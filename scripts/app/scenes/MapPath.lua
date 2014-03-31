@@ -12,15 +12,6 @@ MapPath._pointArr = {} --坐标点
 
 function MapPath:create(startId, endId, pointArr)
 	local mapPath = MapPath.new()
-
-	-- mapPath.super.onEnter(self, function()
- --    print("on Enter mapPath")
-	-- end)
-
-	-- MapPath.super.onExit(self) = function()
- --    print("on Exit mapPath")
-	-- end
-
 	mapPath:init(startId, endId, pointArr)
 	return mapPath
 end

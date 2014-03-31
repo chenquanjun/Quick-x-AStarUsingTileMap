@@ -1,3 +1,4 @@
+require"app/scenes/extern"
 --枚举值
 kMapDataInvalid   =  0 --无效
 kMapDataBlock     = -1 --石头等障碍物
@@ -10,18 +11,23 @@ kMapDataThing     = 11 --物体
 kMapDataServe     = 12 --服务位置
 kMapDataProduct   = 13 --产品位置
 
+kMapKeyOffset     = 10000
+
 --地图信息类
-MapInfo = {}
+MapInfo = class("MapInfo", function()
+	return CCNode:create()
+end)
+
 MapInfo.__index = MapInfo
 MapInfo._mapMatrix = nil--网格，即地图的网格有多少个
 MapInfo._mapUnit = nil --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
 MapInfo._mapData = {} --保存地图的信息
-
+MapInfo._mapPathCache = {}
 
 
 function MapInfo:create(fileName)
-	local mapInfo = {}
-	setmetatable(mapInfo, MapInfo)
+	local mapInfo = MapInfo.new()
+	-- setmetatable(mapInfo, MapInfo)
 	mapInfo:init(fileName)
 	return mapInfo
 end
@@ -44,7 +50,7 @@ function MapInfo:init(fileName)
         local width = (tolua.cast(firstDict:objectForKey(keyW), "CCString")):intValue()
         local keyH = "height"
         local height = (tolua.cast(firstDict:objectForKey(keyH), "CCString")):intValue()
-        MapInfo._mapUnit = CCSize(width, height)
+        self._mapUnit = CCSize(width, height)
 
 		cclog("PointSize: %.0f, %.0f", width, height)
 	end
@@ -82,9 +88,19 @@ function MapInfo:init(fileName)
 	end
 
 	self:findPath(154, 574)
+	self:findPath(574, 154)
 end
 
 function MapInfo:findPath(startMapId, endMapId)
+	do
+		local key = startMapId * kMapKeyOffset + endMapId
+		local path = self._mapPathCache[key]
+		if path ~= nil then
+			return path
+		end
+	end
+
+
 	do  --排除开始和结束点的不合法情况
 		if startMapId == -1 or endMapId == -1 then
 			return nil
@@ -244,18 +260,66 @@ function MapInfo:findPath(startMapId, endMapId)
 	local size = table.getn(vecClose)
 	local pNode = vecClose[size]
 
+	local pointArr = CCPointArray:create(0)
+
 	while pNode do
 		local mapId = pNode.nMapId
 		pNode = pNode.pParent
 
-		print(mapId)
-
+		local point = self:convertIdToPointMid(mapId)
+		pointArr:add(point)
 	end
 
+	local pathRevert = MapPath:create(endMapId, startMapId, pointArr)
+	local path = MapPath:create(startMapId, endMapId, pointArr:reverse())
+
+	local keyRevert = endMapId * kMapKeyOffset + startMapId
+	local key = startMapId * kMapKeyOffset + endMapId
+
+	self._mapPathCache[key] = path
+	self._mapPathCache[keyRevert] = pathRevert
+	print("save key:"..key)
+
+	return path
+end
+
+function MapInfo:convertPointToId(point)
+    local mapId = -1;
+    --在大地图内, 此处的转换是按照左下角往右扩展，然后再往上扩展形式计算，例如
+    -- 8 9 ...
+    -- 4 5 6 7
+    -- 0 1 2 3
+    local rect = CCRect(0, 0, _mapMatrix.width * _mapUnit.width, _mapMatrix.height * _mapUnit.height)
+    if rect.containsPoint(point) then
+    	        local x = point.x / _mapUnit.width;
+        local y = point.y / _mapUnit.height;
+        mapId = x + y * _mapMatrix.width;
+    end
+
+    return mapId;
+end
+
+function MapInfo:convertIdToPoint(mapId)
+    local point = ccp(0, 0)
+
+    local size = table.getn(self._mapData)
+    if mapId >= 0 and mapId < size then
+    	local y = mapId / self._mapMatrix.width
+    	local x = mapId - y * self._mapMatrix.width
+
+    	point = ccp(x * self._mapUnit.width, y * self._mapUnit.height)
+    end
+
+    return point;
+end
+
+function MapInfo:convertIdToPointMid(mapId)
+    local point = self:convertIdToPoint(mapId);
+    return ccp(point.x + self._mapUnit.width * 0.5, point.y + self._mapUnit.height * 0.5);
 end
 
 
-
+--private method
 function MapInfo:InTable(nIndex, vector)
 	local count = table.getn(vector)
 
