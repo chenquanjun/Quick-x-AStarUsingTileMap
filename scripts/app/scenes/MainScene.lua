@@ -1,7 +1,7 @@
 
-require "app/scenes/MapPath"
-require "app/scenes/MapInfo"
-require "app/scenes/NPCSprite"
+require "app/model/MapPath"
+require "app/model/MapInfo"
+require "app/view/NPCSprite"
 --local var
 local _mapLayer = nil --地图layer
 local _mapInfo = nil

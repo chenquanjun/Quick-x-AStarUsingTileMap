@@ -1,4 +1,4 @@
-require"app/scenes/extern"
+require"app/basic/extern"
 --枚举值 地图信息
 kMapDataInvalid   =  0 --无效
 kMapDataBlock     = -1 --石头等障碍物
