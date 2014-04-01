@@ -62,6 +62,8 @@ function MainScene:ctor()
     do
         local testSprite = NPCSprite:create("player1_%i_%i.png")
         self:addChild(testSprite)
+
+        testSprite:playAnim(ccp(100, 100), ccp(200, 200))
     end
 
 
