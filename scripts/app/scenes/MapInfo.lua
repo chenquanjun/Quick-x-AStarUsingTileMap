@@ -264,6 +264,7 @@ function MapInfo:findPath(startMapId, endMapId)
 		pNode = pNode.pParent
 
 		local point = self:convertIdToPointMid(mapId)
+
 		pointArr:add(point)
 	end
      
@@ -307,7 +308,7 @@ function MapInfo:convertIdToPoint(mapId)
 
     local size = table.getn(self._mapData)
     if mapId >= 0 and mapId < size then
-    	local y = mapId / self._mapMatrix.width
+    	local y = self:int(mapId / self._mapMatrix.width)
     	local x = mapId - y * self._mapMatrix.width
 
     	point = ccp(x * self._mapUnit.width, y * self._mapUnit.height)

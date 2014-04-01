@@ -43,8 +43,41 @@ function MainScene:ctor()
         self:addChild(_mapInfo)
         
     end
-    local path1 = _mapInfo:findPath(145, 146)
 
+    do -- 动作
+        local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
+        cache:addSpriteFramesWithFile("player1.plist")
+
+        local sprite = CCSprite:createWithSpriteFrameName("player1_0_0.png")
+        
+        self:addChild(sprite)
+
+        local indexFlag = 1 --执行标志
+        local mapPath = _mapInfo:findPath(145, 150) --地图路径类
+
+        local startPoint = mapPath:getPointAtIndex(indexFlag) --第一个点
+        local pointNum = mapPath:getPointArrCount()
+        
+        sprite:setPosition(startPoint)
+        print("num:"..pointNum)
+
+        local delay = CCDelayTime:create(0.2) --延迟
+        local callfunc = CCCallFunc:create(function()
+                            local point = mapPath:getPointAtIndex(indexFlag)
+                            indexFlag = indexFlag + 1 --标志增加
+                            sprite:setPosition(point) --设置坐标
+
+                            if indexFlag == pointNum then
+
+                                sprite:stopActionByTag(999) --停止
+                            end
+                            end)
+        local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+        local action = CCRepeatForever:create(sequence)
+        action:setTag(999)
+        sprite:runAction(action)
+    end
+    
 
 end
 
