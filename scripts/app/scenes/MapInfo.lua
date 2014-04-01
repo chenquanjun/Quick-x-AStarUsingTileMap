@@ -1,5 +1,5 @@
 require"app/scenes/extern"
---枚举值
+--枚举值 地图信息
 kMapDataInvalid   =  0 --无效
 kMapDataBlock     = -1 --石头等障碍物
 kMapDataRoad      =  1 --路径
@@ -10,6 +10,13 @@ kMapDataStart     = 10 --开始坐标
 kMapDataThing     = 11 --物体
 kMapDataServe     = 12 --服务位置
 kMapDataProduct   = 13 --产品位置
+
+kActionTagInvalid     = 0 --默认
+kActionTagDown       = 1 --下
+kActionTagLeft       = 2 --左
+kActionTagRight      = 3 --右
+kActionTagUp         = 4 --上
+kActionTagMove       = 99
 
 kMapKeyOffset     = 100000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
 

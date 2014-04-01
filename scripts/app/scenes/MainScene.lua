@@ -1,6 +1,7 @@
 
 require "app/scenes/MapPath"
 require "app/scenes/MapInfo"
+require "app/scenes/NPCSprite"
 --local var
 local _mapLayer = nil --地图layer
 local _mapInfo = nil
@@ -55,18 +56,45 @@ function MainScene:ctor()
         
         self:addChild(sprite)
 
-        self:playAction(sprite, 0.3, 145, 146)
+        self:walkTo(sprite, 0.3, 145, 146)
     end
-    
+
+    do
+        local testSprite = NPCSprite:create("player1_%i_%i.png")
+        self:addChild(testSprite)
+    end
+
 
 end
 
+function MainScene:playActionAnimByPos(sprite, startPoint, endPoint)
+    local offsetX = endPoint.x - startPoint.x
+    local offsetY = endPoint.y - startPoint.y
+    local actionType = kActionInvalid
+
+    if offsetY > 5 then
+        actionType = kActionUp
+    elseif offsetY < -5 then
+        actionType = kActionDown
+    elseif offsetX > 5 then
+        actionType = kActionRight
+    elseif offsetX < -5 then
+        actionType = kActionLeft
+    end
+
+    sprite:stopActionByTag(kActionUp)
+    sprite:stopActionByTag(kActionDown)
+    sprite:stopActionByTag(kActionRight)
+    sprite:stopActionByTag(kActionLeft)
+
+    
+end
+
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
-function MainScene:playAction(sprite, speed, startId, endId)
+function MainScene:walkTo(sprite, speed, startId, endId)
         local indexFlag = 0 --执行标志
         local unitDivideNum = 10 --两个格子之间划分成10个坐标点
-        local actionTag = 999 --动作tag，用来停止动作
-
+        local actionTag = kActionTagMove
         local mapPath = _mapInfo:findPath(startId, endId) --地图路径类
 
         if mapPath == nil then
