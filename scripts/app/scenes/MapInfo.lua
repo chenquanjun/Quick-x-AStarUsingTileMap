@@ -25,11 +25,12 @@ MapInfo = class("MapInfo", function()
 	return CCNode:create()
 end)
 
-MapInfo.__index = MapInfo
-MapInfo._mapMatrix = nil       --网格，即地图的网格有多少个
-MapInfo._mapUnit = nil         --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
-MapInfo._mapData = {}          --保存地图的信息
-MapInfo._mapPathCache = {}     --地图缓存
+MapInfo.__index  		    	= MapInfo
+MapInfo._mapMatrix  		    = nil       --网格，即地图的网格有多少个
+MapInfo._mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
+MapInfo._mapData  				= {}        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
+MapInfo._mapPathCache  			= {}        --地图缓存
+MapInfo._mapTypeDataMap  		= {} 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
 
 --构造方法，继承CCNode
 function MapInfo:create(fileName)
@@ -290,6 +291,32 @@ function MapInfo:findPath(startMapId, endMapId)
 	print("save key:"..key)
 
 	return path
+end
+
+-- 地图信息获取方法
+
+function MapInfo:getMapTypeData(type)
+	local typeData = self._mapTypeDataMap[type]
+
+	if typeData == nil then
+		print("cache tpye:"..type)
+		--typeData为type类型信息的数组
+		--下标从1开始，内容保存mapId
+		typeData = {}
+		local index = 1
+		local mapData = self._mapData --地图信息
+		local size = table.getn(mapData)
+		for i = 0, size - 1 do
+			local objectId = mapData[i]
+			if objectId == type then
+				typeData[index] = i --其实是mapId
+				index = index + 1
+			end
+		end
+		self._mapTypeDataMap[type] = typeData
+	end
+
+	return typeData
 end
 
 -- 坐标地图id转换方法，将点转换成地图id

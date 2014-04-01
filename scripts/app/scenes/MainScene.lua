@@ -6,20 +6,25 @@ require "app/scenes/NPCSprite"
 local _mapLayer = nil --地图layer
 local _mapInfo = nil
 
+local _seatVector = nil
+local _waitSeatVector = nil
+local _doorVector = nil
+local _seatMap = {}  --座位字典
+local _waitSeatMap = {} --等待座位字典
+local _doorMap = {} --门口字典
+
 local MainScene = class("MainScene", function()
     return display.newScene("MainScene")
 end)
 
 function MainScene:ctor()
-    ui.newTTFLabel({text = "Hello, World", size = 64, align = ui.TEXT_ALIGN_CENTER})
-        :pos(display.cx, display.cy)
-        :addTo(self)
+
     --所有map对象的容器
     _mapLayer = display.newLayer()
     self:addChild(_mapLayer)
 
 
-    do   --tmx地图
+    do   --tmx地图 单纯显示用
         local map = CCTMXTiledMap:create("map.tmx")
         _mapLayer:addChild(map)
 
@@ -39,36 +44,52 @@ function MainScene:ctor()
             child:getTexture():setAntiAliasTexParameters()
         end
     end
-    do --mapinfo
-        _mapInfo = MapInfo:create("map.tmx")
-        self:addChild(_mapInfo)
-        
-    end
+
     -- local scheduler = require("framework.scheduler")
     -- handle = scheduler.scheduleUpdateGlobal(function()
     --     self:update()
     -- end)
-    do -- 动作
-        local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
-        cache:addSpriteFramesWithFile("player1.plist")
 
-        local sprite = CCSprite:createWithSpriteFrameName("player1_0_0.png")
-        
-        -- self:addChild(sprite)
+    do --mapinfo 创建地图信息类
+        _mapInfo = MapInfo:create("map.tmx")
+        _mapLayer:addChild(_mapInfo) --把内存释放交给2dx
 
-        
+        --记录哪个mapId是座位，等待座位和门口, 下标从1开始
+        self._seatVector = _mapInfo:getMapTypeData(kMapDataSeat)
+        self._waitSeatVector = _mapInfo:getMapTypeData(kMapDataWaitSeat)
+        self._doorVector = _mapInfo:getMapTypeData(kMapDataDoor)
+
+
+        for i,v in ipairs(self._seatVector) 
+        do 
+            _seatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+        end  
+
+        for i,v in ipairs(self._waitSeatVector) 
+        do 
+            _waitSeatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+        end  
+
+        for i,v in ipairs(self._doorVector) 
+        do 
+            _doorMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+        end  
     end
 
-    do
-        local testSprite = NPCSprite:create("player1_%i_%i.png")
-        self:addChild(testSprite)
+    do  --精灵
+        local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
+        cache:addSpriteFramesWithFile("player1.plist")
+        cache:addSpriteFramesWithFile("player2.plist")
+        cache:addSpriteFramesWithFile("player3.plist")
+        cache:addSpriteFramesWithFile("player4.plist")
 
-        -- testSprite:playAnim(ccp(100, 100), ccp(200, 200))
+        local testSprite = NPCSprite:create("player1_%i_%i.png")
+        _mapLayer:addChild(testSprite)
 
         self:walkTo(testSprite, 0.3, 145, 191)
     end
 
-
+    -- self:performWithDelay(function() self:update() end, 1.0)
 end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
@@ -76,6 +97,7 @@ function MainScene:walkTo(pNPCSprite, speed, startId, endId)
         local indexFlag = 0 --执行标志
         local unitDivideNum = 10 --两个格子之间划分成10个坐标点
         local actionTag = kActionTagMove
+        --A星寻路 地图路径
         local mapPath = _mapInfo:findPath(startId, endId) --地图路径类
 
         if mapPath == nil then
@@ -103,11 +125,11 @@ function MainScene:walkTo(pNPCSprite, speed, startId, endId)
                                 local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
                                 curPoint = ccp(x, y) 
 
-                                pNPCSprite:playAnim(curPoint, nextPoint)
+                                pNPCSprite:playAnim(curPoint, nextPoint) --播放上下左右移动动画
 
                             elseif index == pointNum then
-                                pNPCSprite:stopActionByTag(actionTag) --停止
-                                pNPCSprite:stopAnim()
+                                pNPCSprite:stopActionByTag(actionTag) --停止本callFunc
+                                pNPCSprite:stopAnim() --停止播放动画
                             end
                             indexFlag = indexFlag + 1 --标志增加
 

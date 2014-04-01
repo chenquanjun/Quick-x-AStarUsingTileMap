@@ -7,8 +7,9 @@ end)
 
 NPCSprite.__index  			= NPCSprite
 NPCSprite._fileName  		= nil --文件名
-NPCSprite._sprite  			= nil   --精灵
+NPCSprite._sprite  			= nil --精灵
 NPCSprite._lastActionTag  	= nil --最近动作tag
+NPCSprite._npcId            = -1  --用来区分不同NPC，默认为-1
 
 function NPCSprite:create(fileNameFormat)
 	local pNPCSprite = NPCSprite.new()
