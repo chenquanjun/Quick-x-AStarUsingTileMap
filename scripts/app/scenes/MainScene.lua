@@ -54,46 +54,25 @@ function MainScene:ctor()
 
         local sprite = CCSprite:createWithSpriteFrameName("player1_0_0.png")
         
-        self:addChild(sprite)
+        -- self:addChild(sprite)
 
-        self:walkTo(sprite, 0.3, 145, 146)
+        
     end
 
     do
         local testSprite = NPCSprite:create("player1_%i_%i.png")
         self:addChild(testSprite)
 
-        testSprite:playAnim(ccp(100, 100), ccp(200, 200))
+        -- testSprite:playAnim(ccp(100, 100), ccp(200, 200))
+
+        self:walkTo(testSprite, 0.3, 145, 191)
     end
 
 
-end
-
-function MainScene:playActionAnimByPos(sprite, startPoint, endPoint)
-    local offsetX = endPoint.x - startPoint.x
-    local offsetY = endPoint.y - startPoint.y
-    local actionType = kActionInvalid
-
-    if offsetY > 5 then
-        actionType = kActionUp
-    elseif offsetY < -5 then
-        actionType = kActionDown
-    elseif offsetX > 5 then
-        actionType = kActionRight
-    elseif offsetX < -5 then
-        actionType = kActionLeft
-    end
-
-    sprite:stopActionByTag(kActionUp)
-    sprite:stopActionByTag(kActionDown)
-    sprite:stopActionByTag(kActionRight)
-    sprite:stopActionByTag(kActionLeft)
-
-    
 end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
-function MainScene:walkTo(sprite, speed, startId, endId)
+function MainScene:walkTo(pNPCSprite, speed, startId, endId)
         local indexFlag = 0 --执行标志
         local unitDivideNum = 10 --两个格子之间划分成10个坐标点
         local actionTag = kActionTagMove
@@ -106,8 +85,8 @@ function MainScene:walkTo(sprite, speed, startId, endId)
         local startPoint = mapPath:getPointAtIndex(1) --第一个点
         local pointNum = mapPath:getPointArrCount()
         
-        sprite:setPosition(startPoint)
-        sprite:stopActionByTag(actionTag)
+        pNPCSprite:setPosition(startPoint)
+        pNPCSprite:stopActionByTag(actionTag)
         
         local delay = CCDelayTime:create(speed / 10) --延迟
         local callfunc = CCCallFunc:create(function()
@@ -124,18 +103,21 @@ function MainScene:walkTo(sprite, speed, startId, endId)
                                 local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
                                 curPoint = ccp(x, y) 
 
+                                pNPCSprite:playAnim(curPoint, nextPoint)
+
                             elseif index == pointNum then
-                                sprite:stopActionByTag(actionTag) --停止
+                                pNPCSprite:stopActionByTag(actionTag) --停止
+                                pNPCSprite:stopAnim()
                             end
                             indexFlag = indexFlag + 1 --标志增加
 
-                            sprite:setPosition(curPoint) --设置坐标
+                            pNPCSprite:setPosition(curPoint) --设置坐标
 
                             end)
         local sequence = CCSequence:createWithTwoActions(delay, callfunc)
         local action = CCRepeatForever:create(sequence)
         action:setTag(actionTag)
-        sprite:runAction(action)
+        pNPCSprite:runAction(action)
 end
 
 function MainScene:update()

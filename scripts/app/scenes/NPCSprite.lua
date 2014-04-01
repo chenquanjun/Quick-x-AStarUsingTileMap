@@ -6,12 +6,9 @@ NPCSprite = class("NPCSprite", function()
 end)			
 
 NPCSprite.__index  			= NPCSprite
-NPCSprite._startId   		= -1--开始Id
-NPCSprite._endId  			= -1 --结束id
-NPCSprite._pointArr  		= {} --坐标点
 NPCSprite._fileName  		= nil --文件名
 NPCSprite._sprite  			= nil   --精灵
-NPCSprite._lastActionTag  	= kActionInvalid --最近动作tag
+NPCSprite._lastActionTag  	= nil --最近动作tag
 
 function NPCSprite:create(fileNameFormat)
 	local pNPCSprite = NPCSprite.new()
@@ -21,6 +18,8 @@ end
 
 function NPCSprite:init(fileNameFormat)
 	self._fileName = fileNameFormat --缓存文件名
+
+	self._lastActionTag = kActionTagInvalid
 
     self:addAnimCache(fileNameFormat)
 
@@ -61,18 +60,25 @@ function NPCSprite:addAnimCache(fileNameFormat)
 
 end
 
+function NPCSprite:stopAnim()
+	if self._lastActionTag ~= kActionInvalid then
+    	self._sprite:stopActionByTag(self._lastActionTag)
+    	self._lastActionTag = kActionInvalid
+    end
+end
+
 function NPCSprite:playAnim(startPoint, endPoint)
     local offsetX = endPoint.x - startPoint.x
     local offsetY = endPoint.y - startPoint.y
-    local actionType = 50
+    local actionType = kActionTagInvalid     
 
-    if offsetY > 5 then
+    if offsetY > 1 then
         actionType = kActionTagUp
-    elseif offsetY < -5 then
+    elseif offsetY < -1 then
         actionType = kActionTagDown
-    elseif offsetX > 5 then
+    elseif offsetX > 1 then
         actionType = kActionTagRight
-    elseif offsetX < -5 then
+    elseif offsetX < -1 then
         actionType = kActionTagLeft
     end
 
@@ -83,7 +89,7 @@ function NPCSprite:playAnim(startPoint, endPoint)
     end
 
     if lastActionTag ~= kActionInvalid then
-    	self:stopActionByTag(lastActionTag)
+    	self._sprite:stopActionByTag(lastActionTag)
     end
 
     self._lastActionTag = actionType --保存
@@ -95,6 +101,7 @@ function NPCSprite:playAnim(startPoint, endPoint)
     	local action = CCRepeatForever:create(anim)
     	action:setTag(actionType)
     	self._sprite:runAction(action)
+ 	
     end
 
     
