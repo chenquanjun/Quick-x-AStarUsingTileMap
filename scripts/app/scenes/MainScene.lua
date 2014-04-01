@@ -41,14 +41,10 @@ function MainScene:ctor()
     do --mapinfo
         _mapInfo = MapInfo:create("map.tmx")
         self:addChild(_mapInfo)
-
+        
     end
+    local path1 = _mapInfo:findPath(145, 146)
 
-
-    self:performWithDelay(function()
-        _mapInfo:findPath(200, 300)
-        print("test")
-    end, 1.0)
 
 end
 

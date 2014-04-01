@@ -11,7 +11,7 @@ kMapDataThing     = 11 --物体
 kMapDataServe     = 12 --服务位置
 kMapDataProduct   = 13 --产品位置
 
-kMapKeyOffset     = 10000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
+kMapKeyOffset     = 100000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
 
 --地图信息类
 MapInfo = class("MapInfo", function()
@@ -19,15 +19,14 @@ MapInfo = class("MapInfo", function()
 end)
 
 MapInfo.__index = MapInfo
-MapInfo._mapMatrix = nil--网格，即地图的网格有多少个
-MapInfo._mapUnit = nil --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
-MapInfo._mapData = {} --保存地图的信息
-MapInfo._mapPathCache = {}
+MapInfo._mapMatrix = nil       --网格，即地图的网格有多少个
+MapInfo._mapUnit = nil         --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
+MapInfo._mapData = {}          --保存地图的信息
+MapInfo._mapPathCache = {}     --地图缓存
 
-
+--构造方法，继承CCNode
 function MapInfo:create(fileName)
 	local mapInfo = MapInfo.new()
-	-- setmetatable(mapInfo, MapInfo)
 	mapInfo:init(fileName)
 	return mapInfo
 end
@@ -83,12 +82,12 @@ function MapInfo:init(fileName)
 	        local mapId = x + y * gridWidth
 			self._mapData[mapId] = objectId
 
+			print("mapId:"..mapId.." "..objectId)
+
 	    end
 
 	end
 
-	self:findPath(154, 574)
-	self:findPath(574, 154)
 end
 
 function MapInfo:findPath(startMapId, endMapId)
@@ -156,13 +155,11 @@ function MapInfo:findPath(startMapId, endMapId)
 		end --if
 
 		for i = 0, 3 do
-			-- print(i)
 			local nMapId = self:GetIndexByDir(pNextNode.nMapId, i)
-			-- print("mapid:"..nMapId)
 			local bContinue = false
 
 			if nMapID == -1 then
-				bContinue = true --等于continue 跳过下面代码继续下个循环
+				bContinue = true --等于continue 跳过下面代码继续下个循环，下面的同理
 			end
 
 			if bContinue == false then
@@ -179,13 +176,11 @@ function MapInfo:findPath(startMapId, endMapId)
 				end
 
 				if bContinue == false then
-                    -- print("close")
 					if self:InTable(nMapId, vecClose) ~= nil then
 						bContinue = true --在close表里面
 					end
 
 					if bContinue == false then
-						-- print("open:"..nMapId)
 						local pOpenNode = self:InTable(nMapId, vecOpen)
 						if pOpenNode then
 							local nNewG = pNextNode.nG + self:GetGByIndex(pNextNode.nMapId, pOpenNode.nMapId)
@@ -260,8 +255,10 @@ function MapInfo:findPath(startMapId, endMapId)
 	local size = table.getn(vecClose)
 	local pNode = vecClose[size]
 
+    --坐标点集合数组
 	local pointArr = CCPointArray:create(0)
 
+	--此处生成的是逆向坐标点
 	while pNode do
 		local mapId = pNode.nMapId
 		pNode = pNode.pParent
@@ -269,7 +266,7 @@ function MapInfo:findPath(startMapId, endMapId)
 		local point = self:convertIdToPointMid(mapId)
 		pointArr:add(point)
 	end
-
+     
 	local pathRevert = MapPath:create(endMapId, startMapId, pointArr)
 	local path = MapPath:create(startMapId, endMapId, pointArr:reverse())
 
@@ -278,6 +275,10 @@ function MapInfo:findPath(startMapId, endMapId)
 
 	self._mapPathCache[key] = path
 	self._mapPathCache[keyRevert] = pathRevert
+
+	--MapPath是自动释放对象，需要addchild
+	self:addChild(pathRevert) 
+	self:addChild(path)
 	print("save key:"..key)
 
 	return path
@@ -383,6 +384,7 @@ function MapInfo:GetGByIndex(nStartIndex, nEndIndex)
 
 	return 14
 end
+
 -- A星寻路 H值
 function MapInfo:GetHByIndex(nIndex, nEndIndex)
 	local width = self._mapMatrix.width

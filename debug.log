@@ -19,36 +19,36 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0093] [INFO] 
-Cocos2d: [0.0093] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0093] [INFO] #
-Cocos2d: [0.0093] [INFO] # device.platform              = mac
-Cocos2d: [0.0094] [INFO] # device.model                 = unknown
-Cocos2d: [0.0094] [INFO] # device.language              = cn
-Cocos2d: [0.0094] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0094] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0094] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0094] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0094] [INFO] #
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0106] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0107] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0107] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0107] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0107] [INFO] # display.height               = 640.00
-Cocos2d: [0.0107] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0107] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0107] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0107] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0107] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0107] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0107] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0107] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0107] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0107] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0107] [INFO] #
+Cocos2d: [0.0104] [INFO] 
+Cocos2d: [0.0104] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0104] [INFO] #
+Cocos2d: [0.0105] [INFO] # device.platform              = mac
+Cocos2d: [0.0105] [INFO] # device.model                 = unknown
+Cocos2d: [0.0105] [INFO] # device.language              = cn
+Cocos2d: [0.0105] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0105] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0105] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0105] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0105] [INFO] #
+Cocos2d: [0.0117] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0117] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0117] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0117] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0117] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0117] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0117] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0117] [INFO] # display.height               = 640.00
+Cocos2d: [0.0117] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0117] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0117] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0117] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0118] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0118] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0118] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0118] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0118] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0118] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0118] [INFO] #
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
@@ -57,12 +57,741 @@ Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] t
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0612] GridSize: 36, 20
-Cocos2d: [0.0613] PointSize: 32, 32
-Cocos2d: [0.0712] save key:1540574
-Cocos2d: [0.1476] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [1.1968] test
-Cocos2d: [10.1549] [INFO] LUA VM MEMORY USED: 1928.25 KB
-Cocos2d: [20.1557] [INFO] LUA VM MEMORY USED: 1928.34 KB
-Cocos2d: [30.1723] [INFO] LUA VM MEMORY USED: 1928.44 KB
-Cocos2d: [40.1889] [INFO] LUA VM MEMORY USED: 1928.54 KB
+Cocos2d: [0.0617] GridSize: 36, 20
+Cocos2d: [0.0618] PointSize: 32, 32
+Cocos2d: [0.0618] mapId:593 1
+Cocos2d: [0.0618] mapId:594 1
+Cocos2d: [0.0618] mapId:595 1
+Cocos2d: [0.0618] mapId:597 1
+Cocos2d: [0.0618] mapId:596 1
+Cocos2d: [0.0619] mapId:598 1
+Cocos2d: [0.0619] mapId:558 1
+Cocos2d: [0.0619] mapId:562 1
+Cocos2d: [0.0619] mapId:560 1
+Cocos2d: [0.0619] mapId:599 1
+Cocos2d: [0.0619] mapId:601 1
+Cocos2d: [0.0619] mapId:603 1
+Cocos2d: [0.0619] mapId:600 1
+Cocos2d: [0.0619] mapId:604 1
+Cocos2d: [0.0620] mapId:602 1
+Cocos2d: [0.0620] mapId:563 1
+Cocos2d: [0.0620] mapId:565 1
+Cocos2d: [0.0620] mapId:567 1
+Cocos2d: [0.0620] mapId:564 1
+Cocos2d: [0.0620] mapId:568 1
+Cocos2d: [0.0620] mapId:566 1
+Cocos2d: [0.0620] mapId:605 1
+Cocos2d: [0.0620] mapId:607 1
+Cocos2d: [0.0621] mapId:609 1
+Cocos2d: [0.0621] mapId:606 1
+Cocos2d: [0.0621] mapId:610 1
+Cocos2d: [0.0621] mapId:608 1
+Cocos2d: [0.0621] mapId:569 1
+Cocos2d: [0.0621] mapId:571 1
+Cocos2d: [0.0621] mapId:573 1
+Cocos2d: [0.0621] mapId:570 1
+Cocos2d: [0.0622] mapId:574 1
+Cocos2d: [0.0622] mapId:572 1
+Cocos2d: [0.0622] mapId:575 10
+Cocos2d: [0.0622] mapId:611 10
+Cocos2d: [0.0622] mapId:414 1
+Cocos2d: [0.0622] mapId:413 1
+Cocos2d: [0.0622] mapId:342 1
+Cocos2d: [0.0622] mapId:377 1
+Cocos2d: [0.0622] mapId:341 1
+Cocos2d: [0.0623] mapId:378 1
+Cocos2d: [0.0623] mapId:270 1
+Cocos2d: [0.0623] mapId:305 1
+Cocos2d: [0.0623] mapId:269 1
+Cocos2d: [0.0623] mapId:306 1
+Cocos2d: [0.0623] mapId:198 1
+Cocos2d: [0.0623] mapId:233 1
+Cocos2d: [0.0623] mapId:197 1
+Cocos2d: [0.0623] mapId:234 1
+Cocos2d: [0.0623] mapId:200 1
+Cocos2d: [0.0623] mapId:235 1
+Cocos2d: [0.0624] mapId:199 1
+Cocos2d: [0.0624] mapId:236 1
+Cocos2d: [0.0624] mapId:202 1
+Cocos2d: [0.0624] mapId:237 1
+Cocos2d: [0.0624] mapId:201 1
+Cocos2d: [0.0624] mapId:238 1
+Cocos2d: [0.0624] mapId:126 1
+Cocos2d: [0.0624] mapId:161 1
+Cocos2d: [0.0625] mapId:125 1
+Cocos2d: [0.0625] mapId:162 1
+Cocos2d: [0.0625] mapId:128 1
+Cocos2d: [0.0625] mapId:163 1
+Cocos2d: [0.0625] mapId:127 1
+Cocos2d: [0.0626] mapId:164 1
+Cocos2d: [0.0626] mapId:165 1
+Cocos2d: [0.0626] mapId:129 1
+Cocos2d: [0.0626] mapId:166 1
+Cocos2d: [0.0626] mapId:54 1
+Cocos2d: [0.0626] mapId:89 1
+Cocos2d: [0.0626] mapId:53 1
+Cocos2d: [0.0626] mapId:90 1
+Cocos2d: [0.0626] mapId:56 1
+Cocos2d: [0.0626] mapId:91 1
+Cocos2d: [0.0627] mapId:55 1
+Cocos2d: [0.0627] mapId:92 1
+Cocos2d: [0.0627] mapId:58 1
+Cocos2d: [0.0627] mapId:93 1
+Cocos2d: [0.0627] mapId:57 1
+Cocos2d: [0.0627] mapId:94 1
+Cocos2d: [0.0627] mapId:240 1
+Cocos2d: [0.0627] mapId:239 1
+Cocos2d: [0.0627] mapId:242 1
+Cocos2d: [0.0627] mapId:241 1
+Cocos2d: [0.0628] mapId:244 1
+Cocos2d: [0.0628] mapId:243 1
+Cocos2d: [0.0628] mapId:246 1
+Cocos2d: [0.0628] mapId:245 1
+Cocos2d: [0.0628] mapId:60 1
+Cocos2d: [0.0628] mapId:59 1
+Cocos2d: [0.0628] mapId:62 1
+Cocos2d: [0.0628] mapId:61 1
+Cocos2d: [0.0628] mapId:64 1
+Cocos2d: [0.0629] mapId:63 1
+Cocos2d: [0.0629] mapId:66 1
+Cocos2d: [0.0629] mapId:65 1
+Cocos2d: [0.0629] mapId:419 1
+Cocos2d: [0.0629] mapId:418 1
+Cocos2d: [0.0629] mapId:421 1
+Cocos2d: [0.0629] mapId:420 1
+Cocos2d: [0.0629] mapId:423 1
+Cocos2d: [0.0629] mapId:422 1
+Cocos2d: [0.0629] mapId:425 1
+Cocos2d: [0.0630] mapId:424 1
+Cocos2d: [0.0630] mapId:427 1
+Cocos2d: [0.0630] mapId:426 1
+Cocos2d: [0.0630] mapId:428 1
+Cocos2d: [0.0630] mapId:247 1
+Cocos2d: [0.0630] mapId:248 1
+Cocos2d: [0.0630] mapId:382 1
+Cocos2d: [0.0630] mapId:346 1
+Cocos2d: [0.0630] mapId:310 12
+Cocos2d: [0.0630] mapId:274 1
+Cocos2d: [0.0631] mapId:387 1
+Cocos2d: [0.0631] mapId:351 1
+Cocos2d: [0.0631] mapId:171 1
+Cocos2d: [0.0631] mapId:99 1
+Cocos2d: [0.0631] mapId:207 1
+Cocos2d: [0.0631] mapId:317 8
+Cocos2d: [0.0631] mapId:67 1
+Cocos2d: [0.0632] mapId:131 8
+Cocos2d: [0.0632] mapId:311 8
+Cocos2d: [0.0632] mapId:137 8
+Cocos2d: [0.0633] mapId:629 -1
+Cocos2d: [0.0633] mapId:630 -1
+Cocos2d: [0.0633] mapId:631 -1
+Cocos2d: [0.0633] mapId:634 -1
+Cocos2d: [0.0633] mapId:632 -1
+Cocos2d: [0.0633] mapId:633 -1
+Cocos2d: [0.0634] mapId:637 -1
+Cocos2d: [0.0634] mapId:635 -1
+Cocos2d: [0.0634] mapId:636 -1
+Cocos2d: [0.0634] mapId:640 -1
+Cocos2d: [0.0634] mapId:638 -1
+Cocos2d: [0.0634] mapId:639 -1
+Cocos2d: [0.0634] mapId:643 -1
+Cocos2d: [0.0634] mapId:641 -1
+Cocos2d: [0.0634] mapId:642 -1
+Cocos2d: [0.0634] mapId:646 -1
+Cocos2d: [0.0634] mapId:644 -1
+Cocos2d: [0.0635] mapId:645 -1
+Cocos2d: [0.0635] mapId:667 -1
+Cocos2d: [0.0635] mapId:665 -1
+Cocos2d: [0.0635] mapId:666 -1
+Cocos2d: [0.0635] mapId:670 -1
+Cocos2d: [0.0635] mapId:668 -1
+Cocos2d: [0.0635] mapId:669 -1
+Cocos2d: [0.0635] mapId:671 -1
+Cocos2d: [0.0635] mapId:676 -1
+Cocos2d: [0.0635] mapId:675 -1
+Cocos2d: [0.0636] mapId:674 -1
+Cocos2d: [0.0636] mapId:673 -1
+Cocos2d: [0.0636] mapId:672 -1
+Cocos2d: [0.0636] mapId:677 -1
+Cocos2d: [0.0636] mapId:682 -1
+Cocos2d: [0.0636] mapId:681 -1
+Cocos2d: [0.0636] mapId:680 -1
+Cocos2d: [0.0636] mapId:679 -1
+Cocos2d: [0.0636] mapId:678 -1
+Cocos2d: [0.0636] mapId:647 -1
+Cocos2d: [0.0637] mapId:683 -1
+Cocos2d: [0.0637] mapId:702 -1
+Cocos2d: [0.0637] mapId:701 -1
+Cocos2d: [0.0637] mapId:714 -1
+Cocos2d: [0.0637] mapId:706 -1
+Cocos2d: [0.0637] mapId:719 -1
+Cocos2d: [0.0637] mapId:717 -1
+Cocos2d: [0.0637] mapId:716 -1
+Cocos2d: [0.0637] mapId:703 -1
+Cocos2d: [0.0638] mapId:718 -1
+Cocos2d: [0.0638] mapId:705 -1
+Cocos2d: [0.0638] mapId:715 -1
+Cocos2d: [0.0638] mapId:704 -1
+Cocos2d: [0.0638] mapId:707 -1
+Cocos2d: [0.0638] mapId:713 -1
+Cocos2d: [0.0638] mapId:710 -1
+Cocos2d: [0.0638] mapId:709 -1
+Cocos2d: [0.0639] mapId:711 -1
+Cocos2d: [0.0639] mapId:712 -1
+Cocos2d: [0.0639] mapId:708 -1
+Cocos2d: [0.0639] mapId:698 -1
+Cocos2d: [0.0639] mapId:695 -1
+Cocos2d: [0.0639] mapId:697 -1
+Cocos2d: [0.0639] mapId:690 -1
+Cocos2d: [0.0639] mapId:692 -1
+Cocos2d: [0.0639] mapId:696 -1
+Cocos2d: [0.0639] mapId:691 -1
+Cocos2d: [0.0640] mapId:693 -1
+Cocos2d: [0.0640] mapId:700 -1
+Cocos2d: [0.0640] mapId:694 -1
+Cocos2d: [0.0640] mapId:699 -1
+Cocos2d: [0.0640] mapId:662 -1
+Cocos2d: [0.0640] mapId:659 -1
+Cocos2d: [0.0640] mapId:661 -1
+Cocos2d: [0.0640] mapId:654 -1
+Cocos2d: [0.0640] mapId:656 -1
+Cocos2d: [0.0640] mapId:660 -1
+Cocos2d: [0.0641] mapId:655 -1
+Cocos2d: [0.0641] mapId:657 -1
+Cocos2d: [0.0641] mapId:664 -1
+Cocos2d: [0.0641] mapId:658 -1
+Cocos2d: [0.0641] mapId:663 -1
+Cocos2d: [0.0641] mapId:626 -1
+Cocos2d: [0.0641] mapId:625 -1
+Cocos2d: [0.0641] mapId:618 -1
+Cocos2d: [0.0641] mapId:619 -1
+Cocos2d: [0.0641] mapId:628 -1
+Cocos2d: [0.0642] mapId:627 -1
+Cocos2d: [0.0642] mapId:617 -1
+Cocos2d: [0.0642] mapId:649 -1
+Cocos2d: [0.0642] mapId:653 -1
+Cocos2d: [0.0642] mapId:614 -1
+Cocos2d: [0.0642] mapId:652 -1
+Cocos2d: [0.0642] mapId:686 -1
+Cocos2d: [0.0642] mapId:688 -1
+Cocos2d: [0.0642] mapId:616 -1
+Cocos2d: [0.0642] mapId:687 -1
+Cocos2d: [0.0643] mapId:685 -1
+Cocos2d: [0.0643] mapId:650 -1
+Cocos2d: [0.0643] mapId:613 -1
+Cocos2d: [0.0643] mapId:651 -1
+Cocos2d: [0.0643] mapId:615 -1
+Cocos2d: [0.0643] mapId:689 -1
+Cocos2d: [0.0643] mapId:584 -1
+Cocos2d: [0.0643] mapId:585 -1
+Cocos2d: [0.0643] mapId:583 -1
+Cocos2d: [0.0643] mapId:579 -1
+Cocos2d: [0.0644] mapId:581 -1
+Cocos2d: [0.0644] mapId:580 -1
+Cocos2d: [0.0644] mapId:578 -1
+Cocos2d: [0.0644] mapId:582 -1
+Cocos2d: [0.0644] mapId:648 -1
+Cocos2d: [0.0644] mapId:684 -1
+Cocos2d: [0.0644] mapId:612 -1
+Cocos2d: [0.0644] mapId:577 -1
+Cocos2d: [0.0644] mapId:540 -1
+Cocos2d: [0.0644] mapId:576 -1
+Cocos2d: [0.0644] mapId:504 -1
+Cocos2d: [0.0645] mapId:396 -1
+Cocos2d: [0.0645] mapId:360 -1
+Cocos2d: [0.0645] mapId:324 -1
+Cocos2d: [0.0645] mapId:432 -1
+Cocos2d: [0.0645] mapId:288 -1
+Cocos2d: [0.0645] mapId:468 -1
+Cocos2d: [0.0645] mapId:527 -1
+Cocos2d: [0.0645] mapId:494 -1
+Cocos2d: [0.0645] mapId:530 -1
+Cocos2d: [0.0645] mapId:493 -1
+Cocos2d: [0.0646] mapId:529 -1
+Cocos2d: [0.0646] mapId:492 -1
+Cocos2d: [0.0646] mapId:526 -1
+Cocos2d: [0.0647] mapId:491 -1
+Cocos2d: [0.0648] mapId:528 -1
+Cocos2d: [0.0648] mapId:490 -1
+Cocos2d: [0.0648] mapId:536 -1
+Cocos2d: [0.0648] mapId:498 -1
+Cocos2d: [0.0648] mapId:503 -1
+Cocos2d: [0.0648] mapId:534 -1
+Cocos2d: [0.0648] mapId:497 -1
+Cocos2d: [0.0648] mapId:532 -1
+Cocos2d: [0.0648] mapId:539 -1
+Cocos2d: [0.0648] mapId:502 -1
+Cocos2d: [0.0649] mapId:538 -1
+Cocos2d: [0.0649] mapId:496 -1
+Cocos2d: [0.0649] mapId:501 -1
+Cocos2d: [0.0649] mapId:535 -1
+Cocos2d: [0.0649] mapId:533 -1
+Cocos2d: [0.0649] mapId:500 -1
+Cocos2d: [0.0649] mapId:537 -1
+Cocos2d: [0.0649] mapId:499 -1
+Cocos2d: [0.0649] mapId:417 -1
+Cocos2d: [0.0649] mapId:381 -1
+Cocos2d: [0.0650] mapId:345 -1
+Cocos2d: [0.0650] mapId:309 -1
+Cocos2d: [0.0650] mapId:273 -1
+Cocos2d: [0.0650] mapId:456 -1
+Cocos2d: [0.0650] mapId:457 -1
+Cocos2d: [0.0650] mapId:454 -1
+Cocos2d: [0.0650] mapId:455 -1
+Cocos2d: [0.0650] mapId:458 -1
+Cocos2d: [0.0650] mapId:465 -1
+Cocos2d: [0.0650] mapId:466 -1
+Cocos2d: [0.0651] mapId:463 -1
+Cocos2d: [0.0651] mapId:464 -1
+Cocos2d: [0.0651] mapId:467 -1
+Cocos2d: [0.0651] mapId:459 -1
+Cocos2d: [0.0651] mapId:531 -1
+Cocos2d: [0.0651] mapId:495 -1
+Cocos2d: [0.0651] mapId:462 -1
+Cocos2d: [0.0651] mapId:461 -1
+Cocos2d: [0.0651] mapId:460 -1
+Cocos2d: [0.0651] mapId:358 -1
+Cocos2d: [0.0652] mapId:359 -1
+Cocos2d: [0.0652] mapId:430 -1
+Cocos2d: [0.0652] mapId:394 -1
+Cocos2d: [0.0652] mapId:395 -1
+Cocos2d: [0.0652] mapId:431 -1
+Cocos2d: [0.0652] mapId:250 -1
+Cocos2d: [0.0652] mapId:251 -1
+Cocos2d: [0.0652] mapId:322 -1
+Cocos2d: [0.0652] mapId:286 -1
+Cocos2d: [0.0652] mapId:287 -1
+Cocos2d: [0.0653] mapId:323 -1
+Cocos2d: [0.0653] mapId:142 -1
+Cocos2d: [0.0653] mapId:143 -1
+Cocos2d: [0.0653] mapId:214 -1
+Cocos2d: [0.0653] mapId:178 -1
+Cocos2d: [0.0653] mapId:179 -1
+Cocos2d: [0.0653] mapId:215 -1
+Cocos2d: [0.0653] mapId:34 -1
+Cocos2d: [0.0653] mapId:107 -1
+Cocos2d: [0.0653] mapId:70 -1
+Cocos2d: [0.0654] mapId:33 -1
+Cocos2d: [0.0654] mapId:106 -1
+Cocos2d: [0.0654] mapId:71 -1
+Cocos2d: [0.0654] mapId:35 -1
+Cocos2d: [0.0654] mapId:6 -1
+Cocos2d: [0.0654] mapId:9 -1
+Cocos2d: [0.0654] mapId:13 -1
+Cocos2d: [0.0654] mapId:12 -1
+Cocos2d: [0.0654] mapId:16 -1
+Cocos2d: [0.0654] mapId:7 -1
+Cocos2d: [0.0655] mapId:14 -1
+Cocos2d: [0.0655] mapId:8 -1
+Cocos2d: [0.0655] mapId:11 -1
+Cocos2d: [0.0655] mapId:10 -1
+Cocos2d: [0.0655] mapId:15 -1
+Cocos2d: [0.0655] mapId:27 -1
+Cocos2d: [0.0655] mapId:25 -1
+Cocos2d: [0.0655] mapId:30 -1
+Cocos2d: [0.0655] mapId:29 -1
+Cocos2d: [0.0655] mapId:22 -1
+Cocos2d: [0.0656] mapId:28 -1
+Cocos2d: [0.0656] mapId:24 -1
+Cocos2d: [0.0656] mapId:26 -1
+Cocos2d: [0.0656] mapId:32 -1
+Cocos2d: [0.0656] mapId:31 -1
+Cocos2d: [0.0656] mapId:23 -1
+Cocos2d: [0.0656] mapId:19 -1
+Cocos2d: [0.0656] mapId:18 -1
+Cocos2d: [0.0656] mapId:17 -1
+Cocos2d: [0.0657] mapId:21 -1
+Cocos2d: [0.0657] mapId:20 -1
+Cocos2d: [0.0657] mapId:5 -1
+Cocos2d: [0.0657] mapId:3 -1
+Cocos2d: [0.0657] mapId:0 -1
+Cocos2d: [0.0657] mapId:36 -1
+Cocos2d: [0.0657] mapId:2 -1
+Cocos2d: [0.0657] mapId:4 -1
+Cocos2d: [0.0657] mapId:1 -1
+Cocos2d: [0.0657] mapId:108 -1
+Cocos2d: [0.0658] mapId:72 -1
+Cocos2d: [0.0658] mapId:180 -1
+Cocos2d: [0.0658] mapId:216 -1
+Cocos2d: [0.0658] mapId:144 -1
+Cocos2d: [0.0658] mapId:252 -1
+Cocos2d: [0.0658] mapId:204 -1
+Cocos2d: [0.0658] mapId:205 -1
+Cocos2d: [0.0658] mapId:206 -1
+Cocos2d: [0.0658] mapId:203 -1
+Cocos2d: [0.0658] mapId:95 -1
+Cocos2d: [0.0659] mapId:97 -1
+Cocos2d: [0.0659] mapId:98 -1
+Cocos2d: [0.0659] mapId:96 -1
+Cocos2d: [0.0659] mapId:275 -1
+Cocos2d: [0.0659] mapId:277 -1
+Cocos2d: [0.0659] mapId:278 -1
+Cocos2d: [0.0659] mapId:276 -1
+Cocos2d: [0.0659] mapId:383 -1
+Cocos2d: [0.0659] mapId:385 -1
+Cocos2d: [0.0659] mapId:386 -1
+Cocos2d: [0.0660] mapId:384 -1
+Cocos2d: [0.0660] mapId:389 -1
+Cocos2d: [0.0660] mapId:391 -1
+Cocos2d: [0.0660] mapId:392 -1
+Cocos2d: [0.0660] mapId:390 -1
+Cocos2d: [0.0660] mapId:281 -1
+Cocos2d: [0.0660] mapId:283 -1
+Cocos2d: [0.0660] mapId:284 -1
+Cocos2d: [0.0660] mapId:282 -1
+Cocos2d: [0.0661] mapId:209 -1
+Cocos2d: [0.0661] mapId:211 -1
+Cocos2d: [0.0661] mapId:212 -1
+Cocos2d: [0.0661] mapId:210 -1
+Cocos2d: [0.0661] mapId:101 -1
+Cocos2d: [0.0661] mapId:103 -1
+Cocos2d: [0.0661] mapId:104 -1
+Cocos2d: [0.0661] mapId:102 -1
+Cocos2d: [0.0661] mapId:140 8
+Cocos2d: [0.0662] mapId:134 8
+Cocos2d: [0.0662] mapId:314 8
+Cocos2d: [0.0662] mapId:320 8
+Cocos2d: [0.0662] mapId:174 11
+Cocos2d: [0.0662] mapId:175 11
+Cocos2d: [0.0662] mapId:138 11
+Cocos2d: [0.0662] mapId:139 11
+Cocos2d: [0.0662] mapId:319 11
+Cocos2d: [0.0662] mapId:354 11
+Cocos2d: [0.0663] mapId:318 11
+Cocos2d: [0.0663] mapId:355 11
+Cocos2d: [0.0663] mapId:313 11
+Cocos2d: [0.0663] mapId:348 11
+Cocos2d: [0.0663] mapId:312 11
+Cocos2d: [0.0663] mapId:349 11
+Cocos2d: [0.0663] mapId:133 11
+Cocos2d: [0.0663] mapId:168 11
+Cocos2d: [0.0663] mapId:132 11
+Cocos2d: [0.0663] mapId:169 11
+Cocos2d: [0.0664] mapId:279 1
+Cocos2d: [0.0664] mapId:479 9
+Cocos2d: [0.0664] mapId:453 -1
+Cocos2d: [0.0664] mapId:485 7
+Cocos2d: [0.0664] mapId:449 1
+Cocos2d: [0.0664] mapId:450 1
+Cocos2d: [0.0664] mapId:451 1
+Cocos2d: [0.0664] mapId:379 1
+Cocos2d: [0.0664] mapId:380 1
+Cocos2d: [0.0665] mapId:271 1
+Cocos2d: [0.0665] mapId:416 1
+Cocos2d: [0.0665] mapId:415 1
+Cocos2d: [0.0665] mapId:344 1
+Cocos2d: [0.0665] mapId:307 1
+Cocos2d: [0.0665] mapId:343 1
+Cocos2d: [0.0665] mapId:452 1
+Cocos2d: [0.0665] mapId:272 1
+Cocos2d: [0.0666] mapId:308 1
+Cocos2d: [0.0666] mapId:448 1
+Cocos2d: [0.0666] mapId:376 1
+Cocos2d: [0.0666] mapId:412 1
+Cocos2d: [0.0666] mapId:514 1
+Cocos2d: [0.0666] mapId:442 1
+Cocos2d: [0.0666] mapId:478 1
+Cocos2d: [0.0667] mapId:370 1
+Cocos2d: [0.0667] mapId:406 1
+Cocos2d: [0.0667] mapId:556 1
+Cocos2d: [0.0667] mapId:553 1
+Cocos2d: [0.0667] mapId:554 1
+Cocos2d: [0.0667] mapId:555 1
+Cocos2d: [0.0667] mapId:520 1
+Cocos2d: [0.0668] mapId:517 1
+Cocos2d: [0.0668] mapId:518 1
+Cocos2d: [0.0668] mapId:519 1
+Cocos2d: [0.0668] mapId:374 1
+Cocos2d: [0.0668] mapId:372 1
+Cocos2d: [0.0668] mapId:515 1
+Cocos2d: [0.0668] mapId:516 1
+Cocos2d: [0.0668] mapId:484 1
+Cocos2d: [0.0668] mapId:586 -1
+Cocos2d: [0.0668] mapId:588 -1
+Cocos2d: [0.0669] mapId:551 -1
+Cocos2d: [0.0669] mapId:550 -1
+Cocos2d: [0.0669] mapId:587 -1
+Cocos2d: [0.0669] mapId:552 -1
+Cocos2d: [0.0669] mapId:592 -1
+Cocos2d: [0.0669] mapId:590 -1
+Cocos2d: [0.0669] mapId:589 -1
+Cocos2d: [0.0669] mapId:591 -1
+Cocos2d: [0.0669] mapId:407 9
+Cocos2d: [0.0669] mapId:409 9
+Cocos2d: [0.0670] mapId:481 9
+Cocos2d: [0.0670] mapId:411 9
+Cocos2d: [0.0670] mapId:483 9
+Cocos2d: [0.0670] mapId:480 1
+Cocos2d: [0.0670] mapId:408 1
+Cocos2d: [0.0670] mapId:444 1
+Cocos2d: [0.0670] mapId:482 1
+Cocos2d: [0.0670] mapId:410 1
+Cocos2d: [0.0670] mapId:446 1
+Cocos2d: [0.0671] mapId:350 11
+Cocos2d: [0.0671] mapId:347 11
+Cocos2d: [0.0671] mapId:353 11
+Cocos2d: [0.0671] mapId:356 11
+Cocos2d: [0.0671] mapId:176 11
+Cocos2d: [0.0671] mapId:173 11
+Cocos2d: [0.0671] mapId:167 11
+Cocos2d: [0.0671] mapId:170 11
+Cocos2d: [0.0671] mapId:522 1
+Cocos2d: [0.0671] mapId:486 1
+Cocos2d: [0.0672] mapId:524 1
+Cocos2d: [0.0672] mapId:488 1
+Cocos2d: [0.0672] mapId:557 7
+Cocos2d: [0.0672] mapId:559 7
+Cocos2d: [0.0672] mapId:561 7
+Cocos2d: [0.0672] mapId:489 7
+Cocos2d: [0.0672] mapId:487 7
+Cocos2d: [0.0672] mapId:521 1
+Cocos2d: [0.0672] mapId:523 1
+Cocos2d: [0.0672] mapId:525 1
+Cocos2d: [0.0673] mapId:352 1
+Cocos2d: [0.0673] mapId:388 1
+Cocos2d: [0.0673] mapId:280 1
+Cocos2d: [0.0673] mapId:208 1
+Cocos2d: [0.0673] mapId:100 1
+Cocos2d: [0.0673] mapId:172 1
+Cocos2d: [0.0673] mapId:357 1
+Cocos2d: [0.0673] mapId:249 1
+Cocos2d: [0.0673] mapId:177 1
+Cocos2d: [0.0674] mapId:429 1
+Cocos2d: [0.0674] mapId:285 1
+Cocos2d: [0.0674] mapId:105 1
+Cocos2d: [0.0674] mapId:393 1
+Cocos2d: [0.0674] mapId:213 1
+Cocos2d: [0.0674] mapId:68 1
+Cocos2d: [0.0674] mapId:69 1
+Cocos2d: [0.0674] mapId:315 12
+Cocos2d: [0.0674] mapId:316 12
+Cocos2d: [0.0674] mapId:321 12
+Cocos2d: [0.0678] mapId:130 12
+Cocos2d: [0.0678] mapId:135 12
+Cocos2d: [0.0679] mapId:136 12
+Cocos2d: [0.0679] mapId:141 12
+Cocos2d: [0.0679] mapId:443 12
+Cocos2d: [0.0679] mapId:445 12
+Cocos2d: [0.0679] mapId:447 12
+Cocos2d: [0.0679] mapId:371 12
+Cocos2d: [0.0679] mapId:373 12
+Cocos2d: [0.0679] mapId:375 12
+Cocos2d: [0.0679] mapId:623 -1
+Cocos2d: [0.0679] mapId:624 -1
+Cocos2d: [0.0680] mapId:621 -1
+Cocos2d: [0.0680] mapId:622 -1
+Cocos2d: [0.0680] mapId:620 -1
+Cocos2d: [0.0680] mapId:507 -1
+Cocos2d: [0.0680] mapId:473 -1
+Cocos2d: [0.0680] mapId:547 -1
+Cocos2d: [0.0680] mapId:472 -1
+Cocos2d: [0.0680] mapId:549 -1
+Cocos2d: [0.0680] mapId:477 -1
+Cocos2d: [0.0680] mapId:475 -1
+Cocos2d: [0.0681] mapId:510 -1
+Cocos2d: [0.0681] mapId:511 -1
+Cocos2d: [0.0681] mapId:469 -1
+Cocos2d: [0.0681] mapId:470 -1
+Cocos2d: [0.0681] mapId:474 -1
+Cocos2d: [0.0681] mapId:508 -1
+Cocos2d: [0.0681] mapId:513 -1
+Cocos2d: [0.0681] mapId:509 -1
+Cocos2d: [0.0681] mapId:541 -1
+Cocos2d: [0.0681] mapId:512 -1
+Cocos2d: [0.0682] mapId:545 -1
+Cocos2d: [0.0682] mapId:506 -1
+Cocos2d: [0.0682] mapId:544 -1
+Cocos2d: [0.0682] mapId:476 -1
+Cocos2d: [0.0682] mapId:542 -1
+Cocos2d: [0.0682] mapId:505 -1
+Cocos2d: [0.0682] mapId:546 -1
+Cocos2d: [0.0682] mapId:471 -1
+Cocos2d: [0.0682] mapId:543 -1
+Cocos2d: [0.0682] mapId:548 -1
+Cocos2d: [0.0683] mapId:433 -1
+Cocos2d: [0.0683] mapId:399 -1
+Cocos2d: [0.0683] mapId:405 -1
+Cocos2d: [0.0683] mapId:404 -1
+Cocos2d: [0.0683] mapId:400 -1
+Cocos2d: [0.0683] mapId:435 -1
+Cocos2d: [0.0683] mapId:434 -1
+Cocos2d: [0.0683] mapId:401 -1
+Cocos2d: [0.0683] mapId:440 -1
+Cocos2d: [0.0683] mapId:441 -1
+Cocos2d: [0.0684] mapId:402 -1
+Cocos2d: [0.0684] mapId:437 -1
+Cocos2d: [0.0684] mapId:397 -1
+Cocos2d: [0.0684] mapId:436 -1
+Cocos2d: [0.0684] mapId:398 -1
+Cocos2d: [0.0684] mapId:403 -1
+Cocos2d: [0.0684] mapId:439 -1
+Cocos2d: [0.0684] mapId:438 -1
+Cocos2d: [0.0684] mapId:368 1
+Cocos2d: [0.0684] mapId:332 1
+Cocos2d: [0.0684] mapId:330 1
+Cocos2d: [0.0685] mapId:366 1
+Cocos2d: [0.0685] mapId:367 1
+Cocos2d: [0.0685] mapId:369 1
+Cocos2d: [0.0685] mapId:331 1
+Cocos2d: [0.0685] mapId:333 1
+Cocos2d: [0.0685] mapId:363 1
+Cocos2d: [0.0685] mapId:327 1
+Cocos2d: [0.0685] mapId:325 1
+Cocos2d: [0.0685] mapId:361 1
+Cocos2d: [0.0685] mapId:362 1
+Cocos2d: [0.0686] mapId:364 1
+Cocos2d: [0.0686] mapId:326 1
+Cocos2d: [0.0686] mapId:328 1
+Cocos2d: [0.0686] mapId:365 1
+Cocos2d: [0.0686] mapId:329 1
+Cocos2d: [0.0686] mapId:334 1
+Cocos2d: [0.0686] mapId:336 1
+Cocos2d: [0.0686] mapId:337 12
+Cocos2d: [0.0686] mapId:338 1
+Cocos2d: [0.0686] mapId:335 12
+Cocos2d: [0.0687] mapId:340 1
+Cocos2d: [0.0687] mapId:339 12
+Cocos2d: [0.0687] mapId:182 1
+Cocos2d: [0.0687] mapId:145 1
+Cocos2d: [0.0687] mapId:146 1
+Cocos2d: [0.0687] mapId:150 1
+Cocos2d: [0.0687] mapId:187 1
+Cocos2d: [0.0687] mapId:149 1
+Cocos2d: [0.0687] mapId:185 1
+Cocos2d: [0.0687] mapId:186 1
+Cocos2d: [0.0688] mapId:154 1
+Cocos2d: [0.0688] mapId:183 1
+Cocos2d: [0.0688] mapId:190 1
+Cocos2d: [0.0688] mapId:151 1
+Cocos2d: [0.0688] mapId:147 1
+Cocos2d: [0.0688] mapId:181 1
+Cocos2d: [0.0688] mapId:188 1
+Cocos2d: [0.0688] mapId:152 1
+Cocos2d: [0.0688] mapId:191 1
+Cocos2d: [0.0688] mapId:192 1
+Cocos2d: [0.0689] mapId:156 1
+Cocos2d: [0.0689] mapId:157 1
+Cocos2d: [0.0689] mapId:155 1
+Cocos2d: [0.0689] mapId:193 1
+Cocos2d: [0.0689] mapId:160 1
+Cocos2d: [0.0689] mapId:195 1
+Cocos2d: [0.0689] mapId:196 1
+Cocos2d: [0.0689] mapId:159 1
+Cocos2d: [0.0689] mapId:304 1
+Cocos2d: [0.0689] mapId:232 1
+Cocos2d: [0.0689] mapId:268 1
+Cocos2d: [0.0690] mapId:299 1
+Cocos2d: [0.0690] mapId:227 1
+Cocos2d: [0.0690] mapId:263 1
+Cocos2d: [0.0690] mapId:294 1
+Cocos2d: [0.0690] mapId:222 1
+Cocos2d: [0.0690] mapId:258 1
+Cocos2d: [0.0690] mapId:289 1
+Cocos2d: [0.0690] mapId:217 1
+Cocos2d: [0.0690] mapId:253 1
+Cocos2d: [0.0690] mapId:83 -1
+Cocos2d: [0.0691] mapId:47 -1
+Cocos2d: [0.0691] mapId:119 -1
+Cocos2d: [0.0691] mapId:88 -1
+Cocos2d: [0.0691] mapId:52 -1
+Cocos2d: [0.0691] mapId:124 -1
+Cocos2d: [0.0691] mapId:78 -1
+Cocos2d: [0.0691] mapId:42 -1
+Cocos2d: [0.0691] mapId:114 -1
+Cocos2d: [0.0691] mapId:73 -1
+Cocos2d: [0.0691] mapId:37 -1
+Cocos2d: [0.0692] mapId:109 -1
+Cocos2d: [0.0692] mapId:218 11
+Cocos2d: [0.0692] mapId:254 11
+Cocos2d: [0.0692] mapId:290 11
+Cocos2d: [0.0692] mapId:291 11
+Cocos2d: [0.0692] mapId:292 11
+Cocos2d: [0.0692] mapId:293 11
+Cocos2d: [0.0692] mapId:257 11
+Cocos2d: [0.0692] mapId:221 11
+Cocos2d: [0.0692] mapId:298 11
+Cocos2d: [0.0693] mapId:259 11
+Cocos2d: [0.0693] mapId:295 11
+Cocos2d: [0.0693] mapId:297 11
+Cocos2d: [0.0693] mapId:296 11
+Cocos2d: [0.0693] mapId:223 11
+Cocos2d: [0.0693] mapId:226 11
+Cocos2d: [0.0693] mapId:262 11
+Cocos2d: [0.0693] mapId:303 11
+Cocos2d: [0.0693] mapId:264 11
+Cocos2d: [0.0693] mapId:300 11
+Cocos2d: [0.0694] mapId:302 11
+Cocos2d: [0.0694] mapId:301 11
+Cocos2d: [0.0694] mapId:228 11
+Cocos2d: [0.0694] mapId:231 11
+Cocos2d: [0.0694] mapId:267 11
+Cocos2d: [0.0694] mapId:123 11
+Cocos2d: [0.0694] mapId:84 11
+Cocos2d: [0.0694] mapId:120 11
+Cocos2d: [0.0694] mapId:50 11
+Cocos2d: [0.0695] mapId:49 11
+Cocos2d: [0.0695] mapId:48 11
+Cocos2d: [0.0695] mapId:51 11
+Cocos2d: [0.0695] mapId:87 11
+Cocos2d: [0.0695] mapId:118 11
+Cocos2d: [0.0695] mapId:79 11
+Cocos2d: [0.0695] mapId:115 11
+Cocos2d: [0.0695] mapId:45 11
+Cocos2d: [0.0695] mapId:44 11
+Cocos2d: [0.0695] mapId:43 11
+Cocos2d: [0.0696] mapId:46 11
+Cocos2d: [0.0696] mapId:82 11
+Cocos2d: [0.0696] mapId:113 11
+Cocos2d: [0.0696] mapId:74 11
+Cocos2d: [0.0696] mapId:110 11
+Cocos2d: [0.0696] mapId:40 11
+Cocos2d: [0.0696] mapId:39 11
+Cocos2d: [0.0696] mapId:38 11
+Cocos2d: [0.0696] mapId:41 11
+Cocos2d: [0.0696] mapId:77 11
+Cocos2d: [0.0697] mapId:255 11
+Cocos2d: [0.0697] mapId:219 11
+Cocos2d: [0.0697] mapId:260 11
+Cocos2d: [0.0697] mapId:224 11
+Cocos2d: [0.0697] mapId:265 11
+Cocos2d: [0.0697] mapId:229 11
+Cocos2d: [0.0697] mapId:121 11
+Cocos2d: [0.0697] mapId:85 11
+Cocos2d: [0.0697] mapId:116 11
+Cocos2d: [0.0697] mapId:80 11
+Cocos2d: [0.0697] mapId:111 11
+Cocos2d: [0.0698] mapId:75 11
+Cocos2d: [0.0698] mapId:256 11
+Cocos2d: [0.0698] mapId:261 11
+Cocos2d: [0.0698] mapId:266 11
+Cocos2d: [0.0698] mapId:86 11
+Cocos2d: [0.0698] mapId:81 11
+Cocos2d: [0.0698] mapId:76 11
+Cocos2d: [0.0698] mapId:220 13
+Cocos2d: [0.0698] mapId:225 13
+Cocos2d: [0.0698] mapId:230 13
+Cocos2d: [0.0699] mapId:112 13
+Cocos2d: [0.0699] mapId:117 13
+Cocos2d: [0.0699] mapId:122 13
+Cocos2d: [0.0699] mapId:148 12
+Cocos2d: [0.0699] mapId:184 12
+Cocos2d: [0.0699] mapId:189 12
+Cocos2d: [0.0699] mapId:153 12
+Cocos2d: [0.0699] mapId:194 12
+Cocos2d: [0.0699] mapId:158 12
+Cocos2d: [0.0700] save key:14500146
+Cocos2d: [0.0701] dump from: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/scenes/MainScene.lua"]:48: in function 'ctor'
+Cocos2d: [0.0701] - "path" = userdata: 0x06b37f28
+Cocos2d: [0.1584] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [1.2082] id:145
+Cocos2d: [10.1706] [INFO] LUA VM MEMORY USED: 1915.28 KB
+Cocos2d: [20.1711] [INFO] LUA VM MEMORY USED: 1915.38 KB
+Cocos2d: [30.1711] [INFO] LUA VM MEMORY USED: 1915.48 KB
+Cocos2d: [40.1871] [INFO] LUA VM MEMORY USED: 1915.58 KB
+Cocos2d: [50.1877] [INFO] LUA VM MEMORY USED: 1915.68 KB
+Cocos2d: [60.2044] [INFO] LUA VM MEMORY USED: 1915.78 KB
+Cocos2d: [70.2204] [INFO] LUA VM MEMORY USED: 1915.88 KB
+Cocos2d: [80.2210] [INFO] LUA VM MEMORY USED: 1915.97 KB
+Cocos2d: [90.2210] [INFO] LUA VM MEMORY USED: 1916.07 KB
+Cocos2d: [100.2370] [INFO] LUA VM MEMORY USED: 1916.17 KB
+Cocos2d: [110.2375] [INFO] LUA VM MEMORY USED: 1916.27 KB
