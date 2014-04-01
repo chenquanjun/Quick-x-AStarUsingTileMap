@@ -11,7 +11,7 @@ kMapDataThing     = 11 --物体
 kMapDataServe     = 12 --服务位置
 kMapDataProduct   = 13 --产品位置
 
-kMapKeyOffset     = 10000
+kMapKeyOffset     = 10000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
 
 --地图信息类
 MapInfo = class("MapInfo", function()
@@ -283,6 +283,7 @@ function MapInfo:findPath(startMapId, endMapId)
 	return path
 end
 
+-- 坐标地图id转换方法，将点转换成地图id
 function MapInfo:convertPointToId(point)
     local mapId = -1;
     --在大地图内, 此处的转换是按照左下角往右扩展，然后再往上扩展形式计算，例如
@@ -299,6 +300,7 @@ function MapInfo:convertPointToId(point)
     return mapId;
 end
 
+-- 坐标地图id转换方法，将地图id转换成坐标点（方格左下角点）
 function MapInfo:convertIdToPoint(mapId)
     local point = ccp(0, 0)
 
@@ -313,6 +315,7 @@ function MapInfo:convertIdToPoint(mapId)
     return point;
 end
 
+-- 坐标地图id转换方法，将地图id转换成坐标点（方格中点）
 function MapInfo:convertIdToPointMid(mapId)
     local point = self:convertIdToPoint(mapId);
     return ccp(point.x + self._mapUnit.width * 0.5, point.y + self._mapUnit.height * 0.5);
@@ -335,6 +338,8 @@ function MapInfo:InTable(nIndex, vector)
 end
 
 function MapInfo:GetIndexByDir(nIndex, nDir)
+	--暂时只写了四个方向
+	assert(nDir >=0 and nDir <= 4, "out of range")
 	local width = self._mapMatrix.width
 	local height = self._mapMatrix.height
 
@@ -362,6 +367,7 @@ function MapInfo:GetIndexByDir(nIndex, nDir)
 	return nRow * width + nCol
 end
 
+-- A星寻路 G值
 function MapInfo:GetGByIndex(nStartIndex, nEndIndex)
 	local width = self._mapMatrix.width
 
@@ -377,7 +383,7 @@ function MapInfo:GetGByIndex(nStartIndex, nEndIndex)
 
 	return 14
 end
-
+-- A星寻路 H值
 function MapInfo:GetHByIndex(nIndex, nEndIndex)
 	local width = self._mapMatrix.width
 
@@ -392,6 +398,7 @@ function MapInfo:GetHByIndex(nIndex, nEndIndex)
 	return value
 end
 
+-- 浮点转换成int
 function MapInfo:int(x) 
 	return x>=0 and math.floor(x) or math.ceil(x)
 end

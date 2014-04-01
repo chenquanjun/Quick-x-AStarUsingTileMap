@@ -38,20 +38,20 @@ function MainScene:ctor()
             child:getTexture():setAntiAliasTexParameters()
         end
     end
-    do
+    do --mapinfo
         _mapInfo = MapInfo:create("map.tmx")
-
-        local pointArr = CCPointArray:create(0)
-        pointArr:add(ccp(1, 1))
-        pointArr:add(ccp(1, 1))
-        pointArr:add(ccp(1, 1))
-        local mapPath =  MapPath:create(1, 2, pointArr)
-
-        self:addChild(mapPath)
+        self:addChild(_mapInfo)
 
     end
 
+
+    self:performWithDelay(function()
+        _mapInfo:findPath(200, 300)
+        print("test")
+    end, 1.0)
+
 end
+
 
 function MainScene:onEnter()
     if device.platform == "android" then
