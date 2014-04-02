@@ -19,55 +19,220 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0111] [INFO] 
-Cocos2d: [0.0112] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0112] [INFO] #
-Cocos2d: [0.0112] [INFO] # device.platform              = mac
-Cocos2d: [0.0112] [INFO] # device.model                 = unknown
-Cocos2d: [0.0112] [INFO] # device.language              = cn
-Cocos2d: [0.0112] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0112] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0112] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0112] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0112] [INFO] #
-Cocos2d: [0.0124] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0124] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0124] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0124] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0124] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0124] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0124] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0124] [INFO] # display.height               = 640.00
-Cocos2d: [0.0124] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0124] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0124] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0124] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0124] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0124] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0124] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0124] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0124] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0125] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0125] [INFO] #
-Cocos2d: [0.0154] Controller init
-Cocos2d: [0.0154] View init
+Cocos2d: [0.0113] [INFO] 
+Cocos2d: [0.0113] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0113] [INFO] #
+Cocos2d: [0.0113] [INFO] # device.platform              = mac
+Cocos2d: [0.0113] [INFO] # device.model                 = unknown
+Cocos2d: [0.0113] [INFO] # device.language              = cn
+Cocos2d: [0.0114] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0114] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0114] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0114] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0114] [INFO] #
+Cocos2d: [0.0125] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0125] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0125] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0125] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0126] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0126] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0126] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0126] [INFO] # display.height               = 640.00
+Cocos2d: [0.0126] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0126] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0126] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0126] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0126] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0126] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0126] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0126] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0126] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0126] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0126] [INFO] #
+Cocos2d: [0.0156] Controller init
+Cocos2d: [0.0156] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0437] Model init
+Cocos2d: [0.0439] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0621] GridSize: 36, 20
-Cocos2d: [0.0621] PointSize: 32, 32
-Cocos2d: [0.0673] startMapId:575
-Cocos2d: [0.1591] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1591] model onEnter
-Cocos2d: [0.1591] add cache:player1_%i_%i.png0
-Cocos2d: [0.1601] save key:57500485
-Cocos2d: [0.1602] EndTime:30 lsdId:1
-Cocos2d: [0.1602] EndTime:21 lsdId:2
-Cocos2d: [0.1602] EndTime:0 lsdId:3
-Cocos2d: [10.1675] [INFO] LUA VM MEMORY USED: 2026.47 KB
+Cocos2d: [0.0625] GridSize: 36, 20
+Cocos2d: [0.0625] PointSize: 32, 32
+Cocos2d: [0.0676] startMapId:575
+Cocos2d: [0.1592] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1592] model onEnter
+Cocos2d: [0.1592] add cache:player1_%i_%i.png0
+Cocos2d: [0.1603] save key:57500485
+Cocos2d: [0.1603] EndTime:30 lsdId:1
+Cocos2d: [0.1603] start timer
+Cocos2d: [0.1603] same id
+Cocos2d: [0.3353] 1
+Cocos2d: [0.4354] 2
+Cocos2d: [0.5354] 3
+Cocos2d: [0.6353] 4
+Cocos2d: [0.7354] 5
+Cocos2d: [0.8354] 6
+Cocos2d: [0.9353] 7
+Cocos2d: [1.0390] 8
+Cocos2d: [1.1391] 9
+Cocos2d: [1.2351] 10
+Cocos2d: [1.3354] 11
+Cocos2d: [1.4354] 12
+Cocos2d: [1.5353] 13
+Cocos2d: [1.6354] 14
+Cocos2d: [1.7350] 15
+Cocos2d: [1.8353] 16
+Cocos2d: [1.9352] 17
+Cocos2d: [2.0354] 18
+Cocos2d: [2.1353] 19
+Cocos2d: [2.2354] 20
+Cocos2d: [2.3354] 21
+Cocos2d: [2.4353] 22
+Cocos2d: [2.5354] 23
+Cocos2d: [2.6354] 24
+Cocos2d: [2.7353] 25
+Cocos2d: [2.8349] 26
+Cocos2d: [2.9354] 27
+Cocos2d: [3.0353] 28
+Cocos2d: [3.1354] 29
+Cocos2d: [3.2353] 30
+Cocos2d: [3.3353] listenerId is:1
+Cocos2d: [3.3354] 31
+Cocos2d: [3.4354] 32
+Cocos2d: [3.5351] 33
+Cocos2d: [3.6350] 34
+Cocos2d: [3.7346] 35
+Cocos2d: [3.8347] 36
+Cocos2d: [3.9353] 37
+Cocos2d: [4.0354] 38
+Cocos2d: [4.1354] 39
+Cocos2d: [4.2353] 40
+Cocos2d: [4.3344] 41
+Cocos2d: [4.4353] 42
+Cocos2d: [4.5353] 43
+Cocos2d: [4.6350] 44
+Cocos2d: [4.7353] 45
+Cocos2d: [4.8349] 46
+Cocos2d: [4.9352] 47
+Cocos2d: [5.0352] 48
+Cocos2d: [5.1351] 49
+Cocos2d: [5.2352] 50
+Cocos2d: [5.3353] 51
+Cocos2d: [5.4351] 52
+Cocos2d: [5.5350] 53
+Cocos2d: [5.6352] 54
+Cocos2d: [5.7351] 55
+Cocos2d: [5.8351] 56
+Cocos2d: [5.9352] 57
+Cocos2d: [6.0350] 58
+Cocos2d: [6.1351] 59
+Cocos2d: [6.2351] 60
+Cocos2d: [6.3350] 61
+Cocos2d: [6.4351] 62
+Cocos2d: [6.5350] 63
+Cocos2d: [6.6349] 64
+Cocos2d: [6.7350] 65
+Cocos2d: [6.8350] 66
+Cocos2d: [6.9349] 67
+Cocos2d: [7.0349] 68
+Cocos2d: [7.1350] 69
+Cocos2d: [7.2349] 70
+Cocos2d: [7.3349] 71
+Cocos2d: [7.4349] 72
+Cocos2d: [7.5344] 73
+Cocos2d: [7.6349] 74
+Cocos2d: [7.7348] 75
+Cocos2d: [7.8348] 76
+Cocos2d: [7.9348] 77
+Cocos2d: [8.0347] 78
+Cocos2d: [8.1347] 79
+Cocos2d: [8.2347] 80
+Cocos2d: [8.3348] 81
+Cocos2d: [8.4348] 82
+Cocos2d: [8.5347] 83
+Cocos2d: [8.6347] 84
+Cocos2d: [8.7347] 85
+Cocos2d: [8.8346] 86
+Cocos2d: [8.9343] 87
+Cocos2d: [9.0346] 88
+Cocos2d: [9.1346] 89
+Cocos2d: [9.2345] 90
+Cocos2d: [9.3344] 91
+Cocos2d: [9.4345] 92
+Cocos2d: [9.5346] 93
+Cocos2d: [9.6345] 94
+Cocos2d: [9.7344] 95
+Cocos2d: [9.8346] 96
+Cocos2d: [9.9345] 97
+Cocos2d: [10.0345] 98
+Cocos2d: [10.1344] 99
+Cocos2d: [10.1670] [INFO] LUA VM MEMORY USED: 2028.92 KB
+Cocos2d: [10.2345] 100
+Cocos2d: [10.3344] 101
+Cocos2d: [10.4344] 102
+Cocos2d: [10.5344] 103
+Cocos2d: [10.6344] 104
+Cocos2d: [10.7350] 105
+Cocos2d: [10.8344] 106
+Cocos2d: [10.9344] 107
+Cocos2d: [11.0343] 108
+Cocos2d: [11.1344] 109
+Cocos2d: [11.2354] 110
+Cocos2d: [11.3353] 111
+Cocos2d: [11.4344] 112
+Cocos2d: [11.5345] 113
+Cocos2d: [11.6353] 114
+Cocos2d: [11.7349] 115
+Cocos2d: [11.8346] 116
+Cocos2d: [11.9353] 117
+Cocos2d: [12.0343] 118
+Cocos2d: [12.1347] 119
+Cocos2d: [12.2353] 120
+Cocos2d: [12.3351] 121
+Cocos2d: [12.4344] 122
+Cocos2d: [12.5351] 123
+Cocos2d: [12.6344] 124
+Cocos2d: [12.7348] 125
+Cocos2d: [12.8353] 126
+Cocos2d: [12.9353] 127
+Cocos2d: [13.0348] 128
+Cocos2d: [13.1353] 129
+Cocos2d: [13.2353] 130
+Cocos2d: [13.3353] 131
+Cocos2d: [13.4344] 132
+Cocos2d: [13.5353] 133
+Cocos2d: [13.6353] 134
+Cocos2d: [13.7353] 135
+Cocos2d: [13.8353] 136
+Cocos2d: [13.9353] 137
+Cocos2d: [14.0353] 138
+Cocos2d: [14.1353] 139
+Cocos2d: [14.2353] 140
+Cocos2d: [14.3353] 141
+Cocos2d: [14.4353] 142
+Cocos2d: [14.5353] 143
+Cocos2d: [14.6353] 144
+Cocos2d: [14.7353] 145
+Cocos2d: [14.8353] 146
+Cocos2d: [14.9353] 147
+Cocos2d: [15.0344] 148
+Cocos2d: [15.1353] 149
+Cocos2d: [15.2353] 150
+Cocos2d: [15.3353] 151
+Cocos2d: [15.4353] 152
+Cocos2d: [15.5353] 153
+Cocos2d: [15.6353] 154
+Cocos2d: [15.7353] 155
+Cocos2d: [15.8353] 156
+Cocos2d: [15.9352] 157
+Cocos2d: [16.0353] 158
+Cocos2d: [16.1353] 159
+Cocos2d: [16.2353] 160
+Cocos2d: [16.3353] 161
+Cocos2d: [16.4353] 162
+Cocos2d: [16.5344] 163
+Cocos2d: [16.6353] 164

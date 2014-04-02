@@ -91,8 +91,10 @@ function ManageModel:onEnter()
 	self:moveNPC()
 
 	_timer:addTimerListener(1, 3)
-	_timer:addTimerListener(2, 2.1)
-	_timer:addTimerListener(3, 0.02)
+	-- _timer:addTimerListener(1, 2.1)
+	-- _timer:addTimerListener(3, 0.02)
+	_timer:startTimer()
+	_timer:setListenerSpeed(1, 1)
 	-- _timer:startTimer()
 end
 

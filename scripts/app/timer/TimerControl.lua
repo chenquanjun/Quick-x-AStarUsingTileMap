@@ -6,6 +6,7 @@ TimerEvent = {
     Pause            = 3, 
     Stop             = 4,
 }
+--最小单位为0.1f
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 TimerControl = class("TimerControl", function()
@@ -160,7 +161,16 @@ function TimerControl:addTimerListener(listenerId, duration)
 	local lstIdVec = _lstIdsTimerKey[endTime]
 
 	if not lstIdVec then
+		--vec 不存在
 		lstIdVec = {}
+
+	else --对于同一个id在相同时间添加多次的话会造成多次回调
+		for i,v in ipairs(lstIdVec) do
+			if v ==  listenerId then
+				print("same id")
+				return --排除
+			end
+		end
 	end
 
 	print("EndTime:"..endTime.." lsdId:".. listenerId)
