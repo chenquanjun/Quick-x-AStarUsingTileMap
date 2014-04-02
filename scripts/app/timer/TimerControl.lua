@@ -7,6 +7,7 @@ TimerEvent = {
     Stop             = 4,
 }
 --最小单位为0.1f
+--对于同一个listenerid，只有最后一次的定时有效
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 TimerControl = class("TimerControl", function()
@@ -137,7 +138,9 @@ function TimerControl:timerUpdate()
 			end
 
 		end
+		dump(_lstIdsTimerKey, "before")
 		_lstIdsTimerKey[_nTimePast] = nil --释放
+		dump(_lstIdsTimerKey, "after")
 	end
 
 	_nTimePast = _nTimePast + 1
