@@ -6,9 +6,10 @@ MapPath = class("MapPath", function()
 end)			
 
 MapPath.__index = MapPath
-MapPath._startId = -1--开始Id
-MapPath._endId = -1 --结束id
-MapPath._pointArr = {} --坐标点
+
+local _startId = -1--开始Id
+local _endId = -1 --结束id
+local _pointArr = {} --坐标点
 
 function MapPath:create(startId, endId, pointArr)
 	local mapPath = MapPath.new()
@@ -17,8 +18,8 @@ function MapPath:create(startId, endId, pointArr)
 end
 
 function MapPath:init(startId, endId, pointArr)
-	self._startId = startId
-	self._endId = endId
+	_startId = startId
+	_endId = endId
 
 	local arr = tolua.cast(pointArr, "CCPointArray")
     assert(pointArr ~= nil, "error type")
@@ -27,28 +28,28 @@ function MapPath:init(startId, endId, pointArr)
 
     for i = 1, count do
     	local point = arr:get(i - 1)
-    	self._pointArr[i] = {}
-    	self._pointArr[i].x = point.x
-    	self._pointArr[i].y = point.y
+    	_pointArr[i] = {}
+    	_pointArr[i].x = point.x
+    	_pointArr[i].y = point.y
     end
 end
 
 function MapPath:getStartId()
-	return self._startId
+	return _startId
 end
 
 function MapPath:getEndId()
-	return self._endId
+	return _endId
 end
 
 function MapPath:getPointArrCount()
-	return table.getn(self._pointArr)
+	return table.getn(_pointArr)
 end
 
 function MapPath:getPointAtIndex(index)
 	--注意index是从1开始的！
 	assert(index >= 1 and index <= self:getPointArrCount(), "out of range")
-	local pointInArr = self._pointArr[index]
+	local pointInArr = _pointArr[index]
 	local point = ccp(pointInArr.x, pointInArr.y)
 	return point
 end

@@ -7,10 +7,10 @@ end)
 
 ManageModel.__index = ManageModel
 
-local _delegate = nil
+local _delegate = nil --model delegate
 
-local _seatVector = nil
-local _waitSeatVector = nil
+local _seatVector = nil --座位数组，保存座位的mapId
+local _waitSeatVector = nil 
 local _doorVector = nil
 
 local _seatMap = {}  --座位字典
@@ -58,7 +58,6 @@ end
 function ManageModel:onEnter()
 	print("model onEnter")
 	if _delegate then
-		print("show")
 		_delegate:showSprite()
 	end
 end

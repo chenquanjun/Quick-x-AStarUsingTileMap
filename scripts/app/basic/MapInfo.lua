@@ -26,11 +26,12 @@ MapInfo = class("MapInfo", function()
 end)
 
 MapInfo.__index  		    	= MapInfo
-MapInfo._mapMatrix  		    = nil       --网格，即地图的网格有多少个
-MapInfo._mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
-MapInfo._mapData  				= {}        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
-MapInfo._mapPathCache  			= {}        --地图缓存
-MapInfo._mapTypeDataMap  		= {} 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
+
+local _mapMatrix  		   		= nil       --网格，即地图的网格有多少个
+local _mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
+local _mapData  				= {}        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
+local _mapPathCache  			= {}        --地图缓存
+local _mapTypeDataMap  			= {} 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
 
 --构造方法，继承CCNode
 function MapInfo:create(fileName)
@@ -43,9 +44,9 @@ function MapInfo:init(fileName)
 	local map = CCTMXTiledMap:create(fileName)
 
 	--map 网格的大小
-	self._mapMatrix = map:getMapSize()
+	_mapMatrix = map:getMapSize()
 
-	cclog("GridSize: %.0f, %.0f", self._mapMatrix.width, self._mapMatrix.height)
+	cclog("GridSize: %.0f, %.0f", _mapMatrix.width, _mapMatrix.height)
 
 	--object图层 tmx文件中以object命名的object层
 	local group = map:objectGroupNamed("object")
@@ -57,7 +58,7 @@ function MapInfo:init(fileName)
         local width = (tolua.cast(firstDict:objectForKey(keyW), "CCString")):intValue()
         local keyH = "height"
         local height = (tolua.cast(firstDict:objectForKey(keyH), "CCString")):intValue()
-        self._mapUnit = CCSize(width, height)
+        _mapUnit = CCSize(width, height)
 
 		cclog("PointSize: %.0f, %.0f", width, height)
 	end
@@ -67,9 +68,9 @@ function MapInfo:init(fileName)
 	    local  i       = 0   --
 	    local  len     = objects:count()
 
-	    local gridWidth = self._mapMatrix.width --网格行数目
-	    local pointWidth = self._mapUnit.width --网格宽度
-	    local pointHeight = self._mapUnit.height --网格高度
+	    local gridWidth = _mapMatrix.width --网格行数目
+	    local pointWidth = _mapUnit.width --网格宽度
+	    local pointHeight = _mapUnit.height --网格高度
 
 	    for i = 0, len-1, 1 do
 	        dict = tolua.cast(objects:objectAtIndex(i), "CCDictionary")
@@ -88,7 +89,7 @@ function MapInfo:init(fileName)
 	        assert(objectId ~= kMapDataInvalid, "object id not set")
 	        --mapId 从左到右，从下到上扩展
 	        local mapId = x + y * gridWidth
-			self._mapData[mapId] = objectId
+			_mapData[mapId] = objectId
 
 			-- print("mapId:"..mapId.." "..objectId)
 
@@ -101,7 +102,7 @@ end
 function MapInfo:findPath(startMapId, endMapId)
 	do
 		local key = startMapId * kMapKeyOffset + endMapId
-		local path = self._mapPathCache[key]
+		local path = _mapPathCache[key]
 		if path ~= nil then
 			return path
 		end
@@ -113,8 +114,8 @@ function MapInfo:findPath(startMapId, endMapId)
 			return nil
 		end
 
-		local startType = self._mapData[startMapId]
-		local endType = self._mapData[endMapId]
+		local startType = _mapData[startMapId]
+		local endType = _mapData[endMapId]
 
 		if startType ==  kMapDataBlock or startType == kMapDataThing then
 			return nil
@@ -171,7 +172,7 @@ function MapInfo:findPath(startMapId, endMapId)
 			end
 
 			if bContinue == false then
-				local mapType = self._mapData[nMapId]
+				local mapType = _mapData[nMapId]
 
 				if mapType == kMapDataSeat or mapType == kMapDataWaitSeat then
 				
@@ -282,8 +283,8 @@ function MapInfo:findPath(startMapId, endMapId)
 	local keyRevert = endMapId * kMapKeyOffset + startMapId
 	local key = startMapId * kMapKeyOffset + endMapId
 
-	self._mapPathCache[key] = path
-	self._mapPathCache[keyRevert] = pathRevert
+	_mapPathCache[key] = path
+	_mapPathCache[keyRevert] = pathRevert
 
 	--MapPath是自动释放对象，需要addchild
 	self:addChild(pathRevert) 
@@ -296,7 +297,7 @@ end
 -- 地图信息获取方法
 
 function MapInfo:getMapTypeData(type)
-	local typeData = self._mapTypeDataMap[type]
+	local typeData = _mapTypeDataMap[type]
 
 	if typeData == nil then
 		print("cache tpye:"..type)
@@ -304,7 +305,7 @@ function MapInfo:getMapTypeData(type)
 		--下标从1开始，内容保存mapId
 		typeData = {}
 		local index = 1
-		local mapData = self._mapData --地图信息
+		local mapData = _mapData --地图信息
 		local size = table.getn(mapData)
 		for i = 0, size - 1 do
 			local objectId = mapData[i]
@@ -313,7 +314,7 @@ function MapInfo:getMapTypeData(type)
 				index = index + 1
 			end
 		end
-		self._mapTypeDataMap[type] = typeData
+		_mapTypeDataMap[type] = typeData
 	end
 
 	return typeData
@@ -326,11 +327,11 @@ function MapInfo:convertPointToId(point)
     -- 8 9 ...
     -- 4 5 6 7
     -- 0 1 2 3
-    local rect = CCRect(0, 0, self._mapMatrix.width * self._mapUnit.width, self._mapMatrix.height * self._mapUnit.height)
+    local rect = CCRect(0, 0, _mapMatrix.width * _mapUnit.width, _mapMatrix.height * _mapUnit.height)
     if rect.containsPoint(point) then
-    	        local x = point.x / self._mapUnit.width;
-        local y = point.y / self._mapUnit.height;
-        mapId = x + y * self._mapMatrix.width;
+    	        local x = point.x / _mapUnit.width;
+        local y = point.y / _mapUnit.height;
+        mapId = x + y * _mapMatrix.width;
     end
 
     return mapId;
@@ -340,12 +341,12 @@ end
 function MapInfo:convertIdToPoint(mapId)
     local point = ccp(0, 0)
 
-    local size = table.getn(self._mapData)
+    local size = table.getn(_mapData)
     if mapId >= 0 and mapId < size then
-    	local y = self:int(mapId / self._mapMatrix.width)
-    	local x = mapId - y * self._mapMatrix.width
+    	local y = self:int(mapId / _mapMatrix.width)
+    	local x = mapId - y * _mapMatrix.width
 
-    	point = ccp(x * self._mapUnit.width, y * self._mapUnit.height)
+    	point = ccp(x * _mapUnit.width, y * _mapUnit.height)
     end
 
     return point;
@@ -354,7 +355,7 @@ end
 -- 坐标地图id转换方法，将地图id转换成坐标点（方格中点）
 function MapInfo:convertIdToPointMid(mapId)
     local point = self:convertIdToPoint(mapId);
-    return ccp(point.x + self._mapUnit.width * 0.5, point.y + self._mapUnit.height * 0.5);
+    return ccp(point.x + _mapUnit.width * 0.5, point.y + _mapUnit.height * 0.5);
 end
 
 
@@ -376,8 +377,8 @@ end
 function MapInfo:GetIndexByDir(nIndex, nDir)
 	--暂时只写了四个方向
 	assert(nDir >=0 and nDir <= 4, "out of range")
-	local width = self._mapMatrix.width
-	local height = self._mapMatrix.height
+	local width = _mapMatrix.width
+	local height = _mapMatrix.height
 
 	if nIndex < 0 or nIndex >= width * height then
 		return -1
@@ -405,7 +406,7 @@ end
 
 -- A星寻路 G值
 function MapInfo:GetGByIndex(nStartIndex, nEndIndex)
-	local width = self._mapMatrix.width
+	local width = _mapMatrix.width
 
 	local nStartRow = self:int(nStartIndex / width)
 	local nStartCol = nStartIndex % width
@@ -422,7 +423,7 @@ end
 
 -- A星寻路 H值
 function MapInfo:GetHByIndex(nIndex, nEndIndex)
-	local width = self._mapMatrix.width
+	local width = _mapMatrix.width
 
 	local nRow = self:int(nIndex / width)
 	local nCol = nIndex % width

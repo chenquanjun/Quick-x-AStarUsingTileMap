@@ -6,7 +6,8 @@ ManageView = class("ManageView", function()
 end)			
 
 ManageView.__index = ManageView
-local _delegate = nil
+
+local _delegate = nil --view delegate
 local _mapInfo = nil
 
 local _testSprite = nil

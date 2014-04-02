@@ -6,8 +6,9 @@ require "app/basic/MapInfo"
 --mvc
 require "app/model/ManageModel"
 require "app/view/ManageView"
-require "app/delegate/ManageDelegate"
-
+--delegate
+require "app/delegate/ManageModelDelegate"
+require "app/delegate/ManageViewDelegate"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageController = class("ManageController", function()
@@ -55,16 +56,11 @@ function ManageController:init()
     _view:setMapInfo(_mapInfo) 
 
     --model需要知道门口，座位，等待座位的位置
+	local seatVec = _mapInfo:getMapTypeData(kMapDataSeat)
+	local waitSeatVec = _mapInfo:getMapTypeData(kMapDataWaitSeat)
+	local doorVec = _mapInfo:getMapTypeData(kMapDataDoor)
 
-    do 
-        --记录哪个mapId是座位，等待座位和门口, 下标从1开始
-        local seatVec = _mapInfo:getMapTypeData(kMapDataSeat)
-        local waitSeatVec = _mapInfo:getMapTypeData(kMapDataWaitSeat)
-        local doorVec = _mapInfo:getMapTypeData(kMapDataDoor)
-
-        _model:setMapData(seatVec, waitSeatVec, doorVec)
-    end
-
+	_model:setMapData(seatVec, waitSeatVec, doorVec)
 end
 
 function ManageController:onEnter()
