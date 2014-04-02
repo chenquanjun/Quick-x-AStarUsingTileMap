@@ -78,7 +78,7 @@ end
 
 function TimerControl:pauseTimer()
 	if _timerEvent == TimerEvent.Running then
-
+		print("pause timer")
 		self:stopActionByTag(_timerActionTag)
 
 		_timerEvent = TimerEvent.Pause
@@ -89,14 +89,14 @@ end
 
 function TimerControl:resumeTimer()
 	if _timerEvent == TimerEvent.Pause then
-
+		print("resume timer")
 		local delay = CCDelayTime:create(_timerInterval)
-	    local callfunc = CCCallFunc:create(callback)
+	    local callfunc = CCCallFunc:create(function() self:timerUpdate() end)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
 	    local action = CCRepeatForever:create(sequence)
 
 	    action:setTag(_timerActionTag)
-	    node:runAction(action)
+	    self:runAction(action)
 
 	    _timerEvent = TimerEvent.Running
 
