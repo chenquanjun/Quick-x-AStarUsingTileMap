@@ -1,7 +1,13 @@
+--继承
 require "app/basic/extern"
+--地图基础信息
+require "app/basic/MapPath"
+require "app/basic/MapInfo"
+--mvc
 require "app/model/ManageModel"
 require "app/view/ManageView"
 require "app/delegate/ManageDelegate"
+
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageController = class("ManageController", function()
@@ -9,10 +15,12 @@ ManageController = class("ManageController", function()
 end)			
 
 ManageController.__index = ManageController
-ManageController._view = nil
-ManageController._model = nil
-ManageController._viewDelegate = nil
-ManageController._modelDelegate = nil
+
+local _view = nil
+local _model = nil
+local _viewDelegate = nil
+local _modelDelegate = nil
+local _mapInfo = nil
 
 function ManageController:create()
 	local ret = ManageController.new()
@@ -35,9 +43,33 @@ function ManageController:init()
 	--view delegate 指向controller
 	_viewDelegate = ManageViewDelegate:setRefer(self)
 
+	--delegate
+	_model:setDelegate(_modelDelegate)
+	_view:setDelegate(_viewDelegate)
+
+	--地图信息 controller保存
+	_mapInfo = MapInfo:create("map.tmx")
+    self:addChild(_mapInfo)
+
+    --view需要用到地图的mapId转换成坐标的方法，所以需要引用mapInfo
+    _view:setMapInfo(_mapInfo) 
+
+    --model需要知道门口，座位，等待座位的位置
+
+    do 
+        --记录哪个mapId是座位，等待座位和门口, 下标从1开始
+        local seatVec = _mapInfo:getMapTypeData(kMapDataSeat)
+        local waitSeatVec = _mapInfo:getMapTypeData(kMapDataWaitSeat)
+        local doorVec = _mapInfo:getMapTypeData(kMapDataDoor)
+
+        _model:setMapData(seatVec, waitSeatVec, doorVec)
+    end
+
 end
 
---找不到析构函数。。
+function ManageController:onEnter()
+	_model:onEnter()
+end
 --统一用此方法，scene负责通知controller,controller再通知view和model
 function ManageController:onRelease()
 	print("Controller on release")
@@ -45,6 +77,7 @@ function ManageController:onRelease()
 	_modelDelegate:removeRefer()
 	_view:onRelease()
 	_model:onRelease()
+	_mapInfo = nil
 	_view = nil
 	_model = nil
 	_viewDelegate = nil

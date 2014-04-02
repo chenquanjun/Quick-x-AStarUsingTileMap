@@ -90,7 +90,7 @@ function MapInfo:init(fileName)
 	        local mapId = x + y * gridWidth
 			self._mapData[mapId] = objectId
 
-			print("mapId:"..mapId.." "..objectId)
+			-- print("mapId:"..mapId.." "..objectId)
 
 	    end
 
@@ -326,11 +326,11 @@ function MapInfo:convertPointToId(point)
     -- 8 9 ...
     -- 4 5 6 7
     -- 0 1 2 3
-    local rect = CCRect(0, 0, _mapMatrix.width * _mapUnit.width, _mapMatrix.height * _mapUnit.height)
+    local rect = CCRect(0, 0, self._mapMatrix.width * self._mapUnit.width, self._mapMatrix.height * self._mapUnit.height)
     if rect.containsPoint(point) then
-    	        local x = point.x / _mapUnit.width;
-        local y = point.y / _mapUnit.height;
-        mapId = x + y * _mapMatrix.width;
+    	        local x = point.x / self._mapUnit.width;
+        local y = point.y / self._mapUnit.height;
+        mapId = x + y * self._mapMatrix.width;
     end
 
     return mapId;

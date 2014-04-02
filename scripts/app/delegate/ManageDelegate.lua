@@ -18,14 +18,15 @@ end
 --释放
 function ManageModelDelegate:removeRefer()
 	print("Model delegate remove")
-	_refer = nil
+	self._refer = nil
 end
 
 --test
-function ManageModelDelegate:showSprite(mapId)
-	if not _refer then
+function ManageModelDelegate:showSprite()
+	if not self._refer then
 		print("show sprite")
 		--view method
+		self._refer:MD_showSprite()
 	end
 end
 
@@ -49,11 +50,11 @@ function ManageViewDelegate:setRefer(controllerRefer)
 end
 function ManageViewDelegate:removeRefer()
 	print("View delegate remove")
-	_refer = nil
+	self._refer = nil
 end
 --test
 function ManageViewDelegate:onShowSprite()
-	if not _refer then
+	if not self._refer then
 		print("on show sprite")
 		--controller method
 	end
