@@ -65,9 +65,9 @@ end
 
 function ManageModel:onEnter()
 	print("model onEnter")
-	if _delegate then
-		_delegate:showSprite()
-	end
+
+	self:addNPC()
+	self:moveNPC()
 end
 
 function ManageModel:onRelease()
@@ -87,6 +87,23 @@ end
 	---Private method-----
 	---------------------]]
 
+--增加NPC
+function ManageModel:addNPC()
+	
+
+	local data = {}
+
+	data.npcId = 1
+	data.npcType = 1
+
+	_delegate:addNPC(data)
+
+end
+
+--移动NPC
+function ManageModel:moveNPC()
+	_delegate:moveNPC(1, _doorVector[1])
+end
 
 --[[-------------------
 	---Public method-----

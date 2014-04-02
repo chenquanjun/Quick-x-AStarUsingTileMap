@@ -300,7 +300,6 @@ function MapInfo:getMapTypeData(type)
 	local typeData = _mapTypeDataMap[type]
 
 	if typeData == nil then
-		print("cache tpye:"..type)
 		--typeData为type类型信息的数组
 		--下标从1开始，内容保存mapId
 		typeData = {}

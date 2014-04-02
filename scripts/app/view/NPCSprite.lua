@@ -6,29 +6,35 @@ NPCSprite = class("NPCSprite", function()
 end)			
 
 NPCSprite.__index  			= NPCSprite
-NPCSprite._fileName  		= nil --文件名
-NPCSprite._sprite  			= nil --精灵
-NPCSprite._lastActionTag  	= nil --最近动作tag
-NPCSprite._npcId            = -1  --用来区分不同NPC，默认为-1
 
-function NPCSprite:create(fileNameFormat)
+NPCSprite.nPreMapId      = -1
+NPCSprite.nTargetMapId   = -1
+
+local _fileName  		= nil --文件名
+local _sprite  			= nil --精灵
+local _lastActionTag  	= nil --最近动作tag
+local _npcId            = -1  --用来区分不同NPC，默认为-1
+
+function NPCSprite:create(fileNameFormat, npcId)
 	local pNPCSprite = NPCSprite.new()
-	pNPCSprite:init(fileNameFormat)
+	pNPCSprite:init(fileNameFormat, npcId)
 	return pNPCSprite
 end
 
-function NPCSprite:init(fileNameFormat)
-	self._fileName = fileNameFormat --缓存文件名
+function NPCSprite:init(fileNameFormat, npcId)
+	_fileName = fileNameFormat --缓存文件名
 
-	self._lastActionTag = kActionTagInvalid
+    _npcId = npcId
+
+	_lastActionTag = kActionTagInvalid
 
     self:addAnimCache(fileNameFormat)
 
-	self._sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
+	_sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
 
-    self._sprite:setAnchorPoint(ccp(0.5, 0))
+    _sprite:setAnchorPoint(ccp(0.5, 0))
 
-    self:addChild(self._sprite)
+    self:addChild(_sprite)
 end
 
 function NPCSprite:addAnimCache(fileNameFormat)
@@ -62,9 +68,9 @@ function NPCSprite:addAnimCache(fileNameFormat)
 end
 
 function NPCSprite:stopAnim()
-	if self._lastActionTag ~= kActionInvalid then
-    	self._sprite:stopActionByTag(self._lastActionTag)
-    	self._lastActionTag = kActionInvalid
+	if _lastActionTag ~= kActionInvalid then
+    	_sprite:stopActionByTag(_lastActionTag)
+    	_lastActionTag = kActionInvalid
     end
 end
 
@@ -83,25 +89,25 @@ function NPCSprite:playAnim(startPoint, endPoint)
         actionType = kActionTagLeft
     end
 
-    local lastActionTag = self._lastActionTag
+    local lastActionTag = _lastActionTag
     --相同动作直接返回
     if actionType == lastActionTag then
     	return
     end
 
     if lastActionTag ~= kActionInvalid then
-    	self._sprite:stopActionByTag(lastActionTag)
+    	_sprite:stopActionByTag(lastActionTag)
     end
 
-    self._lastActionTag = actionType --保存
+    _lastActionTag = actionType --保存
 
-    local animation = display.getAnimationCache(self._fileName..tostring(actionType))
+    local animation = display.getAnimationCache(_fileName..tostring(actionType))
 
     if animation then
     	local anim = CCAnimate:create(animation)
     	local action = CCRepeatForever:create(anim)
     	action:setTag(actionType)
-    	self._sprite:runAction(action)
+    	_sprite:runAction(action)
  	
     end
 

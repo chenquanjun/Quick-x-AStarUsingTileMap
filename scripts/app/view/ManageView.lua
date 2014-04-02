@@ -14,7 +14,10 @@ ManageView.__index = ManageView
 local _delegate = nil --view delegate
 local _mapInfo = nil
 
-local _testSprite = nil
+local _startMapId = -1
+local _npcMap = {}    --存放npcId和npcSprite的对应字典
+
+local _npcLayer = nil --存放NPC的layer
 
 --[[-------------------
     ---Init Method-----
@@ -28,6 +31,11 @@ end
 
 function ManageView:setDelegate(delegate)
     _delegate = delegate
+end
+
+function ManageView:setStartMapId(mapId)
+    print("startMapId:"..mapId)
+    _startMapId = mapId
 end
 
 function ManageView:init()
@@ -60,13 +68,12 @@ function ManageView:init()
         cache:addSpriteFramesWithFile("player2.plist")
         cache:addSpriteFramesWithFile("player3.plist")
         cache:addSpriteFramesWithFile("player4.plist")
+    end
 
-        local testSprite = NPCSprite:create("player1_%i_%i.png")
-        self:addChild(testSprite)
-
-        _testSprite = testSprite
-
-        
+    do  --npcLayer
+        local npcLayer = display.newLayer()
+        self:addChild(npcLayer)
+        _npcLayer = npcLayer 
     end
 end
 
@@ -74,16 +81,57 @@ function ManageView:onRelease()
 	print("View on release")
     _delegate = nil
 	_mapInfo = nil
+
+    local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
+    cache:removeSpriteFramesFromFile("player1.plist")
+    cache:removeSpriteFramesFromFile("player2.plist")
+    cache:removeSpriteFramesFromFile("player3.plist")
+    cache:removeSpriteFramesFromFile("player4.plist")
 end
 
 --[[
 --------------------------
 ------Delegate Method------
+--MD_前缀代表model delegate---
 ----------------------------]]
 function ManageView:MD_showSprite()
-    self:walkTo(_testSprite, 0.3, 145, 191)
+    -- self:walkTo(_testSprite, 0.3, 145, 191)
 end
 
+function ManageView:MD_addNPC(data)
+    local npcId = data.npcId
+    local npcType = data.npcType
+    
+    local startMapId = _startMapId
+
+    local startPoint = _mapInfo:convertIdToPointMid(startMapId)
+
+    local npcSprite = NPCSprite:create("player1_%i_%i.png", npcId)
+
+    npcSprite.nPreMapId = startMapId
+    npcSprite.nTargetMapId = startMapId
+
+    npcSprite:setPosition(startPoint)
+
+    _npcLayer:addChild(npcSprite)
+
+    --保存到Map里面
+    _npcMap[npcId] = npcSprite 
+end
+
+function ManageView:MD_moveNPC(npcId, mapId)
+    local npcSprite = _npcMap[npcId]
+
+    if npcSprite then
+        local newPreMapId = npcSprite.nTargetMapId
+        local newTargetMapId = mapId
+        --更新值
+        npcSprite.nPreMapId = newPreMapId  
+        npcSprite.nTargetMapId = newTargetMapId
+
+        self:walkTo(npcSprite, 0.3, newPreMapId, newTargetMapId)
+    end
+end
 
 --[[
 --------------------------
