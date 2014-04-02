@@ -5,6 +5,10 @@ ManageModel = class("ManageModel", function()
 	return CCNode:create()
 end)			
 
+--[[-------------------
+	---Init Value-----
+	---------------------]]
+
 ManageModel.__index = ManageModel
 
 local _delegate = nil --model delegate
@@ -16,6 +20,10 @@ local _doorVector = nil
 local _seatMap = {}  --座位字典
 local _waitSeatMap = {} --等待座位字典
 local _doorMap = {} --门口字典
+
+--[[-------------------
+	---Init Method-----
+	---------------------]]
 
 function ManageModel:create()
 	local ret = ManageModel.new()
@@ -74,3 +82,12 @@ function ManageModel:onRelease()
 	_waitSeatMap = nil
 	_doorMap = nil
 end
+
+--[[-------------------
+	---Private method-----
+	---------------------]]
+
+
+--[[-------------------
+	---Public method-----
+	---------------------]]

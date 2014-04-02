@@ -13,7 +13,11 @@ require "app/delegate/ManageViewDelegate"
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageController = class("ManageController", function()
 	return CCNode:create()
-end)			
+end)	
+
+--[[-------------------
+	---Init Value-----
+	---------------------]]		
 
 ManageController.__index = ManageController
 
@@ -22,6 +26,10 @@ local _model = nil
 local _viewDelegate = nil
 local _modelDelegate = nil
 local _mapInfo = nil
+
+--[[-------------------
+	---Init Method-----
+	---------------------]]
 
 function ManageController:create()
 	local ret = ManageController.new()
@@ -79,3 +87,8 @@ function ManageController:onRelease()
 	_viewDelegate = nil
 	_modelDelegate = nil
 end
+
+--[[
+--------------------------
+------Delegate Method------
+----------------------------]]

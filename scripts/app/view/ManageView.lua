@@ -5,12 +5,20 @@ ManageView = class("ManageView", function()
 	return CCNode:create()
 end)			
 
+--[[-------------------
+    ---Init Value-----
+    ---------------------]]
+
 ManageView.__index = ManageView
 
 local _delegate = nil --view delegate
 local _mapInfo = nil
 
 local _testSprite = nil
+
+--[[-------------------
+    ---Init Method-----
+    ---------------------]]
 
 function ManageView:create()
 	local ret = ManageView.new()
@@ -75,7 +83,6 @@ end
 function ManageView:MD_showSprite()
     self:walkTo(_testSprite, 0.3, 145, 191)
 end
-
 
 
 --[[
