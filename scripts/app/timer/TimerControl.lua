@@ -106,6 +106,7 @@ function TimerControl:resumeTimer()
 end
 
 function TimerControl:stopTimer()
+	print("stop timer")
 	self:stopActionByTag(_timerActionTag)
 	_nTimePast = 0
 	_timerEvent = TimerEvent.Stop

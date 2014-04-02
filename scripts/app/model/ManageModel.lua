@@ -92,35 +92,39 @@ function ManageModel:onEnter()
 
 	_timer:addTimerListener(1, 0)
 	_timer:removeTimerListener(1)
-	-- _timer:addTimerListener(1, 2.1)
-	-- _timer:addTimerListener(3, 0.02)
-	_timer:startTimer()
-	-- _timer:setListenerSpeed(1, 1)
+	_timer:addTimerListener(1, 2.1)
+	_timer:addTimerListener(3, 20)
 	-- _timer:startTimer()
+	-- _timer:setListenerSpeed(1, 1)
+	_timer:startTimer()
 
 	do
 		local delay = CCDelayTime:create(1.0)
-	    local callfunc = CCCallFunc:create(function() _timer:pauseTimer() end)
+	    local callfunc = CCCallFunc:create(function() _timer:stopTimer() end)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
 	    self:runAction(sequence)
 	end
 
 	do
-		local delay = CCDelayTime:create(1.2)
-	    local callfunc = CCCallFunc:create(function() _timer:resumeTimer() end)
-	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
-	    self:runAction(sequence)
-	end
-
-	do
-		local delay = CCDelayTime:create(1.3)
+		local delay = CCDelayTime:create(1.5)
 	    local callfunc = CCCallFunc:create(function() 
-	    	_timer:addTimerListener(3, 0.1) 
-	    	_timer:setListenerSpeed(3, 0.02)
+	    											_timer:addTimerListener(1, 2) 
+											    	_timer:startTimer() 
+											    	
 	    	end)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
 	    self:runAction(sequence)
 	end
+
+	-- do
+	-- 	local delay = CCDelayTime:create(1.3)
+	--     local callfunc = CCCallFunc:create(function() 
+	--     	_timer:addTimerListener(3, 0.1) 
+	--     	_timer:setListenerSpeed(3, 0.02)
+	--     	end)
+	--     local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+	--     self:runAction(sequence)
+	-- end
 
 end
 
