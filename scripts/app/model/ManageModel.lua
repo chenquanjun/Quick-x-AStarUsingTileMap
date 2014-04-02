@@ -56,7 +56,9 @@ function ManageModel:init()
 end
 
 function ManageModel:onEnter()
-	if not _delegate then
+	print("model onEnter")
+	if _delegate then
+		print("show")
 		_delegate:showSprite()
 	end
 end

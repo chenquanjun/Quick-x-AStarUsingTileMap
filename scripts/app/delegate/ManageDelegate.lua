@@ -23,7 +23,8 @@ end
 
 --test
 function ManageModelDelegate:showSprite()
-	if not self._refer then
+	print("show sprite")
+	if self._refer then
 		print("show sprite")
 		--view method
 		self._refer:MD_showSprite()
@@ -54,7 +55,7 @@ function ManageViewDelegate:removeRefer()
 end
 --test
 function ManageViewDelegate:onShowSprite()
-	if not self._refer then
+	if self._refer then
 		print("on show sprite")
 		--controller method
 	end

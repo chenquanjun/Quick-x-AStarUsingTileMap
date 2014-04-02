@@ -9,6 +9,8 @@ ManageView.__index = ManageView
 local _delegate = nil
 local _mapInfo = nil
 
+local _testSprite = nil
+
 function ManageView:create()
 	local ret = ManageView.new()
 	ret:init()
@@ -53,6 +55,8 @@ function ManageView:init()
         local testSprite = NPCSprite:create("player1_%i_%i.png")
         self:addChild(testSprite)
 
+        _testSprite = testSprite
+
         
     end
 end
@@ -68,7 +72,7 @@ end
 ------Delegate Method------
 ----------------------------]]
 function ManageView:MD_showSprite()
-    self:walkTo(testSprite, 0.3, 145, 191)
+    self:walkTo(_testSprite, 0.3, 145, 191)
 end
 
 
@@ -130,6 +134,4 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
         local action = CCRepeatForever:create(sequence)
         action:setTag(actionTag)
         pNPCSprite:runAction(action)
-
-        self:performWithDelay(function() self:update() end, 20.0)
 end
