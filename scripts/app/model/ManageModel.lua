@@ -1,4 +1,6 @@
 require "app/basic/extern"
+require "app/timer/TimerControl"
+require "app/timer/TimerControlDelegate"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageModel = class("ManageModel", function()
@@ -12,6 +14,8 @@ end)
 ManageModel.__index = ManageModel
 
 local _delegate = nil --model delegate
+local _timer = nil
+local _timerDelegate = nil
 
 local _seatVector = nil --座位数组，保存座位的mapId
 local _waitSeatVector = nil 
@@ -29,6 +33,27 @@ function ManageModel:create()
 	local ret = ManageModel.new()
 	ret:init()
 	return ret
+end
+
+function ManageModel:init()
+	print("Model init")
+
+	--关于定时器
+	--model负责维护timer及其delegate的生命周期
+	--model直接调用timer的时间方法
+	--timer到时间后调用delegate
+	--delegate再回调model
+
+	--定时器
+	local timerControl = TimerControl:create()
+	self:addChild(timerControl)
+	_timer = timerControl
+
+	--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
+	local timerDelegate = TimerControlDelegate:setRefer(self)
+	_timerDelegate = timerDelegate
+
+	timerControl:setDelegate(timerDelegate)
 end
 
 function ManageModel:setDelegate(delegate)
@@ -59,19 +84,27 @@ function ManageModel:setMapData(seatVec, waitSeatVec, doorVec)
 	end  	
 end
 
-function ManageModel:init()
-	print("Model init")
-end
-
 function ManageModel:onEnter()
 	print("model onEnter")
-
+	--test
 	self:addNPC()
 	self:moveNPC()
+
+	_timer:addTimerListener(1, 3)
+	_timer:addTimerListener(2, 2.1)
+	_timer:addTimerListener(3, 0.02)
+	-- _timer:startTimer()
 end
 
 function ManageModel:onRelease()
 	print("Model on release")
+	_timer:removeDelegate() --timer对delegate的引用
+	_timerDelegate:removeRefer() --delegate对model的引用
+
+	_timerDelegate = nil
+
+	_timer = nil
+
 	_delegate = nil
 
 	_seatVector = nil
@@ -108,3 +141,11 @@ end
 --[[-------------------
 	---Public method-----
 	---------------------]]
+
+
+--[[-------------------
+	---Timer Delegate-----
+	---------------------]]
+function ManageModel:TD_onTimOver(listenerId)
+	print("listenerId is:"..listenerId)
+end
