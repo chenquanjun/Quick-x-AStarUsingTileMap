@@ -14,9 +14,9 @@ function ManageModel:create()
 end
 
 function ManageModel:init()
-
+	print("Model init")
 end
 
 function ManageModel:onRelease()
-	
+	print("Model on release")
 end

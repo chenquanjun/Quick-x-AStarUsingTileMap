@@ -15,6 +15,11 @@ function ManageModelDelegate:setRefer(viewRefer)
     self._refer = viewRefer --view的引用
     return ret
 end
+--释放
+function ManageModelDelegate:removeRefer()
+	print("Model delegate remove")
+	_refer = nil
+end
 
 --test
 function ManageModelDelegate:showSprite(mapId)
@@ -42,7 +47,10 @@ function ManageViewDelegate:setRefer(controllerRefer)
     self._refer = controllerRefer --controller的引用
     return ret
 end
-
+function ManageViewDelegate:removeRefer()
+	print("View delegate remove")
+	_refer = nil
+end
 --test
 function ManageViewDelegate:onShowSprite()
 	if not _refer then

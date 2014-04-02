@@ -2,7 +2,11 @@
 require "app/model/MapPath"
 require "app/model/MapInfo"
 require "app/view/NPCSprite"
+require "app/controller/ManageController"
+
 --local var
+local _controller = nil
+
 local _mapLayer = nil --地图layer
 local _mapInfo = nil
 
@@ -18,6 +22,9 @@ local MainScene = class("MainScene", function()
 end)
 
 function MainScene:ctor()
+
+    _controller = ManageController:create()
+    self:addChild(_controller)
 
     --所有map对象的容器
     _mapLayer = display.newLayer()
@@ -140,10 +147,12 @@ function MainScene:walkTo(pNPCSprite, speed, startId, endId)
         local action = CCRepeatForever:create(sequence)
         action:setTag(actionTag)
         pNPCSprite:runAction(action)
+
+        self:performWithDelay(function() self:update() end, 20.0)
 end
 
 function MainScene:update()
-    -- print("callback")
+    print("callback")
 end
 
 function MainScene:onEnter()
@@ -165,6 +174,8 @@ function MainScene:onEnter()
 end
 
 function MainScene:onExit()
+    _controller:onRelease()
+    _controller = nil
 end
 
 return MainScene

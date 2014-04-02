@@ -14,9 +14,9 @@ function ManageView:create()
 end
 
 function ManageView:init()
-
+	print("View init")
 end
 
 function ManageView:onRelease()
-	
+	print("View on release")
 end
