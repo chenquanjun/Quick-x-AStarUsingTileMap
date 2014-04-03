@@ -164,6 +164,7 @@ function ManageView:setMapInfo(mapInfo)
 end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
+--废弃方法
 function ManageView:walkTo(pNPCSprite, speed, startId, endId)
 
         local indexFlag = 0 --执行标志
@@ -245,38 +246,32 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
         local scheduler = require("framework.scheduler")
         --定时器
         handle = scheduler.scheduleUpdateGlobal(function(dt)
-        curTime = curTime + dt
+                            curTime = curTime + dt
 
-        if curTime >= totalTime then
-            scheduler.unscheduleGlobal(handle)
-            pNPCSprite:stopAnim()
-            print("moveend")
-        else
-            --这个类似动作里面的update的time参数
-            local time = curTime / totalTime
+                            --这个类似动作里面的update的time参数
+                            local time = curTime / totalTime
 
-            local fIndex = pointNum * time + 1 --从1开始
-            local index  = _mapInfo:int(fIndex)
+                            local fIndex = (pointNum - 1) * time + 1 --从1开始
+                            local index  = _mapInfo:int(fIndex)
 
-            if index < pointNum then
-                local curPoint = mapPath:getPointAtIndex(index)
-                local nextPoint = mapPath:getPointAtIndex(index + 1)
-                local offset = fIndex - index
-                local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
-                local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
-                curPoint = ccp(x, y) 
-                pNPCSprite:setPosition(curPoint)
+                            if index < pointNum then
+                                local curPoint = mapPath:getPointAtIndex(index)
+                                local nextPoint = mapPath:getPointAtIndex(index + 1)
+                                local offset = fIndex - index
+                                local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
+                                local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
+                                curPoint = ccp(x, y) 
+                                pNPCSprite:setPosition(curPoint)
 
-                pNPCSprite:playAnim(curPoint, nextPoint)
+                                pNPCSprite:playAnim(curPoint, nextPoint)
 
-            else
-                -- scheduler.unscheduleGlobal(handle)
-                local curPoint = mapPath:getPointAtIndex(index)
-                pNPCSprite:setPosition(curPoint)
-
-            end
-        end
-
+                            else --最后一个点
+                                local curPoint = mapPath:getPointAtIndex(index)
+                                pNPCSprite:setPosition(curPoint)
+                                scheduler.unscheduleGlobal(handle)
+                                pNPCSprite:stopAnim()
+                                print("move end~")
+                            end
         end)
 
         return totalTime
