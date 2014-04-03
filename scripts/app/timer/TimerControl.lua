@@ -152,7 +152,7 @@ function TimerControl:timerUpdate()
 	end
 
 	_nTimePast = _nTimePast + 1
-	print(_nTimePast)
+	-- print(_nTimePast)
 end
 
 --[[-------------------

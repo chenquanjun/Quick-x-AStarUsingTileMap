@@ -1,4 +1,5 @@
 require "app/basic/extern"
+require "app/basic/NPCInfo"
 require "app/timer/TimerControl"
 require "app/timer/TimerControlDelegate"
 
@@ -25,6 +26,12 @@ local _seatMap = {}  --座位字典
 local _waitSeatMap = {} --等待座位字典
 local _doorMap = {} --门口字典
 
+local _startMapId = -1
+
+local _npcInfoMap = {}
+
+local _testNPCIdFlag = 10
+
 --[[-------------------
 	---Init Method-----
 	---------------------]]
@@ -42,6 +49,10 @@ end
 
 function ManageModel:setDelegate(delegate)
 	_delegate = delegate
+end
+
+function ManageModel:setStartMapId(mapId)
+	_startMapId = mapId
 end
 
 function ManageModel:setMapData(seatVec, waitSeatVec, doorVec)
@@ -94,7 +105,7 @@ function ManageModel:onEnter()
 
 	--test
 	self:addNPC()
-	self:moveNPC()
+	-- self:moveNPC()
 
 	
 	-- _timer:removeTimerListener(1)
@@ -107,33 +118,6 @@ function ManageModel:onEnter()
 	-- _timer:setListenerSpeed(1, 1)
 	_timer:startTimer()
 
-	-- do
-	-- 	local delay = CCDelayTime:create(1.0)
-	--     local callfunc = CCCallFunc:create(function() _timer:stopTimer() end)
-	--     local sequence = CCSequence:createWithTwoActions(delay, callfunc)
-	--     self:runAction(sequence)
-	-- end
-
-	-- do
-	-- 	local delay = CCDelayTime:create(1.5)
-	--     local callfunc = CCCallFunc:create(function() 
-	--     											_timer:addTimerListener(1, 2) 
-	-- 										    	_timer:startTimer() 
-											    	
-	--     	end)
-	--     local sequence = CCSequence:createWithTwoActions(delay, callfunc)
-	--     self:runAction(sequence)
-	-- end
-
-	-- do
-	-- 	local delay = CCDelayTime:create(1.3)
-	--     local callfunc = CCCallFunc:create(function() 
-	--     	_timer:addTimerListener(3, 0.1) 
-	--     	_timer:setListenerSpeed(3, 0.02)
-	--     	end)
-	--     local sequence = CCSequence:createWithTwoActions(delay, callfunc)
-	--     self:runAction(sequence)
-	-- end
 
 end
 
@@ -164,22 +148,148 @@ end
 --增加NPC
 function ManageModel:addNPC()
 	
+	local npcId = _testNPCIdFlag
 
-	local data = {}
+	do --init 保存到字典
+		local npcInfo = NPCInfo:create(npcId)
+		npcInfo.curState = NPCStateType.Start --开始位置
+		npcInfo.curFeel = NPCFeelType.Invalid
+		npcInfo.curMapId = _startMapId
+		_npcInfoMap[npcId] = npcInfo
 
-	data.npcId = 1
-	data.npcType = 1
+		--进入状态控制
+		self:npcState(npcInfo)		 
 
-	_delegate:addNPC(data)
+	end
+
+	do --通知view添加npc
+		local data = {}
+		data.npcId = npcId
+		data.npcType = 1
+		_delegate:addNPC(data)
+	end
+
+	_testNPCIdFlag = npcId + 1
+
 
 end
 
 --移动NPC
-function ManageModel:moveNPC()
-	local totalTime = _delegate:moveNPC(1, _doorVector[2])
-	print("totalTIme:"..totalTime)
-	_timer:addTimerListener(1, totalTime)
+-- function ManageModel:moveNPC(npcId, mapId)
+-- 	local totalTime = _delegate:moveNPC(npcId, mapId)
+-- 	print("id:"..npcId.." totalTIme:"..totalTime)
+-- 	_timer:addTimerListener(npcId, totalTime)
+-- end
+
+function ManageModel:npcState(npcInfo)
+	local npcId = npcInfo.npcId --npcId
+	local totalTime = 0 --回调参数
+	local mapId = -1 --npc的目标mapId
+	--switch....
+	local switchState = {
+		[NPCStateType.Start]					= function()
+			print("start")
+			totalTime = math.random(1, 10)
+			npcInfo.curState = NPCStateType.GoToDoor --状态切换
+		end,
+
+		[NPCStateType.GoToDoor]					= function()
+			print("GoToDoor")
+
+		end,
+
+		[NPCStateType.Door] 					= function()
+			print("Door")
+
+		end,
+
+		[NPCStateType.LeaveDoor] 				= function()
+			print("LeaveDoor")
+
+		end,
+
+		[NPCStateType.FindSeat] 				= function()
+			print("FindSeat")
+
+		end,
+
+		[NPCStateType.SeatRequest] 				= function()
+			print("SeatRequest")
+
+		end,
+
+		[NPCStateType.SeatEating] 				= function()
+			print("SeatEating")
+
+		end,
+
+		[NPCStateType.SeatPay] 					= function()
+			print("SeatPay")
+
+		end,
+
+		[NPCStateType.SeatPaySuccess]			= function()
+			print("SeatPaySuccess")
+
+		end,
+
+		[NPCStateType.LeaveSeat] 				= function()
+			print("LeaveSeat")
+
+		end,
+
+		[NPCStateType.FindWaitSeat] 			= function()
+		    print("FindWaitSeat")
+
+		end,
+
+		[NPCStateType.WaitSeatRequest] 			= function()
+		    print("WaitSeatRequest")
+
+		end,
+
+		[NPCStateType.WaitSeatPay] 				= function()
+		    print("WaitSeatPay")
+
+		end,
+
+		[NPCStateType.WaitSeatIdle] 			= function()
+		    print("WaitSeatIdle")
+
+		end,
+
+		[NPCStateType.WaitSeatPaySuccess] 		= function()
+		    print("WaitSeatPaySuccess")
+
+		end,
+
+		[NPCStateType.LeaveWaitSeat] 			= function()
+		    print("LeaveWaitSeat")
+
+		end,
+	}
+	
+	local state = npcInfo.curState --npc通用状态
+	local fSwitch = switchState[state] --switch 方法
+
+	if fSwitch then
+		fSwitch() --执行switch
+	else
+		error("state error")
+	end
+
+	if mapId ~= -1 then
+		--说明在switch中改变了值，调用viewdelegate
+		totalTime = _delegate:moveNPC(npcId, mapId)
+	end
+
+
+	print("id:"..npcId.." totalTIme:"..totalTime)
+	_timer:addTimerListener(npcId, totalTime) --加入时间控制
+
+
 end
+
 
 --[[-------------------
 	---Public method-----
@@ -191,4 +301,10 @@ end
 	---------------------]]
 function ManageModel:TD_onTimOver(listenerId)
 	print("listenerId is:"..listenerId)
+
+	local npcInfo = _npcInfoMap[listenerId]
+	if npcInfo then --回调
+		self:npcState(npcInfo)
+	end
+	
 end

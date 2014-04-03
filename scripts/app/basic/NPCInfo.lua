@@ -33,25 +33,18 @@ NPCFeelType = {
 NPCInfo = {}
 NPCInfo.__index = NPCInfo
 
-local _npcId = -1
-local _curState = NPCStateType.Invalid    --NPC主状态
-local _curFeel  = NPCFeelType.Invalid     --NPC感情类型
+NPCInfo.npcId = -1
+NPCInfo.curMapId = -1
+NPCInfo.curState = NPCStateType.Invalid    --NPC主状态
+NPCInfo.curFeel  = NPCFeelType.Invalid     --NPC感情类型
 
-function NPCInfo:create()
+function NPCInfo:create(npcId)
 	local ret = {}
 	setmetatable(ret, NPCInfo)
-
+	self:init(npcId)
     return ret
 end
 
-function NPCInfo:init()
-	
-end
-
-function NPCInfo:setState(state)
-	_curState = state
-end
-
-function NPCInfo:getState()
-	return _curState
+function NPCInfo:init(npcId)
+	self.npcId = npcId
 end

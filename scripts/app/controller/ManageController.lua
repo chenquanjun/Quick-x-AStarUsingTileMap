@@ -71,7 +71,11 @@ function ManageController:init()
 
 	_model:setMapData(seatVec, waitSeatVec, doorVec)
 
-	_view:setStartMapId(startVec[1])
+	--开始位置
+	local startMapId = startVec[1]
+
+	_model:setStartMapId(startMapId)
+	_view:setStartMapId(startMapId)
 end
 
 function ManageController:onEnter()
