@@ -108,7 +108,10 @@ function ManageModel:onEnter()
 	end
 
 	--test
-	self:addNPC()
+	-- for i=1,5 do
+		self:addNPC()
+	-- end
+	
 	-- self:moveNPC()
 
 	
@@ -194,7 +197,7 @@ function ManageModel:npcState(npcInfo)
 		--开始位置
 		[NPCStateType.Start]					= function()
 			print("start")
-			totalTime = math.random(1, 2)
+			totalTime = math.random(1, 5)
 			npcInfo.curState = NPCStateType.GoToDoor --状态切换
 
 		end,

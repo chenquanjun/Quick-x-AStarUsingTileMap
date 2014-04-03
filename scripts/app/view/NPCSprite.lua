@@ -9,6 +9,7 @@ NPCSprite.__index  			= NPCSprite
 
 NPCSprite.nPreMapId      = -1
 NPCSprite.nTargetMapId   = -1
+NPCSprite.handler        = nil       
 
 local _fileName  		= nil --文件名
 local _sprite  			= nil --精灵

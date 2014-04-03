@@ -21,7 +21,7 @@ local _npcLayer = nil --存放NPC的layer
 
 local _timerInterval = -1
 
-local _lastHandle = nil
+local _scheduler = nil
 
 --[[-------------------
     ---Init Method-----
@@ -45,6 +45,8 @@ end
 function ManageView:init()
 	print("View init")
     _npcMap = {}
+
+    _scheduler = require("framework.scheduler")
 
 	do   --tmx地图 单纯显示用
         local map = CCTMXTiledMap:create("map.tmx")
@@ -168,7 +170,7 @@ end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
 --废弃方法
-function ManageView:walkTo(pNPCSprite, speed, startId, endId)
+function ManageView:walkTo(npcSprite, speed, startId, endId)
         local indexFlag = 0 --执行标志
         local unitDivideNum = _mapInfo:int(speed / _timerInterval)  --两个格子之间划分成10个坐标点
         local actionTag = kActionTagMove
@@ -182,8 +184,8 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
         local startPoint = mapPath:getPointAtIndex(1) --第一个点
         local pointNum = mapPath:getPointArrCount()
         
-        pNPCSprite:setPosition(startPoint)
-        pNPCSprite:stopActionByTag(actionTag)
+        npcSprite:setPosition(startPoint)
+        npcSprite:stopActionByTag(actionTag)
 
         local delay = CCDelayTime:create(speed / unitDivideNum) --延迟
         local callfunc = CCCallFunc:create(function()
@@ -201,15 +203,15 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
                                 local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
                                 curPoint = ccp(x, y) 
 
-                                pNPCSprite:playAnim(curPoint, nextPoint) --播放上下左右移动动画
-                                pNPCSprite:setPosition(curPoint) --设置坐标
+                                npcSprite:playAnim(curPoint, nextPoint) --播放上下左右移动动画
+                                npcSprite:setPosition(curPoint) --设置坐标
 
                             elseif index == pointNum then
                                 local curPoint = mapPath:getPointAtIndex(index)
-                                pNPCSprite:setPosition(curPoint) --设置坐标
+                                npcSprite:setPosition(curPoint) --设置坐标
                             else
-                                pNPCSprite:stopActionByTag(actionTag) --停止本callFunc
-                                pNPCSprite:stopAnim() --停止播放动画
+                                npcSprite:stopActionByTag(actionTag) --停止本callFunc
+                                npcSprite:stopAnim() --停止播放动画
                                 print("move end:"..indexFlag)
                             end
                             indexFlag = indexFlag + 1 --标志增加
@@ -220,7 +222,7 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
         local sequence = CCSequence:createWithTwoActions(delay, callfunc)
         local action = CCRepeatForever:create(sequence)
         action:setTag(actionTag)
-        pNPCSprite:runAction(action)
+        npcSprite:runAction(action)
 
         local totalTime = speed * pointNum
         --model并不知道view中寻路需要多少时间
@@ -228,7 +230,7 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
         return totalTime
 end
 
-function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
+function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
         print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
         local mapPath = _mapInfo:findPath(startId, endId) --地图路径类
@@ -242,20 +244,20 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
 
         print("point num:"..pointNum)
         
-        pNPCSprite:setPosition(startPoint)
+        npcSprite:setPosition(startPoint)
 
         local curTime = 0
         local totalTime = speed * pointNum
 
-        local scheduler = require("framework.scheduler")
+        
 
-        if _lastHandle then
+        if npcSprite.handler then
             print("exist")
-            scheduler.unscheduleGlobal(_lastHandle)
-            _lastHandle = nil
+            _scheduler.unscheduleGlobal(npcSprite.handler)
+            npcSprite.handler = nil
         end
         --定时器
-        _lastHandle = scheduler.scheduleUpdateGlobal(function(dt)
+        npcSprite.handler = _scheduler.scheduleUpdateGlobal(function(dt)
                             curTime = curTime + dt
 
                             --这个类似动作里面的update的time参数
@@ -272,17 +274,17 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
                                 local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
                                 local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
                                 curPoint = ccp(x, y) 
-                                pNPCSprite:setPosition(curPoint)
+                                npcSprite:setPosition(curPoint)
 
 
-                                pNPCSprite:playAnim(curPoint, nextPoint)
+                                npcSprite:playAnim(curPoint, nextPoint)
 
                             else --最后一个点
                                 local curPoint = mapPath:getPointAtIndex(index)
-                                pNPCSprite:setPosition(curPoint)
-                                scheduler.unscheduleGlobal(_lastHandle)
-                                _lastHandle = nil
-                                pNPCSprite:stopAnim()
+                                npcSprite:setPosition(curPoint)
+                                _scheduler.unscheduleGlobal(npcSprite.handler)
+                                npcSprite.handler = nil
+                                npcSprite:stopAnim()
                                 print("move end~")
                             end
         end)
