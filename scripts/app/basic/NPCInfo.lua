@@ -2,6 +2,8 @@ NPCStateType = {
 				Invalid                = 1,
 
 				Start                  = 2,            --开始位置
+				Release                = 3,            --释放
+
 				GoToDoor               = 11,           --移动到门口
 				Door                   = 12,            --在门口
 				LeaveDoor              = 13,            --离开门口
@@ -19,6 +21,8 @@ NPCStateType = {
 				WaitSeatIdle           = 33,            --等于SeatEating
 				WaitSeatPaySuccess     = 34,      
 				LeaveWaitSeat          = 35,            --离开等待座位
+
+
 }
 
 NPCFeelType = {
@@ -34,7 +38,7 @@ NPCInfo = {}
 NPCInfo.__index = NPCInfo
 
 NPCInfo.npcId = -1
-NPCInfo.curMapId = -1
+NPCInfo.mapId = -1
 NPCInfo.curState = NPCStateType.Invalid    --NPC主状态
 NPCInfo.curFeel  = NPCFeelType.Invalid     --NPC感情类型
 

@@ -9,7 +9,7 @@ MapPath.__index = MapPath
 
 local _startId = -1--开始Id
 local _endId = -1 --结束id
-local _pointArr = {} --坐标点
+local _pointArr = nil --坐标点
 
 function MapPath:create(startId, endId, pointArr)
 	local mapPath = MapPath.new()
@@ -25,6 +25,8 @@ function MapPath:init(startId, endId, pointArr)
     assert(pointArr ~= nil, "error type")
 
     local count = arr:count()
+
+    _pointArr = {}
 
     for i = 1, count do
     	local point = arr:get(i - 1)

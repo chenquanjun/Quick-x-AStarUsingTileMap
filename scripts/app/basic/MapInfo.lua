@@ -29,9 +29,9 @@ MapInfo.__index  		    	= MapInfo
 
 local _mapMatrix  		   		= nil       --网格，即地图的网格有多少个
 local _mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
-local _mapData  				= {}        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
-local _mapPathCache  			= {}        --地图缓存
-local _mapTypeDataMap  			= {} 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
+local _mapData  				= nil        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
+local _mapPathCache  			= nil        --地图缓存
+local _mapTypeDataMap  			= nil 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
 
 --构造方法，继承CCNode
 function MapInfo:create(fileName)
@@ -41,6 +41,10 @@ function MapInfo:create(fileName)
 end
 
 function MapInfo:init(fileName)
+	_mapData = {}
+	_mapPathCache = {}
+	_mapTypeDataMap = {}
+
 	local map = CCTMXTiledMap:create(fileName)
 
 	--map 网格的大小
@@ -289,7 +293,7 @@ function MapInfo:findPath(startMapId, endMapId)
 	--MapPath是自动释放对象，需要addchild
 	self:addChild(pathRevert) 
 	self:addChild(path)
-	print("save key:"..key)
+	-- print("save key:"..key)
 
 	return path
 end

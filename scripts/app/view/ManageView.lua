@@ -15,11 +15,13 @@ local _delegate = nil --view delegate
 local _mapInfo = nil
 
 local _startMapId = -1
-local _npcMap = {}    --存放npcId和npcSprite的对应字典
+local _npcMap = nil    --存放npcId和npcSprite的对应字典
 
 local _npcLayer = nil --存放NPC的layer
 
 local _timerInterval = -1
+
+local _lastHandle = nil
 
 --[[-------------------
     ---Init Method-----
@@ -42,6 +44,7 @@ end
 
 function ManageView:init()
 	print("View init")
+    _npcMap = {}
 
 	do   --tmx地图 单纯显示用
         local map = CCTMXTiledMap:create("map.tmx")
@@ -166,7 +169,6 @@ end
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
 --废弃方法
 function ManageView:walkTo(pNPCSprite, speed, startId, endId)
-
         local indexFlag = 0 --执行标志
         local unitDivideNum = _mapInfo:int(speed / _timerInterval)  --两个格子之间划分成10个坐标点
         local actionTag = kActionTagMove
@@ -227,7 +229,7 @@ function ManageView:walkTo(pNPCSprite, speed, startId, endId)
 end
 
 function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
-
+        print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
         local mapPath = _mapInfo:findPath(startId, endId) --地图路径类
 
@@ -237,6 +239,8 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
 
         local startPoint = mapPath:getPointAtIndex(1) --第一个点
         local pointNum = mapPath:getPointArrCount()
+
+        print("point num:"..pointNum)
         
         pNPCSprite:setPosition(startPoint)
 
@@ -244,8 +248,14 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
         local totalTime = speed * pointNum
 
         local scheduler = require("framework.scheduler")
+
+        if _lastHandle then
+            print("exist")
+            scheduler.unscheduleGlobal(_lastHandle)
+            _lastHandle = nil
+        end
         --定时器
-        handle = scheduler.scheduleUpdateGlobal(function(dt)
+        _lastHandle = scheduler.scheduleUpdateGlobal(function(dt)
                             curTime = curTime + dt
 
                             --这个类似动作里面的update的time参数
@@ -256,6 +266,7 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
 
                             if index < pointNum then
                                 local curPoint = mapPath:getPointAtIndex(index)
+                                -- print(index..":"..curPoint.x..", "..curPoint.y)
                                 local nextPoint = mapPath:getPointAtIndex(index + 1)
                                 local offset = fIndex - index
                                 local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
@@ -263,12 +274,14 @@ function ManageView:easeWalkTo(pNPCSprite, speed, startId, endId)
                                 curPoint = ccp(x, y) 
                                 pNPCSprite:setPosition(curPoint)
 
+
                                 pNPCSprite:playAnim(curPoint, nextPoint)
 
                             else --最后一个点
                                 local curPoint = mapPath:getPointAtIndex(index)
                                 pNPCSprite:setPosition(curPoint)
-                                scheduler.unscheduleGlobal(handle)
+                                scheduler.unscheduleGlobal(_lastHandle)
+                                _lastHandle = nil
                                 pNPCSprite:stopAnim()
                                 print("move end~")
                             end
