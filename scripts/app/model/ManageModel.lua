@@ -174,101 +174,150 @@ function ManageModel:addNPC()
 
 end
 
---移动NPC
--- function ManageModel:moveNPC(npcId, mapId)
--- 	local totalTime = _delegate:moveNPC(npcId, mapId)
--- 	print("id:"..npcId.." totalTIme:"..totalTime)
--- 	_timer:addTimerListener(npcId, totalTime)
--- end
-
 function ManageModel:npcState(npcInfo)
 	local npcId = npcInfo.npcId --npcId
-	local totalTime = 0 --回调参数
+	local totalTime = -1 --回调参数
 	local mapId = -1 --npc的目标mapId
 	--switch....
 	local switchState = {
+		--开始位置
 		[NPCStateType.Start]					= function()
 			print("start")
-			totalTime = math.random(1, 10)
+			totalTime = math.random(1, 5)
 			npcInfo.curState = NPCStateType.GoToDoor --状态切换
-		end,
 
+		end,
+		--开始到门口
 		[NPCStateType.GoToDoor]					= function()
 			print("GoToDoor")
+			local isFindSeat = false
+
+			for i,v in ipairs(_doorVector) do
+				
+				local seatState = _doorMap[v]
+
+				if seatState == 0 then
+					isFindSeat = true --找到空位
+					mapId = v --保存id
+					_doorMap[v] = npcId --霸占位置
+					npcInfo.curState = NPCStateType.Door --状态切换
+					break
+				end
+			end --for
+
+			--找不到门口空位 
+			if not isFindSeat then
+				--在开始位置找不到空位怎么处理，继续停留在开始位置等待随机时间？
+				npcInfo.curState = NPCStateType.Start
+			end
 
 		end,
-
+		--门口位置
 		[NPCStateType.Door] 					= function()
 			print("Door")
+			--在门口稍微停留再看看有没位置
+			totalTime = math.random(0.2, 0.5)
+			npcInfo.curState = NPCStateType.FindSeat
 
 		end,
-
+		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
 			print("LeaveDoor")
+			mapId = _startId
+			npcInfo.curState = NPCStateType.Start --开始位置
+
+			--出现此错误因为npc的mapId没有正确设置
+			assert(_doorMap[npcInfo.mapId] ~= nil, "error mapid, not in door") 
+			_doorMap[npcInfo.mapId] = 0 --清空位置
 
 		end,
-
+		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
 			print("FindSeat")
+			local isFindSeat = false
+
+			for i,v in ipairs(_seatVector) do
+				local seatState = _seatMap[v]
+
+				if seatState == 0 then
+					isFindSeat = true --找到空位
+					mapId = v --保存id
+
+					assert(_doorMap[npcInfo.mapId] ~= nil, "error mapid, not in door") 
+					assert(_seatMap[v] ~= nil, "error mapid, not in seat") 
+
+					_doorMap[npcInfo.mapId] = 0 --清空门口位置
+
+					_seatMap[v] = npcId --霸占座位位置
+					npcInfo.curState = NPCStateType.SeatRequest --状态切换
+					npcInfo.curFeel = NPCFeelType.Prepare --进入子状态
+					break
+				end
+			end
+
+			if not isFindSeat then
+				--寻找外卖座位
+				npcInfo.curState = NPCStateType.FindWaitSeat
+			end
 
 		end,
-
+		--在座位请求
 		[NPCStateType.SeatRequest] 				= function()
 			print("SeatRequest")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
 			print("SeatEating")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在座位支付
 		[NPCStateType.SeatPay] 					= function()
 			print("SeatPay")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--支付成功
 		[NPCStateType.SeatPaySuccess]			= function()
 			print("SeatPaySuccess")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--离开座位
 		[NPCStateType.LeaveSeat] 				= function()
 			print("LeaveSeat")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
 		    print("FindWaitSeat")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在外卖座位发起请求
 		[NPCStateType.WaitSeatRequest] 			= function()
 		    print("WaitSeatRequest")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
 		    print("WaitSeatPay")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
 		    print("WaitSeatIdle")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--在外卖座位支付成功
 		[NPCStateType.WaitSeatPaySuccess] 		= function()
 		    print("WaitSeatPaySuccess")
-
+			npcInfo.curState = NPCStateType.
 		end,
-
+		--离开外卖座位
 		[NPCStateType.LeaveWaitSeat] 			= function()
 		    print("LeaveWaitSeat")
-
+			npcInfo.curState = NPCStateType.
 		end,
 	}
-	
+
 	local state = npcInfo.curState --npc通用状态
 	local fSwitch = switchState[state] --switch 方法
 
@@ -276,14 +325,16 @@ function ManageModel:npcState(npcInfo)
 		fSwitch() --执行switch
 	else
 		error("state error")
+		return
 	end
 
 	if mapId ~= -1 then
-		--说明在switch中改变了值，调用viewdelegate
+		--说明在switch中改变了值，调用viewdelegate, view会返回寻路花费的时间
 		totalTime = _delegate:moveNPC(npcId, mapId)
+		npcInfo.mapId = mapId --保存目标位置
 	end
 
-
+	--注意，totalTime为0导致死循环
 	print("id:"..npcId.." totalTIme:"..totalTime)
 	_timer:addTimerListener(npcId, totalTime) --加入时间控制
 

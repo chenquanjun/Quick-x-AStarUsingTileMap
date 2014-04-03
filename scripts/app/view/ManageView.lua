@@ -146,7 +146,7 @@ function ManageView:MD_moveNPC(npcId, mapId)
         -- totalTime = self:walkTo(npcSprite, 0.3, newPreMapId, newTargetMapId)
 
         --test
-        totalTime = self:easeWalkTo(npcSprite, 0.4, newPreMapId, newTargetMapId)
+        totalTime = self:easeWalkTo(npcSprite, 0.2, newPreMapId, newTargetMapId)
 
 
     end

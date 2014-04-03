@@ -19,67 +19,234 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0094] [INFO] 
-Cocos2d: [0.0094] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0094] [INFO] #
-Cocos2d: [0.0095] [INFO] # device.platform              = mac
-Cocos2d: [0.0095] [INFO] # device.model                 = unknown
-Cocos2d: [0.0095] [INFO] # device.language              = cn
-Cocos2d: [0.0095] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0095] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0095] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0095] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0095] [INFO] #
-Cocos2d: [0.0107] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0107] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0107] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0108] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0108] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0108] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0108] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0108] [INFO] # display.height               = 640.00
-Cocos2d: [0.0108] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0108] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0108] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0108] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0108] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0108] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0108] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0108] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0108] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0108] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0108] [INFO] #
-Cocos2d: [0.0142] Controller init
-Cocos2d: [0.0142] View init
+Cocos2d: [0.0085] [INFO] 
+Cocos2d: [0.0085] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0086] [INFO] #
+Cocos2d: [0.0086] [INFO] # device.platform              = mac
+Cocos2d: [0.0086] [INFO] # device.model                 = unknown
+Cocos2d: [0.0086] [INFO] # device.language              = cn
+Cocos2d: [0.0086] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0086] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0086] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0086] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0086] [INFO] #
+Cocos2d: [0.0097] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0097] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0097] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0097] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0097] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0097] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0097] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0097] [INFO] # display.height               = 640.00
+Cocos2d: [0.0097] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0097] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0097] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0097] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0097] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0097] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0097] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0097] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0097] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0097] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0097] [INFO] #
+Cocos2d: [0.0129] Controller init
+Cocos2d: [0.0130] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0398] Model init
+Cocos2d: [0.0388] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0571] GridSize: 36, 20
-Cocos2d: [0.0571] PointSize: 32, 32
-Cocos2d: [0.0623] startMapId:575
-Cocos2d: [0.1460] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1460] model onEnter
-Cocos2d: [0.1460] interval:0.05
-Cocos2d: [0.1460] start
-Cocos2d: [0.1461] switch success
-Cocos2d: [0.1461] id:10 totalTIme:5
-Cocos2d: [0.1461] EndTime:100 lsdId:10
-Cocos2d: [0.1461] add cache:player1_%i_%i.png0
-Cocos2d: [0.1463] start timer
-Cocos2d: [5.2468] listenerId is:10
-Cocos2d: [5.2468] GoToDoor
-Cocos2d: [5.2468] switch success
-Cocos2d: [5.2468] id:10 totalTIme:0
-Cocos2d: [5.2468] same id
-Cocos2d: [10.1467] [INFO] LUA VM MEMORY USED: 1967.37 KB
-Cocos2d: [20.1467] [INFO] LUA VM MEMORY USED: 1967.46 KB
-Cocos2d: [30.1628] [INFO] LUA VM MEMORY USED: 1967.56 KB
-Cocos2d: [40.1633] [INFO] LUA VM MEMORY USED: 1967.66 KB
-Cocos2d: [50.1633] [INFO] LUA VM MEMORY USED: 1967.76 KB
-Cocos2d: [60.1793] [INFO] LUA VM MEMORY USED: 1967.86 KB
+Cocos2d: [0.0576] GridSize: 36, 20
+Cocos2d: [0.0576] PointSize: 32, 32
+Cocos2d: [0.0647] startMapId:575
+Cocos2d: [0.1315] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1315] model onEnter
+Cocos2d: [0.1315] interval:0.05
+Cocos2d: [0.1315] start
+Cocos2d: [0.1315] id:10 totalTIme:5
+Cocos2d: [0.1316] EndTime:100 lsdId:10
+Cocos2d: [0.1316] add cache:player1_%i_%i.png0
+Cocos2d: [0.1317] start timer
+Cocos2d: [5.2492] listenerId is:10
+Cocos2d: [5.2492] GoToDoor
+Cocos2d: [5.2502] save key:57500485
+Cocos2d: [5.2502] id:10 totalTIme:4.2
+Cocos2d: [5.2502] EndTime:184 lsdId:10
+Cocos2d: [9.4490] listenerId is:10
+Cocos2d: [9.4491] Door
+Cocos2d: [9.4491] id:10 totalTIme:-1
+Cocos2d: [9.4723] move end~
+Cocos2d: [10.1325] [INFO] LUA VM MEMORY USED: 2058.73 KB
+Cocos2d: [20.1491] [INFO] LUA VM MEMORY USED: 2058.83 KB
+Cocos2d: [30.1651] [INFO] LUA VM MEMORY USED: 2058.93 KB
+Cocos2d: [40.1824] [INFO] LUA VM MEMORY USED: 2059.03 KB
+Cocos2d: [50.1990] [INFO] LUA VM MEMORY USED: 2059.13 KB
+Cocos2d: [60.2151] [INFO] LUA VM MEMORY USED: 2059.23 KB
+Cocos2d: [70.2156] [INFO] LUA VM MEMORY USED: 2059.33 KB
+Cocos2d: [80.2323] [INFO] LUA VM MEMORY USED: 2059.42 KB
+Cocos2d: [90.2482] [INFO] LUA VM MEMORY USED: 2059.52 KB
+Cocos2d: [100.2489] [INFO] LUA VM MEMORY USED: 2059.62 KB
+Cocos2d: [110.2654] [INFO] LUA VM MEMORY USED: 2059.72 KB
+Cocos2d: [120.2815] [INFO] LUA VM MEMORY USED: 2059.82 KB
+Cocos2d: [130.2821] [INFO] LUA VM MEMORY USED: 2059.92 KB
+Cocos2d: [140.2988] [INFO] LUA VM MEMORY USED: 2060.02 KB
+Cocos2d: [150.3154] [INFO] LUA VM MEMORY USED: 2060.12 KB
+Cocos2d: [160.3320] [INFO] LUA VM MEMORY USED: 2060.21 KB
+Cocos2d: [170.3478] [INFO] LUA VM MEMORY USED: 2060.31 KB
+Cocos2d: [180.3644] [INFO] LUA VM MEMORY USED: 2060.41 KB
+Cocos2d: [190.3652] [INFO] LUA VM MEMORY USED: 2060.51 KB
+Cocos2d: [200.3653] [INFO] LUA VM MEMORY USED: 2060.61 KB
+Cocos2d: [210.3812] [INFO] LUA VM MEMORY USED: 2060.71 KB
+Cocos2d: [220.3819] [INFO] LUA VM MEMORY USED: 2060.81 KB
+Cocos2d: [230.3985] [INFO] LUA VM MEMORY USED: 2060.90 KB
+Cocos2d: [240.4144] [INFO] LUA VM MEMORY USED: 2061.00 KB
+Cocos2d: [250.4149] [INFO] LUA VM MEMORY USED: 2061.10 KB
+Cocos2d: [260.4150] [INFO] LUA VM MEMORY USED: 2061.20 KB
+Cocos2d: [270.4150] [INFO] LUA VM MEMORY USED: 2061.30 KB
+Cocos2d: [280.4310] [INFO] LUA VM MEMORY USED: 2061.40 KB
+Cocos2d: [290.4316] [INFO] LUA VM MEMORY USED: 2061.50 KB
+Cocos2d: [300.4316] [INFO] LUA VM MEMORY USED: 2061.59 KB
+Cocos2d: [310.4482] [INFO] LUA VM MEMORY USED: 2061.69 KB
+Cocos2d: [320.4649] [INFO] LUA VM MEMORY USED: 2061.79 KB
+Cocos2d: [330.4815] [INFO] LUA VM MEMORY USED: 2061.89 KB
+Cocos2d: [340.4982] [INFO] LUA VM MEMORY USED: 2061.99 KB
+Cocos2d: [350.5148] [INFO] LUA VM MEMORY USED: 2062.09 KB
+Cocos2d: [360.5314] [INFO] LUA VM MEMORY USED: 2062.19 KB
+Cocos2d: [370.5481] [INFO] LUA VM MEMORY USED: 2062.29 KB
+Cocos2d: [380.5647] [INFO] LUA VM MEMORY USED: 2062.38 KB
+Cocos2d: [390.5804] [INFO] LUA VM MEMORY USED: 2062.48 KB
+Cocos2d: [400.5813] [INFO] LUA VM MEMORY USED: 2062.58 KB
+Cocos2d: [410.5979] [INFO] LUA VM MEMORY USED: 2062.68 KB
+Cocos2d: [420.6146] [INFO] LUA VM MEMORY USED: 2062.78 KB
+Cocos2d: [430.6312] [INFO] LUA VM MEMORY USED: 2062.88 KB
+Cocos2d: [440.6479] [INFO] LUA VM MEMORY USED: 2062.98 KB
+Cocos2d: [450.6645] [INFO] LUA VM MEMORY USED: 2063.07 KB
+Cocos2d: [460.6811] [INFO] LUA VM MEMORY USED: 2063.17 KB
+Cocos2d: [470.6971] [INFO] LUA VM MEMORY USED: 2063.27 KB
+Cocos2d: [480.6978] [INFO] LUA VM MEMORY USED: 2063.37 KB
+Cocos2d: [490.7144] [INFO] LUA VM MEMORY USED: 2063.47 KB
+Cocos2d: [500.7310] [INFO] LUA VM MEMORY USED: 2063.57 KB
+Cocos2d: [510.7477] [INFO] LUA VM MEMORY USED: 2063.67 KB
+Cocos2d: [520.7643] [INFO] LUA VM MEMORY USED: 2063.76 KB
+Cocos2d: [530.7809] [INFO] LUA VM MEMORY USED: 2063.86 KB
+Cocos2d: [540.7975] [INFO] LUA VM MEMORY USED: 2063.96 KB
+Cocos2d: [550.8142] [INFO] LUA VM MEMORY USED: 2064.06 KB
+Cocos2d: [560.8309] [INFO] LUA VM MEMORY USED: 2064.16 KB
+Cocos2d: [570.8309] [INFO] LUA VM MEMORY USED: 2064.26 KB
+Cocos2d: [580.8475] [INFO] LUA VM MEMORY USED: 2064.36 KB
+Cocos2d: [590.8633] [INFO] LUA VM MEMORY USED: 2064.46 KB
+Cocos2d: [600.8638] [INFO] LUA VM MEMORY USED: 2064.55 KB
+Cocos2d: [610.8640] [INFO] LUA VM MEMORY USED: 2064.65 KB
+Cocos2d: [620.8798] [INFO] LUA VM MEMORY USED: 2064.75 KB
+Cocos2d: [630.8806] [INFO] LUA VM MEMORY USED: 2064.85 KB
+Cocos2d: [640.8806] [INFO] LUA VM MEMORY USED: 2064.95 KB
+Cocos2d: [650.8972] [INFO] LUA VM MEMORY USED: 2065.05 KB
+Cocos2d: [660.9139] [INFO] LUA VM MEMORY USED: 2065.15 KB
+Cocos2d: [670.9305] [INFO] LUA VM MEMORY USED: 2065.24 KB
+Cocos2d: [680.9471] [INFO] LUA VM MEMORY USED: 2065.34 KB
+Cocos2d: [690.9629] [INFO] LUA VM MEMORY USED: 2065.44 KB
+Cocos2d: [700.9637] [INFO] LUA VM MEMORY USED: 2065.54 KB
+Cocos2d: [710.9804] [INFO] LUA VM MEMORY USED: 2065.64 KB
+Cocos2d: [720.9965] [INFO] LUA VM MEMORY USED: 2065.74 KB
+Cocos2d: [730.9970] [INFO] LUA VM MEMORY USED: 2065.84 KB
+Cocos2d: [741.0134] [INFO] LUA VM MEMORY USED: 2065.93 KB
+Cocos2d: [751.0136] [INFO] LUA VM MEMORY USED: 2066.03 KB
+Cocos2d: [761.0302] [INFO] LUA VM MEMORY USED: 2066.13 KB
+Cocos2d: [771.0469] [INFO] LUA VM MEMORY USED: 2066.23 KB
+Cocos2d: [781.0635] [INFO] LUA VM MEMORY USED: 2066.33 KB
+Cocos2d: [791.0801] [INFO] LUA VM MEMORY USED: 2066.43 KB
+Cocos2d: [801.0802] [INFO] LUA VM MEMORY USED: 2066.53 KB
+Cocos2d: [811.0967] [INFO] LUA VM MEMORY USED: 2066.62 KB
+Cocos2d: [821.1134] [INFO] LUA VM MEMORY USED: 2066.72 KB
+Cocos2d: [831.1133] [INFO] LUA VM MEMORY USED: 2066.82 KB
+Cocos2d: [841.1291] [INFO] LUA VM MEMORY USED: 2066.92 KB
+Cocos2d: [851.1300] [INFO] LUA VM MEMORY USED: 2067.02 KB
+Cocos2d: [861.1466] [INFO] LUA VM MEMORY USED: 2067.12 KB
+Cocos2d: [871.1633] [INFO] LUA VM MEMORY USED: 2067.22 KB
+Cocos2d: [881.1790] [INFO] LUA VM MEMORY USED: 2067.32 KB
+Cocos2d: [891.1799] [INFO] LUA VM MEMORY USED: 2067.41 KB
+Cocos2d: [901.1955] [INFO] LUA VM MEMORY USED: 2067.51 KB
+Cocos2d: [911.1965] [INFO] LUA VM MEMORY USED: 2067.61 KB
+Cocos2d: [921.2131] [INFO] LUA VM MEMORY USED: 2067.71 KB
+Cocos2d: [931.2297] [INFO] LUA VM MEMORY USED: 2067.81 KB
+Cocos2d: [941.2297] [INFO] LUA VM MEMORY USED: 2067.91 KB
+Cocos2d: [951.2463] [INFO] LUA VM MEMORY USED: 2068.01 KB
+Cocos2d: [961.2621] [INFO] LUA VM MEMORY USED: 2068.10 KB
+Cocos2d: [971.2630] [INFO] LUA VM MEMORY USED: 2068.20 KB
+Cocos2d: [981.2796] [INFO] LUA VM MEMORY USED: 2068.30 KB
+Cocos2d: [991.2962] [INFO] LUA VM MEMORY USED: 2068.40 KB
+Cocos2d: [1001.3129] [INFO] LUA VM MEMORY USED: 2068.50 KB
+Cocos2d: [1011.3295] [INFO] LUA VM MEMORY USED: 2068.60 KB
+Cocos2d: [1021.3453] [INFO] LUA VM MEMORY USED: 2068.70 KB
+Cocos2d: [1031.3461] [INFO] LUA VM MEMORY USED: 2068.79 KB
+Cocos2d: [1041.3628] [INFO] LUA VM MEMORY USED: 2068.89 KB
+Cocos2d: [1051.3794] [INFO] LUA VM MEMORY USED: 2068.99 KB
+Cocos2d: [1061.3960] [INFO] LUA VM MEMORY USED: 2069.09 KB
+Cocos2d: [1071.4127] [INFO] LUA VM MEMORY USED: 2069.19 KB
+Cocos2d: [1081.4293] [INFO] LUA VM MEMORY USED: 2069.29 KB
+Cocos2d: [1091.4458] [INFO] LUA VM MEMORY USED: 2069.39 KB
+Cocos2d: [1101.4459] [INFO] LUA VM MEMORY USED: 2069.49 KB
+Cocos2d: [1111.4622] [INFO] LUA VM MEMORY USED: 2069.58 KB
+Cocos2d: [1121.4625] [INFO] LUA VM MEMORY USED: 2069.68 KB
+Cocos2d: [1131.4781] [INFO] LUA VM MEMORY USED: 2069.78 KB
+Cocos2d: [1141.4791] [INFO] LUA VM MEMORY USED: 2069.88 KB
+Cocos2d: [1151.4952] [INFO] LUA VM MEMORY USED: 2069.98 KB
+Cocos2d: [1161.4957] [INFO] LUA VM MEMORY USED: 2070.08 KB
+Cocos2d: [1171.5123] [INFO] LUA VM MEMORY USED: 2070.18 KB
+Cocos2d: [1181.5289] [INFO] LUA VM MEMORY USED: 2070.27 KB
+Cocos2d: [1191.5291] [INFO] LUA VM MEMORY USED: 2070.37 KB
+Cocos2d: [1201.5455] [INFO] LUA VM MEMORY USED: 2070.47 KB
+Cocos2d: [1211.5623] [INFO] LUA VM MEMORY USED: 2070.57 KB
+Cocos2d: [1221.5789] [INFO] LUA VM MEMORY USED: 2070.67 KB
+Cocos2d: [1231.5789] [INFO] LUA VM MEMORY USED: 2070.77 KB
+Cocos2d: [1241.5955] [INFO] LUA VM MEMORY USED: 2070.87 KB
+Cocos2d: [1251.6122] [INFO] LUA VM MEMORY USED: 2070.96 KB
+Cocos2d: [1261.6288] [INFO] LUA VM MEMORY USED: 2071.06 KB
+Cocos2d: [1271.6454] [INFO] LUA VM MEMORY USED: 2071.16 KB
+Cocos2d: [1281.6620] [INFO] LUA VM MEMORY USED: 2071.26 KB
+Cocos2d: [1291.6785] [INFO] LUA VM MEMORY USED: 2071.36 KB
+Cocos2d: [1301.6786] [INFO] LUA VM MEMORY USED: 2071.46 KB
+Cocos2d: [1311.6786] [INFO] LUA VM MEMORY USED: 2071.56 KB
+Cocos2d: [1321.6952] [INFO] LUA VM MEMORY USED: 2071.66 KB
+Cocos2d: [1331.6952] [INFO] LUA VM MEMORY USED: 2071.75 KB
+Cocos2d: [1341.7118] [INFO] LUA VM MEMORY USED: 2071.85 KB
+Cocos2d: [1351.7285] [INFO] LUA VM MEMORY USED: 2071.95 KB
+Cocos2d: [1361.7451] [INFO] LUA VM MEMORY USED: 2072.05 KB
+Cocos2d: [1371.7617] [INFO] LUA VM MEMORY USED: 2072.15 KB
+Cocos2d: [1381.7784] [INFO] LUA VM MEMORY USED: 2072.25 KB
+Cocos2d: [1391.7942] [INFO] LUA VM MEMORY USED: 2072.35 KB
+Cocos2d: [1401.7943] [INFO] LUA VM MEMORY USED: 2072.44 KB
+Cocos2d: [1411.7949] [INFO] LUA VM MEMORY USED: 2072.54 KB
+Cocos2d: [1421.8110] [INFO] LUA VM MEMORY USED: 2072.64 KB
+Cocos2d: [1431.8116] [INFO] LUA VM MEMORY USED: 2072.74 KB
+Cocos2d: [1441.8282] [INFO] LUA VM MEMORY USED: 2072.84 KB
+Cocos2d: [1451.8448] [INFO] LUA VM MEMORY USED: 2072.94 KB
+Cocos2d: [1461.8615] [INFO] LUA VM MEMORY USED: 2073.04 KB
+Cocos2d: [1471.8782] [INFO] LUA VM MEMORY USED: 2073.13 KB
+Cocos2d: [1481.8948] [INFO] LUA VM MEMORY USED: 2073.23 KB
+Cocos2d: [1491.9114] [INFO] LUA VM MEMORY USED: 2073.33 KB
+Cocos2d: [1501.9280] [INFO] LUA VM MEMORY USED: 2073.43 KB
+Cocos2d: [1511.9447] [INFO] LUA VM MEMORY USED: 2073.53 KB
+Cocos2d: [1521.9613] [INFO] LUA VM MEMORY USED: 2073.63 KB
+Cocos2d: [1531.9780] [INFO] LUA VM MEMORY USED: 2073.73 KB
+Cocos2d: [1541.9946] [INFO] LUA VM MEMORY USED: 2073.83 KB
+Cocos2d: [1552.0112] [INFO] LUA VM MEMORY USED: 2073.92 KB
+Cocos2d: [1562.0112] [INFO] LUA VM MEMORY USED: 2074.02 KB
+Cocos2d: [1572.0278] [INFO] LUA VM MEMORY USED: 2074.12 KB
+Cocos2d: [1582.0444] [INFO] LUA VM MEMORY USED: 2074.22 KB
+Cocos2d: [1592.0609] [INFO] LUA VM MEMORY USED: 2074.32 KB
+Cocos2d: [1602.0610] [INFO] LUA VM MEMORY USED: 2074.42 KB
+Cocos2d: [1612.0778] [INFO] LUA VM MEMORY USED: 2074.52 KB
+Cocos2d: [1622.0944] [INFO] LUA VM MEMORY USED: 2074.61 KB
+Cocos2d: [1632.0944] [INFO] LUA VM MEMORY USED: 2074.71 KB
+Cocos2d: [1642.1106] [INFO] LUA VM MEMORY USED: 2074.81 KB
+Cocos2d: [1652.1110] [INFO] LUA VM MEMORY USED: 2074.91 KB
+Cocos2d: [1662.1276] [INFO] LUA VM MEMORY USED: 2075.01 KB
+Cocos2d: [1672.1442] [INFO] LUA VM MEMORY USED: 2075.11 KB
+Cocos2d: [1682.1606] [INFO] LUA VM MEMORY USED: 2075.21 KB
+Cocos2d: [1692.1771] [INFO] LUA VM MEMORY USED: 2075.30 KB
+Cocos2d: [1702.1775] [INFO] LUA VM MEMORY USED: 2075.40 KB

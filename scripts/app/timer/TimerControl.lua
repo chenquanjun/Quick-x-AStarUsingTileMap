@@ -160,8 +160,19 @@ end
     ---------------------]]
 
 function TimerControl:addTimerListener(listenerId, duration)
+	if duration < 0 then
+		return --小于0 直接返回
+	end
 	--时间换算
 	local localDur = self:int(duration / _timerInterval) 
+
+	if localDur == 0 then
+		--对于时间为0先清空map对应的数据，然后直接回调
+		--防止同一个id在同一帧里面多次addTimer造成bug
+		_timerUnitLstIdKey[listenerId] = nil
+		_delegate:onTimeOver(listenerId)
+		return
+	end
 
 	local endTime = _nTimePast + localDur
 
@@ -170,7 +181,7 @@ function TimerControl:addTimerListener(listenerId, duration)
 	timerUnit.endTime = endTime
 	timerUnit.listenerId = listenerId
 
-	local lstIdVec = _lstIdsTimerKey[endTime]
+	local lstIdVec = _lstIdsTimerKey[endTime] --endTime时间点的listenerId列表（可能一个，可能存在多个，也可能是空）
 
 	if not lstIdVec then
 		--vec 不存在
