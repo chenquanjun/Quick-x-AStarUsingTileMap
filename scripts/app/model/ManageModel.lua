@@ -38,22 +38,6 @@ end
 function ManageModel:init()
 	print("Model init")
 
-	--关于定时器
-	--model负责维护timer及其delegate的生命周期
-	--model直接调用timer的时间方法
-	--timer到时间后调用delegate
-	--delegate再回调model
-
-	--定时器
-	local timerControl = TimerControl:create()
-	self:addChild(timerControl)
-	_timer = timerControl
-
-	--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
-	local timerDelegate = TimerControlDelegate:setRefer(self)
-	_timerDelegate = timerDelegate
-
-	timerControl:setDelegate(timerDelegate)
 end
 
 function ManageModel:setDelegate(delegate)
@@ -86,17 +70,39 @@ end
 
 function ManageModel:onEnter()
 	print("model onEnter")
+
+	do --初始化定时器	
+
+	--关于定时器
+	--model负责维护timer及其delegate的生命周期
+	--model直接调用timer的时间方法
+	--timer到时间后调用delegate
+	--delegate再回调model
+
+		local timerControl = TimerControl:create()
+		self:addChild(timerControl)
+		_timer = timerControl
+
+		--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
+		local timerDelegate = TimerControlDelegate:setRefer(self)
+		_timerDelegate = timerDelegate
+
+		timerControl:setDelegate(timerDelegate)
+
+		_delegate:setTimerInterval(timerControl:getTimerInterval())
+	end
+
 	--test
 	self:addNPC()
 	self:moveNPC()
 
 	
 	-- _timer:removeTimerListener(1)
-	_timer:addTimerListener(1, 2.1)
-	_timer:addTimerListener(1, 0)
-	_timer:addTimerListener(2, 2.1)
-	_timer:addTimerListener(3, 2.2)
-	_timer:addTimerListener(4, 5)
+	-- _timer:addTimerListener(1, totalTime)
+	-- _timer:addTimerListener(1, 0)
+	-- _timer:addTimerListener(2, 2.1)
+	-- _timer:addTimerListener(3, 2.2)
+	-- _timer:addTimerListener(4, 5)
 	-- _timer:startTimer()
 	-- _timer:setListenerSpeed(1, 1)
 	_timer:startTimer()
@@ -170,7 +176,9 @@ end
 
 --移动NPC
 function ManageModel:moveNPC()
-	_delegate:moveNPC(1, _doorVector[1])
+	local totalTime = _delegate:moveNPC(1, _doorVector[2])
+	print("totalTIme:"..totalTime)
+	_timer:addTimerListener(1, totalTime)
 end
 
 --[[-------------------

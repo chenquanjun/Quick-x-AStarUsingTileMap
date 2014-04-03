@@ -61,10 +61,7 @@ function NPCSprite:addAnimCache(fileNameFormat)
 
 			display.setAnimationCache(name, animation)
 		end
-
 	end
-
-
 end
 
 function NPCSprite:stopAnim()
@@ -74,24 +71,27 @@ function NPCSprite:stopAnim()
     end
 end
 
+--根据移动坐标点的变化来判断播放动画
 function NPCSprite:playAnim(startPoint, endPoint)
     local offsetX = endPoint.x - startPoint.x
     local offsetY = endPoint.y - startPoint.y
     local actionType = kActionTagInvalid     
 
-    if offsetY > 1 then
+    local minOffset = 0.01 --若执行帧数过高，此值会比较小
+    if offsetY > minOffset then
         actionType = kActionTagUp
-    elseif offsetY < -1 then
+    elseif offsetY < -minOffset then
         actionType = kActionTagDown
-    elseif offsetX > 1 then
+    elseif offsetX > minOffset then
         actionType = kActionTagRight
-    elseif offsetX < -1 then
+    elseif offsetX < -minOffset then
         actionType = kActionTagLeft
     end
 
     local lastActionTag = _lastActionTag
     --相同动作直接返回
     if actionType == lastActionTag then
+        -- print("return")
     	return
     end
 

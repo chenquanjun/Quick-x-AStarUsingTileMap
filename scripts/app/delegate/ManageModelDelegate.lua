@@ -26,6 +26,11 @@ function ManageModelDelegate:showSprite()
 	end
 end
 
+--设置时间间隔
+function ManageModelDelegate:setTimerInterval(interval)
+	_refer:MD_setTimerInterval(interval)
+end
+
 --添加NPC
 function ManageModelDelegate:addNPC(data)
 	-- data 结构
@@ -36,5 +41,6 @@ end
 
 --移动NPC
 function ManageModelDelegate:moveNPC(npcId, mapId)
-	_refer:MD_moveNPC(npcId, mapId)
+	local totalTime = _refer:MD_moveNPC(npcId, mapId)
+	return totalTime
 end

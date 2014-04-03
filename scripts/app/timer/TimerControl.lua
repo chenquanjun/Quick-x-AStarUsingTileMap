@@ -22,12 +22,16 @@ local _timerEvent = TimerEvent.Invalid --时间控制器状态
 
 local _nTimePast = 0 --流逝时间
 
-local _timerInterval  =0.1 --每0.1秒执行事件
+local _timerInterval  =0.05 --每0.1秒执行事件
 
 local _timerActionTag = 99 
 
 local _lstIdsTimerKey = {} --以结束时间为key保存listenerId的vec
 local _timerUnitLstIdKey = {} --以listenerId为key保存TimerUnit对象
+
+--[[-------------------
+    ---init Method-----
+    ---------------------]]
 
 function TimerControl:create()
 	local ret = TimerControl.new()
@@ -45,6 +49,10 @@ end
 
 function TimerControl:removeDelegate()
 	_delegate = nil
+end
+
+function TimerControl:getTimerInterval()
+	return _timerInterval
 end
 
 --[[-------------------
@@ -138,9 +146,9 @@ function TimerControl:timerUpdate()
 			end
 
 		end
-		dump(_lstIdsTimerKey, "before")
+		-- dump(_lstIdsTimerKey, "before")
 		_lstIdsTimerKey[_nTimePast] = nil --释放
-		dump(_lstIdsTimerKey, "after")
+		-- dump(_lstIdsTimerKey, "after")
 	end
 
 	_nTimePast = _nTimePast + 1
