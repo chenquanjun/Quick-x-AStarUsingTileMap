@@ -19,83 +19,135 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0108] [INFO] 
-Cocos2d: [0.0108] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0108] [INFO] #
-Cocos2d: [0.0108] [INFO] # device.platform              = mac
-Cocos2d: [0.0109] [INFO] # device.model                 = unknown
-Cocos2d: [0.0109] [INFO] # device.language              = cn
-Cocos2d: [0.0109] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0109] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0109] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0109] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0109] [INFO] #
-Cocos2d: [0.0122] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0122] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0122] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0122] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0122] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0122] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0122] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0122] [INFO] # display.height               = 640.00
-Cocos2d: [0.0122] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0122] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0122] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0122] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0122] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0122] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0122] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0123] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0123] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0123] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0123] [INFO] #
-Cocos2d: [0.0160] Controller init
-Cocos2d: [0.0160] View init
+Cocos2d: [0.0097] [INFO] 
+Cocos2d: [0.0097] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0097] [INFO] #
+Cocos2d: [0.0097] [INFO] # device.platform              = mac
+Cocos2d: [0.0097] [INFO] # device.model                 = unknown
+Cocos2d: [0.0097] [INFO] # device.language              = cn
+Cocos2d: [0.0097] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0097] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0097] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0098] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0098] [INFO] #
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0109] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0110] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0110] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0110] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0110] [INFO] # display.height               = 640.00
+Cocos2d: [0.0110] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0110] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0110] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0110] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0110] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0110] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0110] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0110] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0110] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0110] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0110] [INFO] #
+Cocos2d: [0.0147] Controller init
+Cocos2d: [0.0148] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0419] Model init
+Cocos2d: [0.0408] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0597] GridSize: 36, 20
-Cocos2d: [0.0597] PointSize: 32, 32
-Cocos2d: [0.0654] tpye:3 mapId:91
-Cocos2d: [0.0654] tpye:2 mapId:197
-Cocos2d: [0.0654] tpye:10 mapId:575
-Cocos2d: [0.0654] tpye:10 mapId:611
-Cocos2d: [0.1427] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1427] model onEnter
-Cocos2d: [0.1428] add cache:player1_%i_%i.png1
-Cocos2d: [0.1430] mapId91
-Cocos2d: [0.1430] add cache:player2_%i_%i.png1
-Cocos2d: [0.1432] start timer
-Cocos2d: [1.2114] on product btn:230
-Cocos2d: [3.2140] on product btn:225
-Cocos2d: [4.6988] on product btn:220
-Cocos2d: [5.2001] add cache:player3_%i_%i.png1
-Cocos2d: [7.2341] add cache:player4_%i_%i.png1
-Cocos2d: [7.2505] on product btn:117
-Cocos2d: [8.3217] on product btn:112
-Cocos2d: [9.4592] on product btn:122
-Cocos2d: [10.1508] [INFO] LUA VM MEMORY USED: 2723.31 KB
-Cocos2d: [11.4831] on product btn:230
-Cocos2d: [12.2930] on product btn:225
-Cocos2d: [13.2944] on product btn:220
-Cocos2d: [14.7742] on product btn:230
-Cocos2d: [15.6794] on product btn:122
-Cocos2d: [16.4595] on product btn:117
-Cocos2d: [17.3438] on product btn:225
-Cocos2d: [18.0983] on product btn:122
-Cocos2d: [18.8632] on product btn:230
-Cocos2d: [19.7636] on product btn:122
-Cocos2d: [20.1133] on product btn:122
-Cocos2d: [20.1668] [INFO] LUA VM MEMORY USED: 2881.67 KB
-Cocos2d: [20.6481] on product btn:230
-Cocos2d: [21.4649] on product btn:225
-Cocos2d: [23.8585] on wait seat btn:411
-Cocos2d: [25.2762] on seat btn:311
-Cocos2d: [30.1674] [INFO] LUA VM MEMORY USED: 4337.09 KB
-Cocos2d: [40.3841] [INFO] LUA VM MEMORY USED: 4541.11 KB
+Cocos2d: [0.0590] GridSize: 36, 20
+Cocos2d: [0.0591] PointSize: 32, 32
+Cocos2d: [0.0642] tpye:3 mapId:91
+Cocos2d: [0.0642] tpye:2 mapId:197
+Cocos2d: [0.0642] tpye:10 mapId:575
+Cocos2d: [0.0642] tpye:10 mapId:611
+Cocos2d: [0.1517] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1517] model onEnter
+Cocos2d: [0.1518] add cache:player1_%i_%i.png1
+Cocos2d: [0.1520] mapId91
+Cocos2d: [0.1520] add cache:player2_%i_%i.png1
+Cocos2d: [0.1521] start timer
+Cocos2d: [1.1981] on product btn:122
+Cocos2d: [2.7394] on product btn:225
+Cocos2d: [3.7071] on product btn:220
+Cocos2d: [4.6746] on product btn:112
+Cocos2d: [5.8221] on seat btn:311
+Cocos2d: [7.2330] add cache:player4_%i_%i.png1
+Cocos2d: [7.2333] add cache:player3_%i_%i.png1
+Cocos2d: [8.2908] on wait seat btn:411
+Cocos2d: [10.1662] [INFO] LUA VM MEMORY USED: 2268.99 KB
+Cocos2d: [10.5263] on wait seat btn:411
+Cocos2d: [12.4455] on wait seat btn:409
+Cocos2d: [13.5629] on wait seat btn:407
+Cocos2d: [14.8562] on seat btn:311
+Cocos2d: [16.7576] on wait seat btn:411
+Cocos2d: [17.2075] on wait seat btn:483
+Cocos2d: [20.1664] [INFO] LUA VM MEMORY USED: 3093.66 KB
+Cocos2d: [30.1842] [INFO] LUA VM MEMORY USED: 4140.82 KB
+Cocos2d: [40.1995] [INFO] LUA VM MEMORY USED: 4269.68 KB
+Cocos2d: [50.2163] [INFO] LUA VM MEMORY USED: 5205.02 KB
+Cocos2d: [60.2331] [INFO] LUA VM MEMORY USED: 4817.50 KB
+Cocos2d: [70.2495] [INFO] LUA VM MEMORY USED: 7680.05 KB
+Cocos2d: [80.2497] [INFO] LUA VM MEMORY USED: 7707.58 KB
+Cocos2d: [90.2496] [INFO] LUA VM MEMORY USED: 8806.72 KB
+Cocos2d: [100.2658] [INFO] LUA VM MEMORY USED: 9948.35 KB
+Cocos2d: [110.2662] [INFO] LUA VM MEMORY USED: 6305.54 KB
+Cocos2d: [120.2822] [INFO] LUA VM MEMORY USED: 6805.23 KB
+Cocos2d: [130.2823] [INFO] LUA VM MEMORY USED: 7877.65 KB
+Cocos2d: [140.2827] [INFO] LUA VM MEMORY USED: 10895.85 KB
+Cocos2d: [150.2986] [INFO] LUA VM MEMORY USED: 11845.46 KB
+Cocos2d: [160.2990] [INFO] LUA VM MEMORY USED: 13029.32 KB
+Cocos2d: [170.3156] [INFO] LUA VM MEMORY USED: 8395.92 KB
+Cocos2d: [180.3321] [INFO] LUA VM MEMORY USED: 9302.35 KB
+Cocos2d: [190.3489] [INFO] LUA VM MEMORY USED: 10106.38 KB
+Cocos2d: [200.3492] [INFO] LUA VM MEMORY USED: 10805.18 KB
+Cocos2d: [210.3650] [INFO] LUA VM MEMORY USED: 11513.89 KB
+Cocos2d: [217.3894] on wait seat btn:407
+Cocos2d: [218.4571] on seat btn:311
+Cocos2d: [220.1424] on wait seat btn:411
+Cocos2d: [220.3653] [INFO] LUA VM MEMORY USED: 12174.93 KB
+Cocos2d: [221.5781] on product btn:230
+Cocos2d: [222.7290] on product btn:122
+Cocos2d: [223.8130] on product btn:117
+Cocos2d: [224.9246] on seat btn:131
+Cocos2d: [226.5448] on seat btn:134
+Cocos2d: [227.8948] on seat btn:317
+Cocos2d: [230.3658] [INFO] LUA VM MEMORY USED: 12982.57 KB
+Cocos2d: [230.4377] on seat btn:314
+Cocos2d: [231.3379] on seat btn:140
+Cocos2d: [234.2079] on wait seat btn:411
+Cocos2d: [235.6264] on wait seat btn:409
+Cocos2d: [237.1779] on seat btn:311
+Cocos2d: [238.0791] on seat btn:314
+Cocos2d: [240.3817] [INFO] LUA VM MEMORY USED: 13903.65 KB
+Cocos2d: [240.6416] on seat btn:317
+Cocos2d: [250.3821] [INFO] LUA VM MEMORY USED: 18806.72 KB
+Cocos2d: [260.3824] [INFO] LUA VM MEMORY USED: 19784.09 KB
+Cocos2d: [270.3984] [INFO] LUA VM MEMORY USED: 20661.30 KB
+Cocos2d: [280.3986] [INFO] LUA VM MEMORY USED: 21559.50 KB
+Cocos2d: [290.3990] [INFO] LUA VM MEMORY USED: 15166.54 KB
+Cocos2d: [300.4150] [INFO] LUA VM MEMORY USED: 16497.37 KB
+Cocos2d: [307.5731] on seat btn:137
+Cocos2d: [308.7632] on seat btn:134
+Cocos2d: [310.4151] [INFO] LUA VM MEMORY USED: 17840.84 KB
+Cocos2d: [311.1767] on product btn:230
+Cocos2d: [312.7121] on wait seat btn:411
+Cocos2d: [320.4156] [INFO] LUA VM MEMORY USED: 19133.78 KB
+Cocos2d: [330.4315] [INFO] LUA VM MEMORY USED: 20284.85 KB
+Cocos2d: [340.4319] [INFO] LUA VM MEMORY USED: 21377.28 KB
+Cocos2d: [350.4321] [INFO] LUA VM MEMORY USED: 22225.58 KB
+Cocos2d: [360.4486] [INFO] LUA VM MEMORY USED: 22902.34 KB
+Cocos2d: [370.4650] [INFO] LUA VM MEMORY USED: 23716.76 KB
+Cocos2d: [380.4653] [INFO] LUA VM MEMORY USED: 24664.39 KB
+Cocos2d: [390.4813] [INFO] LUA VM MEMORY USED: 25547.86 KB
+Cocos2d: [400.4816] [INFO] LUA VM MEMORY USED: 26449.05 KB
+Cocos2d: [410.4986] [INFO] LUA VM MEMORY USED: 27397.33 KB
+Cocos2d: [420.5146] [INFO] LUA VM MEMORY USED: 35701.75 KB
+Cocos2d: [430.5147] [INFO] LUA VM MEMORY USED: 36578.07 KB
+Cocos2d: [440.5151] [INFO] LUA VM MEMORY USED: 37232.52 KB
+Cocos2d: [450.5317] [INFO] LUA VM MEMORY USED: 37705.07 KB
