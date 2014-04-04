@@ -46,3 +46,7 @@ function ManageModelDelegate:moveNPC(npcId, mapId)
 	local totalTime = self._refer:MD_moveNPC(npcId, mapId)
 	return totalTime
 end
+
+function ManageModelDelegate:removeNPC(npcId)
+	self._refer:MD_removeNPC(npcId)
+end

@@ -153,7 +153,7 @@ function ManageView:MD_moveNPC(npcId, mapId)
         -- totalTime = self:walkTo(npcSprite, 0.3, newPreMapId, newTargetMapId)
 
         --test
-        totalTime = self:easeWalkTo(npcSprite, 0.2, newPreMapId, newTargetMapId)
+        totalTime = self:easeWalkTo(npcSprite, 0.1, newPreMapId, newTargetMapId)
 
 
     end
@@ -161,11 +161,26 @@ function ManageView:MD_moveNPC(npcId, mapId)
     return totalTime
 end
 
+function ManageView:MD_removeNPC(npcId)
+    local npcSprite = self._npcMap[npcId]
+    --因为精灵移动到指定位置的时候，model刚好回调，所以稍微延迟一帧来删除
+    local function delayRemoveSelf()
+        local delay = CCDelayTime:create(0.05)
+        local removeSelf = CCRemoveSelf:create(true)
+        local sequence = CCSequence:createWithTwoActions(delay, removeSelf)
+        npcSprite:runAction(sequence)
+    end
+
+    if npcSprite then
+        self._npcMap[npcId] = nil
+        delayRemoveSelf()
+    end
+end
+
 --[[
 --------------------------
 ------Private Method------
 ----------------------------]]
-
 function ManageView:setMapInfo(mapInfo)
 	self._mapInfo = mapInfo
 end

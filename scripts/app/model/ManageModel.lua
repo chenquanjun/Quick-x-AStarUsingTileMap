@@ -115,15 +115,19 @@ function ManageModel:onEnter()
     return sequence
 	end
 
-	performWithDelay(self, function() 
+	local function addNPCTest()
+		performWithDelay(self, function() 
 			for i=1,20 do
-				self:addNPC()
+			self:addNPC()
 			end
-		end, 5)
-
-	for i=1,20 do
-		self:addNPC()
+			addNPCTest()
+		end, math.random(1, 8))
 	end
+
+
+	addNPCTest()
+	self:addNPC()
+
 
 	self._timer:startTimer()
 
@@ -403,6 +407,7 @@ function ManageModel:npcState(npcInfo)
 		local result = fSwitch() --执行switch的代码
 		if result then
 			--已经释放对象进入此代码段
+			self._delegate:removeNPC(npcId)
 			return
 		end
 	else
