@@ -175,7 +175,7 @@ end
 
 
 function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
-        print("WalkTo:"..startId.." "..endId)
+        -- print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
         local mapPath = self._mapInfo:findPath(startId, endId) --地图路径类
 
@@ -186,7 +186,7 @@ function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
         local startPoint = mapPath:getPointAtIndex(1) --第一个点
         local pointNum = mapPath:getPointArrCount()
 
-        print("point num:"..pointNum)
+        -- print("point num:"..pointNum)
         
         npcSprite:setPosition(startPoint)
 
@@ -196,7 +196,7 @@ function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
         
 
         if npcSprite.handler then
-            print("exist")
+            -- print("exist")
             self._scheduler.unscheduleGlobal(npcSprite.handler)
             npcSprite.handler = nil
         end
@@ -229,7 +229,7 @@ function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
                                 self._scheduler.unscheduleGlobal(npcSprite.handler)
                                 npcSprite.handler = nil
                                 npcSprite:stopAnim()
-                                print("move end~")
+                                -- print("move end~")
                             end
         end)
 

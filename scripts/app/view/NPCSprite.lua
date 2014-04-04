@@ -46,12 +46,12 @@ end
 
 function NPCSprite:addAnimCache(fileNameFormat)
     --通过动画序列帧的某个缓存来判断是否存在缓存  player1_%i_%i.png0
-	local animation = display.getAnimationCache(fileNameFormat..tostring(0))
+	local animation = display.getAnimationCache(fileNameFormat..tostring(1))
     
     local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
     --四个动作animation，以fileName + i + 1 作为key保存在缓存里面
 	if animation == nil then
-		print("add cache:"..fileNameFormat..tostring(0))
+		print("add cache:"..fileNameFormat..tostring(1))
 		local frameCache = CCSpriteFrameCache:sharedSpriteFrameCache()
 
 		for i = 0, 3 do

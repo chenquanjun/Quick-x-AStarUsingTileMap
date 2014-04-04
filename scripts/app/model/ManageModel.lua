@@ -107,22 +107,24 @@ function ManageModel:onEnter()
 		self._delegate:setTimerInterval(timerControl:getTimerInterval())
 	end
 
-	--test
-	for i=1,2 do
+	local function performWithDelay(node, callback, delay)
+    local delay = CCDelayTime:create(delay)
+    local callfunc = CCCallFunc:create(callback)
+    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+    node:runAction(sequence)
+    return sequence
+	end
+
+	performWithDelay(self, function() 
+			for i=1,20 do
+				self:addNPC()
+			end
+		end, 5)
+
+	for i=1,20 do
 		self:addNPC()
 	end
-	
-	-- self:moveNPC()
 
-	
-	-- self._timer:removeTimerListener(1)
-	-- self._timer:addTimerListener(1, totalTime)
-	-- self._timer:addTimerListener(1, 0)
-	-- self._timer:addTimerListener(2, 2.1)
-	-- self._timer:addTimerListener(3, 2.2)
-	-- self._timer:addTimerListener(4, 5)
-	-- self._timer:startTimer()
-	-- self._timer:setListenerSpeed(1, 1)
 	self._timer:startTimer()
 
 
@@ -190,21 +192,21 @@ function ManageModel:npcState(npcInfo)
 	local switchState = {
 		--释放
 		[NPCStateType.Release]					= function()
-			print("Release")
+			-- print("Release")
 			self._npcInfoMap[npcId] = nil --释放
 
 			return true --返回nil
 		end,
 		--开始位置
 		[NPCStateType.Start]					= function()
-			print("start")
+			-- print("start")
 			totalTime = math.random(1, 5)
 			npcInfo.curState = NPCStateType.GoToDoor --状态切换
 
 		end,
 		--开始到门口
 		[NPCStateType.GoToDoor]					= function()
-			print("GoToDoor")
+			--print("GoToDoor")
 			local isFindSeat = false
 
 			for i,v in ipairs(self._doorVector) do
@@ -223,13 +225,14 @@ function ManageModel:npcState(npcInfo)
 			--找不到门口空位 
 			if not isFindSeat then
 				--在开始位置找不到空位怎么处理，继续停留在开始位置等待随机时间？
+				totalTime = 0
 				npcInfo.curState = NPCStateType.Start
 			end
 
 		end,
 		--门口位置
 		[NPCStateType.Door] 					= function()
-			print("Door")
+			--print("Door")
 			--在门口稍微停留再看看有没位置
 			totalTime = math.random(0.2, 0.5)
 			npcInfo.curState = NPCStateType.FindSeat
@@ -237,7 +240,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
-			print("LeaveDoor")
+			--print("LeaveDoor")
 			mapId = self._startMapId
 			npcInfo.curState = NPCStateType.Start --开始位置
 
@@ -248,7 +251,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
-			print("FindSeat")
+			--print("FindSeat")
 			local isFindSeat = false
 
 			for i,v in ipairs(self._seatVector) do
@@ -273,13 +276,14 @@ function ManageModel:npcState(npcInfo)
 
 			if not isFindSeat then
 				--寻找外卖座位
+				totalTime = 0
 				npcInfo.curState = NPCStateType.FindWaitSeat
 			end
 
 		end,
 		--在座位请求
 		[NPCStateType.SeatRequest] 				= function()
-			print("SeatRequest")
+			--print("SeatRequest")
 			--进入feel状态切换
 			--test,此处应该是进入另外一个方法 未完成
 			totalTime = math.random(2, 4)
@@ -287,7 +291,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
-			print("SeatEating")
+			--print("SeatEating")
 			totalTime = math.random(1, 2)
 			--进入支付状态，feel状态进入normal（由于支付是马上执行？）
 			npcInfo.curState = NPCStateType.SeatPay
@@ -295,7 +299,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--在座位支付
 		[NPCStateType.SeatPay] 					= function()
-			print("SeatPay")
+			--print("SeatPay")
 			--进入feel状态切换
 			--test 未完成
 			totalTime = math.random(2, 4)
@@ -303,14 +307,14 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--支付成功
 		[NPCStateType.SeatPaySuccess]			= function()
-			print("SeatPaySuccess")
+			--print("SeatPaySuccess")
 			totalTime = 1.0
 			npcInfo.curState = NPCStateType.LeaveSeat
 			npcInfo.curFeel = NPCFeelType.Invalid
 		end,
 		--离开座位
 		[NPCStateType.LeaveSeat] 				= function()
-			print("LeaveSeat")
+			--print("LeaveSeat")
 			--离开座位之后回到开始位置然后kill掉?
 			assert(self._seatMap[npcInfo.mapId] == npcId, "error")
 			self._seatMap[npcInfo.mapId] = 0 --设置为空
@@ -320,7 +324,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
-		    print("FindWaitSeat")
+		    --print("FindWaitSeat")
 			local isFindSeat = false
 
 			for i,v in ipairs(self._waitSeatVector) do
@@ -345,12 +349,13 @@ function ManageModel:npcState(npcInfo)
 
 			if not isFindSeat then
 				--离开门口
+				totalTime = 0
 				npcInfo.curState = NPCStateType.LeaveDoor
 			end
 		end,
 		--在外卖座位发起请求
 		[NPCStateType.WaitSeatRequest] 			= function()
-		    print("WaitSeatRequest")
+		    --print("WaitSeatRequest")
 			--进入feel状态切换
 			--test,此处应该是进入另外一个方法 未完成
 			totalTime = math.random(2, 4)
@@ -358,7 +363,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
-		    print("WaitSeatPay")
+		    --print("WaitSeatPay")
 			--进入feel状态切换
 			--test 未完成
 			totalTime = math.random(2, 4)
@@ -366,7 +371,7 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
-		    print("WaitSeatIdle")
+		    --print("WaitSeatIdle")
 
 		    totalTime = math.random(1, 2)
 			npcInfo.curState = NPCStateType.WaitSeatPay
@@ -374,14 +379,14 @@ function ManageModel:npcState(npcInfo)
 		end,
 		--在外卖座位支付成功
 		[NPCStateType.WaitSeatPaySuccess] 		= function()
-		    print("WaitSeatPaySuccess")
+		    --print("WaitSeatPaySuccess")
 		    totalTime = 1.0
 			npcInfo.curState = NPCStateType.LeaveWaitSeat
 			npcInfo.curFeel = NPCFeelType.Invalid --重置状态
 		end,
 		--离开外卖座位
 		[NPCStateType.LeaveWaitSeat] 			= function()
-		    print("LeaveWaitSeat")
+		    --print("LeaveWaitSeat")
 			--离开座位之后回到开始位置然后kill掉?
 			assert(self._waitSeatMap[npcInfo.mapId] == npcId, "error")
 			self._waitSeatMap[npcInfo.mapId] = 0 --设置为空
@@ -407,13 +412,13 @@ function ManageModel:npcState(npcInfo)
 
 	if mapId ~= -1 then
 		--说明在switch中改变了值，调用viewdelegate, view会返回寻路花费的时间
-		print("npcId:"..npcId)
+		--print("npcId:"..npcId)
 		totalTime = self._delegate:moveNPC(npcId, mapId)
 		npcInfo.mapId = mapId --保存目标位置
 	end
 
 	--注意，totalTime为0导致死循环
-	print("id:"..npcId.." totalTIme:"..totalTime)
+	--print("id:"..npcId.." totalTIme:"..totalTime)
 	self._timer:addTimerListener(npcId, totalTime) --加入时间控制
 
 
@@ -429,11 +434,11 @@ end
 	---Timer Delegate-----
 	---------------------]]
 function ManageModel:TD_onTimOver(listenerId)
-	print("listenerId is:"..listenerId)
+	--print("listenerId is:"..listenerId)
 
 	local npcInfo = self._npcInfoMap[listenerId]
 	if npcInfo then --回调
-		print("id:"..npcInfo.npcId)
+		--print("id:"..npcInfo.npcId)
 		self:npcState(npcInfo)
 	end
 	
