@@ -107,31 +107,7 @@ function ManageView:MD_addPlayer(data)
 
     local modelId = data.modelId
 
-    local startMapId = data.npcMapId
-
-    local startPoint = self._mapInfo:convertIdToPointMid(startMapId)
-
-    local fileName = "player1_%i_%i.png"
-
-    local npcSprite = NPCSprite:create(fileName, elfId)
-
-    npcSprite.nPreMapId = startMapId
-    npcSprite.nTargetMapId = startMapId
-
-    npcSprite:setPosition(startPoint)
-
-    self._playerLayer:addChild(npcSprite)
-
-    --保存到Map里面
-    self._playerLayerMap[elfId] = npcSprite 
-
-end
-
-function ManageView:MD_addNPC(data)
-    local elfId = data.elfId
-    local modelId = data.modelId
-
-    local startMapId = data.npcMapId
+    local startMapId = data.mapId
 
     local startPoint = self._mapInfo:convertIdToPointMid(startMapId)
 
@@ -151,6 +127,40 @@ function ManageView:MD_addNPC(data)
 
     npcSprite.nPreMapId = startMapId
     npcSprite.nTargetMapId = startMapId
+
+    npcSprite:setPosition(startPoint)
+
+    self._playerLayer:addChild(npcSprite)
+
+    --保存到Map里面
+    self._playerMap[elfId] = npcSprite 
+
+end
+
+function ManageView:MD_addNPC(data)
+    local elfId = data.elfId
+    local modelId = data.modelId
+
+    local mapId = data.mapId
+
+    local startPoint = self._mapInfo:convertIdToPointMid(mapId)
+
+    local fileName = "player1_%i_%i.png"
+
+    if modelId == 1 then
+        fileName = "player1_%i_%i.png"
+    elseif modelId == 2 then
+        fileName = "player2_%i_%i.png"
+    elseif modelId == 3 then
+        fileName = "player3_%i_%i.png"
+    elseif modelId == 4 then
+        fileName = "player4_%i_%i.png"
+    end
+
+    local npcSprite = NPCSprite:create(fileName, elfId)
+
+    npcSprite.nPreMapId = mapId
+    npcSprite.nTargetMapId = mapId
 
     npcSprite:setPosition(startPoint)
 

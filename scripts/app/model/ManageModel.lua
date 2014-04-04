@@ -1,5 +1,6 @@
 require "app/basic/extern"
 require "app/basic/NPCInfo"
+require "app/basic/PlayerInfo"
 require "app/timer/TimerControl"
 require "app/timer/TimerControlDelegate"
 
@@ -127,7 +128,7 @@ function ManageModel:onEnter()
 		end, math.random(1, 8))
 	end
 
-
+	self:addPlayer()
 	addNPCTest() --批量测试
 	-- self:addNPC() --单个测试
 
@@ -163,24 +164,40 @@ end
 
 function ManageModel:addPlayer()
 	do --init 保存到字典
+		local elfId = 1
 		local mapId = self._oneMapIdMap[kMapDataCook]
+	
+		local playerInfo = PlayerInfo:create()
+		playerInfo.mapId = mapId
+		playerInfo.elfId = elfId
 
-		local npcInfo = NPCInfo:create()
-		npcInfo.curState = NPCStateType.Start --开始位置
-		npcInfo.curFeel = NPCFeelType.Invalid
-		npcInfo.mapId = startMapId
-		npcInfo.elfId = elfId
-		self._playerInfoMap[elfId] = npcInfo
-
-		--进入状态控制
-		self:npcState(npcInfo)		 
+		self._playerInfoMap[elfId] = playerInfo
 		
-		--通知view添加npc
+		--通知view添加玩家
 		local data = {}
 		data.elfId = elfId
-		data.modelId = math.random(2, 4)
-		data.npcMapId = startMapId
-		self._delegate:addNPC(data)
+		data.modelId = 1
+		data.mapId = mapId
+		self._delegate:addPlayer(data)
+	end
+
+	do --init 保存到字典
+		local elfId = 2
+		local mapId = self._oneMapIdMap[kMapDataCashier]
+		print("mapId"..mapId)
+
+		local playerInfo = PlayerInfo:create()
+		playerInfo.mapId = mapId
+		playerInfo.elfId = elfId
+
+		self._playerInfoMap[elfId] = playerInfo
+		
+		--通知view添加玩家
+		local data = {}
+		data.elfId = elfId
+		data.modelId = 2
+		data.mapId = mapId
+		self._delegate:addPlayer(data)
 	end
 end
 
@@ -191,12 +208,14 @@ function ManageModel:addNPC()
 
 	do --init 保存到字典
 		local startMapId = self._oneMapIdMap[kMapDataStart]
+		local modelId = math.random(3, 4)
 
 		local npcInfo = NPCInfo:create()
 		npcInfo.curState = NPCStateType.Start --开始位置
 		npcInfo.curFeel = NPCFeelType.Invalid
 		npcInfo.mapId = startMapId
 		npcInfo.elfId = elfId
+		npcInfo.modelId = modelId
 		self._npcInfoMap[elfId] = npcInfo
 
 		--进入状态控制
@@ -205,8 +224,8 @@ function ManageModel:addNPC()
 		--通知view添加npc
 		local data = {}
 		data.elfId = elfId
-		data.modelId = math.random(2, 4)
-		data.npcMapId = startMapId
+		data.modelId = modelId
+		data.mapId = startMapId
 		self._delegate:addNPC(data)
 	end
 
@@ -569,7 +588,7 @@ function ManageModel:TD_onTimOver(listenerId)
 
 	local npcInfo = self._npcInfoMap[listenerId]
 	if npcInfo then --回调
-		--print("id:"..npcInfo.npcId)
+		--print("id:"..npcInfo.elfId)
 		self:npcState(npcInfo)
 	end
 	
