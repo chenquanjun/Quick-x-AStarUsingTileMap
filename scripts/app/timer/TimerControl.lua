@@ -16,18 +16,18 @@ end)
 
 TimerControl.__index = TimerControl
 
-local _delegate = nil
+TimerControl._delegate = nil
 
-local _timerEvent = TimerEvent.Invalid --时间控制器状态
+TimerControl._timerEvent = TimerEvent.Invalid --时间控制器状态
 
-local _nTimePast = 0 --流逝时间
+TimerControl._nTimePast = 0 --流逝时间
 
-local _timerInterval  =0.05 --每0.1秒执行事件
+TimerControl._timerInterval  =0.05 --每0.1秒执行事件
 
-local _timerActionTag = 99 
+TimerControl._timerActionTag = 99 
 
-local _lstIdsTimerKey = nil --以结束时间为key保存listenerId的vec
-local _timerUnitLstIdKey = nil --以listenerId为key保存TimerUnit对象
+TimerControl._lstIdsTimerKey = nil --以结束时间为key保存listenerId的vec
+TimerControl._timerUnitLstIdKey = nil --以listenerId为key保存TimerUnit对象
 
 --[[-------------------
     ---init Method-----
@@ -40,20 +40,20 @@ function TimerControl:create()
 end
 
 function TimerControl:init()
-    _lstIdsTimerKey = {} --以结束时间为key保存listenerId的vec
-    _timerUnitLstIdKey = {} --以listenerId为key保存TimerUnit对象
+    self._lstIdsTimerKey = {} --以结束时间为key保存listenerId的vec
+    self._timerUnitLstIdKey = {} --以listenerId为key保存TimerUnit对象
 end
 
 function TimerControl:setDelegate(delegate)
-	_delegate = delegate
+	self._delegate = delegate
 end
 
 function TimerControl:removeDelegate()
-	_delegate = nil
+	self._delegate = nil
 end
 
 function TimerControl:getTimerInterval()
-	return _timerInterval
+	return self._timerInterval
 end
 
 --[[-------------------
@@ -62,23 +62,23 @@ end
 
 function TimerControl:startTimer()
 
-	if _timerEvent == TimerEvent.Invalid or _timerEvent == TimerEvent.Stop then
+	if self._timerEvent == TimerEvent.Invalid or self._timerEvent == TimerEvent.Stop then
 		print("start timer")
-		_nTimePast = 0
+		self._nTimePast = 0
 		--停止定时器
-		self:stopActionByTag(_timerActionTag)
+		self:stopActionByTag(self._timerActionTag)
 
-		local delay = CCDelayTime:create(_timerInterval)
+		local delay = CCDelayTime:create(self._timerInterval)
 	    local callfunc = CCCallFunc:create(function() self:timerUpdate() end)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
 	    local action = CCRepeatForever:create(sequence)
 
-	    action:setTag(_timerActionTag)
+	    action:setTag(self._timerActionTag)
 	    self:runAction(action)
 
-	    _timerEvent = TimerEvent.Running
+	    self._timerEvent = TimerEvent.Running
 
-	elseif _timerEvent == TimerEvent.Running or _timerEvent == TimerEvent.Pause then
+	elseif self._timerEvent == TimerEvent.Running or self._timerEvent == TimerEvent.Pause then
 		error("running should stop, pause should resume")
 	end
 
@@ -87,28 +87,28 @@ function TimerControl:startTimer()
 end
 
 function TimerControl:pauseTimer()
-	if _timerEvent == TimerEvent.Running then
+	if self._timerEvent == TimerEvent.Running then
 		print("pause timer")
-		self:stopActionByTag(_timerActionTag)
+		self:stopActionByTag(self._timerActionTag)
 
-		_timerEvent = TimerEvent.Pause
+		self._timerEvent = TimerEvent.Pause
 	else
 		error("error call")
 	end
 end
 
 function TimerControl:resumeTimer()
-	if _timerEvent == TimerEvent.Pause then
+	if self._timerEvent == TimerEvent.Pause then
 		print("resume timer")
-		local delay = CCDelayTime:create(_timerInterval)
+		local delay = CCDelayTime:create(self._timerInterval)
 	    local callfunc = CCCallFunc:create(function() self:timerUpdate() end)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
 	    local action = CCRepeatForever:create(sequence)
 
-	    action:setTag(_timerActionTag)
+	    action:setTag(self._timerActionTag)
 	    self:runAction(action)
 
-	    _timerEvent = TimerEvent.Running
+	    self._timerEvent = TimerEvent.Running
 
 	else
 		error("error call")
@@ -117,12 +117,12 @@ end
 
 function TimerControl:stopTimer()
 	print("stop timer")
-	self:stopActionByTag(_timerActionTag)
-	_nTimePast = 0
-	_timerEvent = TimerEvent.Stop
+	self:stopActionByTag(self._timerActionTag)
+	self._nTimePast = 0
+	self._timerEvent = TimerEvent.Stop
 
-	_lstIdsTimerKey = {} 
-    _timerUnitLstIdKey = {} 
+	self._lstIdsTimerKey = {} 
+    self._timerUnitLstIdKey = {} 
 end
 
 --[[-------------------
@@ -130,30 +130,30 @@ end
     ---------------------]]
 function TimerControl:timerUpdate()
 	--以时间为key 存放listenerId数组
-	local lstIdsVec = _lstIdsTimerKey[_nTimePast]
+	local lstIdsVec = self._lstIdsTimerKey[self._nTimePast]
 
 	if lstIdsVec then
 		for i,v in ipairs(lstIdsVec) do 
 			
 			local listenerId = v
 
-			local timerUnit = _timerUnitLstIdKey[listenerId]
+			local timerUnit = self._timerUnitLstIdKey[listenerId]
 
 			if timerUnit then
 				local endTime = timerUnit.endTime
-				if endTime == _nTimePast then
-					_delegate:onTimeOver(listenerId)
+				if endTime == self._nTimePast then
+					self._delegate:onTimeOver(listenerId)
 				end
 			end
 
 		end
-		-- dump(_lstIdsTimerKey, "before")
-		_lstIdsTimerKey[_nTimePast] = nil --释放
-		-- dump(_lstIdsTimerKey, "after")
+		-- dump(self._lstIdsTimerKey, "before")
+		self._lstIdsTimerKey[self._nTimePast] = nil --释放
+		-- dump(self._lstIdsTimerKey, "after")
 	end
 
-	_nTimePast = _nTimePast + 1
-	-- print(_nTimePast)
+	self._nTimePast = self._nTimePast + 1
+	-- print(self._nTimePast)
 end
 
 --[[-------------------
@@ -165,24 +165,24 @@ function TimerControl:addTimerListener(listenerId, duration)
 		return --小于0 直接返回
 	end
 	--时间换算
-	local localDur = self:int(duration / _timerInterval) 
+	local localDur = self:int(duration / self._timerInterval) 
 
 	if localDur == 0 then
 		--对于时间为0先清空map对应的数据，然后直接回调
 		--防止同一个id在同一帧里面多次addTimer造成bug
-		_timerUnitLstIdKey[listenerId] = nil
-		_delegate:onTimeOver(listenerId)
+		self._timerUnitLstIdKey[listenerId] = nil
+		self._delegate:onTimeOver(listenerId)
 		return
 	end
 
-	local endTime = _nTimePast + localDur
+	local endTime = self._nTimePast + localDur
 
 	local timerUnit = {}
-	timerUnit.startTime = _nTimePast
+	timerUnit.startTime = self._nTimePast
 	timerUnit.endTime = endTime
 	timerUnit.listenerId = listenerId
 
-	local lstIdVec = _lstIdsTimerKey[endTime] --endTime时间点的listenerId列表（可能一个，可能存在多个，也可能是空）
+	local lstIdVec = self._lstIdsTimerKey[endTime] --endTime时间点的listenerId列表（可能一个，可能存在多个，也可能是空）
 
 	if not lstIdVec then
 		--vec 不存在
@@ -202,30 +202,30 @@ function TimerControl:addTimerListener(listenerId, duration)
 	local size = table.getn(lstIdVec)
 	lstIdVec[size + 1] = listenerId --保存在vector里面
 
-	_lstIdsTimerKey[endTime] = lstIdVec
+	self._lstIdsTimerKey[endTime] = lstIdVec
 
-	_timerUnitLstIdKey[listenerId] = timerUnit
+	self._timerUnitLstIdKey[listenerId] = timerUnit
 
 end
 
 function TimerControl:removeTimerListener(listenerId)
 	--增加update时候判断的代价换来删除的快捷
-	_timerUnitLstIdKey[listenerId] = nil
+	self._timerUnitLstIdKey[listenerId] = nil
 end
 
 function TimerControl:setListenerSpeed(listenerId, speed)
-	local timerUnit = _timerUnitLstIdKey[listenerId]
+	local timerUnit = self._timerUnitLstIdKey[listenerId]
 
 	if timerUnit then
 		local endTime = timerUnit.endTime
-		local curTime = _nTimePast
+		local curTime = self._nTimePast
 
 		--过去的不能加速
 		if endTime > curTime then
 			local newDuration = (endTime - curTime) / speed
 			--暂时不知有没问题，待测试
 			--此处的duration需要转换成实际的duration
-			self:addTimerListener(listenerId, newDuration * _timerInterval)
+			self:addTimerListener(listenerId, newDuration * self._timerInterval)
 
 		end
 	end

@@ -11,26 +11,26 @@ end)
 --[[-------------------
 	---Init Value-----
 	---------------------]]
-
+--index
 ManageModel.__index = ManageModel
+--private
+ManageModel._delegate = nil --model delegate
+ManageModel._timer = nil
+ManageModel._timerDelegate = nil
 
-local _delegate = nil --model delegate
-local _timer = nil
-local _timerDelegate = nil
+ManageModel._seatVector = nil --座位数组，保存座位的mapId
+ManageModel._waitSeatVector = nil 
+ManageModel._doorVector = nil
 
-local _seatVector = nil --座位数组，保存座位的mapId
-local _waitSeatVector = nil 
-local _doorVector = nil
+ManageModel._seatMap = nil  --座位字典
+ManageModel._waitSeatMap = nil --等待座位字典
+ManageModel._doorMap = nil --门口字典
 
-local _seatMap = nil  --座位字典
-local _waitSeatMap = nil --等待座位字典
-local _doorMap = nil --门口字典
+ManageModel._startMapId = -1
 
-local _startMapId = -1
+ManageModel._npcInfoMap = nil
 
-local _npcInfoMap = nil
-
-local _testNPCIdFlag = 10
+ManageModel._testNPCIdFlag = 10
 
 --[[-------------------
 	---Init Method-----
@@ -44,42 +44,42 @@ end
 
 function ManageModel:init()
 	print("Model init")
-	_seatMap = {}  --座位字典
-	_waitSeatMap = {} --等待座位字典
-	_doorMap = {} --门口字典
-	_npcInfoMap = {}
+	self._seatMap = {}  --座位字典
+	self._waitSeatMap = {} --等待座位字典
+	self._doorMap = {} --门口字典
+	self._npcInfoMap = {}
 
 end
 
 function ManageModel:setDelegate(delegate)
-	_delegate = delegate
+	self._delegate = delegate
 end
 
 function ManageModel:setStartMapId(mapId)
-	_startMapId = mapId
+	self._startMapId = mapId
 end
 
 function ManageModel:setMapData(seatVec, waitSeatVec, doorVec)
 
     --记录哪个mapId是座位，等待座位和门口, 下标从1开始
-	_seatVector = seatVec
-	_waitSeatVector = waitSeatVec
-	_doorVector = doorVec
+	self._seatVector = seatVec
+	self._waitSeatVector = waitSeatVec
+	self._doorVector = doorVec
 
 	--初始化
-	for i,v in ipairs(_seatVector) 
+	for i,v in ipairs(self._seatVector) 
 	do 
-		_seatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+		self._seatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
 	end  
 
-	for i,v in ipairs(_waitSeatVector) 
+	for i,v in ipairs(self._waitSeatVector) 
 	do 
-		_waitSeatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+		self._waitSeatMap[v] = 0 --0表示空, 其他时候表示顾客的id 
 	end  
 
-	for i,v in ipairs(_doorVector) 
+	for i,v in ipairs(self._doorVector) 
 	do 
-		_doorMap[v] = 0 --0表示空, 其他时候表示顾客的id 
+		self._doorMap[v] = 0 --0表示空, 其他时候表示顾客的id 
 	end  	
 end
 
@@ -96,56 +96,56 @@ function ManageModel:onEnter()
 
 		local timerControl = TimerControl:create()
 		self:addChild(timerControl)
-		_timer = timerControl
+		self._timer = timerControl
 
 		--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
 		local timerDelegate = TimerControlDelegate:setRefer(self)
-		_timerDelegate = timerDelegate
+		self._timerDelegate = timerDelegate
 
 		timerControl:setDelegate(timerDelegate)
 
-		_delegate:setTimerInterval(timerControl:getTimerInterval())
+		self._delegate:setTimerInterval(timerControl:getTimerInterval())
 	end
 
 	--test
-	-- for i=1,5 do
+	for i=1,2 do
 		self:addNPC()
-	-- end
+	end
 	
 	-- self:moveNPC()
 
 	
-	-- _timer:removeTimerListener(1)
-	-- _timer:addTimerListener(1, totalTime)
-	-- _timer:addTimerListener(1, 0)
-	-- _timer:addTimerListener(2, 2.1)
-	-- _timer:addTimerListener(3, 2.2)
-	-- _timer:addTimerListener(4, 5)
-	-- _timer:startTimer()
-	-- _timer:setListenerSpeed(1, 1)
-	_timer:startTimer()
+	-- self._timer:removeTimerListener(1)
+	-- self._timer:addTimerListener(1, totalTime)
+	-- self._timer:addTimerListener(1, 0)
+	-- self._timer:addTimerListener(2, 2.1)
+	-- self._timer:addTimerListener(3, 2.2)
+	-- self._timer:addTimerListener(4, 5)
+	-- self._timer:startTimer()
+	-- self._timer:setListenerSpeed(1, 1)
+	self._timer:startTimer()
 
 
 end
 
 function ManageModel:onRelease()
 	print("Model on release")
-	_timer:removeDelegate() --timer对delegate的引用
-	_timerDelegate:removeRefer() --delegate对model的引用
+	self._timer:removeDelegate() --timer对delegate的引用
+	self._timerDelegate:removeRefer() --delegate对model的引用
 
-	_timerDelegate = nil
+	self._timerDelegate = nil
 
-	_timer = nil
+	self._timer = nil
 
-	_delegate = nil
+	self._delegate = nil
 
-	_seatVector = nil
-	_waitSeatVector = nil
-	_doorVector = nil
+	self._seatVector = nil
+	self._waitSeatVector = nil
+	self._doorVector = nil
 
-	_seatMap = nil
-	_waitSeatMap = nil
-	_doorMap = nil
+	self._seatMap = nil
+	self._waitSeatMap = nil
+	self._doorMap = nil
 end
 
 --[[-------------------
@@ -155,14 +155,15 @@ end
 --增加NPC
 function ManageModel:addNPC()
 	
-	local npcId = _testNPCIdFlag
+	local npcId = self._testNPCIdFlag
 
 	do --init 保存到字典
-		local npcInfo = NPCInfo:create(npcId)
+		local npcInfo = NPCInfo:create()
 		npcInfo.curState = NPCStateType.Start --开始位置
 		npcInfo.curFeel = NPCFeelType.Invalid
-		npcInfo.mapId = _startMapId
-		_npcInfoMap[npcId] = npcInfo
+		npcInfo.mapId = self._startMapId
+		npcInfo.npcId = npcId
+		self._npcInfoMap[npcId] = npcInfo
 
 		--进入状态控制
 		self:npcState(npcInfo)		 
@@ -173,10 +174,10 @@ function ManageModel:addNPC()
 		local data = {}
 		data.npcId = npcId
 		data.npcType = 1
-		_delegate:addNPC(data)
+		self._delegate:addNPC(data)
 	end
 
-	_testNPCIdFlag = npcId + 1
+	self._testNPCIdFlag = npcId + 1
 
 
 end
@@ -190,7 +191,7 @@ function ManageModel:npcState(npcInfo)
 		--释放
 		[NPCStateType.Release]					= function()
 			print("Release")
-			_npcInfoMap[npcId] = nil --释放
+			self._npcInfoMap[npcId] = nil --释放
 
 			return true --返回nil
 		end,
@@ -206,14 +207,14 @@ function ManageModel:npcState(npcInfo)
 			print("GoToDoor")
 			local isFindSeat = false
 
-			for i,v in ipairs(_doorVector) do
+			for i,v in ipairs(self._doorVector) do
 				
-				local seatState = _doorMap[v]
+				local seatState = self._doorMap[v]
 
 				if seatState == 0 then
 					isFindSeat = true --找到空位
 					mapId = v --保存id
-					_doorMap[v] = npcId --霸占位置
+					self._doorMap[v] = npcId --霸占位置
 					npcInfo.curState = NPCStateType.Door --状态切换
 					break
 				end
@@ -237,12 +238,12 @@ function ManageModel:npcState(npcInfo)
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
 			print("LeaveDoor")
-			mapId = _startMapId
+			mapId = self._startMapId
 			npcInfo.curState = NPCStateType.Start --开始位置
 
 			--出现此错误因为npc的mapId没有正确设置
-			assert(_doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
-			_doorMap[npcInfo.mapId] = 0 --清空位置
+			assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+			self._doorMap[npcInfo.mapId] = 0 --清空位置
 
 		end,
 		--寻找座位
@@ -250,19 +251,19 @@ function ManageModel:npcState(npcInfo)
 			print("FindSeat")
 			local isFindSeat = false
 
-			for i,v in ipairs(_seatVector) do
-				local seatState = _seatMap[v]
+			for i,v in ipairs(self._seatVector) do
+				local seatState = self._seatMap[v]
 
 				if seatState == 0 then
 					isFindSeat = true --找到空位
 					mapId = v --保存id
 
-					assert(_doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
-					assert(_seatMap[v] == 0, "error mapid, not in seat") 
+					assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+					assert(self._seatMap[v] == 0, "error mapid, not in seat") 
 
-					_doorMap[npcInfo.mapId] = 0 --清空门口位置
+					self._doorMap[npcInfo.mapId] = 0 --清空门口位置
 
-					_seatMap[v] = npcId --霸占座位位置
+					self._seatMap[v] = npcId --霸占座位位置
 					--进入座位请求状态，feel状态进入prepare
 					npcInfo.curState = NPCStateType.SeatRequest --状态切换
 					npcInfo.curFeel = NPCFeelType.Prepare --进入子状态
@@ -311,9 +312,9 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.LeaveSeat] 				= function()
 			print("LeaveSeat")
 			--离开座位之后回到开始位置然后kill掉?
-			assert(_seatMap[npcInfo.mapId] == npcId, "error")
-			_seatMap[npcInfo.mapId] = 0 --设置为空
-			mapId = _startMapId
+			assert(self._seatMap[npcInfo.mapId] == npcId, "error")
+			self._seatMap[npcInfo.mapId] = 0 --设置为空
+			mapId = self._startMapId
 
 			npcInfo.curState = NPCStateType.Release --进入销毁状态
 		end,
@@ -322,19 +323,19 @@ function ManageModel:npcState(npcInfo)
 		    print("FindWaitSeat")
 			local isFindSeat = false
 
-			for i,v in ipairs(_waitSeatVector) do
-				local seatState = _waitSeatMap[v]
+			for i,v in ipairs(self._waitSeatVector) do
+				local seatState = self._waitSeatMap[v]
 
 				if seatState == 0 then
 					isFindSeat = true --找到空位
 					mapId = v --保存id
 
-					assert(_doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
-					assert(_waitSeatMap[v] == 0, "error mapid, not in wait seat") 
+					assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+					assert(self._waitSeatMap[v] == 0, "error mapid, not in wait seat") 
 
-					_doorMap[npcInfo.mapId] = 0 --清空门口位置
+					self._doorMap[npcInfo.mapId] = 0 --清空门口位置
 
-					_waitSeatMap[v] = npcId --霸占座位位置
+					self._waitSeatMap[v] = npcId --霸占座位位置
 					--进入座位请求状态，feel状态进入prepare
 					npcInfo.curState = NPCStateType.WaitSeatRequest --状态切换
 					npcInfo.curFeel = NPCFeelType.Prepare --进入子状态
@@ -382,9 +383,9 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.LeaveWaitSeat] 			= function()
 		    print("LeaveWaitSeat")
 			--离开座位之后回到开始位置然后kill掉?
-			assert(_waitSeatMap[npcInfo.mapId] == npcId, "error")
-			_waitSeatMap[npcInfo.mapId] = 0 --设置为空
-			mapId = _startMapId
+			assert(self._waitSeatMap[npcInfo.mapId] == npcId, "error")
+			self._waitSeatMap[npcInfo.mapId] = 0 --设置为空
+			mapId = self._startMapId
 
 			npcInfo.curState = NPCStateType.Release --进入销毁状态
 		end,
@@ -406,15 +407,14 @@ function ManageModel:npcState(npcInfo)
 
 	if mapId ~= -1 then
 		--说明在switch中改变了值，调用viewdelegate, view会返回寻路花费的时间
-		print(npcInfo.mapId)
-		print(mapId)
-		totalTime = _delegate:moveNPC(npcId, mapId)
+		print("npcId:"..npcId)
+		totalTime = self._delegate:moveNPC(npcId, mapId)
 		npcInfo.mapId = mapId --保存目标位置
 	end
 
 	--注意，totalTime为0导致死循环
 	print("id:"..npcId.." totalTIme:"..totalTime)
-	_timer:addTimerListener(npcId, totalTime) --加入时间控制
+	self._timer:addTimerListener(npcId, totalTime) --加入时间控制
 
 
 end
@@ -431,8 +431,9 @@ end
 function ManageModel:TD_onTimOver(listenerId)
 	print("listenerId is:"..listenerId)
 
-	local npcInfo = _npcInfoMap[listenerId]
+	local npcInfo = self._npcInfoMap[listenerId]
 	if npcInfo then --回调
+		print("id:"..npcInfo.npcId)
 		self:npcState(npcInfo)
 	end
 	

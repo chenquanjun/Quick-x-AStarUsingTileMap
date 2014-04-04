@@ -19,95 +19,147 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0093] [INFO] 
-Cocos2d: [0.0093] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0093] [INFO] #
-Cocos2d: [0.0094] [INFO] # device.platform              = mac
-Cocos2d: [0.0094] [INFO] # device.model                 = unknown
-Cocos2d: [0.0094] [INFO] # device.language              = cn
-Cocos2d: [0.0094] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0094] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0094] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0094] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0094] [INFO] #
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0106] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0106] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0106] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0106] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0106] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0106] [INFO] # display.height               = 640.00
-Cocos2d: [0.0106] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0106] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0106] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0106] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0106] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0106] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0106] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0107] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0107] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0107] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0107] [INFO] 
+Cocos2d: [0.0107] [INFO] # DEBUG                        = 2
 Cocos2d: [0.0107] [INFO] #
-Cocos2d: [0.0141] Controller init
-Cocos2d: [0.0141] View init
+Cocos2d: [0.0107] [INFO] # device.platform              = mac
+Cocos2d: [0.0107] [INFO] # device.model                 = unknown
+Cocos2d: [0.0107] [INFO] # device.language              = cn
+Cocos2d: [0.0108] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0108] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0108] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0108] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0108] [INFO] #
+Cocos2d: [0.0120] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0120] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0120] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0120] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0120] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0120] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0120] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0120] [INFO] # display.height               = 640.00
+Cocos2d: [0.0120] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0120] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0120] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0120] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0120] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0120] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0120] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0120] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0120] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0120] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0121] [INFO] #
+Cocos2d: [0.0154] Controller init
+Cocos2d: [0.0154] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0390] Model init
+Cocos2d: [0.0422] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0563] GridSize: 36, 20
-Cocos2d: [0.0563] PointSize: 32, 32
-Cocos2d: [0.0618] startMapId:575
-Cocos2d: [0.1274] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1275] model onEnter
-Cocos2d: [0.1275] interval:0.05
-Cocos2d: [0.1275] start
-Cocos2d: [0.1275] id:10 totalTIme:4
-Cocos2d: [0.1276] add cache:player1_%i_%i.png0
-Cocos2d: [0.1277] start timer
-Cocos2d: [4.2629] listenerId is:10
-Cocos2d: [4.2629] GoToDoor
-Cocos2d: [4.2629] 575
-Cocos2d: [4.2629] 485
-Cocos2d: [4.2629] WalkTo:575 485
-Cocos2d: [4.2638] point num:21
-Cocos2d: [4.2638] id:10 totalTIme:4.2
-Cocos2d: [8.4628] listenerId is:10
-Cocos2d: [8.4629] Door
-Cocos2d: [8.4629] id:10 totalTIme:1.2
-Cocos2d: [8.4834] move end~
-Cocos2d: [9.6128] listenerId is:10
-Cocos2d: [9.6129] FindSeat
-Cocos2d: [9.6129] 485
-Cocos2d: [9.6129] 131
-Cocos2d: [9.6129] WalkTo:485 131
-Cocos2d: [9.6141] point num:17
-Cocos2d: [9.6141] id:10 totalTIme:3.4
-Cocos2d: [10.1295] [INFO] LUA VM MEMORY USED: 2142.00 KB
-Cocos2d: [13.0127] listenerId is:10
-Cocos2d: [13.0127] SeatRequest
-Cocos2d: [13.0128] id:10 totalTIme:2
-Cocos2d: [13.0386] move end~
-Cocos2d: [15.0120] listenerId is:10
-Cocos2d: [15.0120] SeatEating
-Cocos2d: [15.0121] id:10 totalTIme:2
-Cocos2d: [17.0121] listenerId is:10
-Cocos2d: [17.0121] SeatPay
-Cocos2d: [17.0122] id:10 totalTIme:4
-Cocos2d: [20.1456] [INFO] LUA VM MEMORY USED: 2163.55 KB
-Cocos2d: [21.0128] listenerId is:10
-Cocos2d: [21.0129] LeaveSeat
-Cocos2d: [21.0129] 131
-Cocos2d: [21.0129] 575
-Cocos2d: [21.0129] WalkTo:131 575
-Cocos2d: [21.0145] point num:31
-Cocos2d: [21.0146] id:10 totalTIme:6.2
-Cocos2d: [27.2127] listenerId is:10
-Cocos2d: [27.2128] Release
-Cocos2d: [27.2372] move end~
-Cocos2d: [30.1623] [INFO] LUA VM MEMORY USED: 2327.88 KB
+Cocos2d: [0.0612] GridSize: 36, 20
+Cocos2d: [0.0612] PointSize: 32, 32
+Cocos2d: [0.0668] startMapId:575
+Cocos2d: [0.1599] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1599] model onEnter
+Cocos2d: [0.1600] interval:0.05
+Cocos2d: [0.1600] start
+Cocos2d: [0.1600] id:10 totalTIme:4
+Cocos2d: [0.1601] add cache:player1_%i_%i.png0
+Cocos2d: [0.1602] start
+Cocos2d: [0.1602] id:11 totalTIme:2
+Cocos2d: [0.1602] add cache:player1_%i_%i.png0
+Cocos2d: [0.1603] start timer
+Cocos2d: [2.2675] listenerId is:11
+Cocos2d: [2.2675] id:11
+Cocos2d: [2.2676] GoToDoor
+Cocos2d: [2.2676] npcId:11
+Cocos2d: [2.2676] WalkTo:575 485
+Cocos2d: [2.2685] point num:21
+Cocos2d: [2.2686] id:11 totalTIme:4.2
+Cocos2d: [4.2674] listenerId is:10
+Cocos2d: [4.2674] id:10
+Cocos2d: [4.2674] GoToDoor
+Cocos2d: [4.2674] npcId:10
+Cocos2d: [4.2674] WalkTo:575 487
+Cocos2d: [4.2681] point num:19
+Cocos2d: [4.2681] id:10 totalTIme:3.8
+Cocos2d: [6.4671] listenerId is:11
+Cocos2d: [6.4671] id:11
+Cocos2d: [6.4672] Door
+Cocos2d: [6.4672] id:11 totalTIme:0.2
+Cocos2d: [6.4984] move end~
+Cocos2d: [6.6670] listenerId is:11
+Cocos2d: [6.6670] id:11
+Cocos2d: [6.6670] FindSeat
+Cocos2d: [6.6670] npcId:11
+Cocos2d: [6.6670] WalkTo:485 131
+Cocos2d: [6.6683] point num:17
+Cocos2d: [6.6683] id:11 totalTIme:3.4
+Cocos2d: [8.0671] listenerId is:10
+Cocos2d: [8.0671] id:10
+Cocos2d: [8.0672] Door
+Cocos2d: [8.0672] id:10 totalTIme:0.2
+Cocos2d: [8.0845] move end~
+Cocos2d: [8.2675] listenerId is:10
+Cocos2d: [8.2675] id:10
+Cocos2d: [8.2676] FindSeat
+Cocos2d: [8.2676] npcId:10
+Cocos2d: [8.2676] WalkTo:487 134
+Cocos2d: [8.2691] point num:20
+Cocos2d: [8.2691] id:10 totalTIme:4
+Cocos2d: [10.0678] listenerId is:11
+Cocos2d: [10.0679] id:11
+Cocos2d: [10.0679] SeatRequest
+Cocos2d: [10.0679] id:11 totalTIme:2
+Cocos2d: [10.0679] move end~
+Cocos2d: [10.1678] [INFO] LUA VM MEMORY USED: 2326.53 KB
+Cocos2d: [12.0678] listenerId is:11
+Cocos2d: [12.0678] id:11
+Cocos2d: [12.0679] SeatEating
+Cocos2d: [12.0679] id:11 totalTIme:1
+Cocos2d: [12.2678] listenerId is:10
+Cocos2d: [12.2678] id:10
+Cocos2d: [12.2679] SeatRequest
+Cocos2d: [12.2679] id:10 totalTIme:4
+Cocos2d: [12.2679] move end~
+Cocos2d: [13.0678] listenerId is:11
+Cocos2d: [13.0678] id:11
+Cocos2d: [13.0679] SeatPay
+Cocos2d: [13.0679] id:11 totalTIme:4
+Cocos2d: [16.2677] listenerId is:10
+Cocos2d: [16.2678] id:10
+Cocos2d: [16.2678] SeatEating
+Cocos2d: [16.2678] id:10 totalTIme:1
+Cocos2d: [17.0677] listenerId is:11
+Cocos2d: [17.0677] id:11
+Cocos2d: [17.0677] LeaveSeat
+Cocos2d: [17.0677] npcId:11
+Cocos2d: [17.0678] WalkTo:131 575
+Cocos2d: [17.0697] point num:31
+Cocos2d: [17.0697] id:11 totalTIme:6.2
+Cocos2d: [17.2677] listenerId is:10
+Cocos2d: [17.2677] id:10
+Cocos2d: [17.2677] SeatPay
+Cocos2d: [17.2677] id:10 totalTIme:2
+Cocos2d: [19.2674] listenerId is:10
+Cocos2d: [19.2674] id:10
+Cocos2d: [19.2674] LeaveSeat
+Cocos2d: [19.2674] npcId:10
+Cocos2d: [19.2674] WalkTo:134 575
+Cocos2d: [19.2690] point num:36
+Cocos2d: [19.2690] id:10 totalTIme:7.2
+Cocos2d: [20.1836] [INFO] LUA VM MEMORY USED: 2627.14 KB
+Cocos2d: [23.2673] listenerId is:11
+Cocos2d: [23.2673] id:11
+Cocos2d: [23.2674] Release
+Cocos2d: [23.2845] move end~
+Cocos2d: [26.4678] listenerId is:10
+Cocos2d: [26.4678] id:10
+Cocos2d: [26.4679] Release
+Cocos2d: [26.4680] move end~
+Cocos2d: [30.1840] [INFO] LUA VM MEMORY USED: 2682.71 KB
+Cocos2d: [40.1844] [INFO] LUA VM MEMORY USED: 2682.81 KB

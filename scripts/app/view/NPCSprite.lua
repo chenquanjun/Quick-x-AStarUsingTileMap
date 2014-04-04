@@ -4,17 +4,19 @@ require "app/basic/extern"
 NPCSprite = class("NPCSprite", function()
 	return CCNode:create()
 end)			
-
+--index
 NPCSprite.__index  			= NPCSprite
 
+--public
 NPCSprite.nPreMapId      = -1
 NPCSprite.nTargetMapId   = -1
 NPCSprite.handler        = nil       
 
-local _fileName  		= nil --文件名
-local _sprite  			= nil --精灵
-local _lastActionTag  	= nil --最近动作tag
-local _npcId            = -1  --用来区分不同NPC，默认为-1
+--private
+NPCSprite._fileName  	= nil --文件名
+NPCSprite._sprite  		= nil --精灵
+NPCSprite._lastActionTag  	= nil --最近动作tag
+NPCSprite._npcId            = -1  --用来区分不同NPC，默认为-1
 
 function NPCSprite:create(fileNameFormat, npcId)
 	local pNPCSprite = NPCSprite.new()
@@ -22,20 +24,24 @@ function NPCSprite:create(fileNameFormat, npcId)
 	return pNPCSprite
 end
 
+function NPCSprite:getNPCId()
+    return self._npcId
+end
+
 function NPCSprite:init(fileNameFormat, npcId)
-	_fileName = fileNameFormat --缓存文件名
+	self._fileName = fileNameFormat --缓存文件名
 
-    _npcId = npcId
+    self._npcId = npcId
 
-	_lastActionTag = kActionTagInvalid
+	self._lastActionTag = kActionTagInvalid
 
     self:addAnimCache(fileNameFormat)
 
-	_sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
+	self._sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
 
-    _sprite:setAnchorPoint(ccp(0.5, 0))
+    self._sprite:setAnchorPoint(ccp(0.5, 0))
 
-    self:addChild(_sprite)
+    self:addChild(self._sprite)
 end
 
 function NPCSprite:addAnimCache(fileNameFormat)
@@ -66,9 +72,9 @@ function NPCSprite:addAnimCache(fileNameFormat)
 end
 
 function NPCSprite:stopAnim()
-	if _lastActionTag ~= kActionInvalid then
-    	_sprite:stopActionByTag(_lastActionTag)
-    	_lastActionTag = kActionInvalid
+	if self._lastActionTag ~= kActionInvalid then
+    	self._sprite:stopActionByTag(self._lastActionTag)
+    	self._lastActionTag = kActionInvalid
     end
 end
 
@@ -89,7 +95,7 @@ function NPCSprite:playAnim(startPoint, endPoint)
         actionType = kActionTagLeft
     end
 
-    local lastActionTag = _lastActionTag
+    local lastActionTag = self._lastActionTag
     --相同动作直接返回
     if actionType == lastActionTag then
         -- print("return")
@@ -97,18 +103,18 @@ function NPCSprite:playAnim(startPoint, endPoint)
     end
 
     if lastActionTag ~= kActionInvalid then
-    	_sprite:stopActionByTag(lastActionTag)
+    	self._sprite:stopActionByTag(lastActionTag)
     end
 
-    _lastActionTag = actionType --保存
+    self._lastActionTag = actionType --保存
 
-    local animation = display.getAnimationCache(_fileName..tostring(actionType))
+    local animation = display.getAnimationCache(self._fileName..tostring(actionType))
 
     if animation then
     	local anim = CCAnimate:create(animation)
     	local action = CCRepeatForever:create(anim)
     	action:setTag(actionType)
-    	_sprite:runAction(action)
+    	self._sprite:runAction(action)
  	
     end
 

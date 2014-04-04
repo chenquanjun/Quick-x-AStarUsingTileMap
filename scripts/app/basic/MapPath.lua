@@ -4,12 +4,12 @@ require "app/basic/extern"
 MapPath = class("MapPath", function()
 	return CCNode:create()
 end)			
-
+--index
 MapPath.__index = MapPath
-
-local _startId = -1--开始Id
-local _endId = -1 --结束id
-local _pointArr = nil --坐标点
+--private
+MapPath._startId = -1--开始Id
+MapPath._endId = -1 --结束id
+MapPath._pointArr = nil --坐标点
 
 function MapPath:create(startId, endId, pointArr)
 	local mapPath = MapPath.new()
@@ -18,40 +18,40 @@ function MapPath:create(startId, endId, pointArr)
 end
 
 function MapPath:init(startId, endId, pointArr)
-	_startId = startId
-	_endId = endId
+	self._startId = startId
+	self._endId = endId
 
 	local arr = tolua.cast(pointArr, "CCPointArray")
     assert(pointArr ~= nil, "error type")
 
     local count = arr:count()
 
-    _pointArr = {}
+    self._pointArr = {}
 
     for i = 1, count do
     	local point = arr:get(i - 1)
-    	_pointArr[i] = {}
-    	_pointArr[i].x = point.x
-    	_pointArr[i].y = point.y
+    	self._pointArr[i] = {}
+    	self._pointArr[i].x = point.x
+    	self._pointArr[i].y = point.y
     end
 end
 
 function MapPath:getStartId()
-	return _startId
+	return self._startId
 end
 
 function MapPath:getEndId()
-	return _endId
+	return self._endId
 end
 
 function MapPath:getPointArrCount()
-	return table.getn(_pointArr)
+	return table.getn(self._pointArr)
 end
 
 function MapPath:getPointAtIndex(index)
 	--注意index是从1开始的！
 	assert(index >= 1 and index <= self:getPointArrCount(), "out of range")
-	local pointInArr = _pointArr[index]
+	local pointInArr = self._pointArr[index]
 	local point = ccp(pointInArr.x, pointInArr.y)
 	return point
 end
