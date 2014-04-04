@@ -38,9 +38,9 @@ NPCInfo = {}
 --index
 NPCInfo.__index = NPCInfo
 --public
-NPCInfo.elfId = -1
-NPCInfo.modelId = -1
-NPCInfo.mapId = -1
+NPCInfo.elfId    = -1
+NPCInfo.modelId  = -1
+NPCInfo.mapId    = -1
 NPCInfo.curState = NPCStateType.Invalid    --NPC主状态
 NPCInfo.curFeel  = NPCFeelType.Invalid     --NPC感情类型
 

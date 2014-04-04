@@ -9,18 +9,15 @@ end)
     ---Init Value-----
     ---------------------]]
 
-ManageView.__index = ManageView
+ManageView.__index      = ManageView
 
-ManageView._delegate = nil --view delegate
-ManageView._mapInfo = nil
-
-ManageView._npcMap = nil    --存放elfId和npcSprite的对应字典
-ManageView._playerMap = nil --存放playerId和精灵的对应字典
-
-ManageView._npcLayer = nil --存放NPC的layer
+ManageView._delegate    = nil --view delegate
+ManageView._mapInfo     = nil
+ManageView._npcMap      = nil    --存放elfId和npcSprite的对应字典
+ManageView._playerMap   = nil --存放playerId和精灵的对应字典
+ManageView._npcLayer    = nil --存放NPC的layer
 ManageView._playerLayer = nil
-
-ManageView._scheduler = nil
+ManageView._scheduler   = nil
 
 --[[-------------------
     ---Init Method-----
@@ -159,7 +156,7 @@ function ManageView:MD_addNPC(data)
 
     local npcSprite = NPCSprite:create(fileName, elfId)
 
-    npcSprite.nPreMapId = mapId
+    npcSprite.nPreMapId    = mapId
     npcSprite.nTargetMapId = mapId
 
     npcSprite:setPosition(startPoint)

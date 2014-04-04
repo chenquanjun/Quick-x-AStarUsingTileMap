@@ -14,19 +14,13 @@ TimerControl = class("TimerControl", function()
 return CCNode:create()
 end)
 
-TimerControl.__index = TimerControl
-
-TimerControl._delegate = nil
-
-TimerControl._timerEvent = TimerEvent.Invalid --时间控制器状态
-
-TimerControl._nTimePast = 0 --流逝时间
-
-TimerControl._timerInterval  =0.05 --每0.1秒执行事件
-
-TimerControl._timerActionTag = 99 
-
-TimerControl._lstIdsTimerKey = nil --以结束时间为key保存listenerId的vec
+TimerControl.__index            = TimerControl
+TimerControl._delegate          = nil
+TimerControl._timerEvent        = TimerEvent.Invalid --时间控制器状态
+TimerControl._nTimePast         = 0 --流逝时间
+TimerControl._timerInterval     = 0.05 --每0.1秒执行事件
+TimerControl._timerActionTag    = 99 
+TimerControl._lstIdsTimerKey    = nil --以结束时间为key保存listenerId的vec
 TimerControl._timerUnitLstIdKey = nil --以listenerId为key保存TimerUnit对象
 
 --[[-------------------

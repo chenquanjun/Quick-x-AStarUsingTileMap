@@ -13,12 +13,12 @@ kMapDataThing     = 11 --物体
 kMapDataServe     = 12 --服务位置
 kMapDataProduct   = 13 --产品位置
 
-kActionTagInvalid     = 0 --默认
-kActionTagDown       = 1 --下
-kActionTagLeft       = 2 --左
-kActionTagRight      = 3 --右
-kActionTagUp         = 4 --上
-kActionTagMove       = 99
+kActionTagInvalid = 0 --默认
+kActionTagDown    = 1 --下
+kActionTagLeft    = 2 --左
+kActionTagRight   = 3 --右
+kActionTagUp      = 4 --上
+kActionTagMove    = 99
 
 kMapKeyOffset     = 100000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
 
@@ -85,11 +85,11 @@ function MapInfo:init(fileName)
 	            break
 	        end
 
-	        local key = "x"
-	        local x = (tolua.cast(dict:objectForKey(key), "CCString")):intValue() / pointWidth
-	        key = "y"
-	        local y = (tolua.cast(dict:objectForKey(key), "CCString")):intValue() / pointHeight
-	        key = "objectid"
+	        local key      = "x"
+	        local x        = (tolua.cast(dict:objectForKey(key), "CCString")):intValue() / pointWidth
+	        key            = "y"
+	        local y        = (tolua.cast(dict:objectForKey(key), "CCString")):intValue() / pointHeight
+	        key            = "objectid"
 	        local objectId = (tolua.cast(dict:objectForKey(key), "CCString")):intValue()
 
 	        assert(objectId ~= kMapDataInvalid, "object id not set")

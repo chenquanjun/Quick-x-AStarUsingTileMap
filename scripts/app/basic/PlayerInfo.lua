@@ -2,9 +2,9 @@ PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo
 --public
-PlayerInfo.elfId = -1
+PlayerInfo.elfId   = -1
 PlayerInfo.modelId = -1
-PlayerInfo.mapId = -1
+PlayerInfo.mapId   = -1
 
 function PlayerInfo:create()
 	local ret = {}

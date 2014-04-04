@@ -7,9 +7,9 @@ end)
 --index
 MapPath.__index = MapPath
 --private
-MapPath._startId = -1--开始Id
-MapPath._endId = -1 --结束id
-MapPath._pointArr = nil --坐标点
+MapPath._startId  	= -1--开始Id
+MapPath._endId  	= -1 --结束id
+MapPath._pointArr  	= nil --坐标点
 
 function MapPath:create(startId, endId, pointArr)
 	local mapPath = MapPath.new()

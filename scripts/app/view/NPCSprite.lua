@@ -13,10 +13,10 @@ NPCSprite.nTargetMapId   = -1
 NPCSprite.handler        = nil       
 
 --private
-NPCSprite._fileName  	= nil --文件名
-NPCSprite._sprite  		= nil --精灵
-NPCSprite._lastActionTag  	= nil --最近动作tag
-NPCSprite._elfId            = -1  --用来区分不同NPC，默认为-1
+NPCSprite._fileName      = nil --文件名
+NPCSprite._sprite        = nil --精灵
+NPCSprite._lastActionTag = nil --最近动作tag
+NPCSprite._elfId         = -1  --用来区分不同NPC，默认为-1
 
 function NPCSprite:create(fileNameFormat, elfId)
 	local pNPCSprite = NPCSprite.new()

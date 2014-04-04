@@ -21,11 +21,11 @@ end)
 
 ManageController.__index = ManageController
 
-ManageController._view = nil
-ManageController._model = nil
-ManageController._viewDelegate = nil
+ManageController._view          = nil
+ManageController._model         = nil
+ManageController._viewDelegate  = nil
 ManageController._modelDelegate = nil
-ManageController._mapInfo = nil
+ManageController._mapInfo       = nil
 
 --[[-------------------
 	---Init Method-----
@@ -77,7 +77,12 @@ function ManageController:init()
 
 	self._model:setMapIdMap(mapIdMap)
 
-	-- self._view:setStartMapId(mapIdMap[kMapDataStart])
+	do --初始化按钮
+
+		
+		
+	end
+
 end
 
 function ManageController:onEnter()

@@ -156,6 +156,12 @@ function ManageModel:onRelease()
 	self._seatMap = nil
 	self._waitSeatMap = nil
 	self._doorMap = nil
+
+	self._oneMapIdMap    = nil
+
+	self._npcInfoMap  	= nil
+	self._playerInfoMap  = nil
+
 end
 
 --[[-------------------
@@ -575,9 +581,21 @@ function ManageModel:npcFeelOnPay(npcInfo, isWaitSeat)
 end
 
 
---[[-------------------
+--[[---------------------
 	---Public method-----
-	---------------------]]
+	----V->C->M----------]]
+--点击座位事件
+function ManageModel:onSeatBtn(mapId)
+	print("on seat btn:"..mapId)
+end
+--点击外卖座位事件
+function ManageModel:onWaitSeatBtn(mapId)
+	print("on seat btn:"..mapId)
+end
+--点击食物事件
+function ManageModel:onFoodBtn(mapId)
+	print("on seat btn:"..mapId)
+end
 
 
 --[[-------------------
