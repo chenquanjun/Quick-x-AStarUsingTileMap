@@ -37,6 +37,12 @@ function ManageModelDelegate:moveNPC(elfId, mapId)
 	return totalTime
 end
 
+--移动player
+function ManageModelDelegate:movePlayer(elfId, mapId)	
+	local totalTime = self._refer:MD_movePlayer(elfId, mapId)
+	return totalTime
+end
+
 function ManageModelDelegate:removeNPC(elfId)
 	self._refer:MD_removeNPC(elfId)
 end

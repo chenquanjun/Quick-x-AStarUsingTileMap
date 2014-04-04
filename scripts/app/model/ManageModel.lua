@@ -587,14 +587,29 @@ end
 --点击座位事件
 function ManageModel:onSeatBtn(mapId)
 	print("on seat btn:"..mapId)
+	--这里应该按照地图对应的座位/位置发生的事件派发给对应的player，然后等待回调
+
+	local testElfId = 1
+
+	local totalTime = self._delegate:movePlayer(testElfId, mapId)
+
+	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
 end
 --点击外卖座位事件
 function ManageModel:onWaitSeatBtn(mapId)
-	print("on seat btn:"..mapId)
+	print("on wait seat btn:"..mapId)
+
+	local testElfId = 2
+
+	local totalTime = self._delegate:movePlayer(2, mapId)
+
+	self._timer:addTimerListener(2, totalTime) --加入时间控制
 end
 --点击食物事件
-function ManageModel:onFoodBtn(mapId)
-	print("on seat btn:"..mapId)
+function ManageModel:onProductBtn(mapId)
+	print("on product btn:"..mapId)
+
+	local totalTime = self._delegate:movePlayer(1, mapId)
 end
 
 
@@ -608,6 +623,20 @@ function ManageModel:TD_onTimOver(listenerId)
 	if npcInfo then --回调
 		--print("id:"..npcInfo.elfId)
 		self:npcState(npcInfo)
+
+		return
+	end
+
+	local playerInfo = self._playerInfoMap[listenerId]
+
+	if playerInfo then
+		--test
+		if playerInfo.elfId == 1 then
+			--返回位置
+			self._delegate:movePlayer(1, self._oneMapIdMap[kMapDataCook])
+		else
+			self._delegate:movePlayer(2, self._oneMapIdMap[kMapDataCashier])
+		end
 	end
 	
 end

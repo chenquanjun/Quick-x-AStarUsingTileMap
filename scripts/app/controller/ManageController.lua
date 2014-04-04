@@ -67,7 +67,8 @@ function ManageController:init()
 	local seatVec = self._mapInfo:getMapIdVecOfType(kMapDataSeat)
 	local waitSeatVec = self._mapInfo:getMapIdVecOfType(kMapDataWaitSeat)
 	local doorVec = self._mapInfo:getMapIdVecOfType(kMapDataDoor)
-	-- local startVec = self._mapInfo:getMapIdVecOfType(kMapDataStart)
+	local productVec = self._mapInfo:getMapIdVecOfType(kMapDataProduct)
+
 
 	self._model:setMapData(seatVec, waitSeatVec, doorVec)
 
@@ -78,9 +79,17 @@ function ManageController:init()
 	self._model:setMapIdMap(mapIdMap)
 
 	do --初始化按钮
+		--座位按钮回调
+		self._view:initBtn(seatVec, function(mapId)  
+					self._model:onSeatBtn(mapId)
+			end)
+		self._view:initBtn(waitSeatVec, function(mapId)  
+					self._model:onWaitSeatBtn(mapId)
+			end)
 
-		
-		
+		self._view:initBtn(productVec, function(mapId)  
+					self._model:onProductBtn(mapId)
+			end)
 	end
 
 end

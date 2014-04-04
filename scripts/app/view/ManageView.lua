@@ -17,6 +17,7 @@ ManageView._npcMap      = nil    --存放elfId和npcSprite的对应字典
 ManageView._playerMap   = nil --存放playerId和精灵的对应字典
 ManageView._npcLayer    = nil --存放NPC的layer
 ManageView._playerLayer = nil
+ManageView._btnLayer    = nil
 ManageView._scheduler   = nil
 
 --[[-------------------
@@ -31,6 +32,44 @@ end
 
 function ManageView:setDelegate(delegate)
     self._delegate = delegate
+end
+
+function ManageView:initBtn(mapIdVec, callBack)
+    local size = self._mapInfo._mapUnit
+    local rect = CCRect(0, 0, size.width, size.height)
+    for i,v in ipairs(mapIdVec) do
+        local sprite = CCSprite:createWithTexture(nil, rect)
+        local point = self._mapInfo:convertIdToPointMid(v) --mapId转换成中点
+        sprite:setPosition(point)
+        sprite:setTouchEnabled(true)
+        sprite:setOpacity(0)
+        self._btnLayer:addChild(sprite)
+
+        sprite:addTouchEventListener(function(event, x, y)
+
+            if event == "began" then
+                return true -- catch touch event, stop event dispatching
+            end
+
+            local touchInSprite = sprite:getCascadeBoundingBox():containsPoint(CCPoint(x, y))
+            if event == "moved" then
+                if touchInSprite then
+
+                else
+
+                end
+            elseif event == "ended" then
+                if touchInSprite then 
+                    callBack(v) --回调
+                end
+
+            else
+
+            end
+        end)
+
+        
+    end
 end
 
 function ManageView:init()
@@ -79,6 +118,12 @@ function ManageView:init()
         local playerLayer = display.newLayer()
         self:addChild(playerLayer)
         self._playerLayer = playerLayer 
+    end
+
+    do  --btnLayer
+        local btnLayer = display.newLayer()
+        self:addChild(btnLayer)
+        self._btnLayer = btnLayer 
     end
 end
 
@@ -181,12 +226,26 @@ function ManageView:MD_moveNPC(elfId, mapId)
         npcSprite.nPreMapId = newPreMapId  
         npcSprite.nTargetMapId = newTargetMapId
 
-        -- totalTime = self:walkTo(npcSprite, 0.3, newPreMapId, newTargetMapId)
-
-        --test
         totalTime = self:easeWalkTo(npcSprite, 0.1, newPreMapId, newTargetMapId)
+    end
 
+    return totalTime
+end
 
+function ManageView:MD_movePlayer(elfId, mapId)
+    local playerSprite = self._playerMap[elfId]
+
+    local totalTime = -1
+
+    if playerSprite then
+        local point = ccp(playerSprite:getPositionX(), playerSprite:getPositionY())
+        local newPreMapId = self._mapInfo:convertPointToId(point) --转换成当前id
+        local newTargetMapId = mapId
+        --更新值
+        playerSprite.nPreMapId = newPreMapId
+        playerSprite.nTargetMapId = newTargetMapId
+
+        totalTime = self:easeWalkTo(playerSprite, 0.05, newPreMapId, newTargetMapId)
     end
 
     return totalTime
@@ -218,9 +277,6 @@ function ManageView:setMapInfo(mapInfo)
 end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
---废弃方法
-
-
 function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
         -- print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
