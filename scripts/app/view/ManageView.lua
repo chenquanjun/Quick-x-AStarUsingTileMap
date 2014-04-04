@@ -19,7 +19,7 @@ ManageView._npcMap = nil    --存放npcId和npcSprite的对应字典
 
 ManageView._npcLayer = nil --存放NPC的layer
 
-ManageView._timerInterval = -1
+-- ManageView._timerInterval = -1 --废弃
 
 ManageView._scheduler = nil
 
@@ -101,15 +101,16 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
-function ManageView:MD_setTimerInterval(interval)
-    --view的动作调用间隔需要和timerControl的间隔一致
-    --经测试 0.05以上的精度较为理想，小于0.05的话执行间隔不确定
-    --具体视乎后面的逻辑设定
-    print("interval:"..interval)
-    assert(interval >= 0.05, "best interval is larger than 0.05")
+-- 废弃方法
+-- function ManageView:MD_setTimerInterval(interval)
+--     --view的动作调用间隔需要和timerControl的间隔一致
+--     --经测试 0.05以上的精度较为理想，小于0.05的话执行间隔不确定
+--     --具体视乎后面的逻辑设定
+--     print("interval:"..interval)
+--     assert(interval >= 0.05, "best interval is larger than 0.05")
     
-    self._timerInterval = interval
-end
+--     self._timerInterval = interval
+-- end
 
 function ManageView:MD_showSprite()
     -- self:walkTo(_testSprite, 0.3, 145, 191)

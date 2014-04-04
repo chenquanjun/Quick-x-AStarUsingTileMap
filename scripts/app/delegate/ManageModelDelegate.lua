@@ -28,10 +28,10 @@ function ManageModelDelegate:showSprite()
 	end
 end
 
---设置时间间隔
-function ManageModelDelegate:setTimerInterval(interval)
-	self._refer:MD_setTimerInterval(interval)
-end
+--设置时间间隔 废弃
+-- function ManageModelDelegate:setTimerInterval(interval)
+-- 	self._refer:MD_setTimerInterval(interval)
+-- end
 
 --添加NPC
 function ManageModelDelegate:addNPC(data)

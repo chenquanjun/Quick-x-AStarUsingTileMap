@@ -104,17 +104,18 @@ function ManageModel:onEnter()
 
 		timerControl:setDelegate(timerDelegate)
 
-		self._delegate:setTimerInterval(timerControl:getTimerInterval())
+		-- self._delegate:setTimerInterval(timerControl:getTimerInterval())
 	end
-
+	--test
 	local function performWithDelay(node, callback, delay)
-    local delay = CCDelayTime:create(delay)
-    local callfunc = CCCallFunc:create(callback)
-    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
-    node:runAction(sequence)
-    return sequence
+	    local delay = CCDelayTime:create(delay)
+	    local callfunc = CCCallFunc:create(callback)
+	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+	    node:runAction(sequence)
+	    return sequence
 	end
 
+	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
 			for i=1,20 do
@@ -125,8 +126,8 @@ function ManageModel:onEnter()
 	end
 
 
-	addNPCTest()
-	self:addNPC()
+	-- addNPCTest() --批量测试
+	self:addNPC() --单个测试
 
 
 	self._timer:startTimer()
@@ -189,9 +190,9 @@ function ManageModel:addNPC()
 end
 
 function ManageModel:npcState(npcInfo)
-	local npcId = npcInfo.npcId --npcId
-	local totalTime = -1 --回调参数
-	local mapId = -1 --npc的目标mapId
+	local npcId = npcInfo.npcId --npcId --NPC的id，具有唯一性
+	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
+	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
 	--switch....
 	local switchState = {
 		--释放
@@ -289,9 +290,8 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.SeatRequest] 				= function()
 			--print("SeatRequest")
 			--进入feel状态切换
-			--test,此处应该是进入另外一个方法 未完成
-			totalTime = math.random(2, 4)
-			npcInfo.curState = NPCStateType.SeatEating
+			local isWaitSeat = false  --false 表示非外卖座位
+			totalTime = self:npcFeelOnRequest(npcInfo, isWaitSeat)
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
@@ -305,9 +305,8 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.SeatPay] 					= function()
 			--print("SeatPay")
 			--进入feel状态切换
-			--test 未完成
-			totalTime = math.random(2, 4)
-			npcInfo.curState = NPCStateType.LeaveSeat
+			local isWaitSeat = false
+			totalTime = self:npcFeelOnPay(npcInfo, isWaitSeat)
 		end,
 		--支付成功
 		[NPCStateType.SeatPaySuccess]			= function()
@@ -361,17 +360,15 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.WaitSeatRequest] 			= function()
 		    --print("WaitSeatRequest")
 			--进入feel状态切换
-			--test,此处应该是进入另外一个方法 未完成
-			totalTime = math.random(2, 4)
-			npcInfo.curState = NPCStateType.WaitSeatIdle
+			local isWaitSeat = true  --true 表示外卖座位
+			totalTime = self:npcFeelOnRequest(npcInfo, isWaitSeat)
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
 		    --print("WaitSeatPay")
 			--进入feel状态切换
-			--test 未完成
-			totalTime = math.random(2, 4)
-			npcInfo.curState = NPCStateType.LeaveWaitSeat
+			local isWaitSeat = true
+			totalTime = self:npcFeelOnPay(npcInfo, isWaitSeat)
 		end,
 		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
@@ -398,35 +395,138 @@ function ManageModel:npcState(npcInfo)
 
 			npcInfo.curState = NPCStateType.Release --进入销毁状态
 		end,
-	}
+	} --switch end
 
 	local state = npcInfo.curState --npc通用状态
 	local fSwitch = switchState[state] --switch 方法
 
+	--存在switch（必然存在）
 	if fSwitch then
-		local result = fSwitch() --执行switch的代码
+		--执行switch的代码，默认无返回值，若返回true则说明需要释放此NPC
+		local result = fSwitch() 
 		if result then
 			--已经释放对象进入此代码段
 			self._delegate:removeNPC(npcId)
 			return
 		end
 	else
-		error("error state")
+		error("error state") --没有枚举
 		return
 	end
 
 	if mapId ~= -1 then
 		--说明在switch中改变了值，调用viewdelegate, view会返回寻路花费的时间
-		--print("npcId:"..npcId)
 		totalTime = self._delegate:moveNPC(npcId, mapId)
 		npcInfo.mapId = mapId --保存目标位置
 	end
 
-	--注意，totalTime为0导致死循环
+	--注意，对于同一个id，小心totalTime总为为0导致死循环，因为0的时候直接回调此方法
 	--print("id:"..npcId.." totalTIme:"..totalTime)
 	self._timer:addTimerListener(npcId, totalTime) --加入时间控制
 
+end
 
+--请求状态下状态转换
+function ManageModel:npcFeelOnRequest(npcInfo, isWaitSeat)
+	local feelType = npcInfo.curFeel
+	local totalTime = 0
+
+	local switchType = {
+		--准备点菜
+		[NPCFeelType.Prepare]					= function()
+			print("prepare")
+			totalTime = math.random(1, 3)
+			npcInfo.curFeel = NPCFeelType.Normal
+		end,
+		--点菜完毕，进入普通等待
+		[NPCFeelType.Normal]					= function()
+			print("Normal")
+			totalTime = math.random(1, 3)
+			npcInfo.curFeel = NPCFeelType.Anger
+		end,
+		--普通等待完毕，进入愤怒状态
+		[NPCFeelType.Anger]						= function()
+			print("Anger")
+			totalTime = math.random(1, 3)
+			npcInfo.curFeel = NPCFeelType.Cancel
+		end,
+		--不理客人,客人要走啦
+		[NPCFeelType.Cancel] 					= function()
+			print("Cancel")
+			totalTime = 0.8 --预留播放动画时间
+
+			npcInfo.curFeel = NPCFeelType.Invalid
+			if isWaitSeat then
+				--外卖座位
+				npcInfo.curState = NPCStateType.LeaveWaitSeat
+
+			else
+				--普通座位
+				npcInfo.curState = NPCStateType.LeaveSeat
+			end
+		end,
+	} --switch end
+
+	local fSwitch = switchType[feelType] --switch 方法
+
+	--存在switch（必然存在）
+	if fSwitch then
+		local result = fSwitch() --执行function
+	else
+		error("error state") --没有枚举
+		return
+	end
+
+	return totalTime
+end
+
+--支付状态下状态转换
+function ManageModel:npcFeelOnPay(npcInfo, isWaitSeat)
+	local feelType = npcInfo.curFeel
+	local totalTime = 0
+
+	local switchType = {
+		--吃完饭，普通等待埋单
+		[NPCFeelType.Normal]					= function()
+			totalTime = math.random(1, 3)
+			npcInfo.curFeel = NPCFeelType.Anger
+		end,
+		--普通等待完毕，进入愤怒状态
+		[NPCFeelType.Anger]						= function()
+			totalTime = math.random(1, 3)
+			npcInfo.curFeel = NPCFeelType.Cancel
+		end,
+		--不理客人,客人要走啦
+		[NPCFeelType.Cancel] 					= function()
+			totalTime = 0.8 --预留播放动画时间
+
+			npcInfo.curFeel = NPCFeelType.Invalid
+			if isWaitSeat then
+				--外卖座位
+				npcInfo.curState = NPCStateType.LeaveWaitSeat
+
+			else
+				--普通座位
+				npcInfo.curState = NPCStateType.LeaveSeat
+			end
+			
+		end,
+		[NPCFeelType.Prepare]					= function()
+			error("error feel") --支付状态下无准备阶段
+		end,
+	} --switch end
+
+	local fSwitch = switchType[feelType] --switch 方法
+
+	--存在switch（必然存在）
+	if fSwitch then
+		local result = fSwitch() --执行function
+	else
+		error("error state") --没有枚举
+		return
+	end
+
+	return totalTime
 end
 
 
