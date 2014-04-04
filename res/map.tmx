@@ -5,7 +5,7 @@
  </tileset>
  <layer name="background" width="36" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA92TwQrCMAyGc+7Fswrb1MOmwtb3fzorpPhT0m0NzSgePgp/yvqRZAMRDY3RNcK/+pwqovFJvzFnTkuf0u9az+v7hsucUn+O8LHsTc3+SD6a+Uafmv8H+pwDF+YKdSk/wucWuDMPqEt56uMSSrKcTw/v9lCXcslnZPDticHMM1s+z8CLeUNdyi19tDNGHwta2ee1vd2zzx33fmEcZCPMK2Y+uZfz0e7zms9Ev53Ce562fbT7HN9BSrLa+9wSH2HaSdpACwAA
+   H4sIAAAAAAAAA92TwQrCMAyGe7UeBNGDCtvUw6aC9v2fzgxS/C3ptLEdxcPH4G9JPtKsM8Z0ldFUwr/6rDKi8Qlr3CPfkj6pdUu/19jDRr7SfObwKTmbnPORfDTv631y/h/osyP2zAHOpXwOnyNxYs5wLuWhjw1IyWI+LfRt4VzKJZ+ewd4Dg5ljPvlciCtzg3MpL+mjfWP0+YVYjVr2eWpvv9nnhmf/YCxkPbyXz1xwb6y3IdbEFvpq93nKZzCvncJ7zrz7LLn2Avpq99n3QVKy3PtcE0+JCNdJQAsAAA==
   </data>
  </layer>
  <objectgroup name="object" width="36" height="20">
@@ -244,11 +244,6 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="r" x="544" y="448" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
   <object name="r" x="576" y="416" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -294,11 +289,6 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="r" x="576" y="512" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
   <object name="r" x="544" y="480" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -314,17 +304,7 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="r" x="640" y="512" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
   <object name="r" x="608" y="480" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="608" y="512" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -364,27 +344,12 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="r" x="576" y="544" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
   <object name="r" x="640" y="576" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="r" x="608" y="544" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
   <object name="r" x="608" y="576" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="640" y="544" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -3659,6 +3624,41 @@
     <property name="objectid" value="12"/>
     <property name="seatx" value="14"/>
     <property name="seaty" value="3"/>
+   </properties>
+  </object>
+  <object name="things" x="576" y="512" width="32" height="32">
+   <properties>
+    <property name="objectid" value="11"/>
+   </properties>
+  </object>
+  <object name="things" x="608" y="512" width="32" height="32">
+   <properties>
+    <property name="objectid" value="11"/>
+   </properties>
+  </object>
+  <object name="things" x="640" y="512" width="32" height="32">
+   <properties>
+    <property name="objectid" value="11"/>
+   </properties>
+  </object>
+  <object name="things" x="576" y="544" width="32" height="32">
+   <properties>
+    <property name="objectid" value="11"/>
+   </properties>
+  </object>
+  <object name="things" x="640" y="544" width="32" height="32">
+   <properties>
+    <property name="objectid" value="11"/>
+   </properties>
+  </object>
+  <object name="cook" x="544" y="448" width="32" height="32">
+   <properties>
+    <property name="objectid" value="2"/>
+   </properties>
+  </object>
+  <object name="cashier" x="608" y="544" width="32" height="32">
+   <properties>
+    <property name="objectid" value="3"/>
    </properties>
   </object>
  </objectgroup>

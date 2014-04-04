@@ -14,12 +14,9 @@ ManageView.__index = ManageView
 ManageView._delegate = nil --view delegate
 ManageView._mapInfo = nil
 
-ManageView._startMapId = -1
 ManageView._npcMap = nil    --存放npcId和npcSprite的对应字典
 
 ManageView._npcLayer = nil --存放NPC的layer
-
--- ManageView._timerInterval = -1 --废弃
 
 ManageView._scheduler = nil
 
@@ -35,11 +32,6 @@ end
 
 function ManageView:setDelegate(delegate)
     self._delegate = delegate
-end
-
-function ManageView:setStartMapId(mapId)
-    print("startMapId:"..mapId)
-    self._startMapId = mapId
 end
 
 function ManageView:init()
@@ -101,30 +93,32 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
--- 废弃方法
--- function ManageView:MD_setTimerInterval(interval)
---     --view的动作调用间隔需要和timerControl的间隔一致
---     --经测试 0.05以上的精度较为理想，小于0.05的话执行间隔不确定
---     --具体视乎后面的逻辑设定
---     print("interval:"..interval)
---     assert(interval >= 0.05, "best interval is larger than 0.05")
-    
---     self._timerInterval = interval
--- end
+function ManageView:MD_addPlayer(data)
+    local playerId = data.playerId
 
-function ManageView:MD_showSprite()
-    -- self:walkTo(_testSprite, 0.3, 145, 191)
 end
 
 function ManageView:MD_addNPC(data)
     local npcId = data.npcId
     local npcType = data.npcType
-    
-    local startMapId = self._startMapId
+
+    local startMapId = data.npcMapId
 
     local startPoint = self._mapInfo:convertIdToPointMid(startMapId)
 
-    npcSprite = NPCSprite:create("player1_%i_%i.png", npcId)
+    local fileName = "player1_%i_%i.png"
+
+    if npcType == 1 then
+        fileName = "player1_%i_%i.png"
+    elseif npcType == 2 then
+        fileName = "player2_%i_%i.png"
+    elseif npcType == 3 then
+        fileName = "player3_%i_%i.png"
+    elseif npcType == 4 then
+        fileName = "player4_%i_%i.png"
+    end
+
+    npcSprite = NPCSprite:create(fileName, npcId)
 
     npcSprite.nPreMapId = startMapId
     npcSprite.nTargetMapId = startMapId
@@ -165,16 +159,17 @@ end
 function ManageView:MD_removeNPC(npcId)
     local npcSprite = self._npcMap[npcId]
     --因为精灵移动到指定位置的时候，model刚好回调，所以稍微延迟一帧来删除
-    local function delayRemoveSelf()
-        local delay = CCDelayTime:create(0.05)
-        local removeSelf = CCRemoveSelf:create(true)
-        local sequence = CCSequence:createWithTwoActions(delay, removeSelf)
-        npcSprite:runAction(sequence)
-    end
-
+    -- local function delayRemoveSelf()
+    --     local delay = CCDelayTime:create(0.05)
+    --     local removeSelf = CCRemoveSelf:create(true)
+    --     local sequence = CCSequence:createWithTwoActions(delay, removeSelf)
+    --     npcSprite:runAction(sequence)
+    -- end
     if npcSprite then
         self._npcMap[npcId] = nil
-        delayRemoveSelf()
+        self._scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
+        npcSprite:removeFromParentAndCleanup(true)
+        -- delayRemoveSelf()
     end
 end
 

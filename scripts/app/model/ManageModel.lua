@@ -14,23 +14,26 @@ end)
 --index
 ManageModel.__index = ManageModel
 --private
-ManageModel._delegate = nil --model delegate
-ManageModel._timer = nil
-ManageModel._timerDelegate = nil
+ManageModel._delegate  		= nil --model delegate
+ManageModel._timer  		= nil
+ManageModel._timerDelegate  = nil
 
-ManageModel._seatVector = nil --座位数组，保存座位的mapId
+ManageModel._seatVector  	= nil --座位数组，保存座位的mapId
 ManageModel._waitSeatVector = nil 
-ManageModel._doorVector = nil
+ManageModel._doorVector  	= nil
 
-ManageModel._seatMap = nil  --座位字典
-ManageModel._waitSeatMap = nil --等待座位字典
-ManageModel._doorMap = nil --门口字典
+ManageModel._seatMap  		= nil  --座位字典
+ManageModel._waitSeatMap  	= nil --等待座位字典
+ManageModel._doorMap  		= nil --门口字典
 
-ManageModel._startMapId = -1
+ManageModel._oneMapIdMap    = nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
+-- ManageModel._oneMapIdMap[kMapDataStart]  	= -1 --NPC开始位置
+-- ManageModel._cookMapId  	= -1 --厨师位置
+-- ManageModel._cashierMapId  	= -1 --收银员位置
 
-ManageModel._npcInfoMap = nil
+ManageModel._npcInfoMap  	= nil
 
-ManageModel._testNPCIdFlag = 10
+ManageModel._testNPCIdFlag  = 10
 
 --[[-------------------
 	---Init Method-----
@@ -55,8 +58,8 @@ function ManageModel:setDelegate(delegate)
 	self._delegate = delegate
 end
 
-function ManageModel:setStartMapId(mapId)
-	self._startMapId = mapId
+function ManageModel:setMapIdMap(mapIdMap)
+	self._oneMapIdMap = mapIdMap
 end
 
 function ManageModel:setMapData(seatVec, waitSeatVec, doorVec)
@@ -118,7 +121,7 @@ function ManageModel:onEnter()
 	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
-			for i=1,20 do
+			for i=1,6 do
 			self:addNPC()
 			end
 			addNPCTest()
@@ -126,8 +129,8 @@ function ManageModel:onEnter()
 	end
 
 
-	-- addNPCTest() --批量测试
-	self:addNPC() --单个测试
+	addNPCTest() --批量测试
+	-- self:addNPC() --单个测试
 
 
 	self._timer:startTimer()
@@ -168,7 +171,7 @@ function ManageModel:addNPC()
 		local npcInfo = NPCInfo:create()
 		npcInfo.curState = NPCStateType.Start --开始位置
 		npcInfo.curFeel = NPCFeelType.Invalid
-		npcInfo.mapId = self._startMapId
+		npcInfo.mapId = self._oneMapIdMap[kMapDataStart]
 		npcInfo.npcId = npcId
 		self._npcInfoMap[npcId] = npcInfo
 
@@ -180,7 +183,8 @@ function ManageModel:addNPC()
 	do --通知view添加npc
 		local data = {}
 		data.npcId = npcId
-		data.npcType = 1
+		data.npcType = math.random(2, 4)
+		data.npcMapId = self._oneMapIdMap[kMapDataStart]
 		self._delegate:addNPC(data)
 	end
 
@@ -200,7 +204,7 @@ function ManageModel:npcState(npcInfo)
 			-- print("Release")
 			self._npcInfoMap[npcId] = nil --释放
 
-			return true --返回nil
+			return true --返回,注意此处非npcState方法的返回
 		end,
 		--开始位置
 		[NPCStateType.Start]					= function()
@@ -246,7 +250,7 @@ function ManageModel:npcState(npcInfo)
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
 			--print("LeaveDoor")
-			mapId = self._startMapId
+			mapId = self._oneMapIdMap[kMapDataStart]
 			npcInfo.curState = NPCStateType.Start --开始位置
 
 			--出现此错误因为npc的mapId没有正确设置
@@ -321,7 +325,7 @@ function ManageModel:npcState(npcInfo)
 			--离开座位之后回到开始位置然后kill掉?
 			assert(self._seatMap[npcInfo.mapId] == npcId, "error")
 			self._seatMap[npcInfo.mapId] = 0 --设置为空
-			mapId = self._startMapId
+			mapId = self._oneMapIdMap[kMapDataStart]
 
 			npcInfo.curState = NPCStateType.Release --进入销毁状态
 		end,
@@ -391,7 +395,7 @@ function ManageModel:npcState(npcInfo)
 			--离开座位之后回到开始位置然后kill掉?
 			assert(self._waitSeatMap[npcInfo.mapId] == npcId, "error")
 			self._waitSeatMap[npcInfo.mapId] = 0 --设置为空
-			mapId = self._startMapId
+			mapId = self._oneMapIdMap[kMapDataStart]
 
 			npcInfo.curState = NPCStateType.Release --进入销毁状态
 		end,
@@ -434,25 +438,25 @@ function ManageModel:npcFeelOnRequest(npcInfo, isWaitSeat)
 	local switchType = {
 		--准备点菜
 		[NPCFeelType.Prepare]					= function()
-			print("prepare")
+			-- print("prepare")
 			totalTime = math.random(1, 3)
 			npcInfo.curFeel = NPCFeelType.Normal
 		end,
 		--点菜完毕，进入普通等待
 		[NPCFeelType.Normal]					= function()
-			print("Normal")
+			-- print("Normal")
 			totalTime = math.random(1, 3)
 			npcInfo.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
-			print("Anger")
+			-- print("Anger")
 			totalTime = math.random(1, 3)
 			npcInfo.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCFeelType.Cancel] 					= function()
-			print("Cancel")
+			-- print("Cancel")
 			totalTime = 0.8 --预留播放动画时间
 
 			npcInfo.curFeel = NPCFeelType.Invalid

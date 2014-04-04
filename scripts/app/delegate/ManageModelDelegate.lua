@@ -18,20 +18,10 @@ function ManageModelDelegate:removeRefer()
 	self._refer = nil
 end
 
---test
-function ManageModelDelegate:showSprite()
-	print("show sprite")
-	if self._refer then
-		print("show sprite")
-		--view method
-		self._refer:MD_showSprite()
-	end
+--添加主角
+function ManageModelDelegate:addPlayer(data)
+	self._refer:MD_addPlayer(data)
 end
-
---设置时间间隔 废弃
--- function ManageModelDelegate:setTimerInterval(interval)
--- 	self._refer:MD_setTimerInterval(interval)
--- end
 
 --添加NPC
 function ManageModelDelegate:addNPC(data)

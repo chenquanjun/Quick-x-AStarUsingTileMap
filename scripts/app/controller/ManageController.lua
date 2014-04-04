@@ -64,18 +64,20 @@ function ManageController:init()
     self._view:setMapInfo(self._mapInfo) 
 
     --model需要知道门口，座位，等待座位等的位置, 从1开始！！
-	local seatVec = self._mapInfo:getMapTypeData(kMapDataSeat)
-	local waitSeatVec = self._mapInfo:getMapTypeData(kMapDataWaitSeat)
-	local doorVec = self._mapInfo:getMapTypeData(kMapDataDoor)
-	local startVec = self._mapInfo:getMapTypeData(kMapDataStart)
+	local seatVec = self._mapInfo:getMapIdVecOfType(kMapDataSeat)
+	local waitSeatVec = self._mapInfo:getMapIdVecOfType(kMapDataWaitSeat)
+	local doorVec = self._mapInfo:getMapIdVecOfType(kMapDataDoor)
+	-- local startVec = self._mapInfo:getMapIdVecOfType(kMapDataStart)
 
 	self._model:setMapData(seatVec, waitSeatVec, doorVec)
 
-	--开始位置
-	local startMapId = startVec[1]
+	--开始位置, 厨师位置，收银位置
+	local typeVec = {kMapDataStart, kMapDataCook, kMapDataCashier}
+	local mapIdMap = self._mapInfo:getMapIdOfType(typeVec)
 
-	self._model:setStartMapId(startMapId)
-	self._view:setStartMapId(startMapId)
+	self._model:setMapIdMap(mapIdMap)
+
+	-- self._view:setStartMapId(mapIdMap[kMapDataStart])
 end
 
 function ManageController:onEnter()

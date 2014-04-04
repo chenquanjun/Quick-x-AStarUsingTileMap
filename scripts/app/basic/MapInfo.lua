@@ -3,6 +3,8 @@ require"app/basic/extern"
 kMapDataInvalid   =  0 --无效
 kMapDataBlock     = -1 --石头等障碍物
 kMapDataRoad      =  1 --路径
+kMapDataCook      =  2 --厨师位置
+kMapDataCashier   =  3 --收银员位置
 kMapDataDoor      =  7 --门口
 kMapDataSeat      =  8 --座位
 kMapDataWaitSeat  =  9 --等待座位
@@ -31,7 +33,7 @@ MapInfo._mapMatrix  		   		= nil       --网格，即地图的网格有多少个
 MapInfo._mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
 MapInfo._mapData  				= nil        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
 MapInfo._mapPathCache  			= nil        --地图缓存
-MapInfo._mapTypeDataMap  			= nil 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
+-- MapInfo._mapTypeDataMap  			= nil 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
 
 --构造方法，继承CCNode
 function MapInfo:create(fileName)
@@ -43,7 +45,7 @@ end
 function MapInfo:init(fileName)
 	self._mapData = {}
 	self._mapPathCache = {}
-	self._mapTypeDataMap = {}
+	-- self._mapTypeDataMap = {}
 
 	local map = CCTMXTiledMap:create(fileName)
 
@@ -299,11 +301,34 @@ function MapInfo:findPath(startMapId, endMapId)
 end
 
 -- 地图信息获取方法
+function MapInfo:getMapIdOfType(typeVec)
+	--获取类型的位置
+	--此处传入类型的vec，
+	--当找到与vec中数值相同的类型type时将mapId以type作为key值保存到返回map中
+	local mapIdMap = {}
+	local mapData = self._mapData --地图信息
+	local size = table.getn(mapData)
+	for i = 0, size - 1 do
+		local objectId = mapData[i]
 
-function MapInfo:getMapTypeData(type)
-	local typeData = self._mapTypeDataMap[type]
+		for j,v in ipairs(typeVec) do
+			if objectId == v then
+			mapIdMap[v] = i  
+			print("tpye:"..v.." mapId:"..i)
+			break
 
-	if typeData == nil then
+			end
+		end
+
+	end
+
+	return mapIdMap
+end
+
+function MapInfo:getMapIdVecOfType(type)
+	-- local typeData = self._mapTypeDataMap[type]
+
+	-- if typeData == nil then
 		--typeData为type类型信息的数组
 		--下标从1开始，内容保存mapId
 		typeData = {}
@@ -317,8 +342,8 @@ function MapInfo:getMapTypeData(type)
 				index = index + 1
 			end
 		end
-		self._mapTypeDataMap[type] = typeData
-	end
+		-- self._mapTypeDataMap[type] = typeData
+	-- end
 
 	return typeData
 end
