@@ -19,19 +19,17 @@ ManageModel._timer  		= nil
 ManageModel._timerDelegate  = nil
 
 ManageModel._seatVector  	= nil --座位数组，保存座位的mapId
-ManageModel._waitSeatVector = nil 
-ManageModel._doorVector  	= nil
+ManageModel._waitSeatVector = nil --等待
+ManageModel._doorVector  	= nil --门口
 
-ManageModel._seatMap  		= nil  --座位字典
+ManageModel._seatMap  		= nil --座位字典
 ManageModel._waitSeatMap  	= nil --等待座位字典
 ManageModel._doorMap  		= nil --门口字典
 
 ManageModel._oneMapIdMap    = nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
--- ManageModel._oneMapIdMap[kMapDataStart]  	= -1 --NPC开始位置
--- ManageModel._cookMapId  	= -1 --厨师位置
--- ManageModel._cashierMapId  	= -1 --收银员位置
 
 ManageModel._npcInfoMap  	= nil
+ManageModel._playerInfoMap  = nil
 
 ManageModel._testNPCIdFlag  = 10
 
@@ -51,6 +49,7 @@ function ManageModel:init()
 	self._waitSeatMap = {} --等待座位字典
 	self._doorMap = {} --门口字典
 	self._npcInfoMap = {}
+	self._playerInfoMap = {}
 
 end
 
@@ -162,39 +161,62 @@ end
 	---Private method-----
 	---------------------]]
 
---增加NPC
-function ManageModel:addNPC()
-	
-	local npcId = self._testNPCIdFlag
-
+function ManageModel:addPlayer()
 	do --init 保存到字典
+		local mapId = self._oneMapIdMap[kMapDataCook]
+
 		local npcInfo = NPCInfo:create()
 		npcInfo.curState = NPCStateType.Start --开始位置
 		npcInfo.curFeel = NPCFeelType.Invalid
-		npcInfo.mapId = self._oneMapIdMap[kMapDataStart]
-		npcInfo.npcId = npcId
-		self._npcInfoMap[npcId] = npcInfo
+		npcInfo.mapId = startMapId
+		npcInfo.elfId = elfId
+		self._playerInfoMap[elfId] = npcInfo
 
 		--进入状态控制
 		self:npcState(npcInfo)		 
-
-	end
-
-	do --通知view添加npc
+		
+		--通知view添加npc
 		local data = {}
-		data.npcId = npcId
-		data.npcType = math.random(2, 4)
-		data.npcMapId = self._oneMapIdMap[kMapDataStart]
+		data.elfId = elfId
+		data.modelId = math.random(2, 4)
+		data.npcMapId = startMapId
+		self._delegate:addNPC(data)
+	end
+end
+
+--增加NPC
+function ManageModel:addNPC()
+	
+	local elfId = self._testNPCIdFlag
+
+	do --init 保存到字典
+		local startMapId = self._oneMapIdMap[kMapDataStart]
+
+		local npcInfo = NPCInfo:create()
+		npcInfo.curState = NPCStateType.Start --开始位置
+		npcInfo.curFeel = NPCFeelType.Invalid
+		npcInfo.mapId = startMapId
+		npcInfo.elfId = elfId
+		self._npcInfoMap[elfId] = npcInfo
+
+		--进入状态控制
+		self:npcState(npcInfo)		 
+		
+		--通知view添加npc
+		local data = {}
+		data.elfId = elfId
+		data.modelId = math.random(2, 4)
+		data.npcMapId = startMapId
 		self._delegate:addNPC(data)
 	end
 
-	self._testNPCIdFlag = npcId + 1
+	self._testNPCIdFlag = elfId + 1
 
 
 end
 
 function ManageModel:npcState(npcInfo)
-	local npcId = npcInfo.npcId --npcId --NPC的id，具有唯一性
+	local elfId = npcInfo.elfId --npcId --NPC的id，具有唯一性
 	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
 	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
 	--switch....
@@ -202,7 +224,7 @@ function ManageModel:npcState(npcInfo)
 		--释放
 		[NPCStateType.Release]					= function()
 			-- print("Release")
-			self._npcInfoMap[npcId] = nil --释放
+			self._npcInfoMap[elfId] = nil --释放
 
 			return true --返回,注意此处非npcState方法的返回
 		end,
@@ -225,7 +247,7 @@ function ManageModel:npcState(npcInfo)
 				if seatState == 0 then
 					isFindSeat = true --找到空位
 					mapId = v --保存id
-					self._doorMap[v] = npcId --霸占位置
+					self._doorMap[v] = elfId --霸占位置
 					npcInfo.curState = NPCStateType.Door --状态切换
 					break
 				end
@@ -254,7 +276,7 @@ function ManageModel:npcState(npcInfo)
 			npcInfo.curState = NPCStateType.Start --开始位置
 
 			--出现此错误因为npc的mapId没有正确设置
-			assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+			assert(self._doorMap[npcInfo.mapId] == elfId, "error mapid, not in door") 
 			self._doorMap[npcInfo.mapId] = 0 --清空位置
 
 		end,
@@ -270,12 +292,12 @@ function ManageModel:npcState(npcInfo)
 					isFindSeat = true --找到空位
 					mapId = v --保存id
 
-					assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+					assert(self._doorMap[npcInfo.mapId] == elfId, "error mapid, not in door") 
 					assert(self._seatMap[v] == 0, "error mapid, not in seat") 
 
 					self._doorMap[npcInfo.mapId] = 0 --清空门口位置
 
-					self._seatMap[v] = npcId --霸占座位位置
+					self._seatMap[v] = elfId --霸占座位位置
 					--进入座位请求状态，feel状态进入prepare
 					npcInfo.curState = NPCStateType.SeatRequest --状态切换
 					npcInfo.curFeel = NPCFeelType.Prepare --进入子状态
@@ -323,7 +345,7 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.LeaveSeat] 				= function()
 			--print("LeaveSeat")
 			--离开座位之后回到开始位置然后kill掉?
-			assert(self._seatMap[npcInfo.mapId] == npcId, "error")
+			assert(self._seatMap[npcInfo.mapId] == elfId, "error")
 			self._seatMap[npcInfo.mapId] = 0 --设置为空
 			mapId = self._oneMapIdMap[kMapDataStart]
 
@@ -341,12 +363,12 @@ function ManageModel:npcState(npcInfo)
 					isFindSeat = true --找到空位
 					mapId = v --保存id
 
-					assert(self._doorMap[npcInfo.mapId] == npcId, "error mapid, not in door") 
+					assert(self._doorMap[npcInfo.mapId] == elfId, "error mapid, not in door") 
 					assert(self._waitSeatMap[v] == 0, "error mapid, not in wait seat") 
 
 					self._doorMap[npcInfo.mapId] = 0 --清空门口位置
 
-					self._waitSeatMap[v] = npcId --霸占座位位置
+					self._waitSeatMap[v] = elfId --霸占座位位置
 					--进入座位请求状态，feel状态进入prepare
 					npcInfo.curState = NPCStateType.WaitSeatRequest --状态切换
 					npcInfo.curFeel = NPCFeelType.Prepare --进入子状态
@@ -393,7 +415,7 @@ function ManageModel:npcState(npcInfo)
 		[NPCStateType.LeaveWaitSeat] 			= function()
 		    --print("LeaveWaitSeat")
 			--离开座位之后回到开始位置然后kill掉?
-			assert(self._waitSeatMap[npcInfo.mapId] == npcId, "error")
+			assert(self._waitSeatMap[npcInfo.mapId] == elfId, "error")
 			self._waitSeatMap[npcInfo.mapId] = 0 --设置为空
 			mapId = self._oneMapIdMap[kMapDataStart]
 
@@ -410,7 +432,7 @@ function ManageModel:npcState(npcInfo)
 		local result = fSwitch() 
 		if result then
 			--已经释放对象进入此代码段
-			self._delegate:removeNPC(npcId)
+			self._delegate:removeNPC(elfId)
 			return
 		end
 	else
@@ -420,13 +442,13 @@ function ManageModel:npcState(npcInfo)
 
 	if mapId ~= -1 then
 		--说明在switch中改变了值，调用viewdelegate, view会返回寻路花费的时间
-		totalTime = self._delegate:moveNPC(npcId, mapId)
+		totalTime = self._delegate:moveNPC(elfId, mapId)
 		npcInfo.mapId = mapId --保存目标位置
 	end
 
 	--注意，对于同一个id，小心totalTime总为为0导致死循环，因为0的时候直接回调此方法
 	--print("id:"..npcId.." totalTIme:"..totalTime)
-	self._timer:addTimerListener(npcId, totalTime) --加入时间控制
+	self._timer:addTimerListener(elfId, totalTime) --加入时间控制
 
 end
 

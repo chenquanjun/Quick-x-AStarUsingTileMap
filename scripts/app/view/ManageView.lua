@@ -14,9 +14,11 @@ ManageView.__index = ManageView
 ManageView._delegate = nil --view delegate
 ManageView._mapInfo = nil
 
-ManageView._npcMap = nil    --存放npcId和npcSprite的对应字典
+ManageView._npcMap = nil    --存放elfId和npcSprite的对应字典
+ManageView._playerMap = nil --存放playerId和精灵的对应字典
 
 ManageView._npcLayer = nil --存放NPC的layer
+ManageView._playerLayer = nil
 
 ManageView._scheduler = nil
 
@@ -37,6 +39,7 @@ end
 function ManageView:init()
 	print("View init")
     self._npcMap = {}
+    self._playerMap = {}
 
     self._scheduler = require("framework.scheduler")
 
@@ -74,6 +77,12 @@ function ManageView:init()
         self:addChild(npcLayer)
         self._npcLayer = npcLayer 
     end
+
+    do  --playerLayer
+        local playerLayer = display.newLayer()
+        self:addChild(playerLayer)
+        self._playerLayer = playerLayer 
+    end
 end
 
 function ManageView:onRelease()
@@ -94,13 +103,9 @@ end
 --MD_前缀代表model delegate---
 ----------------------------]]
 function ManageView:MD_addPlayer(data)
-    local playerId = data.playerId
+    local elfId = data.elfId
 
-end
-
-function ManageView:MD_addNPC(data)
-    local npcId = data.npcId
-    local npcType = data.npcType
+    local modelId = data.modelId
 
     local startMapId = data.npcMapId
 
@@ -108,17 +113,41 @@ function ManageView:MD_addNPC(data)
 
     local fileName = "player1_%i_%i.png"
 
-    if npcType == 1 then
+    local npcSprite = NPCSprite:create(fileName, elfId)
+
+    npcSprite.nPreMapId = startMapId
+    npcSprite.nTargetMapId = startMapId
+
+    npcSprite:setPosition(startPoint)
+
+    self._playerLayer:addChild(npcSprite)
+
+    --保存到Map里面
+    self._playerLayerMap[elfId] = npcSprite 
+
+end
+
+function ManageView:MD_addNPC(data)
+    local elfId = data.elfId
+    local modelId = data.modelId
+
+    local startMapId = data.npcMapId
+
+    local startPoint = self._mapInfo:convertIdToPointMid(startMapId)
+
+    local fileName = "player1_%i_%i.png"
+
+    if modelId == 1 then
         fileName = "player1_%i_%i.png"
-    elseif npcType == 2 then
+    elseif modelId == 2 then
         fileName = "player2_%i_%i.png"
-    elseif npcType == 3 then
+    elseif modelId == 3 then
         fileName = "player3_%i_%i.png"
-    elseif npcType == 4 then
+    elseif modelId == 4 then
         fileName = "player4_%i_%i.png"
     end
 
-    npcSprite = NPCSprite:create(fileName, npcId)
+    local npcSprite = NPCSprite:create(fileName, elfId)
 
     npcSprite.nPreMapId = startMapId
     npcSprite.nTargetMapId = startMapId
@@ -128,12 +157,12 @@ function ManageView:MD_addNPC(data)
     self._npcLayer:addChild(npcSprite)
 
     --保存到Map里面
-    self._npcMap[npcId] = npcSprite 
+    self._npcMap[elfId] = npcSprite 
 end
 
-function ManageView:MD_moveNPC(npcId, mapId)
-    local npcSprite = self._npcMap[npcId]
-    -- print("id:"..npcSprite:getNPCId())
+function ManageView:MD_moveNPC(elfId, mapId)
+    local npcSprite = self._npcMap[elfId]
+    -- print("id:"..npcSprite:getelfId())
 
     local totalTime = -1
 
@@ -156,8 +185,8 @@ function ManageView:MD_moveNPC(npcId, mapId)
     return totalTime
 end
 
-function ManageView:MD_removeNPC(npcId)
-    local npcSprite = self._npcMap[npcId]
+function ManageView:MD_removeNPC(elfId)
+    local npcSprite = self._npcMap[elfId]
     --因为精灵移动到指定位置的时候，model刚好回调，所以稍微延迟一帧来删除
     -- local function delayRemoveSelf()
     --     local delay = CCDelayTime:create(0.05)
@@ -166,7 +195,7 @@ function ManageView:MD_removeNPC(npcId)
     --     npcSprite:runAction(sequence)
     -- end
     if npcSprite then
-        self._npcMap[npcId] = nil
+        self._npcMap[elfId] = nil
         self._scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
         npcSprite:removeFromParentAndCleanup(true)
         -- delayRemoveSelf()

@@ -26,17 +26,17 @@ end
 --添加NPC
 function ManageModelDelegate:addNPC(data)
 	-- data 结构
-	-- npcId    每个npc都有一个唯一对应的NPCId
-	-- npcType  不同类型的NPC，view根据相应的type创建NPC
+	-- elfId   每个npc都有一个唯一对应的elfId
+	-- modelId  不同类型的NPC，view根据相应的type创建NPC
 	self._refer:MD_addNPC(data)
 end
 
 --移动NPC
-function ManageModelDelegate:moveNPC(npcId, mapId)
-	local totalTime = self._refer:MD_moveNPC(npcId, mapId)
+function ManageModelDelegate:moveNPC(elfId, mapId)
+	local totalTime = self._refer:MD_moveNPC(elfId, mapId)
 	return totalTime
 end
 
-function ManageModelDelegate:removeNPC(npcId)
-	self._refer:MD_removeNPC(npcId)
+function ManageModelDelegate:removeNPC(elfId)
+	self._refer:MD_removeNPC(elfId)
 end

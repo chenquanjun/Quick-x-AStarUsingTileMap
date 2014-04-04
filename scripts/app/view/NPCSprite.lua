@@ -16,22 +16,22 @@ NPCSprite.handler        = nil
 NPCSprite._fileName  	= nil --文件名
 NPCSprite._sprite  		= nil --精灵
 NPCSprite._lastActionTag  	= nil --最近动作tag
-NPCSprite._npcId            = -1  --用来区分不同NPC，默认为-1
+NPCSprite._elfId            = -1  --用来区分不同NPC，默认为-1
 
-function NPCSprite:create(fileNameFormat, npcId)
+function NPCSprite:create(fileNameFormat, elfId)
 	local pNPCSprite = NPCSprite.new()
-	pNPCSprite:init(fileNameFormat, npcId)
+	pNPCSprite:init(fileNameFormat, elfId)
 	return pNPCSprite
 end
 
-function NPCSprite:getNPCId()
-    return self._npcId
+function NPCSprite:getElfId()
+    return self._elfId
 end
 
-function NPCSprite:init(fileNameFormat, npcId)
+function NPCSprite:init(fileNameFormat, elfId)
 	self._fileName = fileNameFormat --缓存文件名
 
-    self._npcId = npcId
+    self._elfId = elfId
 
 	self._lastActionTag = kActionTagInvalid
 
