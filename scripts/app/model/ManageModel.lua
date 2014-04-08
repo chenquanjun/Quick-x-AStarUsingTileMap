@@ -19,6 +19,7 @@ ManageModel._delegate  			= nil --model delegate
 ManageModel._timer  			= nil
 ManageModel._timerDelegate  	= nil
 
+--------Map Data-------------
 --所有地图信息在mapDataDic保存
 ManageModel._mapDataDic         = nil --地图信息字典，保存所有信息，如座位数组，等待座位数组
 
@@ -27,17 +28,24 @@ ManageModel._oneMapIdMap    	= nil --对于单个位置的object，一律保存�
 ManageModel._seatVector  		= nil --座位数组，保存座位的mapId
 ManageModel._waitSeatVector 	= nil --等待
 ManageModel._doorVector  		= nil --门口
+ManageModel._productVector      = nil
 
 ManageModel._seatMap  			= nil --座位字典
 ManageModel._waitSeatMap  		= nil --等待座位字典
 ManageModel._doorMap  			= nil --门口字典
 
-ManageModel._npcInfoMap  		= nil
-ManageModel._playerInfoMap  	= nil
+---------info map---------
+ManageModel._npcInfoMap  		= nil --npc信息（包含id，状态）
+ManageModel._playerInfoMap  	= nil --玩家信息
 ManageModel._productInfoMap     = nil
 
+-------------------------
+
+
+-------------------------
 ManageModel._productIdOffset	= 100   --100~1000是物品id
 ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
+ManageModel._npcTestFlag        = 0
 
 --[[-------------------
 	---Init Method-----
@@ -68,13 +76,14 @@ function ManageModel:setMapDataDic(mapDataDic)
 	self._mapDataDic = mapDataDic
 
 	--多个位置的数组
-	self:initMapPointVec()
+	self:initMapPointsVec()
 
 	--单个位置
 	self:initMapPoint()
 end
 
-function ManageModel:initMapPoint(mapIdMap)
+--单点位置
+function ManageModel:initMapPoint()
 	local startVec = self._mapDataDic[kMapDataStart]
 	local cookVec  = self._mapDataDic[kMapDataCook]
 	local cashierVec  = self._mapDataDic[kMapDataCashier]
@@ -88,12 +97,13 @@ function ManageModel:initMapPoint(mapIdMap)
 	self._oneMapIdMap = mapIdMap
 end
 
-function ManageModel:initMapPointVec()
+--多点位置
+function ManageModel:initMapPointsVec()
 
 	local seatVec = self._mapDataDic[kMapDataSeat]
 	local waitSeatVec = self._mapDataDic[kMapDataWaitSeat]
 	local doorVec = self._mapDataDic[kMapDataDoor]
-
+	
     --记录哪个mapId是座位，等待座位和门口, 下标从1开始
 	self._seatVector = seatVec
 	self._waitSeatVector = waitSeatVec
@@ -162,6 +172,8 @@ function ManageModel:onEnter()
 	addNPCTest() --批量测试
 	-- self:addNPC() --单个测试
 
+	self:initProduct()
+
 
 	self._timer:startTimer()
 
@@ -198,35 +210,37 @@ end
 	---Private method-----
 	---------------------]]
 
-function ManageModel:addProduct()
-	local elfId = self._productIdOffset
-	do --test 1个
+function ManageModel:initProduct()
+	local productVec = self._mapDataDic[kMapDataProduct]
+
+	for i,mapId in ipairs(productVec) do
+		local elfId = self._productIdOffset + i
+
+		local name = "id:"..elfId
+		local productType = 1
+
+		local duration = math.random(3, 5)
+
 		local productInfo = {}
-		productInfo.duration = 5.0
-		productInfo.name = "product"
-		-- productInfo.mapId = 
-
+		productInfo.duration = duration
+		productInfo.type = productType
+		productInfo.name = name
+		productInfo.mapId = mapId
+		productInfo.num = 0
 		self._productInfoMap[elfId] = productInfo
+		--view初始化信息
+		local data = {}
+		data.elfId = elfId
+		data.name = name
+		data.type = productType
+		data.mapId = mapId
 
-		elfId = elfId + 1
-	end
-	do --test 2个
-		local productInfo = {}
-		productInfo.duration = 5.0
-		productInfo.name = "product"
+		self._delegate:addProduct(data)
 
-		self._productInfoMap[elfId] = productInfo
+		--定时器 test
+		self._delegate:coolDownProduct(elfId, duration)
 
-		elfId = elfId + 1
-	end
-	do --test 3个
-		local productInfo = {}
-		productInfo.duration = 5.0
-		productInfo.name = "product"
-
-		self._productInfoMap[elfId] = productInfo
-
-		elfId = elfId + 1
+		self._timer:addTimerListener(elfId, duration)
 	end
 
 end
@@ -273,7 +287,7 @@ end
 --增加NPC
 function ManageModel:addNPC()
 	
-	local elfId = self._npcIdOffset
+	local elfId = self._npcIdOffset + self._npcTestFlag
 
 	do --init 保存到字典
 		local startMapId = self._oneMapIdMap[kMapDataStart]
@@ -297,10 +311,16 @@ function ManageModel:addNPC()
 		data.mapId = startMapId
 		self._delegate:addNPC(data)
 	end
+	self._npcTestFlag = self._npcTestFlag + 1
 
-	self._npcIdOffset = elfId + 1
 
 
+end
+
+function ManageModel:onCoolDown(elfId)
+	local productInfo = self._productInfoMap[elfId]
+	assert(productInfo.num == 0, "error") --当前设计最多只有1个，所以此值必为0
+	productInfo.num = 1 --增加
 end
 
 function ManageModel:npcState(npcInfo)
@@ -669,10 +689,24 @@ function ManageModel:onWaitSeatBtn(mapId)
 	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
 end
 --点击食物事件
-function ManageModel:onProductBtn(mapId)
-	print("on product btn:"..mapId)
+function ManageModel:onProductBtn(elfId)
+	print("on product btn:"..elfId)
 
-	local totalTime = self._delegate:movePlayer(1, mapId)
+	--test
+	local testElfId = 1
+
+	local productInfo = self._productInfoMap[elfId]
+
+	local mapId = productInfo.mapId
+
+	local totalTime = self._delegate:movePlayer(testElfId, mapId)
+
+	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
+
+	-- local productInfo = self._productInfoMap[elfId]
+	-- local duration = productInfo.duration
+
+	-- self._delegate:coolDownProduct(elfId, duration)
 end
 
 
@@ -680,26 +714,33 @@ end
 	---Timer Delegate-----
 	---------------------]]
 function ManageModel:TD_onTimOver(listenerId)
-	--print("listenerId is:"..listenerId)
+	if listenerId >= self._npcIdOffset then
+	--npcId回调
+		local npcInfo = self._npcInfoMap[listenerId]
+		if npcInfo then --回调
+			--print("id:"..npcInfo.elfId)
+			self:npcState(npcInfo)
 
-	local npcInfo = self._npcInfoMap[listenerId]
-	if npcInfo then --回调
-		--print("id:"..npcInfo.elfId)
-		self:npcState(npcInfo)
-
-		return
-	end
-
-	local playerInfo = self._playerInfoMap[listenerId]
-
-	if playerInfo then
-		--test
-		if playerInfo.elfId == 1 then
-			--返回位置
-			self._delegate:movePlayer(1, self._oneMapIdMap[kMapDataCook])
-		else
-			self._delegate:movePlayer(2, self._oneMapIdMap[kMapDataCashier])
+			return
 		end
-	end
-	
+
+	elseif listenerId >= self._productIdOffset then
+	--产品id回调
+		self:onCoolDown(listenerId)
+	else
+
+	--玩家id回调
+		local playerInfo = self._playerInfoMap[listenerId]
+
+		if playerInfo then
+			--test
+			-- if playerInfo.elfId == 1 then
+			-- 	--返回位置
+			-- 	self._delegate:movePlayer(1, self._oneMapIdMap[kMapDataCook])
+			-- else
+			-- 	self._delegate:movePlayer(2, self._oneMapIdMap[kMapDataCashier])
+			-- end
+		end
+
+	end	
 end

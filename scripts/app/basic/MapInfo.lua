@@ -322,54 +322,6 @@ function MapInfo:getMapDataDic()
 	return self._mapDataDic
 end
 
--- 地图信息获取方法
-function MapInfo:getMapIdOfType(typeVec)
-	--获取类型的位置
-	--此处传入类型的vec，
-	--当找到与vec中数值相同的类型type时将mapId以type作为key值保存到返回map中
-	local mapIdMap = {}
-	local mapData = self._mapDataVec --地图信息
-	local size = table.getn(mapData)
-	for i = 0, size - 1 do
-		local objectId = mapData[i]
-
-		for j,v in ipairs(typeVec) do
-			if objectId == v then
-			mapIdMap[v] = i  
-			print("tpye:"..v.." mapId:"..i)
-			break
-
-			end
-		end
-
-	end
-
-	return mapIdMap
-end
-
-function MapInfo:getMapIdVecOfType(type)
-	-- local typeData = self._mapTypeDataMap[type]
-
-	-- if typeData == nil then
-		--typeData为type类型信息的数组
-		--下标从1开始，内容保存mapId
-		typeData = {}
-		local index = 1
-		local mapData = self._mapDataVec --地图信息
-		local size = table.getn(mapData)
-		for i = 0, size - 1 do
-			local objectId = mapData[i]
-			if objectId == type then
-				typeData[index] = i --其实是mapId
-				index = index + 1
-			end
-		end
-		-- self._mapTypeDataMap[type] = typeData
-	-- end
-
-	return typeData
-end
-
 -- 坐标地图id转换方法，将点转换成地图id
 function MapInfo:convertPointToId(point)
     local mapId = -1;

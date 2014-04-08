@@ -23,3 +23,7 @@ function ManageViewDelegate:onShowSprite()
 		--controller method
 	end
 end
+
+function ManageViewDelegate:onProductBtn(elfId)
+	self._refer:VD_onProductBtn(elfId)
+end

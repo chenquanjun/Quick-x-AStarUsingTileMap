@@ -15,8 +15,10 @@ ManageView._delegate    = nil --view delegate
 ManageView._mapInfo     = nil
 ManageView._npcMap      = nil    --存放elfId和npcSprite的对应字典
 ManageView._playerMap   = nil --存放playerId和精灵的对应字典
+ManageView._productMap  = nil
 ManageView._npcLayer    = nil --存放NPC的layer
 ManageView._playerLayer = nil
+ManageView._productLayer= nil
 ManageView._btnLayer    = nil
 ManageView._scheduler   = nil
 
@@ -34,7 +36,7 @@ function ManageView:setDelegate(delegate)
     self._delegate = delegate
 end
 
-function ManageView:initBtn(mapIdVec, callBack)
+function ManageView:initBtns(mapIdVec, callBack)
     local size = self._mapInfo._mapUnit
     local rect = CCRect(0, 0, size.width, size.height)
     for i,v in ipairs(mapIdVec) do
@@ -76,6 +78,7 @@ function ManageView:init()
 	print("View init")
     self._npcMap = {}
     self._playerMap = {}
+    self._productMap = {}
 
     self._scheduler = require("framework.scheduler")
 
@@ -116,9 +119,16 @@ function ManageView:init()
 
     do  --playerLayer
         local playerLayer = display.newLayer()
-        self:addChild(playerLayer)
+        self:addChild(playerLayer, 10)
         self._playerLayer = playerLayer 
     end
+
+    do  --productLayer
+        local productLayer = display.newLayer()
+        self:addChild(productLayer)
+        self._productLayer = productLayer     
+    end
+
 
     do  --btnLayer
         local btnLayer = display.newLayer()
@@ -144,9 +154,67 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
-function ManageView:MD_addProdut(data)
-    local elfId = data.elfId
-    local name = data.name
+function ManageView:MD_addProduct(data)
+        local elfId = data.elfId
+        local name = data.name
+        local productType = data.type
+        local mapId = data.mapId
+
+        local point = self._mapInfo:convertIdToPointMid(mapId)
+
+        local size = self._mapInfo._mapUnit
+        local rect = CCRect(0, 0, size.width, size.height)
+
+        local label = CCLabelTTF:create(name, "Arial", 20)
+
+        local progressBar = CCProgressTimer:create(display.newSprite("product.png"))
+
+        progressBar:setType(kCCProgressTimerTypeRadial)
+        progressBar:setPercentage(0)    
+
+        local sprite = CCSprite:createWithTexture(nil, rect)
+
+        sprite:setTouchEnabled(true)
+
+        label:setAnchorPoint(ccp(0.5, - 0.5))
+        label:setColor(ccc3(255, 0, 0))
+        
+        -- sprite:setOpacity(100)
+
+        sprite:setPosition(point)
+        label:setPosition(point)
+        progressBar:setPosition(point)
+
+        
+        self._productLayer:addChild(sprite)
+        self._productLayer:addChild(progressBar)
+        self._productLayer:addChild(label)
+
+        self._productMap[elfId] = progressBar
+
+        sprite:addTouchEventListener(function(event, x, y)
+
+            if event == "began" then
+                return true -- catch touch event, stop event dispatching
+            end
+
+            local touchInSprite = sprite:getCascadeBoundingBox():containsPoint(CCPoint(x, y))
+            if event == "moved" then
+                if touchInSprite then
+
+                else
+
+                end
+            elseif event == "ended" then
+                if touchInSprite then 
+                    --回调
+                    self._delegate:onProductBtn(elfId)
+                end
+
+            else
+
+            end
+        end)
 end
 
 function ManageView:MD_addPlayer(data)
@@ -254,6 +322,12 @@ function ManageView:MD_movePlayer(elfId, mapId)
     end
 
     return totalTime
+end
+
+function ManageView:MD_coolDownProduct(elfId, duration)
+    local progressBar = self._productMap[elfId]
+    progressBar:stopAllActions()
+    progressBar:runAction(CCProgressFromTo:create(duration, 0, 100))
 end
 
 function ManageView:MD_removeNPC(elfId)

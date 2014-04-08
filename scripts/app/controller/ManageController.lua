@@ -70,27 +70,20 @@ function ManageController:init()
 
 	local seatVec = mapDataDic[kMapDataSeat]
 	local waitSeatVec = mapDataDic[kMapDataWaitSeat]
-	local doorVec = mapDataDic[kMapDataDoor]
 	local productVec = mapDataDic[kMapDataProduct]
-
-	--开始位置, 厨师位置，收银位置
-	-- local typeVec = {kMapDataStart, kMapDataCook, kMapDataCashier}
-	-- local mapIdMap = self._mapInfo:getMapIdOfType(typeVec)
-
-	-- self._model:setMapIdMap(mapIdMap)
 
 	do --初始化按钮
 		--座位按钮回调
-		self._view:initBtn(seatVec, function(mapId)  
+		self._view:initBtns(seatVec, function(mapId)  
 					self._model:onSeatBtn(mapId)
 			end)
-		self._view:initBtn(waitSeatVec, function(mapId)  
+		self._view:initBtns(waitSeatVec, function(mapId)  
 					self._model:onWaitSeatBtn(mapId)
 			end)
 
-		self._view:initBtn(productVec, function(mapId)  
-					self._model:onProductBtn(mapId)
-			end)
+		-- self._view:initBtns(productVec, function(mapId)  
+		-- 			self._model:onProductBtn(mapId)
+		-- 	end)
 	end
 
 end
@@ -116,3 +109,6 @@ end
 --------------------------
 ------Delegate Method------
 ----------------------------]]
+function ManageController:VD_onProductBtn(elfId)
+	self._model:onProductBtn(elfId)
+end

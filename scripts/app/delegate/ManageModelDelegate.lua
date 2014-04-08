@@ -19,8 +19,8 @@ function ManageModelDelegate:removeRefer()
 end
 
 --添加产品
-function ManageModelDelegate:addProdut(data)
-	self._refer:MD_addProdut(data)
+function ManageModelDelegate:addProduct(data)
+	self._refer:MD_addProduct(data)
 end
 
 --添加主角
@@ -46,6 +46,10 @@ end
 function ManageModelDelegate:movePlayer(elfId, mapId)	
 	local totalTime = self._refer:MD_movePlayer(elfId, mapId)
 	return totalTime
+end
+
+function ManageModelDelegate:coolDownProduct(elfId, duration)
+	self._refer:MD_coolDownProduct(elfId, duration)
 end
 
 function ManageModelDelegate:removeNPC(elfId)
