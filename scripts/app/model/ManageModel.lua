@@ -15,24 +15,29 @@ end)
 --index
 ManageModel.__index = ManageModel
 --private
-ManageModel._delegate  		= nil --model delegate
-ManageModel._timer  		= nil
-ManageModel._timerDelegate  = nil
+ManageModel._delegate  			= nil --model delegate
+ManageModel._timer  			= nil
+ManageModel._timerDelegate  	= nil
 
-ManageModel._seatVector  	= nil --座位数组，保存座位的mapId
-ManageModel._waitSeatVector = nil --等待
-ManageModel._doorVector  	= nil --门口
+--所有地图信息在mapDataDic保存
+ManageModel._mapDataDic         = nil --地图信息字典，保存所有信息，如座位数组，等待座位数组
 
-ManageModel._seatMap  		= nil --座位字典
-ManageModel._waitSeatMap  	= nil --等待座位字典
-ManageModel._doorMap  		= nil --门口字典
+ManageModel._oneMapIdMap    	= nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
 
-ManageModel._oneMapIdMap    = nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
+ManageModel._seatVector  		= nil --座位数组，保存座位的mapId
+ManageModel._waitSeatVector 	= nil --等待
+ManageModel._doorVector  		= nil --门口
 
-ManageModel._npcInfoMap  	= nil
-ManageModel._playerInfoMap  = nil
+ManageModel._seatMap  			= nil --座位字典
+ManageModel._waitSeatMap  		= nil --等待座位字典
+ManageModel._doorMap  			= nil --门口字典
 
-ManageModel._testNPCIdFlag  = 10
+ManageModel._npcInfoMap  		= nil
+ManageModel._playerInfoMap  	= nil
+ManageModel._productInfoMap     = nil
+
+ManageModel._productIdOffset	= 100   --100~1000是物品id
+ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
 
 --[[-------------------
 	---Init Method-----
@@ -46,11 +51,12 @@ end
 
 function ManageModel:init()
 	print("Model init")
-	self._seatMap = {}  --座位字典
-	self._waitSeatMap = {} --等待座位字典
-	self._doorMap = {} --门口字典
-	self._npcInfoMap = {}
-	self._playerInfoMap = {}
+	self._seatMap 			= {}  --座位字典
+	self._waitSeatMap 		= {} --等待座位字典
+	self._doorMap 			= {} --门口字典
+	self._npcInfoMap 		= {}
+	self._playerInfoMap 	= {}
+	self._productInfoMap 	= {}
 
 end
 
@@ -58,11 +64,35 @@ function ManageModel:setDelegate(delegate)
 	self._delegate = delegate
 end
 
-function ManageModel:setMapIdMap(mapIdMap)
+function ManageModel:setMapDataDic(mapDataDic)
+	self._mapDataDic = mapDataDic
+
+	--多个位置的数组
+	self:initMapPointVec()
+
+	--单个位置
+	self:initMapPoint()
+end
+
+function ManageModel:initMapPoint(mapIdMap)
+	local startVec = self._mapDataDic[kMapDataStart]
+	local cookVec  = self._mapDataDic[kMapDataCook]
+	local cashierVec  = self._mapDataDic[kMapDataCashier]
+
+	local mapIdMap = {}
+
+	mapIdMap[kMapDataStart] = startVec[1]
+	mapIdMap[kMapDataCook] = cookVec[1]
+	mapIdMap[kMapDataCashier] = cashierVec[1]
+
 	self._oneMapIdMap = mapIdMap
 end
 
-function ManageModel:setMapData(seatVec, waitSeatVec, doorVec)
+function ManageModel:initMapPointVec()
+
+	local seatVec = self._mapDataDic[kMapDataSeat]
+	local waitSeatVec = self._mapDataDic[kMapDataWaitSeat]
+	local doorVec = self._mapDataDic[kMapDataDoor]
 
     --记录哪个mapId是座位，等待座位和门口, 下标从1开始
 	self._seatVector = seatVec
@@ -168,6 +198,39 @@ end
 	---Private method-----
 	---------------------]]
 
+function ManageModel:addProduct()
+	local elfId = self._productIdOffset
+	do --test 1个
+		local productInfo = {}
+		productInfo.duration = 5.0
+		productInfo.name = "product"
+		-- productInfo.mapId = 
+
+		self._productInfoMap[elfId] = productInfo
+
+		elfId = elfId + 1
+	end
+	do --test 2个
+		local productInfo = {}
+		productInfo.duration = 5.0
+		productInfo.name = "product"
+
+		self._productInfoMap[elfId] = productInfo
+
+		elfId = elfId + 1
+	end
+	do --test 3个
+		local productInfo = {}
+		productInfo.duration = 5.0
+		productInfo.name = "product"
+
+		self._productInfoMap[elfId] = productInfo
+
+		elfId = elfId + 1
+	end
+
+end
+
 function ManageModel:addPlayer()
 	do --init 保存到字典
 		local elfId = 1
@@ -210,7 +273,7 @@ end
 --增加NPC
 function ManageModel:addNPC()
 	
-	local elfId = self._testNPCIdFlag
+	local elfId = self._npcIdOffset
 
 	do --init 保存到字典
 		local startMapId = self._oneMapIdMap[kMapDataStart]
@@ -235,7 +298,7 @@ function ManageModel:addNPC()
 		self._delegate:addNPC(data)
 	end
 
-	self._testNPCIdFlag = elfId + 1
+	self._npcIdOffset = elfId + 1
 
 
 end
@@ -599,11 +662,11 @@ end
 function ManageModel:onWaitSeatBtn(mapId)
 	print("on wait seat btn:"..mapId)
 
-	local testElfId = 2
+	local testElfId = 1
 
-	local totalTime = self._delegate:movePlayer(2, mapId)
+	local totalTime = self._delegate:movePlayer(testElfId, mapId)
 
-	self._timer:addTimerListener(2, totalTime) --加入时间控制
+	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
 end
 --点击食物事件
 function ManageModel:onProductBtn(mapId)

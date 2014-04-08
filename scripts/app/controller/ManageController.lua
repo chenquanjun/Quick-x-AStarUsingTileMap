@@ -64,19 +64,20 @@ function ManageController:init()
     self._view:setMapInfo(self._mapInfo) 
 
     --model需要知道门口，座位，等待座位等的位置, 从1开始！！
-	local seatVec = self._mapInfo:getMapIdVecOfType(kMapDataSeat)
-	local waitSeatVec = self._mapInfo:getMapIdVecOfType(kMapDataWaitSeat)
-	local doorVec = self._mapInfo:getMapIdVecOfType(kMapDataDoor)
-	local productVec = self._mapInfo:getMapIdVecOfType(kMapDataProduct)
+    local mapDataDic = self._mapInfo:getMapDataDic()
 
+    self._model:setMapDataDic(mapDataDic)
 
-	self._model:setMapData(seatVec, waitSeatVec, doorVec)
+	local seatVec = mapDataDic[kMapDataSeat]
+	local waitSeatVec = mapDataDic[kMapDataWaitSeat]
+	local doorVec = mapDataDic[kMapDataDoor]
+	local productVec = mapDataDic[kMapDataProduct]
 
 	--开始位置, 厨师位置，收银位置
-	local typeVec = {kMapDataStart, kMapDataCook, kMapDataCashier}
-	local mapIdMap = self._mapInfo:getMapIdOfType(typeVec)
+	-- local typeVec = {kMapDataStart, kMapDataCook, kMapDataCashier}
+	-- local mapIdMap = self._mapInfo:getMapIdOfType(typeVec)
 
-	self._model:setMapIdMap(mapIdMap)
+	-- self._model:setMapIdMap(mapIdMap)
 
 	do --初始化按钮
 		--座位按钮回调

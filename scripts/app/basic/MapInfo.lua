@@ -31,7 +31,8 @@ MapInfo.__index  		    	= MapInfo
 --private
 MapInfo._mapMatrix  		   		= nil       --网格，即地图的网格有多少个
 MapInfo._mapUnit  				= nil       --网格单元大小，每个网格的大小，理论上所有网格的大小都一样
-MapInfo._mapData  				= nil        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
+MapInfo._mapDataVec  				= nil        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
+MapInfo._mapDataDic                 = nil
 MapInfo._mapPathCache  			= nil        --地图缓存
 -- MapInfo._mapTypeDataMap  			= nil 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
 
@@ -43,7 +44,8 @@ function MapInfo:create(fileName)
 end
 
 function MapInfo:init(fileName)
-	self._mapData = {}
+	self._mapDataVec = {}
+	self._mapDataDic = {}
 	self._mapPathCache = {}
 	-- self._mapTypeDataMap = {}
 
@@ -95,12 +97,27 @@ function MapInfo:init(fileName)
 	        assert(objectId ~= kMapDataInvalid, "object id not set")
 	        --mapId 从左到右，从下到上扩展
 	        local mapId = x + y * gridWidth
-			self._mapData[mapId] = objectId
+	        --数组：按照从0到最大的顺序(mapId)存储objectId
+			self._mapDataVec[mapId] = objectId
+
 
 			-- print("mapId:"..mapId.." "..objectId)
 
 	    end
+	    --根据数组的值保存map
+	    for mapId,objectId in ipairs(self._mapDataVec) do
+	    	--字典：按照objectId的储存mapId，可能存在多个，所以用vec来存储
+			local objectVec = self._mapDataDic[objectId]
 
+			if objectVec then
+				local size = table.getn(objectVec)
+				objectVec[size + 1] = mapId
+			else --数组为空
+				objectVec = {}
+				objectVec[1] = mapId
+				self._mapDataDic[objectId] = objectVec
+			end
+	    end
 	end
 
 end
@@ -120,8 +137,8 @@ function MapInfo:findPath(startMapId, endMapId)
 			return nil
 		end
 
-		local startType = self._mapData[startMapId]
-		local endType = self._mapData[endMapId]
+		local startType = self._mapDataVec[startMapId]
+		local endType = self._mapDataVec[endMapId]
 
 		if startType ==  kMapDataBlock or startType == kMapDataThing then
 			return nil
@@ -178,7 +195,7 @@ function MapInfo:findPath(startMapId, endMapId)
 			end
 
 			if bContinue == false then
-				local mapType = self._mapData[nMapId]
+				local mapType = self._mapDataVec[nMapId]
 
 				if mapType == kMapDataSeat or mapType == kMapDataWaitSeat then
 				
@@ -300,13 +317,18 @@ function MapInfo:findPath(startMapId, endMapId)
 	return path
 end
 
+--获取地图信息字典
+function MapInfo:getMapDataDic()
+	return self._mapDataDic
+end
+
 -- 地图信息获取方法
 function MapInfo:getMapIdOfType(typeVec)
 	--获取类型的位置
 	--此处传入类型的vec，
 	--当找到与vec中数值相同的类型type时将mapId以type作为key值保存到返回map中
 	local mapIdMap = {}
-	local mapData = self._mapData --地图信息
+	local mapData = self._mapDataVec --地图信息
 	local size = table.getn(mapData)
 	for i = 0, size - 1 do
 		local objectId = mapData[i]
@@ -333,7 +355,7 @@ function MapInfo:getMapIdVecOfType(type)
 		--下标从1开始，内容保存mapId
 		typeData = {}
 		local index = 1
-		local mapData = self._mapData --地图信息
+		local mapData = self._mapDataVec --地图信息
 		local size = table.getn(mapData)
 		for i = 0, size - 1 do
 			local objectId = mapData[i]
@@ -370,7 +392,7 @@ end
 function MapInfo:convertIdToPoint(mapId)
     local point = ccp(0, 0)
 
-    local size = table.getn(self._mapData)
+    local size = table.getn(self._mapDataVec)
     if mapId >= 0 and mapId < size then
     	local y = self:int(mapId / self._mapMatrix.width)
     	local x = mapId - y * self._mapMatrix.width

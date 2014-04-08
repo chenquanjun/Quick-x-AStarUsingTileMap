@@ -18,6 +18,11 @@ function ManageModelDelegate:removeRefer()
 	self._refer = nil
 end
 
+--添加产品
+function ManageModelDelegate:addProdut(data)
+	self._refer:MD_addProdut(data)
+end
+
 --添加主角
 function ManageModelDelegate:addPlayer(data)
 	self._refer:MD_addPlayer(data)

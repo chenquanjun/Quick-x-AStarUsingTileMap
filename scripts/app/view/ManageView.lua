@@ -144,6 +144,11 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
+function ManageView:MD_addProdut(data)
+    local elfId = data.elfId
+    local name = data.name
+end
+
 function ManageView:MD_addPlayer(data)
     local elfId = data.elfId
 
