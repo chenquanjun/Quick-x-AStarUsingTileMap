@@ -253,6 +253,7 @@ function ManageModel:addPlayer()
 		local playerInfo = PlayerInfo:create()
 		playerInfo.mapId = mapId
 		playerInfo.elfId = elfId
+		playerInfo.curState = PlayerStateType.Idle
 
 		self._playerInfoMap[elfId] = playerInfo
 		
@@ -663,45 +664,136 @@ function ManageModel:npcFeelOnPay(npcInfo, isWaitSeat)
 	return totalTime
 end
 
+function ManageModel:playerQueue(playerInfo)
+	--处理当前位置的数据
+	local state = playerInfo.curState
+	local elfId = playerInfo.elfId
+
+	local switchState = {
+		[PlayerStateType.Idle]	 		= function()
+
+		end,
+		--2
+		[PlayerStateType.Seat]	 		= function()
+			print("at seat")
+		end,
+		--3
+		[PlayerStateType.WaitSeat]		= function()
+			print("at wait seat")
+		end,
+		--4
+		[PlayerStateType.Product]		= function()
+			print("at product")
+		end,
+	} --switch end
+
+	local fSwitch = switchState[state] --switch 方法
+
+	--存在switch（必然存在）
+	if fSwitch then
+		local result = fSwitch() --执行function
+	else
+		error("error state") --没有枚举
+		return
+	end
+
+	--弹出最上面的数据
+	local queueData = playerInfo:pop()
+
+	if queueData then
+		--当前数据, 执行逻辑
+		local mapId = queueData.mapId
+
+		playerInfo.curState = queueData.state --保存状态
+
+
+		local totalTime = self._delegate:movePlayer(elfId, mapId)
+
+		self._timer:addTimerListener(elfId, totalTime) --加入时间控制
+
+	else --不存在
+		playerInfo.curState = PlayerStateType.Idle --空闲状态
+	end
+end
+
 
 --[[---------------------
 	---Public method-----
 	----V->C->M----------]]
 --点击座位事件
 function ManageModel:onSeatBtn(mapId)
-	print("on seat btn:"..mapId)
+	-- print("on seat btn:"..mapId)
 	--这里应该按照地图对应的座位/位置发生的事件派发给对应的player，然后等待回调
 
-	local testElfId = 1
+	--填队列结构
+	local queueData = {}
+	queueData.mapId = mapId
+	queueData.state = PlayerStateType.Seat
 
-	local totalTime = self._delegate:movePlayer(testElfId, mapId)
+	local testPlayerId = 1
 
-	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
+	local playerInfo = self._playerInfoMap[testPlayerId]
+
+	local isEmpty = playerInfo:push(queueData)
+
+	if playerInfo.curState == PlayerStateType.Idle then
+		--当前队列为空，直接执行命令
+		self:playerQueue(playerInfo)
+	end
 end
 --点击外卖座位事件
 function ManageModel:onWaitSeatBtn(mapId)
-	print("on wait seat btn:"..mapId)
+	-- print("on wait seat btn:"..mapId)
 
-	local testElfId = 1
+	--填队列结构
+	local queueData = {}
+	queueData.mapId = mapId
+	queueData.state = PlayerStateType.WaitSeat
 
-	local totalTime = self._delegate:movePlayer(testElfId, mapId)
+	local testPlayerId = 1
 
-	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
+	local playerInfo = self._playerInfoMap[testPlayerId]
+
+	local isEmpty = playerInfo:push(queueData)
+
+	if playerInfo.curState == PlayerStateType.Idle then
+		--当前队列为空，直接执行命令
+		self:playerQueue(playerInfo)
+	end
 end
 --点击食物事件
 function ManageModel:onProductBtn(elfId)
-	print("on product btn:"..elfId)
-
-	--test
-	local testElfId = 1
-
+	-- print("on product btn:"..elfId)
+	--填队列结构
 	local productInfo = self._productInfoMap[elfId]
-
 	local mapId = productInfo.mapId
 
-	local totalTime = self._delegate:movePlayer(testElfId, mapId)
+	local queueData = {}
+	queueData.mapId = mapId
+	queueData.state = PlayerStateType.Product
 
-	self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
+	local testPlayerId = 1
+
+	local playerInfo = self._playerInfoMap[testPlayerId]
+
+	local isEmpty = playerInfo:push(queueData)
+
+	if playerInfo.curState == PlayerStateType.Idle then
+		--当前状态为空闲，直接执行命令
+		self:playerQueue(playerInfo)
+	end
+
+
+	--test
+	-- local testElfId = 1
+
+	-- 
+
+	-- local mapId = productInfo.mapId
+
+	-- local totalTime = self._delegate:movePlayer(testElfId, mapId)
+
+	-- self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
 
 	-- local productInfo = self._productInfoMap[elfId]
 	-- local duration = productInfo.duration
@@ -733,13 +825,8 @@ function ManageModel:TD_onTimOver(listenerId)
 		local playerInfo = self._playerInfoMap[listenerId]
 
 		if playerInfo then
-			--test
-			-- if playerInfo.elfId == 1 then
-			-- 	--返回位置
-			-- 	self._delegate:movePlayer(1, self._oneMapIdMap[kMapDataCook])
-			-- else
-			-- 	self._delegate:movePlayer(2, self._oneMapIdMap[kMapDataCashier])
-			-- end
+			--处理队列
+			self:playerQueue(playerInfo)
 		end
 
 	end	

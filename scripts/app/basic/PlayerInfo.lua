@@ -1,3 +1,13 @@
+PlayerStateType = {
+				Invalid                = 1,
+
+				Idle                   = 2, --空闲状态
+
+				Seat                   = 3, --座位位置
+				WaitSeat               = 4, --等待座位位置
+				Product                = 5, --产品位置
+}
+
 PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo
@@ -5,7 +15,10 @@ PlayerInfo.__index = PlayerInfo
 PlayerInfo.elfId   = -1
 PlayerInfo.modelId = -1
 PlayerInfo.mapId   = -1
-PlayerInfo.queue   = nil --队列
+PlayerInfo.curState = -1
+PlayerInfo.queue   = nil --队列 从1开始增长
+PlayerInfo._first   = 0
+PlayerInfo._last    = -1
 
 function PlayerInfo:create()
 	local ret = {}
@@ -18,6 +31,50 @@ function PlayerInfo:init()
 	self.queue = {}
 end
 
+--队列push，加到队列末尾，如果加入前是空的则返回true（方便直接执行队列）
 function PlayerInfo:push(data)
-	
+	local isEmpty = false
+
+	local last = self._last
+	local first = self._first
+
+	if first >  last then
+		isEmpty = true --队列是空的
+	end
+
+	self._last = last + 1
+
+	self.queue[self._last] = data
+
+	return isEmpty
+
+end
+
+--队列pop，弹出顶端数据并删除顶端
+function PlayerInfo:pop()
+	local data = nil
+	local first = self._first
+	if first > self._last then
+		-- print("empty")
+	else
+		data = self.queue[first]
+		self.queue[first] = nil
+		self._first = first + 1
+	end
+
+	return data
+end
+
+--队列test，检查顶端的数据，不做删除操作
+function PlayerInfo:test()
+	local data = nil
+	local first = self._first
+	if first > self._last then
+		-- print("empty")
+	else
+		data = self.queue[first]
+		--测试顶端数据，没有删除操作
+	end
+
+	return data
 end
