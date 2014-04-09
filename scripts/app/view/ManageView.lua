@@ -1,4 +1,5 @@
 require "app/basic/extern"
+require "app/view/ManageTray"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageView = class("ManageView", function()
@@ -20,6 +21,7 @@ ManageView._npcLayer    = nil --存放NPC的layer
 ManageView._playerLayer = nil
 ManageView._productLayer= nil
 ManageView._btnLayer    = nil
+ManageView._trayLayer   = nil
 ManageView._scheduler   = nil
 
 --[[-------------------
@@ -134,6 +136,14 @@ function ManageView:init()
         local btnLayer = display.newLayer()
         self:addChild(btnLayer)
         self._btnLayer = btnLayer 
+    end
+
+    do --tray 托盘
+        local trayView = ManageTray:create(5)
+        trayView:setPosition(ccp(display.left + 80, display.top - 50))
+
+        self:addChild(trayView)
+        self._trayLayer = trayView
     end
 end
 
@@ -332,18 +342,12 @@ end
 
 function ManageView:MD_removeNPC(elfId)
     local npcSprite = self._npcMap[elfId]
-    --因为精灵移动到指定位置的时候，model刚好回调，所以稍微延迟一帧来删除
-    -- local function delayRemoveSelf()
-    --     local delay = CCDelayTime:create(0.05)
-    --     local removeSelf = CCRemoveSelf:create(true)
-    --     local sequence = CCSequence:createWithTwoActions(delay, removeSelf)
-    --     npcSprite:runAction(sequence)
-    -- end
+
     if npcSprite then
         self._npcMap[elfId] = nil
         self._scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
         npcSprite:removeFromParentAndCleanup(true)
-        -- delayRemoveSelf()
+
     end
 end
 
@@ -374,8 +378,6 @@ function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
 
         local curTime = 0
         local totalTime = speed * pointNum
-
-        
 
         if npcSprite.handler then
             -- print("exist")

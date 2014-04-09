@@ -31,26 +31,34 @@ function PlayerInfo:init()
 	self.queue = {}
 end
 
+
+--队列操作
+--为了寻找与删除，队列保持增长不删除
+function PlayerInfo:at(index)
+	local data = self.queue[first]
+
+	return data
+end
+
 --队列push，加到队列末尾，如果加入前是空的则返回true（方便直接执行队列）
 function PlayerInfo:push(data)
-	local isEmpty = false
 
 	local last = self._last
 	local first = self._first
 
-	if first >  last then
-		isEmpty = true --队列是空的
-	end
+	-- if first >  last then
+	-- 	--队列是空的
+	-- end
 
 	self._last = last + 1
 
 	self.queue[self._last] = data
 
-	return isEmpty
+	return self._last --返回指针值
 
 end
 
---队列pop，弹出顶端数据并删除顶端
+--队列pop，弹出顶端数据
 function PlayerInfo:pop()
 	local data = nil
 	local first = self._first
@@ -60,20 +68,6 @@ function PlayerInfo:pop()
 		data = self.queue[first]
 		self.queue[first] = nil
 		self._first = first + 1
-	end
-
-	return data
-end
-
---队列test，检查顶端的数据，不做删除操作
-function PlayerInfo:test()
-	local data = nil
-	local first = self._first
-	if first > self._last then
-		-- print("empty")
-	else
-		data = self.queue[first]
-		--测试顶端数据，没有删除操作
 	end
 
 	return data

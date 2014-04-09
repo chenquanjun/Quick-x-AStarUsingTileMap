@@ -4,7 +4,9 @@ require "app/basic/extern"
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
 --mvc
+----model
 require "app/model/ManageModel"
+----view
 require "app/view/ManageView"
 --delegate
 require "app/delegate/ManageModelDelegate"
@@ -44,8 +46,9 @@ function ManageController:init()
 	--为了便于内存控制，controller view 和 model都继承于CCNode，场景离开时交给2dx释放
 	self._view = ManageView:create()
 	self._model = ManageModel:create()
-	self:addChild(self._view)
-	self:addChild(self._model)
+
+	self:addChild(self._view)--view
+	self:addChild(self._model)--model
 
 	--model delegate 指向view
 	self._modelDelegate = ManageModelDelegate:setRefer(self._view)

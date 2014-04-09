@@ -707,11 +707,18 @@ function ManageModel:playerQueue(playerInfo)
 	local queueData = playerInfo:pop()
 
 	if queueData then
+		local isDelete = queueData.isDelete
+		--是否已经取消，若取消则执行下一个队列
+		if isDelete then
+			playerInfo.curState = PlayerStateType.Idle --空闲状态
+			self:playerQueue(playerInfo)
+			return
+		end
+
 		--当前数据, 执行逻辑
 		local mapId = queueData.mapId
 
 		playerInfo.curState = queueData.state --保存状态
-
 
 		local totalTime = self._delegate:movePlayer(elfId, mapId)
 
@@ -742,7 +749,7 @@ function ManageModel:onSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local isEmpty = playerInfo:push(queueData)
+	local actionIndex = playerInfo:push(queueData) --动作标志
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -765,7 +772,7 @@ function ManageModel:onWaitSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local isEmpty = playerInfo:push(queueData)
+	local actionIndex = playerInfo:push(queueData)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -786,12 +793,13 @@ function ManageModel:onProductBtn(elfId)
 	local queueData = {}
 	queueData.mapId = serveId
 	queueData.state = PlayerStateType.Product
+	queueData.elfId = elfId
 
 	local testPlayerId = 1
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local isEmpty = playerInfo:push(queueData)
+	local actionIndex = playerInfo:push(queueData)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前状态为空闲，直接执行命令
