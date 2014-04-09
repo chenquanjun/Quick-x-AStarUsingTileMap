@@ -55,3 +55,16 @@ end
 function ManageModelDelegate:removeNPC(elfId)
 	self._refer:MD_removeNPC(elfId)
 end
+
+--tray method
+function ManageModelDelegate:addProductAtIndex(index, productType)
+    self._refer:MD_addProductAtIndex(index, productType)
+end
+
+function ManageModelDelegate:removeProductAtIndex(index)
+    self._refer:MD_removeProductAtIndex(index)
+end
+
+function ManageModelDelegate:setProductFinishAtIndex(index)
+    self._refer:MD_setProductFinishAtIndex(index)
+end

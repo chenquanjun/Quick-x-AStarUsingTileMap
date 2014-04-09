@@ -118,3 +118,7 @@ end
 function ManageController:VD_onProductBtn(elfId)
 	self._model:onProductBtn(elfId)
 end
+
+function ManageController:VD_onTrayProductBtn(index)
+	self._model:onTrayProductBtn(index)
+end

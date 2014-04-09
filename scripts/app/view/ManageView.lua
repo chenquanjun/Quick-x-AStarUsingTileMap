@@ -1,5 +1,5 @@
 require "app/basic/extern"
-require "app/view/ManageTray"
+require "app/view/ManageTrayView"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageView = class("ManageView", function()
@@ -36,6 +36,8 @@ end
 
 function ManageView:setDelegate(delegate)
     self._delegate = delegate
+
+    self._trayLayer:setDelegate(self._delegate) --同样的delegate
 end
 
 function ManageView:initBtns(mapIdVec, callBack)
@@ -139,7 +141,7 @@ function ManageView:init()
     end
 
     do --tray 托盘
-        local trayView = ManageTray:create(5)
+        local trayView = ManageTrayView:create(5)
         trayView:setPosition(ccp(display.left + 80, display.top - 50))
 
         self:addChild(trayView)
@@ -149,6 +151,8 @@ end
 
 function ManageView:onRelease()
 	print("View on release")
+    self._trayLayer:onRelease()
+
     self._delegate = nil
 	self._mapInfo = nil
 
@@ -352,6 +356,25 @@ function ManageView:MD_removeNPC(elfId)
 end
 
 --[[
+------------------------------
+--------Delegate Method-------
+----------Tray Method---------
+------------------------------]]
+
+
+function ManageView:MD_addProductAtIndex(index, productType)
+    self._trayLayer:addProductAtIndex(index, productType)
+end
+
+function ManageView:MD_removeProductAtIndex(index)
+    self._trayLayer:removeProductAtIndex(index)
+end
+
+function ManageView:MD_setProductFinishAtIndex(index)
+    self._trayLayer:setProductFinishAtIndex(index)
+end
+
+--[[
 --------------------------
 ------Private Method------
 ----------------------------]]
@@ -420,3 +443,4 @@ function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
         return totalTime
  
 end
+

@@ -24,6 +24,12 @@ function ManageViewDelegate:onShowSprite()
 	end
 end
 
+--view call back
 function ManageViewDelegate:onProductBtn(elfId)
 	self._refer:VD_onProductBtn(elfId)
+end
+
+--tray call back
+function ManageViewDelegate:onTrayProductBtn(index)
+	self._refer:VD_onTrayProductBtn(index)
 end

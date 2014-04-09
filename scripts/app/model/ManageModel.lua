@@ -1,8 +1,10 @@
 require "app/basic/extern"
 require "app/basic/NPCInfo"
 require "app/basic/PlayerInfo"
+require "app/basic/TrayInfo"
 require "app/timer/TimerControl"
 require "app/timer/TimerControlDelegate"
+
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageModel = class("ManageModel", function()
@@ -42,7 +44,7 @@ ManageModel._playerInfoMap  	= nil --玩家信息
 ManageModel._productInfoMap     = nil
 
 -------------------------
-
+ManageModel._trayInfo           = nil --面板信息
 
 -------------------------
 ManageModel._productIdOffset	= 100   --100~1000是物品id
@@ -67,6 +69,7 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
+	self._trayInfo = TrayInfo:create(5)
 
 end
 
@@ -749,7 +752,7 @@ function ManageModel:onSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local actionIndex = playerInfo:push(queueData) --动作标志
+	local queueId = playerInfo:push(queueData) --动作标志
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -772,7 +775,7 @@ function ManageModel:onWaitSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local actionIndex = playerInfo:push(queueData)
+	local queueId = playerInfo:push(queueData)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -783,6 +786,14 @@ end
 --点击产品事件
 function ManageModel:onProductBtn(elfId)
 	-- print("on product btn:"..elfId)
+
+	local isFull = self._trayInfo:isFull()
+
+	if isFull then
+		print("product full")
+		return
+	end
+
 
 	--填队列结构
 	local productInfo = self._productInfoMap[elfId]
@@ -799,12 +810,28 @@ function ManageModel:onProductBtn(elfId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local actionIndex = playerInfo:push(queueData)
+	local queueId = playerInfo:push(queueData)
+
+	local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
+
+	self._delegate:addProductAtIndex(productIndex, productType)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前状态为空闲，直接执行命令
 		self:playerQueue(playerInfo)
 	end
+end
+
+function ManageModel:onTrayProductBtn(index)
+
+	local queueId = self._trayInfo:removeProduct(index)
+
+	print(queueId)
+
+	if queueId then
+		self._delegate:removeProductAtIndex(index)
+	end
+	
 end
 
 --[[-------------------
