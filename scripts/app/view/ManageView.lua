@@ -318,7 +318,7 @@ function ManageView:MD_movePlayer(elfId, mapId)
         playerSprite.nPreMapId = newPreMapId
         playerSprite.nTargetMapId = newTargetMapId
 
-        totalTime = self:easeWalkTo(playerSprite, 0.05, newPreMapId, newTargetMapId)
+        totalTime = self:easeWalkTo(playerSprite, 0.1, newPreMapId, newTargetMapId)
     end
 
     return totalTime

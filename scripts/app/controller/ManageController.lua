@@ -63,10 +63,13 @@ function ManageController:init()
     --view需要用到地图的mapId转换成坐标的方法，所以需要引用mapInfo
     self._view:setMapInfo(self._mapInfo) 
 
-    --model需要知道门口，座位，等待座位等的位置, 从1开始！！
+
+   	--model需要知道门口，座位，等待座位等的位置, 从1开始！！
     local mapDataDic = self._mapInfo:getMapDataDic()
+    local seatToServeDic = self._mapInfo:getSeatToServeDic()
 
     self._model:setMapDataDic(mapDataDic)
+    self._model:setSeatToServeDic(seatToServeDic)
 
 	local seatVec = mapDataDic[kMapDataSeat]
 	local waitSeatVec = mapDataDic[kMapDataWaitSeat]

@@ -34,6 +34,8 @@ ManageModel._seatMap  			= nil --座位字典
 ManageModel._waitSeatMap  		= nil --等待座位字典
 ManageModel._doorMap  			= nil --门口字典
 
+ManageModel._seatToServeDic		= nil --座位id与服务id的对应表
+
 ---------info map---------
 ManageModel._npcInfoMap  		= nil --npc信息（包含id，状态）
 ManageModel._playerInfoMap  	= nil --玩家信息
@@ -70,6 +72,10 @@ end
 
 function ManageModel:setDelegate(delegate)
 	self._delegate = delegate
+end
+
+function ManageModel:setSeatToServeDic(seatToServeDic)
+	self._seatToServeDic = seatToServeDic
 end
 
 function ManageModel:setMapDataDic(mapDataDic)
@@ -726,8 +732,10 @@ function ManageModel:onSeatBtn(mapId)
 	--这里应该按照地图对应的座位/位置发生的事件派发给对应的player，然后等待回调
 
 	--填队列结构
+	local serveId = self._seatToServeDic[mapId]
+
 	local queueData = {}
-	queueData.mapId = mapId
+	queueData.mapId = serveId
 	queueData.state = PlayerStateType.Seat
 
 	local testPlayerId = 1
@@ -741,13 +749,16 @@ function ManageModel:onSeatBtn(mapId)
 		self:playerQueue(playerInfo)
 	end
 end
+
 --点击外卖座位事件
 function ManageModel:onWaitSeatBtn(mapId)
 	-- print("on wait seat btn:"..mapId)
 
 	--填队列结构
+	local serveId = self._seatToServeDic[mapId]
+
 	local queueData = {}
-	queueData.mapId = mapId
+	queueData.mapId = serveId
 	queueData.state = PlayerStateType.WaitSeat
 
 	local testPlayerId = 1
@@ -761,15 +772,19 @@ function ManageModel:onWaitSeatBtn(mapId)
 		self:playerQueue(playerInfo)
 	end
 end
---点击食物事件
+
+--点击产品事件
 function ManageModel:onProductBtn(elfId)
 	-- print("on product btn:"..elfId)
+
 	--填队列结构
 	local productInfo = self._productInfoMap[elfId]
 	local mapId = productInfo.mapId
 
+	local serveId = self._seatToServeDic[mapId]
+
 	local queueData = {}
-	queueData.mapId = mapId
+	queueData.mapId = serveId
 	queueData.state = PlayerStateType.Product
 
 	local testPlayerId = 1
@@ -782,25 +797,7 @@ function ManageModel:onProductBtn(elfId)
 		--当前状态为空闲，直接执行命令
 		self:playerQueue(playerInfo)
 	end
-
-
-	--test
-	-- local testElfId = 1
-
-	-- 
-
-	-- local mapId = productInfo.mapId
-
-	-- local totalTime = self._delegate:movePlayer(testElfId, mapId)
-
-	-- self._timer:addTimerListener(testElfId, totalTime) --加入时间控制
-
-	-- local productInfo = self._productInfoMap[elfId]
-	-- local duration = productInfo.duration
-
-	-- self._delegate:coolDownProduct(elfId, duration)
 end
-
 
 --[[-------------------
 	---Timer Delegate-----

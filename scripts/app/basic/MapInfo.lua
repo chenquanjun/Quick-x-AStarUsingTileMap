@@ -34,7 +34,7 @@ MapInfo._mapUnit  				= nil       --网格单元大小，每个网格的大小�
 MapInfo._mapDataVec  				= nil        --保存地图的信息, 以数组矩阵形式保存, 从左到右，从下到上扩展数值(mapId)，保存kMapDataXXX值
 MapInfo._mapDataDic                 = nil
 MapInfo._mapPathCache  			= nil        --地图缓存
--- MapInfo._mapTypeDataMap  			= nil 		--地图信息类字典(根据mapData分类缓存成字典, 以kMapDataXXX为key值)
+MapInfo._mapSeatToServeDic      = nil
 
 --构造方法，继承CCNode
 function MapInfo:create(fileName)
@@ -47,7 +47,7 @@ function MapInfo:init(fileName)
 	self._mapDataVec = {}
 	self._mapDataDic = {}
 	self._mapPathCache = {}
-	-- self._mapTypeDataMap = {}
+	self._mapSeatToServeDic = {}
 
 	local map = CCTMXTiledMap:create(fileName)
 
@@ -100,8 +100,16 @@ function MapInfo:init(fileName)
 	        --数组：按照从0到最大的顺序(mapId)存储objectId
 			self._mapDataVec[mapId] = objectId
 
+			--座位与服务位置对应表（注意serve的seatx和seaty是按照左下角坐标计算的）
+			if objectId == kMapDataServe then
+				key      = "seatx"
+				local seatX = (tolua.cast(dict:objectForKey(key), "CCString")):intValue()
+				key      = "seaty"
+				local seatY = (tolua.cast(dict:objectForKey(key), "CCString")):intValue()
+				local seatId = seatX + gridWidth * seatY
 
-			-- print("mapId:"..mapId.." "..objectId)
+				self._mapSeatToServeDic[seatId] = mapId
+			end
 
 	    end
 	    --根据数组的值保存map
@@ -321,6 +329,10 @@ end
 function MapInfo:getMapDataDic()
 	return self._mapDataDic
 end
+
+function MapInfo:getSeatToServeDic()
+	return self._mapSeatToServeDic
+end 
 
 -- 坐标地图id转换方法，将点转换成地图id
 function MapInfo:convertPointToId(point)

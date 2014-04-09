@@ -2937,35 +2937,14 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="serve" x="416" y="320" width="32" height="32">
-   <properties>
-    <property name="objectid" value="12"/>
-    <property name="seatx" value="13"/>
-    <property name="seaty" value="11"/>
-   </properties>
-  </object>
   <object name="r" x="448" y="320" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
   </object>
-  <object name="serve" x="352" y="320" width="32" height="32">
-   <properties>
-    <property name="objectid" value="12"/>
-    <property name="seatx" value="11"/>
-    <property name="seaty" value="11"/>
-   </properties>
-  </object>
   <object name="r" x="512" y="320" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="serve" x="480" y="320" width="32" height="32">
-   <properties>
-    <property name="objectid" value="12"/>
-    <property name="seatx" value="15"/>
-    <property name="seaty" value="11"/>
    </properties>
   </object>
   <object name="r" x="64" y="448" width="32" height="32">
@@ -3595,14 +3574,14 @@
    <properties>
     <property name="objectid" value="12"/>
     <property name="seatx" value="4"/>
-    <property name="seaty" value="4"/>
+    <property name="seaty" value="6"/>
    </properties>
   </object>
   <object name="serve" x="288" y="448" width="32" height="32">
    <properties>
     <property name="objectid" value="12"/>
     <property name="seatx" value="9"/>
-    <property name="seaty" value="4"/>
+    <property name="seaty" value="6"/>
    </properties>
   </object>
   <object name="serve" x="288" y="480" width="32" height="32">
@@ -3616,7 +3595,7 @@
    <properties>
     <property name="objectid" value="12"/>
     <property name="seatx" value="14"/>
-    <property name="seaty" value="4"/>
+    <property name="seaty" value="6"/>
    </properties>
   </object>
   <object name="serve" x="448" y="480" width="32" height="32">
@@ -3659,6 +3638,21 @@
   <object name="cashier" x="608" y="544" width="32" height="32">
    <properties>
     <property name="objectid" value="3"/>
+   </properties>
+  </object>
+  <object name="r" x="352" y="320" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="416" y="320" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="480" y="320" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
    </properties>
   </object>
  </objectgroup>
