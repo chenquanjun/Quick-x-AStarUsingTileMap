@@ -331,6 +331,17 @@ function ManageModel:onCoolDown(elfId)
 	local productInfo = self._productInfoMap[elfId]
 	assert(productInfo.num == 0, "error") --当前设计最多只有1个，所以此值必为0
 	productInfo.num = 1 --增加
+
+	local testPlayerId = 1
+
+	local playerInfo = self._playerInfoMap[testPlayerId]
+
+	if playerInfo.curState == PlayerStateType.WaitProduct and playerInfo.waitProductId == elfId then
+		--等待的物品终于完成了
+		playerInfo.curState = PlayerStateType.Product --设置原来的数值
+		playerInfo.waitProductId = -1
+		self:playerQueue(playerInfo)
+	end
 end
 
 function ManageModel:npcState(npcInfo)
@@ -721,10 +732,21 @@ function ManageModel:playerQueue(playerInfo)
 
 			else --不满足需求
 				--玩家保持等待状态
+				playerInfo.curState = PlayerStateType.WaitProduct
+				playerInfo.waitProductId = productElfId --等待id
 
 				--等待产品cooldown回调
 
+				return true --注意此值是fSwitch()的返回值
+
 			end
+		end,
+
+		[PlayerStateType.WaitProduct]		= function()
+				--在调用playerQueue前应该把此状态改变
+				--例如产品完成的回调，检测到玩家是WaitProduct状态，则改变成Product状态
+				--以便代码复用
+				error("error")
 		end,
 	} --switch end
 
@@ -733,6 +755,11 @@ function ManageModel:playerQueue(playerInfo)
 	--存在switch（必然存在）
 	if fSwitch then
 		local result = fSwitch() --执行function
+
+		if result then
+			--有回调 目前是玩家在等待状态下有回调
+			return 
+		end
 	else
 		error("error state") --没有枚举
 		return
@@ -851,6 +878,7 @@ function ManageModel:onProductBtn(elfId)
 	self._delegate:addProductAtIndex(productIndex, productType)
 
 	if playerInfo.curState == PlayerStateType.Idle then
+		print("idle")
 		--当前状态为空闲，直接执行命令
 		self:playerQueue(playerInfo)
 	end
@@ -861,18 +889,21 @@ function ManageModel:onTrayProductBtn(index)
 
 	local queueId = self._trayInfo:removeProduct(index)
 
-	print("remove:"..queueId)
-
-	if queueId then
-		--queueId存在说明物品处于冷却阶段
+	if queueId then --queueId存在说明物品处于冷却阶段
+		
 		local testPlayerId = 1
 
 		local playerInfo = self._playerInfoMap[testPlayerId]
 
 		playerInfo:removeQueue(queueId) --删除队列值
 		
-		self._delegate:removeProductAtIndex(index) --删除面板上的值
+		
+
+	else --删除已经完成的物品
+
 	end
+
+	self._delegate:removeProductAtIndex(index) --删除面板上的值
 	
 end
 

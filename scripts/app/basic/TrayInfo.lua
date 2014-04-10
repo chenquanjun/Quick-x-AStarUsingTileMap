@@ -60,6 +60,7 @@ function TrayInfo:addProduct(elfId, queueId)
 
 	local productType = elfId --test
 
+	--返回product在tray 的index和产品类型
 	return index, productType
 end
 
@@ -79,6 +80,7 @@ function TrayInfo:removeProduct(index)
 		end
 
 		if product.state == ProductStateType.NotComplete then
+			--返回队列id
 			return queueId
 		end
 	end

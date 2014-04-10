@@ -6,19 +6,21 @@ PlayerStateType = {
 				Seat                   = 3, --座位位置
 				WaitSeat               = 4, --等待座位位置
 				Product                = 5, --产品位置
+				WaitProduct            = 6, --等待产品完成
 }
 
 PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo
 --public
-PlayerInfo.elfId   = -1
-PlayerInfo.modelId = -1
-PlayerInfo.mapId   = -1
-PlayerInfo.curState = -1
+PlayerInfo.elfId   = -1  --区别id
+PlayerInfo.modelId = -1  --类型
+PlayerInfo.mapId   = -1  --当前位置
+PlayerInfo.curState = -1 --当前状态
+PlayerInfo.waitProductId = -1
 PlayerInfo._queue   = nil --队列 从1开始增长
-PlayerInfo._first   = 0
-PlayerInfo._last    = -1
+PlayerInfo._first   = 0 --队列first
+PlayerInfo._last    = -1 --队列last
 
 function PlayerInfo:create()
 	local ret = {}
