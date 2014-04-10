@@ -41,6 +41,16 @@ function ManageTrayView:addProductAtIndex(index, productType)
 
 	local sprite = display.newSprite("product_1.jpg")
 
+	local testFlag = "id:"..productType
+
+	local label = CCLabelTTF:create(testFlag, "Arial", 50)
+
+	label:setPosition(ccp(50, 90))
+
+	label:setColor(ccc3(255, 0, 0))
+
+	sprite:addChild(label)
+
 	    sprite:setTouchEnabled(true)
         sprite:addTouchEventListener(function(event, x, y)
 

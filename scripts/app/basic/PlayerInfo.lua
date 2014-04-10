@@ -40,13 +40,14 @@ function PlayerInfo:atQueue(index)
 	return data
 end
 
+--删除操作仅加入isDelete标志，防止打乱结构
 function PlayerInfo:removeQueue(index)
 	local data = self._queue[index]
 	--删除原理，player读取队列该数值的时候判断此值是否为true，若true则不执行该队列的命令
 	data.isDelete = true --删除
 end
 
---队列push，加到队列末尾，如果加入前是空的则返回true（方便直接执行队列）
+--队列push，加到队列末尾，返回偏移值
 function PlayerInfo:pushQueue(data)
 
 	local last = self._last
@@ -64,7 +65,7 @@ function PlayerInfo:pushQueue(data)
 
 end
 
---队列pop，弹出顶端数据
+--队列pop，弹出顶端数据（改变指针位置）
 function PlayerInfo:popQueue()
 	local data = nil
 	local first = self._first
@@ -76,6 +77,13 @@ function PlayerInfo:popQueue()
 		self._first = first + 1
 	end
 
+	return data
+end
+
+--上一个队列的数据
+function PlayerInfo:preQueue()
+
+	local data = self._queue[self._first - 1]
 	return data
 end
 

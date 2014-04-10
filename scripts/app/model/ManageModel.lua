@@ -693,6 +693,38 @@ function ManageModel:playerQueue(playerInfo)
 		--4
 		[PlayerStateType.Product]		= function()
 			print("at product")
+			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
+			assert(preQueueData ~= nil, "error,queue should not nil")
+
+			local productElfId = preQueueData.elfId --产品id
+
+			local productInfo = self._productInfoMap[productElfId] --产品信息
+
+			local productNum = productInfo.num --产品数目
+
+			--目前设计productNum是只有一个
+			if productNum > 0 then --满足需求
+				
+				 --产品数减1
+				productInfo.num = productNum - 1
+				--改变面板信息（把面板对应的产品改成complete状态）
+				local trayIndex = self._trayInfo:setProductFinish(productElfId)--返回物品在面板的位置
+
+				self._delegate:setProductFinishAtIndex(trayIndex)
+				--物品触发冷却
+				local duration = productInfo.duration
+
+				self._delegate:coolDownProduct(productElfId, duration)
+
+				self._timer:addTimerListener(productElfId, duration)
+				--玩家进入下个状态
+
+			else --不满足需求
+				--玩家保持等待状态
+
+				--等待产品cooldown回调
+
+			end
 		end,
 	} --switch end
 

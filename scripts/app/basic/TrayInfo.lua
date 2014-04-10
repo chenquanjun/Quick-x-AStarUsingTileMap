@@ -58,7 +58,7 @@ function TrayInfo:addProduct(elfId, queueId)
 
 	self._productVec[index] = product
 
-	local productType = 1 --test
+	local productType = elfId --test
 
 	return index, productType
 end
