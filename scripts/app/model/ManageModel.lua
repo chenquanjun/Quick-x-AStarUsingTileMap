@@ -112,7 +112,7 @@ function ManageModel:onEnter()
 	end
 
 	self:addPlayer()
-	addNPCTest() --批量测试
+	-- addNPCTest() --批量测试
 	-- self:addNPC() --单个测试
 	self:addNPC() --单个测试
 
@@ -352,6 +352,10 @@ function ManageModel:npcStateControl(elfId)
 				npcInfo.mapId = mapId --保存目标位置
 			end
 			self._timer:addTimerListener(elfId, totalTime) --加入时间控制
+
+			if productVec then
+				self._delegate:addRequest(elfId, productVec)
+			end
 		end
 
 

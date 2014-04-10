@@ -264,6 +264,31 @@ function ManageView:MD_addPlayer(data)
     --保存到Map里面
     self._playerMap[elfId] = npcSprite 
 
+    -- if elfId == 1 then
+    --     --test
+    --     local productVec = {}
+
+    --     for i=1,5 do
+    --         local product1 = {}
+    --         productVec[i] = product1
+    --         product1.elfId = i
+    --     end
+
+    --     npcSprite:addRequest(productVec)
+
+    --     local removeList = {}
+    --     removeList[1] = 2
+    --     removeList[2] = 3
+    --     removeList[3] = 5
+    --     -- removeList[4] = 4
+    --     -- removeList[5] = 5
+
+    --     npcSprite:removeRequest(removeList)
+    -- end
+
+
+
+
 end
 
 function ManageView:MD_addNPC(data)
@@ -301,7 +326,6 @@ end
 
 function ManageView:MD_moveNPC(elfId, mapId)
     local npcSprite = self._npcMap[elfId]
-    -- print("id:"..npcSprite:getelfId())
 
     local totalTime = -1
 
@@ -312,8 +336,6 @@ function ManageView:MD_moveNPC(elfId, mapId)
         --更新值
         npcSprite.nPreMapId = newPreMapId  
         npcSprite.nTargetMapId = newTargetMapId
-
-        -- totalTime = self:easeWalkTo(npcSprite, 0.1, newPreMapId, newTargetMapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
@@ -339,18 +361,26 @@ function ManageView:MD_movePlayer(elfId, mapId)
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
         totalTime = playerSprite:easeWalkTo(0.1, mapPath)
-
-        -- totalTime = self:easeWalkTo(playerSprite, 0.1, newPreMapId, newTargetMapId)
     end
 
     return totalTime
 end
 
-function ManageView:MD_showRequest(elfId, productVec)
+function ManageView:addRequest(elfId, productVec)
     local npcSprite = self._npcMap[elfId]
 
     if npcSprite then
-        --todo
+
+        npcSprite:addRequest(productVec)
+
+    end
+end
+
+function ManageView:MD_removeRequest(elfId, indexVec)
+    local npcSprite = self._npcMap[elfId]
+
+    if npcSprite then
+        npcSprite:removeRequest(indexVec)
     end
 end
 
@@ -397,66 +427,4 @@ end
 function ManageView:setMapInfo(mapInfo)
 	self._mapInfo = mapInfo
 end
-
--- --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
--- function ManageView:easeWalkTo(npcSprite, speed, startId, endId)
---         -- print("WalkTo:"..startId.." "..endId)
---         --A星寻路 地图路径
---         local mapPath = self._mapInfo:findPath(startId, endId) --地图路径类
-
---         if mapPath == nil then
---             return --没有路径
---         end
-
---         local startPoint = mapPath:getPointAtIndex(1) --第一个点
---         local pointNum = mapPath:getPointArrCount()
-
---         -- print("point num:"..pointNum)
-        
---         npcSprite:setPosition(startPoint)
-
---         local curTime = 0
---         local totalTime = speed * pointNum
-
---         if npcSprite.handler then
---             -- print("exist")
---             self._scheduler.unscheduleGlobal(npcSprite.handler)
---             npcSprite.handler = nil
---         end
---         --定时器
---         npcSprite.handler = self._scheduler.scheduleUpdateGlobal(function(dt)
---                             curTime = curTime + dt
-
---                             --这个类似动作里面的update的time参数
---                             local time = curTime / totalTime
-
---                             local fIndex = (pointNum - 1) * time + 1 --从1开始
---                             local index  = self._mapInfo:int(fIndex)
-
---                             if index < pointNum then
---                                 local curPoint = mapPath:getPointAtIndex(index)
---                                 -- print(index..":"..curPoint.x..", "..curPoint.y)
---                                 local nextPoint = mapPath:getPointAtIndex(index + 1)
---                                 local offset = fIndex - index
---                                 local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
---                                 local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
---                                 curPoint = ccp(x, y) 
---                                 npcSprite:setPosition(curPoint)
-
-
---                                 npcSprite:playAnim(curPoint, nextPoint)
-
---                             else --最后一个点
---                                 local curPoint = mapPath:getPointAtIndex(index)
---                                 npcSprite:setPosition(curPoint)
---                                 self._scheduler.unscheduleGlobal(npcSprite.handler)
---                                 npcSprite.handler = nil
---                                 npcSprite:stopAnim()
---                                 -- print("move end~")
---                             end
---         end)
-
---         return totalTime
- 
--- end
 

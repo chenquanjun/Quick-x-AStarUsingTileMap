@@ -18,6 +18,9 @@ NPCSprite._sprite        = nil --精灵
 NPCSprite._lastActionTag = nil --最近动作tag
 NPCSprite._elfId         = -1  --用来区分不同NPC，默认为-1
 
+NPCSprite._productVec    = nil
+NPCSprite._productLayer  = nil
+
 function NPCSprite:create(fileNameFormat, elfId)
 	local pNPCSprite = NPCSprite.new()
 	pNPCSprite:init(fileNameFormat, elfId)
@@ -42,6 +45,80 @@ function NPCSprite:init(fileNameFormat, elfId)
     self._sprite:setAnchorPoint(ccp(0.5, 0))
 
     self:addChild(self._sprite)
+
+    local layer = CCLayer:create()
+    layer:setPosition(ccp(-55, 50))
+
+    self._productLayer = layer
+    self:addChild(layer)
+end
+
+--添加请求的时候产品列表必然是空的
+function NPCSprite:addRequest(productVec)
+    self._productVec = {}
+    self._productLayer:removeAllChildren()
+
+    for i,value in ipairs(productVec) do
+
+        local elfId = value.elfId
+        local productType = value.productType
+
+        local name = elfId --test
+        local label = CCLabelTTF:create(name, "Arial", 16)
+
+        label:setPosition(ccp(i * 28, 0))
+        label:setColor(ccc3(255, 0, 0))
+
+        --保存
+        local product = {}
+        self._productVec[i] = product
+
+        product.eldId = elfId
+        product.sprite = label
+
+        self._productLayer:addChild(label)
+    end
+end
+
+function NPCSprite:removeRequest(indexVec)
+    local size = #self._productVec
+    local indexSize = #indexVec
+
+    local productVec = self._productVec
+    
+    for i = 1, indexSize do
+        local iRevert = indexSize - i + 1
+
+        local index = indexVec[iRevert] --从后面删除
+
+        local product = productVec[index]
+
+        local sequence = CCSequence:createWithTwoActions(CCFadeOut:create(0.2), CCRemoveSelf:create(true))
+
+        local sprite = product.sprite
+
+        sprite:runAction(sequence)
+
+        productVec[index] = nil
+
+        for j = index, size - 1 do
+            productVec[j] = productVec[j + 1]
+        end
+
+    end
+
+    -- dump(productVec, "product:")
+
+    if indexSize < size then
+        for i, product in ipairs(productVec) do
+            local sprite = product.sprite
+
+            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(i * 28, 0)))
+
+            sprite:runAction(sequence)
+        end
+
+    end
 end
 
 function NPCSprite:addAnimCache(fileNameFormat)
@@ -177,7 +254,6 @@ function NPCSprite:easeWalkTo(speed, mapPath)
         return totalTime
  
 end
-
 
 function NPCSprite:int(x) 
     return x>=0 and math.floor(x) or math.ceil(x)

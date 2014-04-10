@@ -57,8 +57,12 @@ function ManageModelDelegate:removeNPC(elfId)
 end
 
 --请求
-function ManageModelDelegate:showRequest(elfId, productVec)
-	self._refer:MD_showRequest(elfId, productVec)
+function ManageModelDelegate:addRequest(elfId, productVec)
+	self._refer:addRequest(elfId, productVec)
+end
+
+function ManageModelDelegate:removeRequest(elfId, indexVec)
+	self._refer:MD_removeRequest(elfId, indexVec)
 end
 
 --tray method

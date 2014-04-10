@@ -114,7 +114,7 @@ function NPCInfo:npcState()
 		end,
 		--开始位置
 		[NPCStateType.Start]					= function()
-			totalTime = math.random(1, 5)
+			totalTime = math.random(1, 3)
 			self.curState = NPCStateType.GoToDoor --状态切换
 
 		end,
@@ -322,7 +322,7 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
-			print("Anger")
+			-- print("Anger")
 			totalTime = math.random(1, 3)
 			self.curFeel = NPCFeelType.Cancel
 		end,
