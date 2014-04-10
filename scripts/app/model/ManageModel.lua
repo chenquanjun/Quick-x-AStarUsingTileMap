@@ -707,7 +707,7 @@ function ManageModel:playerQueue(playerInfo)
 	end
 
 	--弹出最上面的数据
-	local queueData = playerInfo:pop()
+	local queueData = playerInfo:popQueue()
 
 	if queueData then
 		local isDelete = queueData.isDelete
@@ -752,7 +752,7 @@ function ManageModel:onSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local queueId = playerInfo:push(queueData) --动作标志
+	local queueId = playerInfo:pushQueue(queueData) --动作标志
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -775,7 +775,7 @@ function ManageModel:onWaitSeatBtn(mapId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local queueId = playerInfo:push(queueData)
+	local queueId = playerInfo:pushQueue(queueData)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		--当前队列为空，直接执行命令
@@ -810,10 +810,12 @@ function ManageModel:onProductBtn(elfId)
 
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
-	local queueId = playerInfo:push(queueData)
+	local queueId = playerInfo:pushQueue(queueData)
+	print("QUEUE:"..queueId)
 
+	--model保存product信息
 	local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
-
+	--view显示product增加
 	self._delegate:addProductAtIndex(productIndex, productType)
 
 	if playerInfo.curState == PlayerStateType.Idle then
@@ -822,14 +824,22 @@ function ManageModel:onProductBtn(elfId)
 	end
 end
 
+--点击托盘食物回调
 function ManageModel:onTrayProductBtn(index)
 
 	local queueId = self._trayInfo:removeProduct(index)
 
-	print(queueId)
+	print("remove:"..queueId)
 
 	if queueId then
-		self._delegate:removeProductAtIndex(index)
+		--queueId存在说明物品处于冷却阶段
+		local testPlayerId = 1
+
+		local playerInfo = self._playerInfoMap[testPlayerId]
+
+		playerInfo:removeQueue(queueId) --删除队列值
+		
+		self._delegate:removeProductAtIndex(index) --删除面板上的值
 	end
 	
 end

@@ -1,6 +1,6 @@
 ProductStateType = {
 				Invalid                = 1,
-				CoolDown               = 2,
+				NotComplete            = 2,
 				Complete               = 3,    
 
 }
@@ -46,12 +46,14 @@ function TrayInfo:addProduct(elfId, queueId)
 	assert(index <= self._maxNum, "error") --超出界限，出错
 
 	if self:isFull() then
-		return -1
+		return -1, -1
 	end
+
+	print("index"..index)
 
 	local product = {}
 	product.elfId = elfId
-	product.state = ProductStateType.CoolDown
+	product.state = ProductStateType.NotComplete
 	product.queueId = queueId
 
 	self._productVec[index] = product
@@ -76,14 +78,16 @@ function TrayInfo:removeProduct(index)
 			self._productVec[i] = self._productVec[i + 1]
 		end
 
-		return queueId
+		if product.state == ProductStateType.NotComplete then
+			return queueId
+		end
 	end
 
 end
 
 function TrayInfo:setProductFinish(elfId)
 	for index, product in ipairs(self._productVec) do
-		if product.elfId == elfId and product.state == ProductStateType.CoolDown then
+		if product.elfId == elfId and product.state == ProductStateType.NotComplete then
 			product.state = ProductStateType.Complete
 			return index
 		end
