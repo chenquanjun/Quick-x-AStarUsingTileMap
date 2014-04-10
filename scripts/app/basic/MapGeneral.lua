@@ -8,9 +8,11 @@ MapGeneral._occupySeatDic  				= nil --可以占位的类型均保存在这个�
 
 MapGeneral._pointDic   	 		 		= nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
 
-MapGeneral._seatToServeDic		 	 	= nil --座位id与服务id的对应表
+-- MapGeneral._seatToServeDic		 	 	= nil --座位id与服务id的对应表
 
 MapGeneral.SEAT_EMPTY             	    = 0
+
+--经营场景的全局变量，controller负责初始化和回收
 
 function MapGeneral:create(mapDataDic)
 	local ret = {}
@@ -68,19 +70,19 @@ function MapGeneral:initMapPointsVec()
 		seatDic[v] = self.SEAT_EMPTY --0表示空, 其他时候表示顾客的id 
 	end  
 
-	for i,v in ipairs(waitSeatVector) 
+	for i,v in ipairs(waitSeatVec) 
 	do 
 		waitSeatDic[v] = self.SEAT_EMPTY --0表示空, 其他时候表示顾客的id 
 	end  
 
-	for i,v in ipairs(doorVector) 
+	for i,v in ipairs(doorVec) 
 	do 
 		doorDic[v] = self.SEAT_EMPTY --0表示空, 其他时候表示顾客的id 
 	end  	
 end
 
 --需要占用的类型，占用的npcId
-function MapGeneral:OccupySeat(mapType, elfId)
+function MapGeneral:occupySeat(mapType, elfId)
 	-- 占位 
 	-- 返回地图id
 	local mapId = -1
@@ -88,14 +90,14 @@ function MapGeneral:OccupySeat(mapType, elfId)
 	local mapVec = self._mapDataDic[mapType]
 	--取出字典
 	local mapDic = self._occupySeatDic[mapType]
-
+	
 	for i,v in ipairs(mapVec) do
 				
 		local seatState = mapDic[v]
 
 			if seatState == self.SEAT_EMPTY then
 				mapId = v --保存id
-				mapDic = elfId --霸占位置
+				mapDic[v] = elfId --霸占位置
 			break
 		end
 	end --for
@@ -109,6 +111,7 @@ function MapGeneral:leaveSeat(mapType, mapId, elfId)
 	local mapDic = self._occupySeatDic[mapType]
 
 	local seatState = mapDic[mapId]
+
 	--两个值应该是相同的，否则出错
 	assert(seatState == elfId, "error seat state")
 
@@ -118,4 +121,9 @@ end
 function MapGeneral:getMapIdOfType(mapType)
 	local mapId = self._pointDic[mapType]
 	return mapId
+end
+
+function MapGeneral:getMapIdVecOfType(mapType)
+	local vector = self._mapDataDic[mapType]
+	return vector
 end

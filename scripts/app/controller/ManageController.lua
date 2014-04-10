@@ -3,6 +3,7 @@ require "app/basic/extern"
 --地图基础信息
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
+require "app/basic/MapGeneral"
 --mvc
 ----model
 require "app/model/ManageModel"
@@ -69,9 +70,13 @@ function ManageController:init()
 
    	--model需要知道门口，座位，等待座位等的位置, 从1开始！！
     local mapDataDic = self._mapInfo:getMapDataDic()
+
+    --全局变量
+    G_mapGeneral = MapGeneral:create(mapDataDic)
+
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
 
-    self._model:setMapDataDic(mapDataDic)
+    -- self._model:setMapDataDic(mapDataDic)
     self._model:setSeatToServeDic(seatToServeDic)
 
 	local seatVec = mapDataDic[kMapDataSeat]
@@ -109,6 +114,8 @@ function ManageController:onRelease()
 	self._model = nil
 	self._viewDelegate = nil
 	self._modelDelegate = nil
+
+	G_mapGeneral = nil
 end
 
 --[[
