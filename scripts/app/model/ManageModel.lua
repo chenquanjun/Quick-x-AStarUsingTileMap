@@ -327,6 +327,7 @@ function ManageModel:addNPC()
 
 end
 
+--产品冷却完毕
 function ManageModel:onCoolDown(elfId)
 	local productInfo = self._productInfoMap[elfId]
 	assert(productInfo.num == 0, "error") --当前设计最多只有1个，所以此值必为0
@@ -344,6 +345,7 @@ function ManageModel:onCoolDown(elfId)
 	end
 end
 
+--npc主状态转换
 function ManageModel:npcState(npcInfo)
 	local elfId = npcInfo.elfId --npcId --NPC的id，具有唯一性
 	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
@@ -886,7 +888,8 @@ end
 
 --点击托盘食物回调
 function ManageModel:onTrayProductBtn(index)
-
+	--逻辑上删除面板index的值，若产品是未完成的则返回加入产品时候的队列值
+	--该队列值是playerInfo动作队列中加入产品动作时候返回的
 	local queueId = self._trayInfo:removeProduct(index)
 
 	if queueId then --queueId存在说明物品处于冷却阶段
@@ -899,11 +902,12 @@ function ManageModel:onTrayProductBtn(index)
 		
 		
 
-	else --删除已经完成的物品
+	else --物品处于完成阶段
 
 	end
 
-	self._delegate:removeProductAtIndex(index) --删除面板上的值
+	--删除面板上的值
+	self._delegate:removeProductAtIndex(index) 
 	
 end
 
