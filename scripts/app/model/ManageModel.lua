@@ -570,13 +570,29 @@ function ManageModel:onTrayProductBtn(index)
 	--该队列值是playerInfo动作队列中加入产品动作时候返回的
 	local queueId = self._trayInfo:removeProduct(index)
 
-	if queueId then --queueId存在说明物品处于冷却阶段
+	if queueId then --queueId存在说明物品未完成状态
 		
 		local testPlayerId = 1
 
 		local playerInfo = self._playerInfoMap[testPlayerId]
 
 		playerInfo:removeQueue(queueId) --删除队列值
+
+
+		--有问题！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
+		if index == 1 then
+			--删除第一个队列的值
+			--判断玩家是否在等待该产品
+			if playerInfo.curState == PlayerStateType.WaitProduct then
+				--切换状态，执行下一条命令
+				playerInfo.curState = PlayerStateType.Idle --设置空闲状态
+				playerInfo.waitProductId = -1
+				self:playerQueue(playerInfo)
+			end
+
+		end
+
 		
 		
 
