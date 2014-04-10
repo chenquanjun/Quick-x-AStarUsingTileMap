@@ -73,6 +73,7 @@ function ManageController:init()
 
     --全局变量
     G_mapGeneral = MapGeneral:create(mapDataDic)
+    G_scheduler = require("framework.scheduler")
 
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
 

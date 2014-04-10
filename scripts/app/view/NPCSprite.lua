@@ -117,6 +117,68 @@ function NPCSprite:playAnim(startPoint, endPoint)
     	self._sprite:runAction(action)
  	
     end
+end
 
-    
+--sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
+function NPCSprite:easeWalkTo(speed, mapPath)
+        -- print("WalkTo:"..startId.." "..endId)
+        --A星寻路 地图路径
+
+        if mapPath == nil then
+            return --没有路径
+        end
+
+        local startPoint = mapPath:getPointAtIndex(1) --第一个点
+        local pointNum = mapPath:getPointArrCount()
+
+        self:setPosition(startPoint)
+
+        local curTime = 0
+        local totalTime = speed * pointNum
+
+        if self.handler then
+            -- print("exist")
+            G_scheduler.unscheduleGlobal(self.handler)
+            self.handler = nil
+        end
+        --定时器
+        self.handler = G_scheduler.scheduleUpdateGlobal(function(dt)
+                            curTime = curTime + dt
+
+                            --这个类似动作里面的update的time参数
+                            local time = curTime / totalTime
+
+                            local fIndex = (pointNum - 1) * time + 1 --从1开始
+                            local index  = self:int(fIndex)
+
+                            if index < pointNum then
+                                local curPoint = mapPath:getPointAtIndex(index)
+                                -- print(index..":"..curPoint.x..", "..curPoint.y)
+                                local nextPoint = mapPath:getPointAtIndex(index + 1)
+                                local offset = fIndex - index
+                                local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
+                                local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
+                                curPoint = ccp(x, y) 
+                                self:setPosition(curPoint)
+
+
+                                self:playAnim(curPoint, nextPoint)
+
+                            else --最后一个点
+                                local curPoint = mapPath:getPointAtIndex(index)
+                                self:setPosition(curPoint)
+                                G_scheduler.unscheduleGlobal(self.handler)
+                                self.handler = nil
+                                self:stopAnim()
+                                -- print("move end~")
+                            end
+        end)
+
+        return totalTime
+ 
+end
+
+
+function NPCSprite:int(x) 
+    return x>=0 and math.floor(x) or math.ceil(x)
 end

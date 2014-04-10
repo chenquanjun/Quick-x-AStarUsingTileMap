@@ -89,6 +89,9 @@ function ManageModel:onEnter()
 
 		-- self._delegate:setTimerInterval(timerControl:getTimerInterval())
 	end
+	--初始化产品
+	self:initProduct()
+
 	--test
 	local function performWithDelay(node, callback, delay)
 	    local delay = CCDelayTime:create(delay)
@@ -111,9 +114,7 @@ function ManageModel:onEnter()
 	self:addPlayer()
 	addNPCTest() --批量测试
 	-- self:addNPC() --单个测试
-
-	self:initProduct()
-
+	self:addNPC() --单个测试
 
 	self._timer:startTimer()
 
@@ -168,6 +169,7 @@ function ManageModel:initProduct()
 		productInfo.name = name
 		productInfo.mapId = mapId
 		productInfo.num = 0
+		productInfo.elfId = elfId
 		self._productInfoMap[elfId] = productInfo
 		--view初始化信息
 		local data = {}
@@ -241,6 +243,55 @@ function ManageModel:addNPC()
 		npcInfo.mapId = startMapId
 		npcInfo.elfId = elfId
 		npcInfo.modelId = modelId
+
+		do --产品 TEST
+			--npc需求结构
+			--产品表 (table)
+					-- 产品数组 (table)
+							-- 产品 (table)
+									-- 产品id，产品状态 (int)
+
+			local productList = {}
+
+			local totalNum = 6
+
+			local productListNum = math.random(1, 2) --1到2个列表
+
+			for i = 1, productListNum do
+				local productVec = {}
+				productList[i] = productVec
+				local productNum = math.random(1, 3) --每个列表里面1到3个物品
+
+				for j = 1, productNum do
+	
+					local randomIndex = math.random(1, totalNum)
+					-- print(randomIndex)
+					local flag = 1
+
+					for index, productInfo in pairs(self._productInfoMap) do
+						-- print("test")
+						if randomIndex == flag then
+							local product = {}
+							product.elfId = productInfo.elfId
+							product.curState = 0 --未满足
+							productVec[j] = product
+							-- print(productElfId)
+							break
+						end
+
+						flag = flag + 1
+					end
+
+					
+				end
+			end
+
+			-- dump(productList, "test")
+
+			npcInfo:setProductList(productList)
+
+		end
+
 		self._npcInfoMap[elfId] = npcInfo
 
 		--进入状态控制
@@ -283,7 +334,12 @@ function ManageModel:npcStateControl(elfId)
 	local npcInfo = self._npcInfoMap[elfId]
 
 	if npcInfo then
-		local isRelease, totalTime, mapId = npcInfo:npcState() --执行状态方法
+		local returnValue = npcInfo:npcState() --执行状态方法
+
+		local isRelease = returnValue.isRelease
+		local totalTime = returnValue.totalTime
+		local mapId = returnValue.mapId
+		local productVec = returnValue.productVec
 
 		if isRelease then
 			--释放

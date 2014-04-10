@@ -56,6 +56,11 @@ function ManageModelDelegate:removeNPC(elfId)
 	self._refer:MD_removeNPC(elfId)
 end
 
+--请求
+function ManageModelDelegate:showRequest(elfId, productVec)
+	self._refer:MD_showRequest(elfId, productVec)
+end
+
 --tray method
 function ManageModelDelegate:addProductAtIndex(index, productType)
     self._refer:MD_addProductAtIndex(index, productType)

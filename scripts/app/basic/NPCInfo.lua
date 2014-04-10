@@ -44,6 +44,9 @@ NPCInfo.mapId    = -1
 NPCInfo.curState = NPCStateType.Invalid    --NPC主状态
 NPCInfo.curFeel  = NPCFeelType.Invalid     --NPC感情类型
 
+NPCInfo._productList = nil
+NPCInfo._productIndex = 1  --默认指向第一个需求
+
 function NPCInfo:create()
 	local ret = {}
 	setmetatable(ret, NPCInfo)
@@ -55,12 +58,54 @@ function NPCInfo:init()
 	
 end
 
+--设计：npc在座位提出需求，每次需求有一个或多个product，满足一次需求之后可能还有需求
+--产品信息使用方法
+--1、首先初始化npc时候setProductList(结构：从1开始，每个元素里面包含一个或多个产品id)
+--2、获取当前产品getCurProduct，
+--3、 再遍历玩家身上的完成物品表，调用isNeedProduct方法判断是否满足npc需求
+--4、npc本次需求满足后，进入进食状态，调用nextProduct方法，返回nil退出，否则重复2，3
+
+function NPCInfo:setProductList(productList)
+	self._productList = productList
+	self._productIndex = 1
+end
+
+
+function NPCInfo:getCurProduct()
+
+	local productVec = self._productList[self._productIndex]
+
+	return productVec
+end
+
+function NPCInfo:nextProduct()
+	self._productIndex = self._productIndex + 1
+	return self:getCurProduct()
+end
+
+function NPCInfo:isNeedProduct(elfId)
+	local isNeed = false --默认失败
+	local productVec = self:getCurProduct() --获得当前的productVec
+	for index, product in ipairs(productVec) do
+		local elfId = product.elfId
+		local state = product.curState 
+		if elfId == elfId and state == 0 then--elfId相同， 而且未满足需求
+			product.curState = 1 --设置成满足
+			isNeed = true --返回成功
+			break
+		end
+	end
+
+	return isNeed
+end
+
 
 --npc主状态转换
 function NPCInfo:npcState()
 	local elfId = self.elfId --npcId --NPC的id，具有唯一性
 	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
 	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
+	local productVec = nil
 	--switch....
 	local switchState = {
 		--释放
@@ -127,14 +172,26 @@ function NPCInfo:npcState()
 		[NPCStateType.SeatRequest] 				= function()
 			--进入feel状态切换 
 			local isWaitSeat = false  --false 表示非外卖座位
-			totalTime = self:npcFeelOnRequest(isWaitSeat)
+			totalTime, productVec = self:npcFeelOnRequest(isWaitSeat)
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
-			totalTime = math.random(1, 2)
-			--进入支付状态，feel状态进入normal（由于支付是马上执行？）
-			self.curState = NPCStateType.SeatPay
-			self.curFeel = NPCFeelType.Normal
+			local productVec = self:nextProduct()
+
+			if productVec then
+				--还有需求
+				self.curState = NPCStateType.SeatRequest --状态切换
+				self.curFeel = NPCFeelType.Prepare --进入子状态
+
+			else
+				--没有需求，进入支付状态
+				totalTime = math.random(1, 2)
+
+				--进入支付状态，feel状态进入normal（由于支付是马上执行？）
+				self.curState = NPCStateType.SeatPay
+				self.curFeel = NPCFeelType.Normal
+			end
+
 		end,
 		--在座位支付
 		[NPCStateType.SeatPay] 					= function()
@@ -231,30 +288,41 @@ function NPCInfo:npcState()
 	--如果totalTime小于0，mapId不为0则说明totaltime需要view回调寻路时间来决定
 	--否则totalTime小于0是设置错误
 	--如果mapId不为-1则移动npc
-	return isRelease, totalTime, mapId
+
+	local returnValue      = {}
+	returnValue.isRelease  = isRelease
+	returnValue.totalTime  = totalTime
+	returnValue.mapId      = mapId
+	returnValue.productVec = productVec
+
+	return returnValue
 end
 
 --请求状态下状态转换
 function NPCInfo:npcFeelOnRequest(isWaitSeat)
 	local feelType = self.curFeel
 	local totalTime = 0
+	local productVec = nil
 
 	local switchType = {
 		--准备点菜
 		[NPCFeelType.Prepare]					= function()
 			-- print("prepare")
-			totalTime = math.random(1, 3)
+			totalTime = math.random(1, 2)
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--点菜完毕，进入普通等待
 		[NPCFeelType.Normal]					= function()
-			-- print("Normal")
+			print("Normal")
+			--点餐
+			productVec = self:getCurProduct()
+
 			totalTime = math.random(1, 3)
 			self.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
-			-- print("Anger")
+			print("Anger")
 			totalTime = math.random(1, 3)
 			self.curFeel = NPCFeelType.Cancel
 		end,
@@ -285,7 +353,7 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		return
 	end
 
-	return totalTime
+	return totalTime, productVec
 end
 
 --支付状态下状态转换
