@@ -148,8 +148,23 @@ function NPCInfo:isAllProductOK()
 	return isAllOK
 end
 
+function NPCInfo:meetProductNeed()
+	if self.curState ==  NPCStateType.SeatRequest then
+		self.curState = NPCStateType.SeatEating
+		self.curFeel = NPCFeelType.Invalid
+	elseif self.curState ==  NPCStateType.WaitSeatRequest then
+		self.curState = NPCStateType.WaitSeatIdle
+		self.curFeel = NPCFeelType.Invalid
+	end
+end
+
 function NPCInfo:setStateEating()
 	self.curState = NPCStateType.SeatEating
+	self.curFeel = NPCFeelType.Invalid
+end
+
+function NPCInfo:setStateWaitIdle()
+	self.curState = NPCStateType.WaitSeatIdle
 	self.curFeel = NPCFeelType.Invalid
 end
 
@@ -304,10 +319,11 @@ function NPCInfo:npcState()
 		end,
 		--在外卖座位发起请求
 		[NPCStateType.WaitSeatRequest] 			= function()
-		stateStr = "Request"
 			--进入feel状态切换
 			local isWaitSeat = true  --true 表示外卖座位
-			totalTime = self:npcFeelOnRequest(isWaitSeat)
+			totalTime, productVec, feelStr = self:npcFeelOnRequest(isWaitSeat)
+
+			stateStr = "Request"..feelStr
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
@@ -319,9 +335,21 @@ function NPCInfo:npcState()
 		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
 		stateStr = "Idle"
-		    totalTime = math.random(1, 2)
-			self.curState = NPCStateType.WaitSeatPay
-			self.curFeel = NPCFeelType.Normal
+			local productVec = self:nextProduct()
+			totalTime = math.random(1, 2)
+			if productVec then
+
+				--还有需求
+				self.curState = NPCStateType.WaitSeatRequest --状态切换
+				self.curFeel = NPCFeelType.Prepare --进入子状态
+
+			else
+				--没有需求，进入支付状态
+
+				--进入支付状态，feel状态进入normal（由于支付是马上执行？）
+				self.curState = NPCStateType.WaitSeatPay
+				self.curFeel = NPCFeelType.Normal
+			end
 		end,
 		--在外卖座位支付成功
 		[NPCStateType.WaitSeatPaySuccess] 		= function()
@@ -377,7 +405,7 @@ end
 function NPCInfo:isRequest()
 	local isRequest = false
 
-	if self.curState ==  NPCStateType.SeatRequest then
+	if self.curState ==  NPCStateType.SeatRequest or self.curState ==  NPCStateType.WaitSeatRequest then
 		if self.curFeel ==  NPCFeelType.Anger or self.curFeel ==  NPCFeelType.Cancel then
 			isRequest = true
 		end
