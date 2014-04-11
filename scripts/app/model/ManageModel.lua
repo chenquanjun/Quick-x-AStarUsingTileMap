@@ -113,8 +113,8 @@ function ManageModel:onEnter()
 
 	self:addPlayer()
 	-- addNPCTest() --批量测试
-	-- self:addNPC() --单个测试
 	self:addNPC() --单个测试
+	-- self:addNPC() --单个测试
 
 	self._timer:startTimer()
 
@@ -161,7 +161,7 @@ function ManageModel:initProduct()
 		local name = "id:"..elfId
 		local productType = 1
 
-		local duration = math.random(3, 5)
+		local duration = math.random(1, 3)
 
 		local productInfo = {}
 			productInfo.duration = duration
@@ -257,9 +257,9 @@ function ManageModel:addNPC()
 
 			local productList = {
 									{
-										{elfId = 101, curState = 0},
 										{elfId = 102, curState = 0},
-										{elfId = 103, curState = 0},
+										{elfId = 102, curState = 0},
+										{elfId = 104, curState = 0},
 										-- {elfId = 101, curState = 0}
 									},
 								}
@@ -416,7 +416,7 @@ function ManageModel:playerQueue(playerInfo)
 				--然后每个和npc的需求比较
 				local finishProductVec = self._trayInfo:getFinishProduct()
 
-				dump(finishProductVec, "finish")
+				-- dump(finishProductVec, "finish")
 
 				local requestIndexVec = {} --需求index vec
 				local trayIndexVec = {}    --托盘index vec
@@ -436,12 +436,13 @@ function ManageModel:playerQueue(playerInfo)
 					end
 				end
 
-				dump(requestIndexVec, "req index")
-				dump(trayIndexVec, "tray index")
+				-- dump(requestIndexVec, "req index")
+				-- dump(trayIndexVec, "tray index")
 
 				if isProductNeed then
 					--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除
-					--model删除 (model中npc的物品已经在isNeedProduct方法中标记)
+					--model删除 
+					npcInfo:removeFinishProduct(requestIndexVec)
 					self._trayInfo:removeProductWithVec(trayIndexVec)  --删除model中托盘物品
 
 					--view删除
@@ -450,10 +451,16 @@ function ManageModel:playerQueue(playerInfo)
 
 				end --if end
 
-				if npcInfo:isAllProductOK() then --所有需求满足，改变npc状态
+				local isAllProductOK = npcInfo:isAllProductOK()
+
+				if isAllProductOK then --所有需求满足，改变npc状态
 					
 					--删除回调
 					self._timer:removeTimerListener(elfId)
+
+					--改变npc状态
+					npcInfo:setStateEating()
+
 					--进入下一个状态
 					self:npcStateControl(elfId)
 				end

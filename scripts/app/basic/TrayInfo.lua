@@ -80,7 +80,7 @@ function TrayInfo:removeProductWithVec(indexVec)
 
     end
 
-    dump(productVec, "model tray")
+    -- dump(productVec, "model tray")
 end
 
 function TrayInfo:addProduct(elfId, queueId)

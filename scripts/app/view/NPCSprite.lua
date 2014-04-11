@@ -95,11 +95,15 @@ function NPCSprite:removeRequest(indexVec)
     local indexSize = #indexVec
 
     local productVec = self._productVec
+
+    dump(productVec, "product")
     
     for i = 1, indexSize do
         local iRevert = indexSize - i + 1
 
         local index = indexVec[iRevert] --从后面删除
+
+        print(index)
 
         local product = productVec[index]
 
@@ -111,7 +115,7 @@ function NPCSprite:removeRequest(indexVec)
 
         productVec[index] = nil
 
-        for j = index, size - 1 do
+        for j = index, size do
             productVec[j] = productVec[j + 1]
         end
 

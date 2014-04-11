@@ -105,7 +105,32 @@ function NPCInfo:isNeedProduct(elfId)
 	return needIndex
 end
 
+function NPCInfo:removeFinishProduct(indexVec)
+	local productVec = self:getCurProduct() 
+
+    local size = #productVec
+    local indexSize = #indexVec
+
+    for i = 1, indexSize do
+        local iRevert = indexSize - i + 1
+
+        local index = indexVec[iRevert] --从后面删除
+
+        local product = productVec[index]
+
+        productVec[index] = nil
+
+        assert(product.curState == 1, "remove error")
+
+        for j = index, size do
+            productVec[j] = productVec[j + 1]
+        end
+
+    end
+end
+
 function NPCInfo:isAllProductOK()
+	--其实统计产品个数是否为0也可以
 	local productVec = self:getCurProduct() --获得当前的productVec
 
 	local isAllOK = true
@@ -123,6 +148,10 @@ function NPCInfo:isAllProductOK()
 	return isAllOK
 end
 
+function NPCInfo:setStateEating()
+	self.curState = NPCStateType.SeatEating
+	self.curFeel = NPCFeelType.Invalid
+end
 
 --npc主状态转换
 function NPCInfo:npcState()
@@ -201,14 +230,17 @@ function NPCInfo:npcState()
 		end,
 		--在座位请求
 		[NPCStateType.SeatRequest] 				= function()
-		stateStr = "SeatRequest"
+		local feelStr = nil
+		-- stateStr = "SeatRequest"
 			--进入feel状态切换 
 			local isWaitSeat = false  --false 表示非外卖座位
-			totalTime, productVec = self:npcFeelOnRequest(isWaitSeat)
+			totalTime, productVec, feelStr = self:npcFeelOnRequest(isWaitSeat)
+
+			stateStr = "Request"..feelStr
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
-		stateStr = "SeatEating"
+		stateStr = "Eating"
 			local productVec = self:nextProduct()
 
 			if productVec then
@@ -228,14 +260,14 @@ function NPCInfo:npcState()
 		end,
 		--在座位支付
 		[NPCStateType.SeatPay] 					= function()
-		stateStr = "SeatPay"
+		stateStr = "Pay"
 			--进入feel状态切换
 			local isWaitSeat = false
 			totalTime = self:npcFeelOnPay(isWaitSeat)
 		end,
 		--支付成功
 		[NPCStateType.SeatPaySuccess]			= function()
-		stateStr = "SeatPaySuccess"
+		stateStr = "PayOK"
 			totalTime = 1.0
 			self.curState = NPCStateType.LeaveSeat
 			self.curFeel = NPCFeelType.Invalid
@@ -272,28 +304,28 @@ function NPCInfo:npcState()
 		end,
 		--在外卖座位发起请求
 		[NPCStateType.WaitSeatRequest] 			= function()
-		stateStr = "WaitSeatRequest"
+		stateStr = "Request"
 			--进入feel状态切换
 			local isWaitSeat = true  --true 表示外卖座位
 			totalTime = self:npcFeelOnRequest(isWaitSeat)
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
-		stateStr = "WaitSeatPay"
+		stateStr = "Pay"
 			--进入feel状态切换
 			local isWaitSeat = true
 			totalTime = self:npcFeelOnPay(isWaitSeat)
 		end,
 		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
-		stateStr = "WaitSeatIdle"
+		stateStr = "Idle"
 		    totalTime = math.random(1, 2)
 			self.curState = NPCStateType.WaitSeatPay
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--在外卖座位支付成功
 		[NPCStateType.WaitSeatPaySuccess] 		= function()
-		stateStr = "WaitSeatPaySuccess"
+		stateStr = "PayOk"
 		    totalTime = 1.0
 			self.curState = NPCStateType.LeaveWaitSeat
 			self.curFeel = NPCFeelType.Invalid --重置状态
@@ -350,11 +382,6 @@ function NPCInfo:isRequest()
 			isRequest = true
 		end
 	end
-
-	print(self.curState)
-	print(self.curFeel)
-	print(isRequest)
-
 	return isRequest
 end
 
@@ -363,16 +390,19 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 	local feelType = self.curFeel
 	local totalTime = 0
 	local productVec = nil
+	local testStateStr = nil
 
 	local switchType = {
 		--准备点菜
 		[NPCFeelType.Prepare]					= function()
+		testStateStr = "prepare"
 			-- print("prepare")
 			totalTime = math.random(1, 2)
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--点菜完毕，进入普通等待
 		[NPCFeelType.Normal]					= function()
+		testStateStr = "Normal"
 			print("Normal")
 			--点餐
 			productVec = self:getCurProduct()
@@ -382,12 +412,14 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
+		testStateStr = "Anger"
 			-- print("Anger")
 			totalTime = math.random(10, 15)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCFeelType.Cancel] 					= function()
+		testStateStr = "Cancel"
 			-- print("Cancel")
 			totalTime = 0.8 --预留播放动画时间
 
@@ -413,7 +445,7 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		return
 	end
 
-	return totalTime, productVec
+	return totalTime, productVec, testStateStr
 end
 
 --支付状态下状态转换
