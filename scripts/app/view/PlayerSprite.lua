@@ -1,39 +1,35 @@
 require "app/basic/extern"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
-NPCSprite = class("NPCSprite", function()
+PlayerSprite = class("PlayerSprite", function()
 	return CCNode:create()
 end)			
 --index
-NPCSprite.__index  			= NPCSprite
+PlayerSprite.__index  			= PlayerSprite
 
 --public
-NPCSprite.nPreMapId      = -1
-NPCSprite.nTargetMapId   = -1
-NPCSprite.handler        = nil       
+PlayerSprite.nPreMapId      = -1
+PlayerSprite.nTargetMapId   = -1
+PlayerSprite.handler        = nil       
 
 --private
-NPCSprite._fileName      = nil --文件名
-NPCSprite._sprite        = nil --精灵
-NPCSprite._lastActionTag = nil --最近动作tag
-NPCSprite._elfId         = -1  --用来区分不同NPC，默认为-1
+PlayerSprite._fileName      = nil --文件名
+PlayerSprite._sprite        = nil --精灵
+PlayerSprite._lastActionTag = nil --最近动作tag
+PlayerSprite._elfId         = -1  --用来区分不同NPC，默认为-1
 
-NPCSprite._productVec    = nil
-NPCSprite._productLayer  = nil
 
-NPCSprite._testStateLabel = nil
-
-function NPCSprite:create(fileNameFormat, elfId)
-	local pNPCSprite = NPCSprite.new()
-	pNPCSprite:init(fileNameFormat, elfId)
-	return pNPCSprite
+function PlayerSprite:create(fileNameFormat, elfId)
+	local ret = PlayerSprite.new()
+	ret:init(fileNameFormat, elfId)
+	return ret
 end
 
-function NPCSprite:getElfId()
+function PlayerSprite:getElfId()
     return self._elfId
 end
 
-function NPCSprite:init(fileNameFormat, elfId)
+function PlayerSprite:init(fileNameFormat, elfId)
 	self._fileName = fileNameFormat --缓存文件名
 
     self._elfId = elfId
@@ -63,83 +59,7 @@ function NPCSprite:init(fileNameFormat, elfId)
     self._testStateLabel = testLabel
 end
 
---添加请求的时候产品列表必然是空的
-function NPCSprite:addRequest(productVec)
-    self._productVec = {}
-    self._productLayer:removeAllChildren()
-
-    for i,value in ipairs(productVec) do
-
-        local elfId = value.elfId
-        local productType = value.productType
-
-        local name = elfId --test
-        local label = CCLabelTTF:create(name, "Arial", 16)
-
-        label:setPosition(ccp(i * 28, 0))
-        label:setColor(ccc3(255, 0, 0))
-
-        --保存
-        local product = {}
-        self._productVec[i] = product
-
-        product.eldId = elfId
-        product.sprite = label
-
-        self._productLayer:addChild(label)
-    end
-end
-
-function NPCSprite:removeRequest(indexVec)
-    local size = #self._productVec
-    local indexSize = #indexVec
-
-    local productVec = self._productVec
-
-    -- dump(productVec, "product")
-    
-    for i = 1, indexSize do
-        local iRevert = indexSize - i + 1
-
-        local index = indexVec[iRevert] --从后面删除
-
-        print(index)
-
-        local product = productVec[index]
-
-        local sequence = CCSequence:createWithTwoActions(CCFadeOut:create(0.2), CCRemoveSelf:create(true))
-
-        local sprite = product.sprite
-
-        sprite:runAction(sequence)
-
-        productVec[index] = nil
-
-        for j = index, size do
-            productVec[j] = productVec[j + 1]
-        end
-
-    end
-
-    -- dump(productVec, "product:")
-
-    if indexSize < size then
-        for i, product in ipairs(productVec) do
-            local sprite = product.sprite
-
-            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(i * 28, 0)))
-
-            sprite:runAction(sequence)
-        end
-
-    end
-end
-
-function NPCSprite:setStateStr(stateStr)
-    self._testStateLabel:setString(stateStr)
-end
-
-function NPCSprite:addAnimCache(fileNameFormat)
+function PlayerSprite:addAnimCache(fileNameFormat)
     --通过动画序列帧的某个缓存来判断是否存在缓存  player1_%i_%i.png0
 	local animation = display.getAnimationCache(fileNameFormat..tostring(1))
     
@@ -166,7 +86,7 @@ function NPCSprite:addAnimCache(fileNameFormat)
 	end
 end
 
-function NPCSprite:stopAnim()
+function PlayerSprite:stopAnim()
 	if self._lastActionTag ~= kActionInvalid then
     	self._sprite:stopActionByTag(self._lastActionTag)
     	self._lastActionTag = kActionInvalid
@@ -174,7 +94,7 @@ function NPCSprite:stopAnim()
 end
 
 --根据移动坐标点的变化来判断播放动画
-function NPCSprite:playAnim(startPoint, endPoint)
+function PlayerSprite:playAnim(startPoint, endPoint)
     local offsetX = endPoint.x - startPoint.x
     local offsetY = endPoint.y - startPoint.y
     local actionType = kActionTagInvalid     
@@ -215,7 +135,7 @@ function NPCSprite:playAnim(startPoint, endPoint)
 end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
-function NPCSprite:easeWalkTo(speed, mapPath)
+function PlayerSprite:easeWalkTo(speed, mapPath)
         -- print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
 
@@ -273,6 +193,6 @@ function NPCSprite:easeWalkTo(speed, mapPath)
  
 end
 
-function NPCSprite:int(x) 
+function PlayerSprite:int(x) 
     return x>=0 and math.floor(x) or math.ceil(x)
 end

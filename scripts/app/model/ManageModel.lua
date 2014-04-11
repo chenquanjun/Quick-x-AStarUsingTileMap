@@ -108,14 +108,20 @@ function ManageModel:onEnter()
 			self:addNPC()
 			end
 			addNPCTest()
-		end, math.random(10, 20))
+		end, math.random(5, 10))
 	end
 
 	self:addPlayer()
-	-- addNPCTest() --批量测试
+	addNPCTest() --批量测试
 
 	do
 				local productList = {
+										{
+											{elfId = 106, curState = 0},
+											{elfId = 105, curState = 0},
+											{elfId = 101, curState = 0},
+											-- {elfId = 106, curState = 0}
+										},
 										{
 											{elfId = 106, curState = 0},
 											{elfId = 105, curState = 0},
@@ -304,7 +310,7 @@ function ManageModel:addNPC(productList)
 				for i = 1, productListNum do
 					local productVec = {}
 					productList[i] = productVec
-					local productNum = math.random(3, 4) --每个列表里面1到3个物品
+					local productNum = math.random(1, 3) --每个列表里面1到3个物品
 
 					for j = 1, productNum do
 		
@@ -335,7 +341,7 @@ function ManageModel:addNPC(productList)
 			end
 		end
 
-		dump(productList, "test")
+		-- dump(productList, "test")
 
 		npcInfo:setProductList(productList)
 
@@ -445,14 +451,10 @@ function ManageModel:playerQueue(playerInfo)
 					return --非请求状态，返回
 				end
 
-				--还有满足所有需求后转变npc的状态！！！
-
-
 				--取出所有已经完成的product信息
 				--然后每个和npc的需求比较
 				local finishProductVec = self._trayInfo:getFinishProduct()
 
-				-- dump(finishProductVec, "finish")
 
 				local requestIndexVec = {} --需求index vec
 				local trayIndexVec = {}    --托盘index vec
@@ -471,9 +473,6 @@ function ManageModel:playerQueue(playerInfo)
 						isProductNeed = true
 					end
 				end
-
-				-- dump(requestIndexVec, "req index")
-				-- dump(trayIndexVec, "tray index")
 
 				if isProductNeed then
 					--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除

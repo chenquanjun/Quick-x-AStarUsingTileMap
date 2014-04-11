@@ -1,5 +1,7 @@
 require "app/basic/extern"
 require "app/view/ManageTrayView"
+require "app/view/PlayerSprite"
+require "app/view/NPCSprite"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageView = class("ManageView", function()
@@ -252,7 +254,7 @@ function ManageView:MD_addPlayer(data)
         fileName = "player4_%i_%i.png"
     end
 
-    local npcSprite = NPCSprite:create(fileName, elfId)
+    local npcSprite = PlayerSprite:create(fileName, elfId)
 
     npcSprite.nPreMapId = startMapId
     npcSprite.nTargetMapId = startMapId
@@ -360,7 +362,7 @@ function ManageView:MD_movePlayer(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
         -- print("player move")
-        totalTime = playerSprite:easeWalkTo(0.1, mapPath)
+        totalTime = playerSprite:easeWalkTo(0.05, mapPath)
     end
 
     return totalTime

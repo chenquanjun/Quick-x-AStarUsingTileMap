@@ -242,15 +242,15 @@ function NPCInfo:npcState()
 		[NPCStateType.SeatEating] 				= function()
 		stateStr = "Eating"
 			local productVec = self:nextProduct()
-
+			totalTime = math.random(1, 2)
 			if productVec then
+
 				--还有需求
 				self.curState = NPCStateType.SeatRequest --状态切换
 				self.curFeel = NPCFeelType.Prepare --进入子状态
 
 			else
 				--没有需求，进入支付状态
-				totalTime = math.random(1, 2)
 
 				--进入支付状态，feel状态进入normal（由于支付是马上执行？）
 				self.curState = NPCStateType.SeatPay
