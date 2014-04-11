@@ -118,9 +118,9 @@ function NPCInfo:removeFinishProduct(indexVec)
 
         local product = productVec[index]
 
-        productVec[index] = nil
-
         assert(product.curState == 1, "remove error")
+
+        productVec[index] = nil
 
         for j = index, size do
             productVec[j] = productVec[j + 1]

@@ -108,12 +108,43 @@ function ManageModel:onEnter()
 			self:addNPC()
 			end
 			addNPCTest()
-		end, math.random(1, 8))
+		end, math.random(10, 20))
 	end
 
 	self:addPlayer()
 	-- addNPCTest() --批量测试
-	self:addNPC() --单个测试
+
+	do
+				local productList = {
+										{
+											{elfId = 106, curState = 0},
+											{elfId = 105, curState = 0},
+											{elfId = 101, curState = 0},
+											-- {elfId = 106, curState = 0}
+										},
+									}
+
+				self:addNPC(productList) --单个测试		
+	end
+
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 102, curState = 0},
+	-- 										{elfId = 103, curState = 0},
+	-- 										{elfId = 106, curState = 0},
+	-- 										-- {elfId = 106, curState = 0}
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+
+
+	-- self:addNPC() --单个测试
+	-- self:addNPC() --单个测试
+	-- self:addNPC() --单个测试
+	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
 
 	self._timer:startTimer()
@@ -231,7 +262,7 @@ function ManageModel:addPlayer()
 end
 
 --增加NPC
-function ManageModel:addNPC()
+function ManageModel:addNPC(productList)
 	
 	local elfId = self._npcIdOffset + self._npcTestFlag
 
@@ -247,63 +278,68 @@ function ManageModel:addNPC()
 		npcInfo.modelId = modelId
 
 
+		if productList == nil then
+			do --产品 TEST
+				--npc需求结构
+				--产品表 (table)
+						-- 产品数组 (table)
+								-- 产品 (table)
+										-- 产品id，产品状态 (int)
 
-		do --产品 TEST
-			--npc需求结构
-			--产品表 (table)
-					-- 产品数组 (table)
-							-- 产品 (table)
-									-- 产品id，产品状态 (int)
+				-- local productList = {
+				-- 						{
+				-- 							{elfId = 106, curState = 0},
+				-- 							{elfId = 105, curState = 0},
+				-- 							{elfId = 101, curState = 0},
+				-- 							{elfId = 106, curState = 0}
+				-- 						},
+				-- 					}
 
-			local productList = {
-									{
-										{elfId = 102, curState = 0},
-										{elfId = 102, curState = 0},
-										{elfId = 104, curState = 0},
-										-- {elfId = 101, curState = 0}
-									},
-								}
+				productList = {}
 
-			-- local productList = {}
+				local totalNum = 6
 
-			-- local totalNum = 6
+				local productListNum = math.random(1, 1) --1到2个列表
 
-			-- local productListNum = math.random(1, 1) --1到2个列表
+				for i = 1, productListNum do
+					local productVec = {}
+					productList[i] = productVec
+					local productNum = math.random(3, 4) --每个列表里面1到3个物品
 
-			-- for i = 1, productListNum do
-			-- 	local productVec = {}
-			-- 	productList[i] = productVec
-			-- 	local productNum = math.random(3, 4) --每个列表里面1到3个物品
+					for j = 1, productNum do
+		
+						local randomIndex = math.random(1, totalNum)
+						-- print(randomIndex)
+						local flag = 1
 
-			-- 	for j = 1, productNum do
-	
-			-- 		local randomIndex = math.random(1, totalNum)
-			-- 		-- print(randomIndex)
-			-- 		local flag = 1
+						for index, productInfo in pairs(self._productInfoMap) do
+							-- print("test")
+							if randomIndex == flag then
+								local product = {}
+								product.elfId = productInfo.elfId
+								product.curState = 0 --未满足
+								productVec[j] = product
+								-- print(productElfId)
+								break
+							end
 
-			-- 		for index, productInfo in pairs(self._productInfoMap) do
-			-- 			-- print("test")
-			-- 			if randomIndex == flag then
-			-- 				local product = {}
-			-- 				product.elfId = productInfo.elfId
-			-- 				product.curState = 0 --未满足
-			-- 				productVec[j] = product
-			-- 				-- print(productElfId)
-			-- 				break
-			-- 			end
+							flag = flag + 1
+						end
 
-			-- 			flag = flag + 1
-			-- 		end
+						
+					end
+				end
 
-					
-			-- 	end
-			-- end
 
-			-- dump(productList, "test")
 
-			npcInfo:setProductList(productList)
-
+			end
 		end
+
+		dump(productList, "test")
+
+		npcInfo:setProductList(productList)
+
+
 
 		self._npcInfoMap[elfId] = npcInfo
 
@@ -441,6 +477,8 @@ function ManageModel:playerQueue(playerInfo)
 
 				if isProductNeed then
 					--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除
+
+					table.sort(requestIndexVec) --将请求列表的序号排序（因为托盘的物品不一定按照npc的需求来排序，所以此处需要排序）
 					--model删除 
 					npcInfo:removeFinishProduct(requestIndexVec)
 					self._trayInfo:removeProductWithVec(trayIndexVec)  --删除model中托盘物品
