@@ -424,6 +424,7 @@ function ManageModel:npcStateControl(elfId)
 	end
 end
 
+--玩家去到座位时候调用此方法（仅当座位上存在npc）
 function ManageModel:playerOnSeat(npcInfo)
 	local elfId = npcInfo.elfId
 
@@ -502,74 +503,15 @@ function ManageModel:playerQueue(playerInfo)
 		end,
 		--2
 		[PlayerStateType.Seat]	 		= function()
-			print("at seat")
+			-- print("at seat")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 			local elfId = G_mapGeneral:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
 
 			if elfId ~= G_mapGeneral.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
-
+				--处理需求
 				self:playerOnSeat(npcInfo)
-
-				-- if npcInfo:isRequest() == false then
-				-- 	return --非请求状态，返回
-				-- end
-
-				-- --取出所有已经完成的product信息
-				-- --然后每个和npc的需求比较
-				-- local finishProductVec = self._trayInfo:getFinishProduct()
-
-
-				-- local requestIndexVec = {} --需求index vec
-				-- local trayIndexVec = {}    --托盘index vec
-
-				-- local isProductNeed = false
-
-				-- for i,v in ipairs(finishProductVec) do
-				-- 	local productId = v.elfId
-				-- 	local trayIndex = v.index
-				-- 	local requestIndex = npcInfo:isNeedProduct(productId)
-
-				-- 	if requestIndex > -1 then
-				-- 		requestIndexVec[#requestIndexVec + 1] = requestIndex
-				-- 		trayIndexVec[#trayIndexVec + 1] = trayIndex
-
-				-- 		isProductNeed = true
-				-- 	end
-				-- end
-
-				-- if isProductNeed then
-				-- 	--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除
-
-				-- 	table.sort(requestIndexVec) --将请求列表的序号排序（因为托盘的物品不一定按照npc的需求来排序，所以此处需要排序）
-				-- 	--model删除 
-				-- 	npcInfo:removeFinishProduct(requestIndexVec)
-				-- 	self._trayInfo:removeProductWithVec(trayIndexVec)  --删除model中托盘物品
-
-				-- 	--view删除
-				-- 	self._delegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
-				-- 	self._delegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
-
-				-- else --没有一个产品满足npc（赶走npc）
-
-
-				-- 	return
-				-- end --if end
-
-				-- local isAllProductOK = npcInfo:isAllProductOK()
-
-				-- if isAllProductOK then --所有需求满足，改变npc状态
-					
-				-- 	--删除回调
-				-- 	self._timer:removeTimerListener(elfId)
-
-				-- 	--改变npc状态
-				-- 	npcInfo:setStateEating()
-
-				-- 	--进入下一个状态
-				-- 	self:npcStateControl(elfId)
-				-- end
 
 			end-- if end
 			
@@ -577,8 +519,7 @@ function ManageModel:playerQueue(playerInfo)
 		end,
 		--3
 		[PlayerStateType.WaitSeat]		= function()
-			print("at wait seat")
-
+			-- print("at wait seat")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 
@@ -586,10 +527,10 @@ function ManageModel:playerQueue(playerInfo)
 
 			if elfId ~= G_mapGeneral.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
-
+				--处理需求
 				self:playerOnSeat(npcInfo)
 
-			end
+			end-- if end
 		end,
 		--4
 		[PlayerStateType.Product]		= function()

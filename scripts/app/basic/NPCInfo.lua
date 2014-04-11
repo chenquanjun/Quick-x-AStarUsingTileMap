@@ -155,17 +155,9 @@ function NPCInfo:meetProductNeed()
 	elseif self.curState ==  NPCStateType.WaitSeatRequest then
 		self.curState = NPCStateType.WaitSeatIdle
 		self.curFeel = NPCFeelType.Invalid
+	else
+		error("error call")
 	end
-end
-
-function NPCInfo:setStateEating()
-	self.curState = NPCStateType.SeatEating
-	self.curFeel = NPCFeelType.Invalid
-end
-
-function NPCInfo:setStateWaitIdle()
-	self.curState = NPCStateType.WaitSeatIdle
-	self.curFeel = NPCFeelType.Invalid
 end
 
 --npc主状态转换
@@ -431,7 +423,7 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		--点菜完毕，进入普通等待
 		[NPCFeelType.Normal]					= function()
 		testStateStr = "Normal"
-			print("Normal")
+			-- print("Normal")
 			--点餐
 			productVec = self:getCurProduct()
 
