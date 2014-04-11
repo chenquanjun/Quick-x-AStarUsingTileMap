@@ -164,19 +164,21 @@ function ManageModel:initProduct()
 		local duration = math.random(3, 5)
 
 		local productInfo = {}
-		productInfo.duration = duration
-		productInfo.type = productType
-		productInfo.name = name
-		productInfo.mapId = mapId
-		productInfo.num = 0
-		productInfo.elfId = elfId
+			productInfo.duration = duration
+			productInfo.type = productType
+			productInfo.name = name
+			productInfo.mapId = mapId
+			productInfo.num = 0
+			productInfo.elfId = elfId
+
 		self._productInfoMap[elfId] = productInfo
+
 		--view初始化信息
 		local data = {}
-		data.elfId = elfId
-		data.name = name
-		data.type = productType
-		data.mapId = mapId
+			data.elfId = elfId
+			data.name = name
+			data.type = productType
+			data.mapId = mapId
 
 		self._delegate:addProduct(data)
 
@@ -244,6 +246,8 @@ function ManageModel:addNPC()
 		npcInfo.elfId = elfId
 		npcInfo.modelId = modelId
 
+
+
 		do --产品 TEST
 			--npc需求结构
 			--产品表 (table)
@@ -251,40 +255,49 @@ function ManageModel:addNPC()
 							-- 产品 (table)
 									-- 产品id，产品状态 (int)
 
-			local productList = {}
+			local productList = {
+									{
+										{elfId = 101, curState = 0},
+										{elfId = 102, curState = 0},
+										{elfId = 103, curState = 0},
+										-- {elfId = 101, curState = 0}
+									},
+								}
 
-			local totalNum = 6
+			-- local productList = {}
 
-			local productListNum = math.random(1, 2) --1到2个列表
+			-- local totalNum = 6
 
-			for i = 1, productListNum do
-				local productVec = {}
-				productList[i] = productVec
-				local productNum = math.random(1, 3) --每个列表里面1到3个物品
+			-- local productListNum = math.random(1, 1) --1到2个列表
 
-				for j = 1, productNum do
+			-- for i = 1, productListNum do
+			-- 	local productVec = {}
+			-- 	productList[i] = productVec
+			-- 	local productNum = math.random(3, 4) --每个列表里面1到3个物品
+
+			-- 	for j = 1, productNum do
 	
-					local randomIndex = math.random(1, totalNum)
-					-- print(randomIndex)
-					local flag = 1
+			-- 		local randomIndex = math.random(1, totalNum)
+			-- 		-- print(randomIndex)
+			-- 		local flag = 1
 
-					for index, productInfo in pairs(self._productInfoMap) do
-						-- print("test")
-						if randomIndex == flag then
-							local product = {}
-							product.elfId = productInfo.elfId
-							product.curState = 0 --未满足
-							productVec[j] = product
-							-- print(productElfId)
-							break
-						end
+			-- 		for index, productInfo in pairs(self._productInfoMap) do
+			-- 			-- print("test")
+			-- 			if randomIndex == flag then
+			-- 				local product = {}
+			-- 				product.elfId = productInfo.elfId
+			-- 				product.curState = 0 --未满足
+			-- 				productVec[j] = product
+			-- 				-- print(productElfId)
+			-- 				break
+			-- 			end
 
-						flag = flag + 1
-					end
+			-- 			flag = flag + 1
+			-- 		end
 
 					
-				end
-			end
+			-- 	end
+			-- end
 
 			-- dump(productList, "test")
 
@@ -336,10 +349,11 @@ function ManageModel:npcStateControl(elfId)
 	if npcInfo then
 		local returnValue = npcInfo:npcState() --执行状态方法
 
-		local isRelease = returnValue.isRelease
-		local totalTime = returnValue.totalTime
-		local mapId = returnValue.mapId
-		local productVec = returnValue.productVec
+		local isRelease = returnValue.isRelease --是否已经释放
+		local totalTime = returnValue.totalTime --回调时间
+		local mapId = returnValue.mapId --移动目标id
+		local productVec = returnValue.productVec --产品数组
+		local testStateStr = returnValue.testStateStr
 
 		if isRelease then
 			--释放
@@ -356,6 +370,10 @@ function ManageModel:npcStateControl(elfId)
 			if productVec then
 				self._delegate:addRequest(elfId, productVec)
 			end
+
+			if testStateStr then
+				self._delegate:setStateStr(elfId, testStateStr)
+			end
 		end
 
 
@@ -364,6 +382,10 @@ function ManageModel:npcStateControl(elfId)
 	end
 end
 
+
+--玩家队列分两部分执行，动作与移动
+--switch执行的是当前动作
+--popQueue是下一个动作的移动部分
 function ManageModel:playerQueue(playerInfo)
 	--处理当前位置的数据
 	local state = playerInfo.curState
@@ -376,6 +398,69 @@ function ManageModel:playerQueue(playerInfo)
 		--2
 		[PlayerStateType.Seat]	 		= function()
 			print("at seat")
+			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
+			local mapId = preQueueData.originMapId --取出座位id
+			local elfId = G_mapGeneral:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
+
+			if elfId ~= G_mapGeneral.SEAT_EMPTY  then --座位不为空！
+				local npcInfo = self._npcInfoMap[elfId]
+
+				if npcInfo:isRequest() == false then
+					return --非请求状态，返回
+				end
+
+				--还有满足所有需求后转变npc的状态！！！
+
+
+				--取出所有已经完成的product信息
+				--然后每个和npc的需求比较
+				local finishProductVec = self._trayInfo:getFinishProduct()
+
+				dump(finishProductVec, "finish")
+
+				local requestIndexVec = {} --需求index vec
+				local trayIndexVec = {}    --托盘index vec
+
+				local isProductNeed = false
+
+				for i,v in ipairs(finishProductVec) do
+					local productId = v.elfId
+					local trayIndex = v.index
+					local requestIndex = npcInfo:isNeedProduct(productId)
+
+					if requestIndex > -1 then
+						requestIndexVec[#requestIndexVec + 1] = requestIndex
+						trayIndexVec[#trayIndexVec + 1] = trayIndex
+
+						isProductNeed = true
+					end
+				end
+
+				dump(requestIndexVec, "req index")
+				dump(trayIndexVec, "tray index")
+
+				if isProductNeed then
+					--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除
+					--model删除 (model中npc的物品已经在isNeedProduct方法中标记)
+					self._trayInfo:removeProductWithVec(trayIndexVec)  --删除model中托盘物品
+
+					--view删除
+					self._delegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
+					self._delegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
+
+				end --if end
+
+				if npcInfo:isAllProductOK() then --所有需求满足，改变npc状态
+					
+					--删除回调
+					self._timer:removeTimerListener(elfId)
+					--进入下一个状态
+					self:npcStateControl(elfId)
+				end
+
+			end-- if end
+			
+
 		end,
 		--3
 		[PlayerStateType.WaitSeat]		= function()
@@ -386,6 +471,11 @@ function ManageModel:playerQueue(playerInfo)
 			print("at product")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			assert(preQueueData ~= nil, "error,queue should not nil")
+
+			if preQueueData.isDelete then --先判断是否已经删除
+				print("delete")
+				return
+			end
 
 			local productElfId = preQueueData.elfId --产品id
 
@@ -485,6 +575,7 @@ function ManageModel:onSeatBtn(mapId)
 
 	local queueData = {}
 	queueData.mapId = serveId
+	queueData.originMapId = mapId
 	queueData.state = PlayerStateType.Seat
 
 	local testPlayerId = 1
@@ -508,6 +599,7 @@ function ManageModel:onWaitSeatBtn(mapId)
 
 	local queueData = {}
 	queueData.mapId = serveId
+	queueData.originMapId = mapId
 	queueData.state = PlayerStateType.WaitSeat
 
 	local testPlayerId = 1
@@ -542,6 +634,7 @@ function ManageModel:onProductBtn(elfId)
 
 	local queueData = {}
 	queueData.mapId = serveId
+	queueData.originMapId = mapId
 	queueData.state = PlayerStateType.Product
 	queueData.elfId = elfId
 
@@ -578,10 +671,8 @@ function ManageModel:onTrayProductBtn(index)
 
 		playerInfo:removeQueue(queueId) --删除队列值
 
-
-		--有问题！！！！！！！！！！！！！！！！！！！！！！！！！！！
-
-		if index == 1 then
+		if index == 1 then --此条件仅在等待物品cd且取消的是第一个时候触发
+			-- print("remove cd queue")
 			--删除第一个队列的值
 			--判断玩家是否在等待该产品
 			if playerInfo.curState == PlayerStateType.WaitProduct then

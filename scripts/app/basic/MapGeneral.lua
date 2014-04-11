@@ -81,6 +81,16 @@ function MapGeneral:initMapPointsVec()
 	end  	
 end
 
+--看看是谁霸占了座位
+function MapGeneral:getSeatInfo(mapType, mapId)
+
+	local mapDic = self._occupySeatDic[mapType]
+
+	local elfId = mapDic[mapId]
+
+	return elfId
+end
+
 --需要占用的类型，占用的npcId
 function MapGeneral:occupySeat(mapType, elfId)
 	-- 占位 

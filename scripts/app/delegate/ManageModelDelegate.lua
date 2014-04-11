@@ -56,11 +56,16 @@ function ManageModelDelegate:removeNPC(elfId)
 	self._refer:MD_removeNPC(elfId)
 end
 
+function ManageModelDelegate:setStateStr(elfId, stateStr)
+	self._refer:MD_setStateStr(elfId, stateStr)
+end
+
 --请求
 function ManageModelDelegate:addRequest(elfId, productVec)
 	self._refer:addRequest(elfId, productVec)
 end
 
+--删除请求
 function ManageModelDelegate:removeRequest(elfId, indexVec)
 	self._refer:MD_removeRequest(elfId, indexVec)
 end
@@ -72,6 +77,10 @@ end
 
 function ManageModelDelegate:removeProductAtIndex(index)
     self._refer:MD_removeProductAtIndex(index)
+end
+
+function ManageModelDelegate:removeProductWithVec(indexVec)
+	self._refer:MD_removeProductWithVec(indexVec)
 end
 
 function ManageModelDelegate:setProductFinishAtIndex(index)

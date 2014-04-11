@@ -39,6 +39,50 @@ function TrayInfo:isFull()
 	return value
 end
 
+--获得完成物品的id和elfId的数组
+function TrayInfo:getFinishProduct()
+	local finishProductVec = {}
+	for index, product in ipairs(self._productVec) do
+		if  product.state == ProductStateType.Complete then
+			local productIdAndIndex = {}
+			productIdAndIndex.index = index
+			productIdAndIndex.elfId = product.elfId
+
+			finishProductVec[#finishProductVec + 1] = productIdAndIndex
+		end
+	end
+
+	return finishProductVec
+end
+
+--删除产品
+function TrayInfo:removeProductWithVec(indexVec)
+    local size = #self._productVec
+    local indexSize = #indexVec
+
+    local productVec = self._productVec
+
+    productVec[size + 1] = nil
+    
+    --注意是从后面开始删除，这样才不会破坏index值(需要保证传入的indexVec是从小到大排列)
+    for i = 1, indexSize do
+        local iRevert = indexSize - i + 1
+
+        local index = indexVec[iRevert] --从后面删除
+
+        local product = productVec[index]
+
+        productVec[index] = nil
+
+        for j = index, size do
+            productVec[j] = productVec[j + 1]
+        end
+
+    end
+
+    dump(productVec, "model tray")
+end
+
 function TrayInfo:addProduct(elfId, queueId)
 
 	local index = #self._productVec + 1

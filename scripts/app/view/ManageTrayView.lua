@@ -128,6 +128,47 @@ function ManageTrayView:setProductFinishAtIndex(index)
 	sprite:setColor(ccc3(255, 0, 0))
 end
 
+function ManageTrayView:removeProductWithVec(indexVec)
+	local size = #self._productVec
+    local indexSize = #indexVec
+
+    local productVec = self._productVec
+
+    productVec[size + 1] = nil
+    
+    for i = 1, indexSize do
+        local iRevert = indexSize - i + 1
+
+        local index = indexVec[iRevert] --从后面删除
+
+        local sequence = CCSequence:createWithTwoActions(CCFadeOut:create(0.2), CCRemoveSelf:create(true))
+
+        local sprite = productVec[index]
+
+        sprite:runAction(sequence)
+
+        productVec[index] = nil
+
+        for j = index, size do
+            productVec[j] = productVec[j + 1]
+        end
+
+    end
+
+    print("size:"..#productVec)
+
+    if indexSize < size then
+        for i, product in ipairs(productVec) do
+            local sprite = product
+
+            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(0, - i * 50)))
+
+            sprite:runAction(sequence)
+        end
+
+    end
+end
+
 
 
 

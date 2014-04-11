@@ -21,6 +21,8 @@ NPCSprite._elfId         = -1  --用来区分不同NPC，默认为-1
 NPCSprite._productVec    = nil
 NPCSprite._productLayer  = nil
 
+NPCSprite._testStateLabel = nil
+
 function NPCSprite:create(fileNameFormat, elfId)
 	local pNPCSprite = NPCSprite.new()
 	pNPCSprite:init(fileNameFormat, elfId)
@@ -51,6 +53,14 @@ function NPCSprite:init(fileNameFormat, elfId)
 
     self._productLayer = layer
     self:addChild(layer)
+
+    local testLabel = CCLabelTTF:create(elfId, "Arial", 15)
+    testLabel:setPosition(ccp(0, 70))
+    testLabel:setColor(ccc3(0, 0, 255))
+
+    self:addChild(testLabel)
+
+    self._testStateLabel = testLabel
 end
 
 --添加请求的时候产品列表必然是空的
@@ -119,6 +129,10 @@ function NPCSprite:removeRequest(indexVec)
         end
 
     end
+end
+
+function NPCSprite:setStateStr(stateStr)
+    self._testStateLabel:setString(stateStr)
 end
 
 function NPCSprite:addAnimCache(fileNameFormat)

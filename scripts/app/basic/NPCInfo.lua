@@ -84,19 +84,43 @@ function NPCInfo:nextProduct()
 end
 
 function NPCInfo:isNeedProduct(elfId)
-	local isNeed = false --默认失败
+	local needIndex = -1 --默认没有
 	local productVec = self:getCurProduct() --获得当前的productVec
+
+	-- dump(productVec, "product")
+
 	for index, product in ipairs(productVec) do
-		local elfId = product.elfId
+		local productId = product.elfId
 		local state = product.curState 
-		if elfId == elfId and state == 0 then--elfId相同， 而且未满足需求
+		if elfId == productId and state == 0 then--elfId相同， 而且未满足需求
 			product.curState = 1 --设置成满足
-			isNeed = true --返回成功
+
+			needIndex = index
 			break
 		end
 	end
 
-	return isNeed
+	-- dump(productVec, "product")
+
+	return needIndex
+end
+
+function NPCInfo:isAllProductOK()
+	local productVec = self:getCurProduct() --获得当前的productVec
+
+	local isAllOK = true
+
+	for index, product in ipairs(productVec) do
+
+		local state = product.curState 
+		if 	state == 0 then--有没满足需求的
+
+			isAllOK = false --设置为false
+			break 
+		end
+	end
+
+	return isAllOK
 end
 
 
@@ -106,6 +130,8 @@ function NPCInfo:npcState()
 	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
 	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
 	local productVec = nil
+
+	local stateStr = nil
 	--switch....
 	local switchState = {
 		--释放
@@ -114,12 +140,14 @@ function NPCInfo:npcState()
 		end,
 		--开始位置
 		[NPCStateType.Start]					= function()
+		stateStr = "start"
 			totalTime = math.random(1, 3)
 			self.curState = NPCStateType.GoToDoor --状态切换
 
 		end,
 		--开始到门口
 		[NPCStateType.GoToDoor]					= function()
+		stateStr = "GoToDoor"
 			mapId = G_mapGeneral:occupySeat(kMapDataDoor, elfId)
 
 			if mapId > -1 then--占位成功
@@ -134,6 +162,7 @@ function NPCInfo:npcState()
 		end,
 		--门口位置
 		[NPCStateType.Door] 					= function()
+		stateStr = "Door"
 			--在门口稍微停留再看看有没位置
 			totalTime = math.random(0.2, 0.5)
 			self.curState = NPCStateType.FindSeat
@@ -141,6 +170,7 @@ function NPCInfo:npcState()
 		end,
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
+		stateStr = "LeaveDoor"	
 			--获得开始位置的mapId
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
 			--改变状态
@@ -151,6 +181,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
+		stateStr = "FindSeat"
 			mapId = G_mapGeneral:occupySeat(kMapDataSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -170,12 +201,14 @@ function NPCInfo:npcState()
 		end,
 		--在座位请求
 		[NPCStateType.SeatRequest] 				= function()
+		stateStr = "SeatRequest"
 			--进入feel状态切换 
 			local isWaitSeat = false  --false 表示非外卖座位
 			totalTime, productVec = self:npcFeelOnRequest(isWaitSeat)
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
+		stateStr = "SeatEating"
 			local productVec = self:nextProduct()
 
 			if productVec then
@@ -195,18 +228,22 @@ function NPCInfo:npcState()
 		end,
 		--在座位支付
 		[NPCStateType.SeatPay] 					= function()
+		stateStr = "SeatPay"
 			--进入feel状态切换
 			local isWaitSeat = false
 			totalTime = self:npcFeelOnPay(isWaitSeat)
 		end,
 		--支付成功
 		[NPCStateType.SeatPaySuccess]			= function()
+		stateStr = "SeatPaySuccess"
 			totalTime = 1.0
 			self.curState = NPCStateType.LeaveSeat
 			self.curFeel = NPCFeelType.Invalid
 		end,
 		--离开座位
 		[NPCStateType.LeaveSeat] 				= function()
+		stateStr = "LeaveSeat"
+			print("npc leave")
 			--离开座位之后回到开始位置然后kill掉?
 			G_mapGeneral:leaveSeat(kMapDataSeat, self.mapId, elfId)
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
@@ -215,6 +252,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
+		stateStr = "FindWaitSeat"
 			mapId = G_mapGeneral:occupySeat(kMapDataWaitSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -234,30 +272,35 @@ function NPCInfo:npcState()
 		end,
 		--在外卖座位发起请求
 		[NPCStateType.WaitSeatRequest] 			= function()
+		stateStr = "WaitSeatRequest"
 			--进入feel状态切换
 			local isWaitSeat = true  --true 表示外卖座位
 			totalTime = self:npcFeelOnRequest(isWaitSeat)
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
+		stateStr = "WaitSeatPay"
 			--进入feel状态切换
 			local isWaitSeat = true
 			totalTime = self:npcFeelOnPay(isWaitSeat)
 		end,
 		--在外卖座位稍微发呆
 		[NPCStateType.WaitSeatIdle] 			= function()
+		stateStr = "WaitSeatIdle"
 		    totalTime = math.random(1, 2)
 			self.curState = NPCStateType.WaitSeatPay
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--在外卖座位支付成功
 		[NPCStateType.WaitSeatPaySuccess] 		= function()
+		stateStr = "WaitSeatPaySuccess"
 		    totalTime = 1.0
 			self.curState = NPCStateType.LeaveWaitSeat
 			self.curFeel = NPCFeelType.Invalid --重置状态
 		end,
 		--离开外卖座位
 		[NPCStateType.LeaveWaitSeat] 			= function()
+		stateStr = "LeaveWaitSeat"
 			--离开座位之后回到开始位置然后kill掉?
 			G_mapGeneral:leaveSeat(kMapDataWaitSeat, self.mapId, elfId)
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
@@ -294,8 +337,25 @@ function NPCInfo:npcState()
 	returnValue.totalTime  = totalTime
 	returnValue.mapId      = mapId
 	returnValue.productVec = productVec
+	returnValue.testStateStr = stateStr
 
 	return returnValue
+end
+
+function NPCInfo:isRequest()
+	local isRequest = false
+
+	if self.curState ==  NPCStateType.SeatRequest then
+		if self.curFeel ==  NPCFeelType.Anger or self.curFeel ==  NPCFeelType.Cancel then
+			isRequest = true
+		end
+	end
+
+	print(self.curState)
+	print(self.curFeel)
+	print(isRequest)
+
+	return isRequest
 end
 
 --请求状态下状态转换
@@ -317,13 +377,13 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 			--点餐
 			productVec = self:getCurProduct()
 
-			totalTime = math.random(1, 3)
+			totalTime = math.random(10, 15)
 			self.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
 			-- print("Anger")
-			totalTime = math.random(1, 3)
+			totalTime = math.random(10, 15)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦

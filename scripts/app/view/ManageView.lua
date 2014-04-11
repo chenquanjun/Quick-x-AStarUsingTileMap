@@ -338,7 +338,7 @@ function ManageView:MD_moveNPC(elfId, mapId)
         npcSprite.nTargetMapId = newTargetMapId
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
-
+        print("npc move")
         totalTime = npcSprite:easeWalkTo(0.1, mapPath)
     end
 
@@ -359,7 +359,7 @@ function ManageView:MD_movePlayer(elfId, mapId)
         playerSprite.nTargetMapId = newTargetMapId
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
-
+        print("player move")
         totalTime = playerSprite:easeWalkTo(0.1, mapPath)
     end
 
@@ -401,6 +401,14 @@ function ManageView:MD_removeNPC(elfId)
     end
 end
 
+function ManageView:MD_setStateStr(elfId, stateStr)
+    local npcSprite = self._npcMap[elfId]
+
+    if npcSprite then
+        npcSprite:setStateStr(stateStr)
+    end
+end
+
 --[[
 ------------------------------
 --------Delegate Method-------
@@ -420,6 +428,9 @@ function ManageView:MD_setProductFinishAtIndex(index)
     self._trayLayer:setProductFinishAtIndex(index)
 end
 
+function ManageView:MD_removeProductWithVec(indexVec)
+    self._trayLayer:removeProductWithVec(indexVec)
+end
 --[[
 --------------------------
 ------Private Method------
