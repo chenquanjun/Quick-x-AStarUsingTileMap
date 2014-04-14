@@ -6,6 +6,7 @@ NPCSprite = class("NPCSprite", function()
 end)			
 --index
 NPCSprite.__index  			= NPCSprite
+NPCSprite.__mode = "v" --弱引用
 
 --public
 NPCSprite.nPreMapId      = -1

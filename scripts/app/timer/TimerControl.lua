@@ -225,6 +225,21 @@ function TimerControl:setListenerSpeed(listenerId, speed)
 	end
 end
 
+function TimerControl:getListenerRemainTime(listenerId)
+	local remainTime = -1
+	local timerUnit = self._timerUnitLstIdKey[listenerId]  
+	if timerUnit then
+		local endTime  = timerUnit.endTime
+		local curTime = self._nTimePast
+
+		if endTime > curTime then
+			remainTime = (endTime - curTime) * self._timerInterval
+		end
+	end
+
+	return remainTime
+end
+
 --[[-------------------
     ---private Method-----
     ---------------------]]

@@ -9,7 +9,7 @@ ManageViewDelegate._refer = nil --初始化时候包含对controller的弱引用
 function ManageViewDelegate:setRefer(controllerRefer)
 	local ret = {}
 	setmetatable(ret, ManageViewDelegate)
-    self._refer = controllerRefer --controller的引用
+    ret._refer = controllerRefer --controller的引用
     return ret
 end
 function ManageViewDelegate:removeRefer()

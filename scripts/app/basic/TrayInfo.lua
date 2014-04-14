@@ -15,7 +15,7 @@ TrayInfo._productVec = nil
 function TrayInfo:create(maxNum)
 	local ret = {}
 	setmetatable(ret, TrayInfo)
-	self:init(maxNum)
+	ret:init(maxNum)
     return ret
 end
 

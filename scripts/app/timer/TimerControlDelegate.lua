@@ -6,7 +6,7 @@ TimerControlDelegate._refer = nil --初始化时候包含对view的弱引用，�
 function TimerControlDelegate:setRefer(delegate)
 	local ret = {}
 	setmetatable(ret, TimerControlDelegate)
-    self._refer = delegate --view的引用
+    ret._refer = delegate --view的引用
     return ret
 end
 --释放

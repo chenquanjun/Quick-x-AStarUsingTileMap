@@ -12,6 +12,7 @@ PlayerStateType = {
 PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo
+PlayerInfo.__mode = "v" --弱引用
 --public
 PlayerInfo.elfId   = -1  --区别id
 PlayerInfo.modelId = -1  --类型
@@ -25,7 +26,7 @@ PlayerInfo._last    = -1 --队列last
 function PlayerInfo:create()
 	local ret = {}
 	setmetatable(ret, PlayerInfo)
-	self:init()
+	ret:init()
     return ret
 end
 

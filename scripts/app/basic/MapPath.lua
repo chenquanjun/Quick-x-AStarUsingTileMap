@@ -6,6 +6,7 @@ MapPath = class("MapPath", function()
 end)			
 --index
 MapPath.__index = MapPath
+MapPath.__mode = "v" --弱引用
 --private
 MapPath._startId  	= -1--开始Id
 MapPath._endId  	= -1 --结束id

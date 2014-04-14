@@ -9,7 +9,7 @@ ManageModelDelegate._refer = nil --初始化时候包含对view的弱引用，�
 function ManageModelDelegate:setRefer(viewRefer)
 	local ret = {}
 	setmetatable(ret, ManageModelDelegate)
-    self._refer = viewRefer --view的引用
+    ret._refer = viewRefer --view的引用
     return ret
 end
 --释放

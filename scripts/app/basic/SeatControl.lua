@@ -16,7 +16,7 @@ SeatControl.SEAT_EMPTY             	    = 0
 function SeatControl:create(mapDataDic)
 	local ret = {}
 	setmetatable(ret, SeatControl)
-	self:init(mapDataDic)
+	ret:init(mapDataDic)
     return ret
 end
 
@@ -53,15 +53,19 @@ function SeatControl:initMapPointsVec()
 	local seatVec = self._mapDataDic[kMapDataSeat]
 	local waitSeatVec = self._mapDataDic[kMapDataWaitSeat]
 	local doorVec = self._mapDataDic[kMapDataDoor]
+	local payVec = self._mapDataDic[kMapDataPayQueue]
 
 	--初始化字典
 	local seatDic = {}
 	local waitSeatDic = {}
 	local doorDic = {}
+	local payDic = {}
+
 	--保存字典到占位字典
 	self._occupySeatDic[kMapDataSeat] = seatDic
 	self._occupySeatDic[kMapDataWaitSeat] = waitSeatDic 
 	self._occupySeatDic[kMapDataDoor] = doorDic 
+	self._occupySeatDic[kMapDataPayQueue] = payDic
 	
 	--初始化
 	for i,v in ipairs(seatVec) 
@@ -77,7 +81,13 @@ function SeatControl:initMapPointsVec()
 	for i,v in ipairs(doorVec) 
 	do 
 		doorDic[v] = self.SEAT_EMPTY --0表示空, 其他时候表示顾客的id 
-	end  	
+	end
+
+	--注意支付队列初始化数组+1为开始排队位置，不作占位使用，用来作移动
+	for i,v in ipairs(payVec) 
+	do 
+		payDic[v] = self.SEAT_EMPTY --0表示空, 其他时候表示顾客的id 
+	end  
 end
 
 --看看是谁霸占了座位

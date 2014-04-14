@@ -12,7 +12,7 @@ kMapDataStart         	= 10 --开始坐标
 kMapDataThing         	= 11 --物体
 kMapDataServe         	= 12 --服务位置
 kMapDataProduct       	= 13 --产品位置
-kMapDataCashierQueue    = 14 --收银台队列
+kMapDataPayQueue    	= 14 --收银台队列
 
 kActionTagInvalid     	= 0 --默认
 kActionTagDown        	= 1 --下

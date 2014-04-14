@@ -4,6 +4,7 @@ require "app/basic/extern"
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
 require "app/basic/SeatControl"
+require "app/basic/PayControl"
 --mvc
 ----model
 require "app/model/ManageModel"
@@ -12,6 +13,11 @@ require "app/view/ManageView"
 --delegate
 require "app/delegate/ManageModelDelegate"
 require "app/delegate/ManageViewDelegate"
+
+--controller
+--关于全局变量
+--所有全局变量均由controller控制生命周期与释放
+--命名规范为G_xxx
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageController = class("ManageController", function()
@@ -29,6 +35,7 @@ ManageController._model         = nil
 ManageController._viewDelegate  = nil
 ManageController._modelDelegate = nil
 ManageController._mapInfo       = nil
+ManageController._timerDelegate = nil
 
 --[[-------------------
 	---Init Method-----
@@ -71,9 +78,35 @@ function ManageController:init()
    	--model需要知道门口，座位，等待座位等的位置, 从1开始！！
     local mapDataDic = self._mapInfo:getMapDataDic()
 
-    --全局变量
-    G_seatControl = SeatControl:create(mapDataDic)
-    G_scheduler = require("framework.scheduler")
+    do  --全局变量(所有全局变量均由controller控制生命周期与释放)
+
+	    G_seatControl = SeatControl:create(mapDataDic)  --座位控制
+	    G_scheduler = require("framework.scheduler")    --scheduler
+ 
+	    G_payControl = PayControl:create()              --支付控制
+
+
+		--关于定时器
+		--model负责维护timer及其delegate的生命周期
+		--model直接调用timer的时间方法
+		--timer到时间后调用delegate
+		--delegate再回调model
+
+ 		local timerControl = TimerControl:create()      
+		self:addChild(timerControl)
+		-- self._timer = timerControl
+
+		--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
+		--所有定时器事件都回调给model
+		local timerDelegate = TimerControlDelegate:setRefer(self._model)
+		self._timerDelegate = timerDelegate
+
+		timerControl:setDelegate(timerDelegate)
+
+		G_timerControl = timerControl                   --时间控制
+    end
+
+
 
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
 
@@ -118,6 +151,13 @@ function ManageController:onRelease()
 
 	G_seatControl = nil
 	G_scheduler = nil
+	G_payControl = nil
+
+	G_timerControl:removeDelegate() --timer对delegate的引用
+	self._timerDelegate:removeRefer() --delegate对model的引用
+
+	G_timerControl = nil
+	self._timerDelegate = nil
 end
 
 --[[

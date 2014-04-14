@@ -4,8 +4,9 @@ PayQueue = {}
 PayQueue.__index = PayQueue
 PayQueue._maxNum =  -1
 PayQueue._queueData = nil
+PayQueue._targetNum = 0
 
---队列系统
+--支付队列系统
 --实现功能
 --普通队列操作（push，pop）
 --队列某元素删除操作（根据elfId）
@@ -13,7 +14,7 @@ PayQueue._queueData = nil
 function PayQueue:create(maxNum)
 	local ret = {}
 	setmetatable(ret, PayQueue)
-	self:init(maxNum)
+	ret:init(maxNum)
     return ret
 end
 
@@ -28,6 +29,23 @@ end
 function PayQueue:onRelease()
 	self._elfIdDic = nil
 	self._queueData = nil
+end
+
+--功能：判断队列是否为空，若为空则_targetNum加1，返回结果
+--删除队列时候自减去
+function PayQueue:isFull()
+	local isFull = true
+
+	if self._targetNum < self._maxNum then
+		self:addTargetNum(1)
+		isFull = false
+	end
+
+	return isFull
+end
+
+function PayQueue:addTargetNum(num)
+	self._targetNum = self._targetNum + num
 end
 
 --push
@@ -56,6 +74,9 @@ function PayQueue:removeQueue(elfId)
 	for i, data in ipairs(queueData) do
 		if data.elfId == elfId then
 			table.remove(queueData, i)
+
+			self:addTargetNum(-1) --减1
+
 			isSuccess = true
 
 			break
@@ -74,6 +95,8 @@ function PayQueue:popQueue()
 	if queueNum > 0 then
 		data = self._queueData[1] 
 		table.remove(queueData, 1)
+
+		self:addTargetNum(-1)
 	end
 
 	return data

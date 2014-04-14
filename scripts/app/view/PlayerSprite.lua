@@ -6,6 +6,7 @@ PlayerSprite = class("PlayerSprite", function()
 end)			
 --index
 PlayerSprite.__index  			= PlayerSprite
+PlayerSprite.__mode = "v" --弱引用
 
 --public
 PlayerSprite.nPreMapId      = -1

@@ -2,7 +2,6 @@ require "app/basic/extern"
 require "app/basic/NPCInfo"
 require "app/basic/PlayerInfo"
 require "app/basic/TrayInfo"
-require "app/basic/PayQueue"
 require "app/timer/TimerControl"
 require "app/timer/TimerControlDelegate"
 
@@ -19,8 +18,6 @@ end)
 ManageModel.__index = ManageModel
 --private
 ManageModel._delegate  			= nil --model delegate
-ManageModel._timer  			= nil
-ManageModel._timerDelegate  	= nil
 
 ManageModel._seatToServeDic		= nil --座位id与服务id的对应表
 
@@ -37,9 +34,7 @@ ManageModel._productIdOffset	= 100   --100~1000是物品id
 ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
 ManageModel._npcTestFlag        = 0
 
-------------------------
-ManageModel._norPayQueue        = nil   --普通支付队列
-ManageModel._waitPayQueue        = nil  --等待支付队列
+
 
 
 --[[-------------------
@@ -83,17 +78,6 @@ function ManageModel:onEnter()
 	--timer到时间后调用delegate
 	--delegate再回调model
 
-		local timerControl = TimerControl:create()
-		self:addChild(timerControl)
-		self._timer = timerControl
-
-		--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
-		local timerDelegate = TimerControlDelegate:setRefer(self)
-		self._timerDelegate = timerDelegate
-
-		timerControl:setDelegate(timerDelegate)
-
-		-- self._delegate:setTimerInterval(timerControl:getTimerInterval())
 	end
 	--初始化产品
 	self:initProduct()
@@ -118,22 +102,22 @@ function ManageModel:onEnter()
 	end
 
 	self:addPlayer()
-	addNPCTest() --批量测试
+	-- addNPCTest() --批量测试
 
 	do
 				local productList = {
 										{
 											{elfId = 106, curState = 0},
-											{elfId = 105, curState = 0},
-											{elfId = 101, curState = 0},
+											-- {elfId = 105, curState = 0},
+											-- {elfId = 101, curState = 0},
 											-- {elfId = 106, curState = 0}
 										},
-										{
-											{elfId = 106, curState = 0},
-											{elfId = 105, curState = 0},
-											{elfId = 101, curState = 0},
-											-- {elfId = 106, curState = 0}
-										},
+										-- {
+										-- 	{elfId = 106, curState = 0},
+										-- 	{elfId = 105, curState = 0},
+										-- 	{elfId = 101, curState = 0},
+										-- 	-- {elfId = 106, curState = 0}
+										-- },
 									}
 
 				self:addNPC(productList) --单个测试		
@@ -159,19 +143,13 @@ function ManageModel:onEnter()
 	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
 
-	self._timer:startTimer()
+	G_timerControl:startTimer()
 
 
 end
 
 function ManageModel:onRelease()
 	print("Model on release")
-	self._timer:removeDelegate() --timer对delegate的引用
-	self._timerDelegate:removeRefer() --delegate对model的引用
-
-	self._timerDelegate = nil
-
-	self._timer = nil
 
 	self._delegate = nil
 
@@ -228,7 +206,7 @@ function ManageModel:initProduct()
 		--定时器 test
 		self._delegate:coolDownProduct(elfId, duration)
 
-		self._timer:addTimerListener(elfId, duration)
+		G_timerControl:addTimerListener(elfId, duration)
 	end
 
 end
@@ -413,7 +391,8 @@ function ManageModel:npcStateControl(elfId)
 				totalTime = self._delegate:moveNPC(elfId, mapId) 
 				npcInfo.mapId = mapId --保存目标位置
 			end
-			self._timer:addTimerListener(elfId, totalTime) --加入时间控制
+			
+			G_timerControl:addTimerListener(elfId, totalTime) --加入时间控制
 
 			if productVec then
 				self._delegate:addRequest(elfId, productVec)
@@ -485,7 +464,7 @@ function ManageModel:playerOnSeat(npcInfo)
 	if isAllProductOK then --所有需求满足，改变npc状态
 		
 		--删除回调
-		self._timer:removeTimerListener(elfId)
+		G_timerControl:removeTimerListener(elfId)
 
 		--改变npc状态
 		npcInfo:meetProductNeed()
@@ -571,7 +550,7 @@ function ManageModel:playerQueue(playerInfo)
 
 				self._delegate:coolDownProduct(productElfId, duration)
 
-				self._timer:addTimerListener(productElfId, duration)
+				G_timerControl:addTimerListener(productElfId, duration)
 				--玩家进入下个状态
 
 			else --不满足需求
@@ -628,7 +607,7 @@ function ManageModel:playerQueue(playerInfo)
 
 		local totalTime = self._delegate:movePlayer(elfId, mapId)
 
-		self._timer:addTimerListener(elfId, totalTime) --加入时间控制
+		G_timerControl:addTimerListener(elfId, totalTime) --加入时间控制
 
 	else --不存在
 		playerInfo.curState = PlayerStateType.Idle --空闲状态
@@ -772,7 +751,7 @@ end
 
 --[[-------------------
 	---Timer Delegate-----
-	---------------------]]
+	---时间管理的核心-----]]
 function ManageModel:TD_onTimOver(listenerId)
 	if listenerId >= self._npcIdOffset then --npcId回调
 	
