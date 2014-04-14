@@ -117,6 +117,7 @@ function ManageController:onRelease()
 	self._modelDelegate = nil
 
 	G_mapGeneral = nil
+	G_scheduler = nil
 end
 
 --[[

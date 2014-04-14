@@ -231,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F456EFBD15EE019300FCF3E2 /* Build configuration list for PBXNativeTarget "testmap" */;
 			buildPhases = (
+				8AC6B53018FB818C006F1662 /* ShellScript */,
 				F456ECBD15EE018E00FCF3E2 /* Sources */,
 				F456ECBE15EE018E00FCF3E2 /* Frameworks */,
 				F456ECBF15EE018E00FCF3E2 /* Resources */,
@@ -303,6 +304,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AC6B53018FB818C006F1662 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch \"$PROJECT_DIR\"/../scripts";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F456ECBD15EE018E00FCF3E2 /* Sources */ = {
@@ -481,6 +498,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -550,6 +568,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;

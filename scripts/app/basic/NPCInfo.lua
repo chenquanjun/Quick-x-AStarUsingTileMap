@@ -183,7 +183,7 @@ function NPCInfo:npcState()
 		end,
 		--开始到门口
 		[NPCStateType.GoToDoor]					= function()
-		stateStr = "GoToDoor"
+		stateStr = "ToDoor"
 			mapId = G_mapGeneral:occupySeat(kMapDataDoor, elfId)
 
 			if mapId > -1 then--占位成功
@@ -206,7 +206,7 @@ function NPCInfo:npcState()
 		end,
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
-		stateStr = "LeaveDoor"	
+		stateStr = "L-Door"	
 			--获得开始位置的mapId
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
 			--改变状态
@@ -217,7 +217,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
-		stateStr = "FindSeat"
+		stateStr = "F-Seat"
 			mapId = G_mapGeneral:occupySeat(kMapDataSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -229,7 +229,7 @@ function NPCInfo:npcState()
 
 			else --寻找外卖座位
 				--在开始位置找不到空位怎么处理，继续停留在开始位置等待随机时间？
-				totalTime = 0
+				totalTime = 0.1
 				self.curState = NPCStateType.FindWaitSeat
 
 			end
@@ -243,11 +243,11 @@ function NPCInfo:npcState()
 			local isWaitSeat = false  --false 表示非外卖座位
 			totalTime, productVec, feelStr = self:npcFeelOnRequest(isWaitSeat)
 
-			stateStr = "Request"..feelStr
+			stateStr = "Req-"..feelStr
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
-		stateStr = "Eating"
+		stateStr = "Eat"
 			local productVec = self:nextProduct()
 			totalTime = math.random(1, 2)
 			if productVec then
@@ -281,8 +281,8 @@ function NPCInfo:npcState()
 		end,
 		--离开座位
 		[NPCStateType.LeaveSeat] 				= function()
-		stateStr = "LeaveSeat"
-			print("npc leave")
+		stateStr = "L-S"
+			-- print("npc leave")
 			--离开座位之后回到开始位置然后kill掉?
 			G_mapGeneral:leaveSeat(kMapDataSeat, self.mapId, elfId)
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
@@ -291,7 +291,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
-		stateStr = "FindWaitSeat"
+		stateStr = "F-Wait-S"
 			mapId = G_mapGeneral:occupySeat(kMapDataWaitSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -303,7 +303,8 @@ function NPCInfo:npcState()
 
 			else --寻找外卖座位
 				--在开始位置找不到空位怎么处理，继续停留在开始位置等待随机时间？
-				totalTime = 0
+				stateStr = "L-Door"
+				totalTime = 0.1
 				self.curState = NPCStateType.LeaveDoor
 
 			end
@@ -315,7 +316,7 @@ function NPCInfo:npcState()
 			local isWaitSeat = true  --true 表示外卖座位
 			totalTime, productVec, feelStr = self:npcFeelOnRequest(isWaitSeat)
 
-			stateStr = "Request"..feelStr
+			stateStr = "Req-"..feelStr
 		end,
 		--在外卖座位支付
 		[NPCStateType.WaitSeatPay] 				= function()
@@ -352,7 +353,7 @@ function NPCInfo:npcState()
 		end,
 		--离开外卖座位
 		[NPCStateType.LeaveWaitSeat] 			= function()
-		stateStr = "LeaveWaitSeat"
+		stateStr = "L-WaitSeat"
 			--离开座位之后回到开始位置然后kill掉?
 			G_mapGeneral:leaveSeat(kMapDataWaitSeat, self.mapId, elfId)
 			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
@@ -415,14 +416,14 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 	local switchType = {
 		--准备点菜
 		[NPCFeelType.Prepare]					= function()
-		testStateStr = "prepare"
+		testStateStr = "Pre"
 			-- print("prepare")
 			totalTime = math.random(1, 2)
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--点菜完毕，进入普通等待
 		[NPCFeelType.Normal]					= function()
-		testStateStr = "Normal"
+		testStateStr = "Nor"
 			-- print("Normal")
 			--点餐
 			productVec = self:getCurProduct()
@@ -432,14 +433,14 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
-		testStateStr = "Anger"
+		testStateStr = "Ang"
 			-- print("Anger")
 			totalTime = math.random(10, 15)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCFeelType.Cancel] 					= function()
-		testStateStr = "Cancel"
+		testStateStr = "XX"
 			-- print("Cancel")
 			totalTime = 0.8 --预留播放动画时间
 

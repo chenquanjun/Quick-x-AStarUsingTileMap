@@ -50,7 +50,7 @@ function ManageView:initBtns(mapIdVec, callBack)
         local point = self._mapInfo:convertIdToPointMid(v) --mapId转换成中点
         sprite:setPosition(point)
         sprite:setTouchEnabled(true)
-        sprite:setOpacity(100)
+        sprite:setOpacity(0)
         self._btnLayer:addChild(sprite)
 
         sprite:addTouchEventListener(function(event, x, y)

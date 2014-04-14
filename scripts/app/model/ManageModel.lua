@@ -413,9 +413,11 @@ function ManageModel:npcStateControl(elfId)
 				self._delegate:addRequest(elfId, productVec)
 			end
 
-			if testStateStr then
+
+		end
+
+		if testStateStr then
 				self._delegate:setStateStr(elfId, testStateStr)
-			end
 		end
 
 
@@ -534,12 +536,12 @@ function ManageModel:playerQueue(playerInfo)
 		end,
 		--4
 		[PlayerStateType.Product]		= function()
-			print("at product")
+			-- print("at product")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			assert(preQueueData ~= nil, "error,queue should not nil")
 
 			if preQueueData.isDelete then --先判断是否已经删除
-				print("delete")
+				-- print("delete")
 				return
 			end
 
@@ -687,7 +689,7 @@ function ManageModel:onProductBtn(elfId)
 	local isFull = self._trayInfo:isFull()
 
 	if isFull then
-		print("product full")
+		-- print("product full")
 		return
 	end
 
