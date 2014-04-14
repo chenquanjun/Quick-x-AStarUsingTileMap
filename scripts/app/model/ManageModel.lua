@@ -67,15 +67,6 @@ end
 function ManageModel:onEnter()
 	print("model onEnter")
 
-	do --初始化定时器	
-
-	--关于定时器
-	--model负责维护timer及其delegate的生命周期
-	--model直接调用timer的时间方法
-	--timer到时间后调用delegate
-	--delegate再回调model
-
-	end
 	--初始化产品
 	self:initProduct()
 
@@ -140,6 +131,7 @@ function ManageModel:onEnter()
 	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
 
+	--启动定时器
 	G_timer:startTimer()
 
 
@@ -733,10 +725,6 @@ function ManageModel:onTrayProductBtn(index)
 			end
 
 		end
-
-		
-		
-
 	else --物品处于完成阶段
 
 	end

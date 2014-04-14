@@ -38,7 +38,6 @@ ManageController._model         = nil
 ManageController._viewDelegate  = nil
 ManageController._modelDelegate = nil
 ManageController._mapInfo       = nil
-ManageController._timerDelegate = nil
 
 --[[-------------------
 	---Init Method-----
@@ -88,29 +87,8 @@ function ManageController:init()
  
 	    G_payControl = PayControl:create()              --支付控制
 
-	    local globalTimer = GlobalTimer:create()      
-		self:addChild(globalTimer)
-		G_timer = globalTimer
-
-
-		--关于定时器
-		--model负责维护timer及其delegate的生命周期
-		--model直接调用timer的时间方法
-		--timer到时间后调用delegate
-		--delegate再回调model
-
- 	-- 	local timerControl = TimerControl:create()      
-		-- self:addChild(timerControl)
-		-- -- self._timer = timerControl
-
-		-- --定时器delegate 将model加入到refer中，以便delegate能回调model的方法
-		-- --所有定时器事件都回调给model
-		-- local timerDelegate = TimerControlDelegate:setRefer(self._model)
-		-- self._timerDelegate = timerDelegate
-
-		-- timerControl:setDelegate(timerDelegate)
-
-		-- G_timerControl = timerControl                   --时间控制
+	    G_timer = GlobalTimer:create()                  --全局时间控制
+		self:addChild(G_timer)
     end
 
 
@@ -160,11 +138,7 @@ function ManageController:onRelease()
 	G_scheduler = nil
 	G_payControl = nil
 
-	G_timerControl:removeDelegate() --timer对delegate的引用
-	self._timerDelegate:removeRefer() --delegate对model的引用
-
-	G_timerControl = nil
-	self._timerDelegate = nil
+	G_timer = nil
 end
 
 --[[
