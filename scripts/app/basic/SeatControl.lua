@@ -1,27 +1,26 @@
-MapGeneral = {}
+SeatControl = {}
 --index
-MapGeneral.__index = MapGeneral
+SeatControl.__index = SeatControl
 
-MapGeneral._mapDataDic				  	= nil
+SeatControl._mapDataDic				  	= nil
 
-MapGeneral._occupySeatDic  				= nil --可以占位的类型均保存在这个字典里面
+SeatControl._occupySeatDic  				= nil --可以占位的类型均保存在这个字典里面
 
-MapGeneral._pointDic   	 		 		= nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
+SeatControl._pointDic   	 		 		= nil --对于单个位置的object，一律保存到这个字典里面，例如开始位置，
 
--- MapGeneral._seatToServeDic		 	 	= nil --座位id与服务id的对应表
-
-MapGeneral.SEAT_EMPTY             	    = 0
+SeatControl.SEAT_EMPTY             	    = 0
 
 --经营场景的全局变量，controller负责初始化和回收
+--负责管理座位占领和离开
 
-function MapGeneral:create(mapDataDic)
+function SeatControl:create(mapDataDic)
 	local ret = {}
-	setmetatable(ret, MapGeneral)
+	setmetatable(ret, SeatControl)
 	self:init(mapDataDic)
     return ret
 end
 
-function MapGeneral:init(mapDataDic)
+function SeatControl:init(mapDataDic)
 	self._mapDataDic = mapDataDic
 
 	self._occupySeatDic = {}
@@ -34,7 +33,7 @@ function MapGeneral:init(mapDataDic)
 end
 
 --单点位置
-function MapGeneral:initMapPoint()
+function SeatControl:initMapPoint()
 	local startVec = self._mapDataDic[kMapDataStart]
 	local cookVec  = self._mapDataDic[kMapDataCook]
 	local cashierVec  = self._mapDataDic[kMapDataCashier]
@@ -49,7 +48,7 @@ function MapGeneral:initMapPoint()
 end
 
 --多点位置
-function MapGeneral:initMapPointsVec()
+function SeatControl:initMapPointsVec()
 
 	local seatVec = self._mapDataDic[kMapDataSeat]
 	local waitSeatVec = self._mapDataDic[kMapDataWaitSeat]
@@ -82,7 +81,7 @@ function MapGeneral:initMapPointsVec()
 end
 
 --看看是谁霸占了座位
-function MapGeneral:getSeatInfo(mapType, mapId)
+function SeatControl:getSeatInfo(mapType, mapId)
 
 	local mapDic = self._occupySeatDic[mapType]
 
@@ -92,7 +91,7 @@ function MapGeneral:getSeatInfo(mapType, mapId)
 end
 
 --需要占用的类型，占用的npcId
-function MapGeneral:occupySeat(mapType, elfId)
+function SeatControl:occupySeat(mapType, elfId)
 	-- 占位 
 	-- 返回地图id
 	local mapId = -1
@@ -116,7 +115,7 @@ function MapGeneral:occupySeat(mapType, elfId)
 end
 
 --离开座位，传入地图类型，地图id，之前占领的id
-function MapGeneral:leaveSeat(mapType, mapId, elfId)
+function SeatControl:leaveSeat(mapType, mapId, elfId)
 	--取出字典
 	local mapDic = self._occupySeatDic[mapType]
 
@@ -128,12 +127,12 @@ function MapGeneral:leaveSeat(mapType, mapId, elfId)
 	mapDic[mapId] = self.SEAT_EMPTY
 end
 
-function MapGeneral:getMapIdOfType(mapType)
+function SeatControl:getMapIdOfType(mapType)
 	local mapId = self._pointDic[mapType]
 	return mapId
 end
 
-function MapGeneral:getMapIdVecOfType(mapType)
+function SeatControl:getMapIdVecOfType(mapType)
 	local vector = self._mapDataDic[mapType]
 	return vector
 end

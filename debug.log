@@ -14,460 +14,64 @@ Cocos2d:
 	gl.supports_discard_framebuffer: false
 	gl.supports_vertex_array_object: true
 </dict>
-Cocos2d: lua_loadChunksFromZIP() - load zip file: /Users/chenquanjun/Documents/Project/WB_Client/quick-cocos2d-x/lib/framework_precompiled/framework_precompiled.zip
-Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 60
+Cocos2d: lua_loadChunksFromZIP() - load zip file: /Users/chenquanjun/Documents/Project/QuickX/quick-cocos2d-x/lib/framework_precompiled/framework_precompiled.zip
+Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0096] [INFO] 
-Cocos2d: [0.0096] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0096] [INFO] #
-Cocos2d: [0.0097] [INFO] # device.platform              = mac
-Cocos2d: [0.0097] [INFO] # device.model                 = unknown
-Cocos2d: [0.0097] [INFO] # device.language              = cn
-Cocos2d: [0.0097] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0097] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0097] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0097] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0097] [INFO] #
-Cocos2d: [0.0122] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0122] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0123] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0123] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0123] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0123] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0123] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0123] [INFO] # display.height               = 640.00
-Cocos2d: [0.0123] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0123] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0123] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0123] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0123] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0123] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0123] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0123] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0123] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0123] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0123] [INFO] #
-Cocos2d: [0.0176] Controller init
-Cocos2d: [0.0176] View init
+Cocos2d: [0.0089] [INFO] 
+Cocos2d: [0.0089] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0089] [INFO] #
+Cocos2d: [0.0090] [INFO] # device.platform              = mac
+Cocos2d: [0.0090] [INFO] # device.model                 = unknown
+Cocos2d: [0.0090] [INFO] # device.language              = cn
+Cocos2d: [0.0090] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0090] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0090] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0090] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0090] [INFO] #
+Cocos2d: [0.0102] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0102] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0102] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0102] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0102] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0102] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0102] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0102] [INFO] # display.height               = 640.00
+Cocos2d: [0.0102] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0102] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0102] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0102] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0102] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0102] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0102] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0102] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0102] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0103] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0103] [INFO] #
+Cocos2d: [0.0162] Controller init
+Cocos2d: [0.0162] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0433] Model init
+Cocos2d: [0.0438] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0618] GridSize: 36, 20
-Cocos2d: [0.0619] PointSize: 32, 32
-Cocos2d: [0.1852] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1853] model onEnter
-Cocos2d: [0.1982] add cache:player1_%i_%i.png1
-Cocos2d: [0.1990] mapId91
-Cocos2d: [0.1991] add cache:player2_%i_%i.png1
-Cocos2d: [0.1999] add cache:player3_%i_%i.png1
-Cocos2d: [0.2007] start timer
-Cocos2d: [1.3674] QUEUE:0
-Cocos2d: [1.3674] index1
-Cocos2d: [1.3693] idle
-Cocos2d: [1.5861] at product
-Cocos2d: [2.3360] at product
-Cocos2d: [3.5930] QUEUE:3
-Cocos2d: [3.5931] index2
-Cocos2d: [3.5941] idle
-Cocos2d: [4.1697] at product
-Cocos2d: [4.1883] QUEUE:4
-Cocos2d: [4.1883] index3
-Cocos2d: [4.3200] at product
-Cocos2d: [4.6366] at product
-Cocos2d: [6.2712] add cache:player4_%i_%i.png1
-Cocos2d: [7.0806] QUEUE:7
-Cocos2d: [7.0807] index4
-Cocos2d: [7.0818] idle
-Cocos2d: [8.0197] at product
-Cocos2d: [8.2758] remove3
-Cocos2d: [8.7007] remove2
-Cocos2d: [9.0157] remove1
-Cocos2d: [10.1863] [INFO] LUA VM MEMORY USED: 2892.81 KB
-Cocos2d: [20.1869] [INFO] LUA VM MEMORY USED: 3155.19 KB
-Cocos2d: [30.2028] [INFO] LUA VM MEMORY USED: 2977.84 KB
-Cocos2d: [34.8699] npc leave
-Cocos2d: [35.1201] npc leave
-Cocos2d: [36.9699] npc leave
-Cocos2d: [40.1197] npc leave
-Cocos2d: [40.2035] [INFO] LUA VM MEMORY USED: 4764.89 KB
-Cocos2d: [41.1858] npc leave
-Cocos2d: [41.2866] npc leave
-Cocos2d: [41.9374] npc leave
-Cocos2d: [45.4861] npc leave
-Cocos2d: [50.2222] [INFO] LUA VM MEMORY USED: 5289.10 KB
-Cocos2d: [60.2374] [INFO] LUA VM MEMORY USED: 4326.68 KB
-Cocos2d: [62.4700] npc leave
-Cocos2d: [64.5373] npc leave
-Cocos2d: [66.4200] npc leave
-Cocos2d: [68.2199] npc leave
-Cocos2d: [69.8366] npc leave
-Cocos2d: [70.0231] npc leave
-Cocos2d: [70.2368] [INFO] LUA VM MEMORY USED: 5403.97 KB
-Cocos2d: [71.1198] npc leave
-Cocos2d: [76.3361] npc leave
-Cocos2d: [80.2533] [INFO] LUA VM MEMORY USED: 7521.25 KB
-Cocos2d: [90.2533] [INFO] LUA VM MEMORY USED: 8032.00 KB
-Cocos2d: [91.7199] 1
-Cocos2d: [91.7200] size:0
-Cocos2d: [94.0702] npc leave
-Cocos2d: [95.7199] npc leave
-Cocos2d: [96.6199] npc leave
-Cocos2d: [97.2707] npc leave
-Cocos2d: [98.5206] npc leave
-Cocos2d: [100.2774] [INFO] LUA VM MEMORY USED: 9390.16 KB
-Cocos2d: [100.5793] npc leave
-Cocos2d: [104.4365] npc leave
-Cocos2d: [108.8863] npc leave
-Cocos2d: [110.2880] [INFO] LUA VM MEMORY USED: 6587.86 KB
-Cocos2d: [120.3033] [INFO] LUA VM MEMORY USED: 7868.62 KB
-Cocos2d: [121.1379] npc leave
-Cocos2d: [121.7698] npc leave
-Cocos2d: [125.6060] npc leave
-Cocos2d: [128.1537] npc leave
-Cocos2d: [128.2037] npc leave
-Cocos2d: [129.5038] npc leave
-Cocos2d: [130.5359] [INFO] LUA VM MEMORY USED: 9296.27 KB
-Cocos2d: [132.7032] npc leave
-Cocos2d: [135.8039] npc leave
-Cocos2d: [140.5366] [INFO] LUA VM MEMORY USED: 11372.36 KB
-Cocos2d: [150.5527] [INFO] LUA VM MEMORY USED: 12731.52 KB
-Cocos2d: [151.5022] npc leave
-Cocos2d: [154.5526] npc leave
-Cocos2d: [155.1040] npc leave
-Cocos2d: [156.3532] npc leave
-Cocos2d: [159.3538] npc leave
-Cocos2d: [159.5530] npc leave
-Cocos2d: [160.5602] [INFO] LUA VM MEMORY USED: 10892.94 KB
-Cocos2d: [160.9779] QUEUE:23
-Cocos2d: [160.9779] index1
-Cocos2d: [160.9793] idle
-Cocos2d: [161.5026] at product
-Cocos2d: [163.9530] npc leave
-Cocos2d: [164.9918] QUEUE:24
-Cocos2d: [164.9919] index2
-Cocos2d: [164.9932] idle
-Cocos2d: [165.0534] at product
-Cocos2d: [165.4991] QUEUE:25
-Cocos2d: [165.4991] index3
-Cocos2d: [165.5002] idle
-Cocos2d: [165.6044] at product
-Cocos2d: [166.2867] QUEUE:26
-Cocos2d: [166.2867] index4
-Cocos2d: [166.2877] idle
-Cocos2d: [166.3538] at product
-Cocos2d: [166.5557] QUEUE:27
-Cocos2d: [166.5557] index5
-Cocos2d: [166.6044] npc leave
-Cocos2d: [166.9841] product full
-Cocos2d: [167.6022] at product
-Cocos2d: [167.6537] at product
-Cocos2d: [167.6692] product full
-Cocos2d: [168.0970] product full
-Cocos2d: [169.6045] at product
-Cocos2d: [169.6610] remove1
-Cocos2d: [170.0108] remove1
-Cocos2d: [170.3718] remove1
-Cocos2d: [170.5698] [INFO] LUA VM MEMORY USED: 10560.96 KB
-Cocos2d: [171.4160] QUEUE:28
-Cocos2d: [171.4160] index3
-Cocos2d: [171.4170] idle
-Cocos2d: [171.7530] at product
-Cocos2d: [173.8799] QUEUE:32
-Cocos2d: [173.8800] index4
-Cocos2d: [173.9021] 1
-Cocos2d: [173.9022] size:3
-Cocos2d: [174.6093] at product
-Cocos2d: [175.2770] QUEUE:34
-Cocos2d: [175.2770] index4
-Cocos2d: [175.2780] idle
-Cocos2d: [175.8044] at product
-Cocos2d: [176.5048] 2
-Cocos2d: [176.5048] size:3
-Cocos2d: [176.7540] 2
-Cocos2d: [176.7541] size:2
-Cocos2d: [180.5850] QUEUE:44
-Cocos2d: [180.5850] index3
-Cocos2d: [180.5861] idle
-Cocos2d: [180.5888] [INFO] LUA VM MEMORY USED: 9169.94 KB
-Cocos2d: [180.9676] QUEUE:45
-Cocos2d: [180.9676] index4
-Cocos2d: [181.5414] QUEUE:46
-Cocos2d: [181.5414] index5
-Cocos2d: [181.5543] at product
-Cocos2d: [181.6550] at product
-Cocos2d: [181.7067] at product
-Cocos2d: [181.7248] product full
-Cocos2d: [181.9015] product full
-Cocos2d: [183.6543] at product
-Cocos2d: [184.2027] npc leave
-Cocos2d: [184.5033] npc leave
-Cocos2d: [184.7582] 2
-Cocos2d: [184.7583] size:4
-Cocos2d: [185.2530] npc leave
-Cocos2d: [185.5029] npc leave
-Cocos2d: [187.7630] QUEUE:55
-Cocos2d: [187.7630] index5
-Cocos2d: [187.7639] idle
-Cocos2d: [188.2023] npc leave
-Cocos2d: [188.4092] at product
-Cocos2d: [188.8592] 2
-Cocos2d: [188.8593] size:4
-Cocos2d: [189.3955] QUEUE:58
-Cocos2d: [189.3955] index5
-Cocos2d: [189.3967] idle
-Cocos2d: [189.5587] npc leave
-Cocos2d: [189.6029] npc leave
-Cocos2d: [189.9029] at product
-Cocos2d: [190.6029] [INFO] LUA VM MEMORY USED: 11056.86 KB
-Cocos2d: [191.2781] product full
-Cocos2d: [192.0527] npc leave
-Cocos2d: [193.7931] product full
-Cocos2d: [193.9731] product full
-Cocos2d: [194.2093] product full
-Cocos2d: [194.3894] product full
-Cocos2d: [194.9314] product full
-Cocos2d: [195.9083] remove1
-Cocos2d: [196.2569] remove1
-Cocos2d: [198.5523] 1
-Cocos2d: [198.5523] size:2
-Cocos2d: [200.6030] [INFO] LUA VM MEMORY USED: 12825.93 KB
-Cocos2d: [210.9029] [INFO] LUA VM MEMORY USED: 10974.33 KB
-Cocos2d: [214.3381] npc leave
-Cocos2d: [214.5361] 2
-Cocos2d: [214.5373] size:1
-Cocos2d: [215.1803] QUEUE:73
-Cocos2d: [215.1803] index2
-Cocos2d: [215.1814] idle
-Cocos2d: [215.4370] npc leave
-Cocos2d: [215.8361] at product
-Cocos2d: [216.2406] npc leave
-Cocos2d: [217.7361] npc leave
-Cocos2d: [218.3910] QUEUE:75
-Cocos2d: [218.3910] index3
-Cocos2d: [218.3920] idle
-Cocos2d: [219.5941] at product
-Cocos2d: [219.8391] npc leave
-Cocos2d: [220.6489] npc leave
-Cocos2d: [220.9193] [INFO] LUA VM MEMORY USED: 10150.25 KB
-Cocos2d: [221.7859] npc leave
-Cocos2d: [222.4362] npc leave
-Cocos2d: [223.4371] 2
-Cocos2d: [223.4372] size:2
-Cocos2d: [224.7993] QUEUE:79
-Cocos2d: [224.7993] index3
-Cocos2d: [224.8004] idle
-Cocos2d: [225.2832] QUEUE:80
-Cocos2d: [225.2832] index4
-Cocos2d: [226.0913] at product
-Cocos2d: [226.2057] QUEUE:81
-Cocos2d: [226.2057] index5
-Cocos2d: [226.4361] at product
-Cocos2d: [226.9854] at product
-Cocos2d: [228.7873] 2
-Cocos2d: [228.7873] 1
-Cocos2d: [228.7874] size:3
-Cocos2d: [230.8889] QUEUE:83
-Cocos2d: [230.8890] index4
-Cocos2d: [230.8900] idle
-Cocos2d: [230.9386] [INFO] LUA VM MEMORY USED: 12208.67 KB
-Cocos2d: [232.2811] QUEUE:84
-Cocos2d: [232.2811] index5
-Cocos2d: [232.4356] at product
-Cocos2d: [232.9861] at product
-Cocos2d: [233.4869] 1
-Cocos2d: [233.4869] size:4
-Cocos2d: [234.5942] npc leave
-Cocos2d: [234.6508] QUEUE:86
-Cocos2d: [234.6508] index5
-Cocos2d: [234.6516] idle
-Cocos2d: [235.2472] at product
-Cocos2d: [235.4106] product full
-Cocos2d: [236.3781] product full
-Cocos2d: [237.5011] remove1
-Cocos2d: [237.8836] remove1
-Cocos2d: [238.2885] remove1
-Cocos2d: [238.6825] remove1
-Cocos2d: [239.0649] remove1
-Cocos2d: [240.2879] npc leave
-Cocos2d: [240.3822] QUEUE:87
-Cocos2d: [240.3822] index1
-Cocos2d: [240.3833] idle
-Cocos2d: [240.6899] at product
-Cocos2d: [240.9166] QUEUE:88
-Cocos2d: [240.9166] index2
-Cocos2d: [240.9176] idle
-Cocos2d: [240.9408] [INFO] LUA VM MEMORY USED: 14132.74 KB
-Cocos2d: [241.0354] at product
-Cocos2d: [241.4275] QUEUE:89
-Cocos2d: [241.4275] index3
-Cocos2d: [241.4286] idle
-Cocos2d: [241.7358] at product
-Cocos2d: [241.8551] QUEUE:90
-Cocos2d: [241.8551] index4
-Cocos2d: [241.8561] idle
-Cocos2d: [241.9875] at product
-Cocos2d: [242.9360] 2
-Cocos2d: [242.9361] size:3
-Cocos2d: [243.8852] 1
-Cocos2d: [243.8853] size:2
-Cocos2d: [244.2432] 2
-Cocos2d: [244.2433] size:1
-Cocos2d: [245.9503] QUEUE:98
-Cocos2d: [245.9503] index2
-Cocos2d: [245.9513] idle
-Cocos2d: [246.5916] at product
-Cocos2d: [246.6589] QUEUE:99
-Cocos2d: [246.6590] index3
-Cocos2d: [246.6600] idle
-Cocos2d: [246.7360] at product
-Cocos2d: [246.8730] QUEUE:100
-Cocos2d: [246.8730] index4
-Cocos2d: [247.0358] npc leave
-Cocos2d: [247.5405] QUEUE:101
-Cocos2d: [247.5405] index5
-Cocos2d: [248.6461] npc leave
-Cocos2d: [248.7360] npc leave
-Cocos2d: [249.5860] at product
-Cocos2d: [249.6507] at product
-Cocos2d: [250.9528] [INFO] LUA VM MEMORY USED: 11781.45 KB
-Cocos2d: [251.3859] npc leave
-Cocos2d: [251.7360] npc leave
-Cocos2d: [252.0960] npc leave
-Cocos2d: [252.1784] remove5
-Cocos2d: [252.5865] at product
-Cocos2d: [257.7294] remove2
-Cocos2d: [258.2702] remove2
-Cocos2d: [259.2037] QUEUE:111
-Cocos2d: [259.2038] index3
-Cocos2d: [259.2047] idle
-Cocos2d: [259.6451] at product
-Cocos2d: [260.9693] [INFO] LUA VM MEMORY USED: 10829.93 KB
-Cocos2d: [261.5060] QUEUE:112
-Cocos2d: [261.5060] index4
-Cocos2d: [261.5070] idle
-Cocos2d: [261.5905] at product
-Cocos2d: [262.2075] remove4
-Cocos2d: [262.6399] at product
-Cocos2d: [262.6400] delete
-Cocos2d: [262.9352] npc leave
-Cocos2d: [268.2868] npc leave
-Cocos2d: [268.4967] remove2
-Cocos2d: [268.8976] remove2
-Cocos2d: [270.9694] [INFO] LUA VM MEMORY USED: 12915.35 KB
-Cocos2d: [271.4775] QUEUE:114
-Cocos2d: [271.4775] index2
-Cocos2d: [271.4785] idle
-Cocos2d: [271.6575] QUEUE:115
-Cocos2d: [271.6575] index3
-Cocos2d: [271.9170] QUEUE:116
-Cocos2d: [271.9170] index4
-Cocos2d: [272.1416] at product
-Cocos2d: [272.2375] at product
-Cocos2d: [273.5489] remove3
-Cocos2d: [274.1361] at product
-Cocos2d: [274.1361] delete
-Cocos2d: [274.1889] at product
-Cocos2d: [274.2675] remove3
-Cocos2d: [275.2853] 1
-Cocos2d: [275.2854] size:1
-Cocos2d: [279.6485] npc leave
-Cocos2d: [280.1448] QUEUE:121
-Cocos2d: [280.1448] index2
-Cocos2d: [280.1457] idle
-Cocos2d: [280.3100] QUEUE:122
-Cocos2d: [280.3101] index3
-Cocos2d: [280.4665] QUEUE:123
-Cocos2d: [280.4665] index4
-Cocos2d: [280.6525] QUEUE:124
-Cocos2d: [280.6525] index5
-Cocos2d: [280.8109] product full
-Cocos2d: [280.9866] [INFO] LUA VM MEMORY USED: 12180.97 KB
-Cocos2d: [281.2869] at product
-Cocos2d: [281.3477] at product
-Cocos2d: [281.5992] npc leave
-Cocos2d: [281.9066] remove4
-Cocos2d: [281.9851] npc leave
-Cocos2d: [282.0851] npc leave
-Cocos2d: [282.6404] remove3
-Cocos2d: [283.2807] at product
-Cocos2d: [283.2807] delete
-Cocos2d: [283.3488] at product
-Cocos2d: [283.4973] remove3
-Cocos2d: [285.9380] 2
-Cocos2d: [285.9380] size:1
-Cocos2d: [286.4852] npc leave
-Cocos2d: [287.3384] npc leave
-Cocos2d: [289.2757] QUEUE:127
-Cocos2d: [289.2758] index2
-Cocos2d: [289.2768] idle
-Cocos2d: [289.4444] QUEUE:128
-Cocos2d: [289.4444] index3
-Cocos2d: [289.6132] QUEUE:129
-Cocos2d: [289.6132] index4
-Cocos2d: [289.7932] QUEUE:130
-Cocos2d: [289.7932] index5
-Cocos2d: [289.9621] product full
-Cocos2d: [290.4360] at product
-Cocos2d: [290.5390] at product
-Cocos2d: [291.0027] [INFO] LUA VM MEMORY USED: 12796.03 KB
-Cocos2d: [291.4354] at product
-Cocos2d: [291.4901] at product
-Cocos2d: [292.4352] at product
-Cocos2d: [292.4902] at product
-Cocos2d: [292.9364] npc leave
-Cocos2d: [293.0784] remove5
-Cocos2d: [293.4349] at product
-Cocos2d: [293.4349] delete
-Cocos2d: [294.4359] 1
-Cocos2d: [294.4360] size:3
-Cocos2d: [295.1426] 1
-Cocos2d: [295.1427] size:2
-Cocos2d: [301.2516] [INFO] LUA VM MEMORY USED: 11222.94 KB
-Cocos2d: [301.4704] npc leave
-Cocos2d: [304.1689] npc leave
-Cocos2d: [308.5262] npc leave
-Cocos2d: [311.2526] [INFO] LUA VM MEMORY USED: 10206.31 KB
-Cocos2d: [311.2953] npc leave
-Cocos2d: [312.9847] npc leave
-Cocos2d: [316.5210] npc leave
-Cocos2d: [318.5226] npc leave
-Cocos2d: [320.2686] npc leave
-Cocos2d: [321.2693] [INFO] LUA VM MEMORY USED: 12603.80 KB
-Cocos2d: [321.9352] 2
-Cocos2d: [321.9353] size:1
-Cocos2d: [323.1699] 1
-Cocos2d: [323.1700] size:0
-Cocos2d: [329.3682] npc leave
-Cocos2d: [331.2832] [INFO] LUA VM MEMORY USED: 11650.54 KB
-Cocos2d: [333.2685] npc leave
-Cocos2d: [338.5186] npc leave
-Cocos2d: [339.1274] npc leave
-Cocos2d: [341.2856] [INFO] LUA VM MEMORY USED: 11206.87 KB
-Cocos2d: [344.1693] npc leave
-Cocos2d: [348.8782] npc leave
-Cocos2d: [351.1281] npc leave
-Cocos2d: [351.2858] [INFO] LUA VM MEMORY USED: 13823.07 KB
-Cocos2d: [352.4198] npc leave
-Cocos2d: [361.1230] npc leave
-Cocos2d: [361.3025] [INFO] LUA VM MEMORY USED: 11839.55 KB
-Cocos2d: [361.3189] npc leave
-Cocos2d: [364.4182] npc leave
-Cocos2d: [369.1689] npc leave
-Cocos2d: [371.3199] [INFO] LUA VM MEMORY USED: 11043.95 KB
-Cocos2d: [374.1353] npc leave
-Cocos2d: [376.8681] npc leave
-Cocos2d: [379.7690] npc leave
-Cocos2d: [381.3357] [INFO] LUA VM MEMORY USED: 13750.61 KB
-Cocos2d: [382.5308] npc leave
-Cocos2d: [388.4693] npc leave
-Cocos2d: [389.8688] npc leave
-Cocos2d: [391.3524] [INFO] LUA VM MEMORY USED: 11355.45 KB
-Cocos2d: [396.7689] npc leave
+Cocos2d: [0.0637] GridSize: 36, 20
+Cocos2d: [0.0638] PointSize: 32, 32
+Cocos2d: [0.1470] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1470] model onEnter
+Cocos2d: [0.1596] add cache:player1_%i_%i.png1
+Cocos2d: [0.1603] mapId91
+Cocos2d: [0.1603] add cache:player2_%i_%i.png1
+Cocos2d: [0.1611] add cache:player4_%i_%i.png1
+Cocos2d: [0.1618] start timer
+Cocos2d: [7.2383] add cache:player3_%i_%i.png1
+Cocos2d: [10.1543] [INFO] LUA VM MEMORY USED: 2326.48 KB
+Cocos2d: [20.1709] [INFO] LUA VM MEMORY USED: 3070.38 KB
+Cocos2d: [30.1710] [INFO] LUA VM MEMORY USED: 3045.84 KB
+Cocos2d: [40.1875] [INFO] LUA VM MEMORY USED: 4720.78 KB
+Cocos2d: [50.2036] [INFO] LUA VM MEMORY USED: 4369.67 KB

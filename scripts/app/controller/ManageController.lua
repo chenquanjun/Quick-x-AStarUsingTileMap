@@ -3,7 +3,7 @@ require "app/basic/extern"
 --地图基础信息
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
-require "app/basic/MapGeneral"
+require "app/basic/SeatControl"
 --mvc
 ----model
 require "app/model/ManageModel"
@@ -72,7 +72,7 @@ function ManageController:init()
     local mapDataDic = self._mapInfo:getMapDataDic()
 
     --全局变量
-    G_mapGeneral = MapGeneral:create(mapDataDic)
+    G_seatControl = SeatControl:create(mapDataDic)
     G_scheduler = require("framework.scheduler")
 
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
@@ -116,7 +116,7 @@ function ManageController:onRelease()
 	self._viewDelegate = nil
 	self._modelDelegate = nil
 
-	G_mapGeneral = nil
+	G_seatControl = nil
 	G_scheduler = nil
 end
 

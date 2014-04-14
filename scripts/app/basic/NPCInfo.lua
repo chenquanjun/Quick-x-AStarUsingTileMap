@@ -23,6 +23,11 @@ NPCStateType = {
 				LeaveWaitSeat          = 35,            --离开等待座位
 
 
+				NormalPay              = 40, 			--普通支付
+				WaitPay                = 41, 			--等待支付
+				LeavePay               = 42, 			--离开支付
+
+
 }
 
 NPCFeelType = {
@@ -184,7 +189,7 @@ function NPCInfo:npcState()
 		--开始到门口
 		[NPCStateType.GoToDoor]					= function()
 		stateStr = "ToDoor"
-			mapId = G_mapGeneral:occupySeat(kMapDataDoor, elfId)
+			mapId = G_seatControl:occupySeat(kMapDataDoor, elfId)
 
 			if mapId > -1 then--占位成功
 				self.curState = NPCStateType.Door --状态切换
@@ -208,21 +213,21 @@ function NPCInfo:npcState()
 		[NPCStateType.LeaveDoor] 				= function()
 		stateStr = "L-Door"	
 			--获得开始位置的mapId
-			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
+			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 			--改变状态
 			self.curState = NPCStateType.Start --开始位置
 			--清空位置
-			G_mapGeneral:leaveSeat(kMapDataDoor, self.mapId, elfId)
+			G_seatControl:leaveSeat(kMapDataDoor, self.mapId, elfId)
 
 		end,
 		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
 		stateStr = "F-Seat"
-			mapId = G_mapGeneral:occupySeat(kMapDataSeat, elfId)
+			mapId = G_seatControl:occupySeat(kMapDataSeat, elfId)
 
 			if mapId > -1 then--占位成功
 				--离开门口
-				G_mapGeneral:leaveSeat(kMapDataDoor, self.mapId, elfId)
+				G_seatControl:leaveSeat(kMapDataDoor, self.mapId, elfId)
 
 				self.curState = NPCStateType.SeatRequest --状态切换
 				self.curFeel = NPCFeelType.Prepare --进入子状态
@@ -284,19 +289,19 @@ function NPCInfo:npcState()
 		stateStr = "L-S"
 			-- print("npc leave")
 			--离开座位之后回到开始位置然后kill掉?
-			G_mapGeneral:leaveSeat(kMapDataSeat, self.mapId, elfId)
-			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
+			G_seatControl:leaveSeat(kMapDataSeat, self.mapId, elfId)
+			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
 			self.curState = NPCStateType.Release --进入销毁状态
 		end,
 		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
 		stateStr = "F-Wait-S"
-			mapId = G_mapGeneral:occupySeat(kMapDataWaitSeat, elfId)
+			mapId = G_seatControl:occupySeat(kMapDataWaitSeat, elfId)
 
 			if mapId > -1 then--占位成功
 				--离开门口
-				G_mapGeneral:leaveSeat(kMapDataDoor, self.mapId, elfId)
+				G_seatControl:leaveSeat(kMapDataDoor, self.mapId, elfId)
 
 				self.curState = NPCStateType.WaitSeatRequest --状态切换
 				self.curFeel = NPCFeelType.Prepare --进入子状态
@@ -355,8 +360,8 @@ function NPCInfo:npcState()
 		[NPCStateType.LeaveWaitSeat] 			= function()
 		stateStr = "L-WaitSeat"
 			--离开座位之后回到开始位置然后kill掉?
-			G_mapGeneral:leaveSeat(kMapDataWaitSeat, self.mapId, elfId)
-			mapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
+			G_seatControl:leaveSeat(kMapDataWaitSeat, self.mapId, elfId)
+			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
 			self.curState = NPCStateType.Release --进入销毁状态
 		end,

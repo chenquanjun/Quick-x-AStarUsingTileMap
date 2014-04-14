@@ -2,6 +2,7 @@ require "app/basic/extern"
 require "app/basic/NPCInfo"
 require "app/basic/PlayerInfo"
 require "app/basic/TrayInfo"
+require "app/basic/PayQueue"
 require "app/timer/TimerControl"
 require "app/timer/TimerControlDelegate"
 
@@ -35,6 +36,11 @@ ManageModel._trayInfo           = nil --面板信息
 ManageModel._productIdOffset	= 100   --100~1000是物品id
 ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
 ManageModel._npcTestFlag        = 0
+
+------------------------
+ManageModel._norPayQueue        = nil   --普通支付队列
+ManageModel._waitPayQueue        = nil  --等待支付队列
+
 
 --[[-------------------
 	---Init Method-----
@@ -189,7 +195,7 @@ end
 	---------------------]]
 
 function ManageModel:initProduct()
-	local productVec = G_mapGeneral:getMapIdVecOfType(kMapDataProduct)
+	local productVec = G_seatControl:getMapIdVecOfType(kMapDataProduct)
 	-- self._mapDataDic[kMapDataProduct]
 
 	for i,mapId in ipairs(productVec) do
@@ -230,7 +236,7 @@ end
 function ManageModel:addPlayer()
 	do --init 保存到字典
 		local elfId = 1
-		local mapId = G_mapGeneral:getMapIdOfType(kMapDataCook)
+		local mapId = G_seatControl:getMapIdOfType(kMapDataCook)
 	
 		local playerInfo = PlayerInfo:create()
 		playerInfo.mapId = mapId
@@ -249,7 +255,7 @@ function ManageModel:addPlayer()
 
 	do --init 保存到字典
 		local elfId = 2
-		local mapId = G_mapGeneral:getMapIdOfType(kMapDataCashier)
+		local mapId = G_seatControl:getMapIdOfType(kMapDataCashier)
 		print("mapId"..mapId)
 
 		local playerInfo = PlayerInfo:create()
@@ -273,7 +279,7 @@ function ManageModel:addNPC(productList)
 	local elfId = self._npcIdOffset + self._npcTestFlag
 
 	do --init 保存到字典
-		local startMapId = G_mapGeneral:getMapIdOfType(kMapDataStart)
+		local startMapId = G_seatControl:getMapIdOfType(kMapDataStart)
 		local modelId = math.random(3, 4)
 
 		local npcInfo = NPCInfo:create()
@@ -508,9 +514,9 @@ function ManageModel:playerQueue(playerInfo)
 			-- print("at seat")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
-			local elfId = G_mapGeneral:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
+			local elfId = G_seatControl:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
 
-			if elfId ~= G_mapGeneral.SEAT_EMPTY  then --座位不为空！
+			if elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
 				--处理需求
 				self:playerOnSeat(npcInfo)
@@ -525,9 +531,9 @@ function ManageModel:playerQueue(playerInfo)
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 
-			local elfId = G_mapGeneral:getSeatInfo(kMapDataWaitSeat, mapId) --取出占座位的npc
+			local elfId = G_seatControl:getSeatInfo(kMapDataWaitSeat, mapId) --取出占座位的npc
 
-			if elfId ~= G_mapGeneral.SEAT_EMPTY  then --座位不为空！
+			if elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
 				--处理需求
 				self:playerOnSeat(npcInfo)
