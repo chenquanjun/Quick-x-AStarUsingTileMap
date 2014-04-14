@@ -5,6 +5,9 @@ require "app/basic/MapPath"
 require "app/basic/MapInfo"
 require "app/basic/SeatControl"
 require "app/basic/PayControl"
+--timer
+require "app/timer/GlobalTimer"
+
 --mvc
 ----model
 require "app/model/ManageModel"
@@ -85,6 +88,10 @@ function ManageController:init()
  
 	    G_payControl = PayControl:create()              --支付控制
 
+	    local globalTimer = GlobalTimer:create()      
+		self:addChild(globalTimer)
+		G_timer = globalTimer
+
 
 		--关于定时器
 		--model负责维护timer及其delegate的生命周期
@@ -92,18 +99,18 @@ function ManageController:init()
 		--timer到时间后调用delegate
 		--delegate再回调model
 
- 		local timerControl = TimerControl:create()      
-		self:addChild(timerControl)
-		-- self._timer = timerControl
+ 	-- 	local timerControl = TimerControl:create()      
+		-- self:addChild(timerControl)
+		-- -- self._timer = timerControl
 
-		--定时器delegate 将model加入到refer中，以便delegate能回调model的方法
-		--所有定时器事件都回调给model
-		local timerDelegate = TimerControlDelegate:setRefer(self._model)
-		self._timerDelegate = timerDelegate
+		-- --定时器delegate 将model加入到refer中，以便delegate能回调model的方法
+		-- --所有定时器事件都回调给model
+		-- local timerDelegate = TimerControlDelegate:setRefer(self._model)
+		-- self._timerDelegate = timerDelegate
 
-		timerControl:setDelegate(timerDelegate)
+		-- timerControl:setDelegate(timerDelegate)
 
-		G_timerControl = timerControl                   --时间控制
+		-- G_timerControl = timerControl                   --时间控制
     end
 
 

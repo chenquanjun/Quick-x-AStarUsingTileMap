@@ -2,9 +2,6 @@ require "app/basic/extern"
 require "app/basic/NPCInfo"
 require "app/basic/PlayerInfo"
 require "app/basic/TrayInfo"
-require "app/timer/TimerControl"
-require "app/timer/TimerControlDelegate"
-
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageModel = class("ManageModel", function()
@@ -143,7 +140,7 @@ function ManageModel:onEnter()
 	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
 
-	G_timerControl:startTimer()
+	G_timer:startTimer()
 
 
 end
@@ -206,7 +203,7 @@ function ManageModel:initProduct()
 		--定时器 test
 		self._delegate:coolDownProduct(elfId, duration)
 
-		G_timerControl:addTimerListener(elfId, duration)
+		G_timer:addTimerListener(elfId, duration, self)
 	end
 
 end
@@ -392,7 +389,7 @@ function ManageModel:npcStateControl(elfId)
 				npcInfo.mapId = mapId --保存目标位置
 			end
 			
-			G_timerControl:addTimerListener(elfId, totalTime) --加入时间控制
+			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
 			if productVec then
 				self._delegate:addRequest(elfId, productVec)
@@ -464,7 +461,7 @@ function ManageModel:playerOnSeat(npcInfo)
 	if isAllProductOK then --所有需求满足，改变npc状态
 		
 		--删除回调
-		G_timerControl:removeTimerListener(elfId)
+		G_timer:removeTimerListener(elfId)
 
 		--改变npc状态
 		npcInfo:meetProductNeed()
@@ -550,7 +547,7 @@ function ManageModel:playerQueue(playerInfo)
 
 				self._delegate:coolDownProduct(productElfId, duration)
 
-				G_timerControl:addTimerListener(productElfId, duration)
+				G_timer:addTimerListener(productElfId, duration, self)
 				--玩家进入下个状态
 
 			else --不满足需求
@@ -607,7 +604,7 @@ function ManageModel:playerQueue(playerInfo)
 
 		local totalTime = self._delegate:movePlayer(elfId, mapId)
 
-		G_timerControl:addTimerListener(elfId, totalTime) --加入时间控制
+		G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
 	else --不存在
 		playerInfo.curState = PlayerStateType.Idle --空闲状态
