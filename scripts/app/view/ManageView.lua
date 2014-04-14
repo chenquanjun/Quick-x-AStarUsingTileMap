@@ -44,7 +44,7 @@ end
 
 function ManageView:initBtns(mapIdVec, callBack)
     local size = self._mapInfo._mapUnit
-    local rect = CCRect(0, 0, size.width, size.height)
+    local rect = CCRect(0, 0, size.width * 1.5, size.height * 1.5)
     for i,v in ipairs(mapIdVec) do
         local sprite = CCSprite:createWithTexture(nil, rect)
         local point = self._mapInfo:convertIdToPointMid(v) --mapId转换成中点
@@ -179,7 +179,7 @@ function ManageView:MD_addProduct(data)
         local point = self._mapInfo:convertIdToPointMid(mapId)
 
         local size = self._mapInfo._mapUnit
-        local rect = CCRect(0, 0, size.width, size.height)
+        local rect = CCRect(0, 0, size.width * 1.5, size.height * 1.5)
 
         local label = CCLabelTTF:create(name, "Arial", 20)
 
