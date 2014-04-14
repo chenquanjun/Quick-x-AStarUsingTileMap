@@ -1,26 +1,27 @@
 require"app/basic/extern"
 --枚举值 地图信息
-kMapDataInvalid   =  0 --无效
-kMapDataBlock     = -1 --石头等障碍物
-kMapDataRoad      =  1 --路径
-kMapDataCook      =  2 --厨师位置
-kMapDataCashier   =  3 --收银员位置
-kMapDataDoor      =  7 --门口
-kMapDataSeat      =  8 --座位
-kMapDataWaitSeat  =  9 --等待座位
-kMapDataStart     = 10 --开始坐标
-kMapDataThing     = 11 --物体
-kMapDataServe     = 12 --服务位置
-kMapDataProduct   = 13 --产品位置
+kMapDataInvalid       	=  0 --无效
+kMapDataBlock         	= -1 --石头等障碍物
+kMapDataRoad          	=  1 --路径
+kMapDataCook          	=  2 --厨师位置
+kMapDataCashier       	=  3 --收银员位置
+kMapDataDoor          	=  7 --门口
+kMapDataSeat          	=  8 --座位
+kMapDataWaitSeat      	=  9 --等待座位
+kMapDataStart         	= 10 --开始坐标
+kMapDataThing         	= 11 --物体
+kMapDataServe         	= 12 --服务位置
+kMapDataProduct       	= 13 --产品位置
+kMapDataCashierQueue    = 14 --收银台队列
 
-kActionTagInvalid = 0 --默认
-kActionTagDown    = 1 --下
-kActionTagLeft    = 2 --左
-kActionTagRight   = 3 --右
-kActionTagUp      = 4 --上
-kActionTagMove    = 99
+kActionTagInvalid     	= 0 --默认
+kActionTagDown        	= 1 --下
+kActionTagLeft        	= 2 --左
+kActionTagRight       	= 3 --右
+kActionTagUp          	= 4 --上
+kActionTagMove        	= 99
 
-kMapKeyOffset     = 100000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
+kMapKeyOffset         	= 100000 --地图路径的保存偏移量 startId * kMapKeyOffset + endId作为key值
 
 --地图信息类
 MapInfo = class("MapInfo", function()

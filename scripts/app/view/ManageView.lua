@@ -408,6 +408,9 @@ function ManageView:MD_setStateStr(elfId, stateStr)
 
     if npcSprite then
         npcSprite:setStateStr(stateStr)
+
+    else
+
     end
 end
 
