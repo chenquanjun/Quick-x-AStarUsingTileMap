@@ -7,6 +7,7 @@ DEBUG_MEM = true
 -- design resolution
 CONFIG_SCREEN_WIDTH  = 1136
 CONFIG_SCREEN_HEIGHT = 640
+CONFIG_SCREEN_ORIENTATION = "landscape"
 
 -- auto scale mode
 CONFIG_SCREEN_AUTOSCALE = "FIXED_WIDTH"
