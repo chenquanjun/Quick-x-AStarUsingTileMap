@@ -13,7 +13,6 @@ return CCNode:create()
 end)
 
 GlobalTimer.__index            = GlobalTimer
--- GlobalTimer._delegate          = nil
 GlobalTimer._timerEvent        = TimerEvent.Invalid --时间控制器状态
 GlobalTimer._nTimePast         = 0 --流逝时间
 GlobalTimer._timerInterval     = 0.05 --每0.1秒执行事件
@@ -122,9 +121,10 @@ function GlobalTimer:timerUpdate()
 			if timerUnit then
 				local endTime = timerUnit.endTime
 				if endTime == self._nTimePast then
-					--此处通过addTimer时候的传入的指针delegate调用通用TD_onTimOver方法
-					-- timerUnit.delegate:TD_onTimOver(listenerId)
-					timerUnit.callback()
+					-- local object = timerUnit.object
+					timerUnit.delegate:TD_onTimeOver(listenerId)
+					-- local callback = imerUnit.callback
+					-- timerUnit.callback(object) --直接执行callback方法
 				end
 			end
 
@@ -139,7 +139,7 @@ end
     ---regist Method-----
     ---------------------]]
 
-function GlobalTimer:addTimerListener(listenerId, duration, callback)
+function GlobalTimer:addTimerListener(listenerId, duration, delegate)
 	if duration < 0 then
 		return --小于0 直接返回
 	end
@@ -150,8 +150,7 @@ function GlobalTimer:addTimerListener(listenerId, duration, callback)
 		--对于时间为0先清空map对应的数据，然后直接回调
 		--防止同一个id在同一帧里面多次addTimer造成bug
 		self._timerUnitLstIdKey[listenerId] = nil
-		-- self._delegate:onTimeOver(listenerId)
-		callback()
+		delegate:TD_onTimOver(listenerId)
 		return
 	end
 
@@ -161,7 +160,7 @@ function GlobalTimer:addTimerListener(listenerId, duration, callback)
 	timerUnit.startTime = self._nTimePast
 	timerUnit.endTime = endTime
 	timerUnit.listenerId = listenerId
-	timerUnit.callback = callback
+	timerUnit.delegate = delegate
 
 	local lstIdVec = self._lstIdsTimerKey[endTime] --endTime时间点的listenerId列表（可能一个，可能存在多个，也可能是空）
 
@@ -206,7 +205,7 @@ function GlobalTimer:setListenerSpeed(listenerId, speed)
 			local newDuration = (endTime - curTime) / speed
 			--暂时不知有没问题，待测试
 			--此处的duration需要转换成实际的duration
-			self:addTimerListener(listenerId, newDuration * self._timerInterval, timerUnit.callback)
+			self:addTimerListener(listenerId, newDuration * self._timerInterval, timerUnit.delegate)
 
 		end
 	end

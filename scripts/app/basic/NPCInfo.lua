@@ -2,7 +2,7 @@
 NPCInfo = {}
 --index
 NPCInfo.__index = NPCInfo
-NPCInfo.__mode = "v" --弱引用
+-- NPCInfo.__mode = "v" --弱引用
 --public
 NPCInfo.elfId    = -1
 NPCInfo.modelId  = -1
@@ -556,6 +556,7 @@ function NPCInfo:npcPayOnNorPay()
 			--加入队列
 			print("move ended")
 			self.curPay = NPCPayType.Prepare --不会有时间回调
+			G_payControl:joinNormalPay(self) --加入普通支付
 		end,
 		[NPCPayType.Prepare]						= function()
 			--npc进入指定位置后变成Prepare，然后由支付control统一控制进入normal

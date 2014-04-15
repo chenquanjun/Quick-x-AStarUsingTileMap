@@ -68,6 +68,7 @@ function PayControl:joinPay(elfId)
 	return isWaitPay
 end
 
+--npcinfo方法进入pay的prepare状态时才调用此方法
 function PayControl:joinNormalPay(npcInfo)
 	--已经到达普通支付的等待位置，准备进入队列
 	local elfId = npcInfo.elfId
@@ -82,7 +83,14 @@ function PayControl:joinNormalPay(npcInfo)
 
 	--获得即将进入的位置
 
-	local mapId = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
+	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
+
+	local mapId = payVec[pushIndex] --目的地id
+
+	local totalTime = G_modelDelegate:moveNPC(elfId, mapId) --移动到指定地方
+
+	--注意此处的listenerId需要作偏移处理，防止干扰npcStateControl方法中npc自己状态的改变
+	G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
 
 	--转变状态
 end
@@ -103,7 +111,7 @@ function PayControl:npcStateControl(elfId)
 
 	if npcInfo then
 		local returnValue = npcInfo:npcState() --执行状态方法
-		dump(returnValue, "value")
+		-- dump(returnValue, "value")
 		local isRelease = returnValue.isRelease --是否已经释放
 		local totalTime = returnValue.totalTime --回调时间
 		local mapId = returnValue.mapId --移动目标id
@@ -142,11 +150,12 @@ function PayControl:npcStateControl(elfId)
 end
 
 
-function PayControl:TD_onTimOver(listenerId)
-	if listenerId >= ElfIdList.NpcOffset then --npcId回调
+function PayControl:TD_onTimeOver(listenerId)
+	if listenerId >= ElfIdList.NpcOffset + ElfIdList.PayNpcOffset then --npcId回调
+		
+	elseif listenerId >= ElfIdList.NpcOffset then
+		--todo
 		self:npcStateControl(listenerId)
-	else --控制回调
-
 	end	
 end
 

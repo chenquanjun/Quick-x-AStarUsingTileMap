@@ -2,7 +2,7 @@
 PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo
-PlayerInfo.__mode = "v" --弱引用
+-- PlayerInfo.__mode = "v" --弱引用
 --public
 PlayerInfo.elfId   = -1  --区别id
 PlayerInfo.modelId = -1  --类型

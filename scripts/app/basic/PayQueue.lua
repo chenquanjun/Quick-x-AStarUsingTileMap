@@ -54,7 +54,7 @@ function PayQueue:pushQueue(data)
 	local queueData = self._queueData
 	local index = #queueData + 1
 	local maxNum = self._maxNum
-	index = index + 1
+	-- index = index + 1
 	if maxNum == -1 or index <= maxNum then --无限或者未满，可push
 
 		self._queueData[index] = data

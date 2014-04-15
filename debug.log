@@ -19,72 +19,735 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0086] [INFO] 
-Cocos2d: [0.0086] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0086] [INFO] #
-Cocos2d: [0.0087] [INFO] # device.platform              = mac
-Cocos2d: [0.0087] [INFO] # device.model                 = unknown
-Cocos2d: [0.0087] [INFO] # device.language              = cn
-Cocos2d: [0.0087] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0087] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0087] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0087] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0087] [INFO] #
-Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0099] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0099] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0099] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0099] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0099] [INFO] # display.height               = 640.00
-Cocos2d: [0.0099] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0099] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0099] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0099] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0099] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0099] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0099] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0099] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0099] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0100] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0100] [INFO] #
-Cocos2d: [0.0154] Controller init
-Cocos2d: [0.0154] View init
+Cocos2d: [0.0102] [INFO] 
+Cocos2d: [0.0102] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0102] [INFO] #
+Cocos2d: [0.0103] [INFO] # device.platform              = mac
+Cocos2d: [0.0103] [INFO] # device.model                 = unknown
+Cocos2d: [0.0103] [INFO] # device.language              = cn
+Cocos2d: [0.0103] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0103] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0103] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0103] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0103] [INFO] #
+Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0115] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0115] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0115] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0115] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0115] [INFO] # display.height               = 640.00
+Cocos2d: [0.0115] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0115] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0116] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0116] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0116] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0116] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0116] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0116] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0116] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0116] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0116] [INFO] #
+Cocos2d: [0.0171] Controller init
+Cocos2d: [0.0171] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0407] Model init
+Cocos2d: [0.0446] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0584] GridSize: 36, 20
-Cocos2d: [0.0584] PointSize: 32, 32
-Cocos2d: [0.1446] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1447] model onEnter
-Cocos2d: [0.1569] add cache:player1_%i_%i.png1
-Cocos2d: [0.1577] mapId91
-Cocos2d: [0.1578] add cache:player2_%i_%i.png1
-Cocos2d: [0.1585] add cache:player3_%i_%i.png1
-Cocos2d: [0.1592] start timer
-Cocos2d: [1.3117] QUEUE:0
-Cocos2d: [1.3117] index1
-Cocos2d: [1.3136] idle
-Cocos2d: [3.3114] QUEUE:1
-Cocos2d: [3.3114] index2
-Cocos2d: [3.3125] idle
-Cocos2d: [4.1581] QUEUE:2
-Cocos2d: [4.1581] index3
-Cocos2d: [4.1592] idle
-Cocos2d: [4.8300] QUEUE:3
-Cocos2d: [4.8300] index4
-Cocos2d: [4.8311] idle
-Cocos2d: [5.3843] QUEUE:4
-Cocos2d: [5.3843] index5
-Cocos2d: [5.3854] idle
-Cocos2d: [10.3664] [INFO] LUA VM MEMORY USED: 2269.68 KB
-Cocos2d: [20.3830] [INFO] LUA VM MEMORY USED: 2272.25 KB
-Cocos2d: [30.3997] [INFO] LUA VM MEMORY USED: 2365.70 KB
-Cocos2d: [40.4158] [INFO] LUA VM MEMORY USED: 2365.80 KB
+Cocos2d: [0.0631] GridSize: 36, 20
+Cocos2d: [0.0631] PointSize: 32, 32
+Cocos2d: [0.1544] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1544] model onEnter
+Cocos2d: [0.1683] add cache:player1_%i_%i.png1
+Cocos2d: [0.1692] mapId91
+Cocos2d: [0.1692] add cache:player2_%i_%i.png1
+Cocos2d: [0.1710] add cache:player4_%i_%i.png1
+Cocos2d: [0.1731] add cache:player3_%i_%i.png1
+Cocos2d: [0.1744] start timer
+Cocos2d: [1.3852] QUEUE:0
+Cocos2d: [1.3852] index1
+Cocos2d: [1.3872] idle
+Cocos2d: [1.8414] QUEUE:1
+Cocos2d: [1.8414] index2
+Cocos2d: [2.2126] QUEUE:2
+Cocos2d: [2.2126] index3
+Cocos2d: [2.2136] idle
+Cocos2d: [2.6626] QUEUE:3
+Cocos2d: [2.6626] index4
+Cocos2d: [2.6638] idle
+Cocos2d: [3.2027] QUEUE:4
+Cocos2d: [3.2027] index5
+Cocos2d: [3.2039] idle
+Cocos2d: [5.5714] 1
+Cocos2d: [5.5714] size:4
+Cocos2d: [7.4213] 1
+Cocos2d: [7.4213] size:3
+Cocos2d: [7.5707] addPay:1002
+Cocos2d: [7.5708] normal pay
+Cocos2d: [7.8214] 1
+Cocos2d: [7.8214] size:2
+Cocos2d: [8.4213] addPay:1004
+Cocos2d: [8.4214] normal pay
+Cocos2d: [8.6713] normal pay
+Cocos2d: [8.6714] move ended
+Cocos2d: [8.7271] QUEUE:9
+Cocos2d: [8.7271] index3
+Cocos2d: [8.7282] idle
+Cocos2d: [8.8213] addPay:1001
+Cocos2d: [8.8213] normal pay
+Cocos2d: [9.2713] ----------------------------------------
+Cocos2d: [9.2714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.2714] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.2714] ----------------------------------------
+Cocos2d: [9.3211] ----------------------------------------
+Cocos2d: [9.3211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.3212] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.3212] ----------------------------------------
+Cocos2d: [9.3880] ----------------------------------------
+Cocos2d: [9.3880] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.3880] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.3880] ----------------------------------------
+Cocos2d: [9.4213] ----------------------------------------
+Cocos2d: [9.4214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.4214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.4214] ----------------------------------------
+Cocos2d: [9.4713] ----------------------------------------
+Cocos2d: [9.4714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.4714] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.4714] ----------------------------------------
+Cocos2d: [9.5213] ----------------------------------------
+Cocos2d: [9.5213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.5213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.5214] ----------------------------------------
+Cocos2d: [9.5713] ----------------------------------------
+Cocos2d: [9.5713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.5713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.5713] ----------------------------------------
+Cocos2d: [9.6213] ----------------------------------------
+Cocos2d: [9.6214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.6214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.6214] ----------------------------------------
+Cocos2d: [9.6713] ----------------------------------------
+Cocos2d: [9.6714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.6714] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.6714] ----------------------------------------
+Cocos2d: [9.7213] ----------------------------------------
+Cocos2d: [9.7213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.7213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.7213] ----------------------------------------
+Cocos2d: [9.7713] ----------------------------------------
+Cocos2d: [9.7713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.7714] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.7714] ----------------------------------------
+Cocos2d: [9.8213] ----------------------------------------
+Cocos2d: [9.8214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.8214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.8214] ----------------------------------------
+Cocos2d: [9.8705] ----------------------------------------
+Cocos2d: [9.8705] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.8705] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.8705] ----------------------------------------
+Cocos2d: [9.9213] ----------------------------------------
+Cocos2d: [9.9214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.9214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.9214] ----------------------------------------
+Cocos2d: [9.9713] ----------------------------------------
+Cocos2d: [9.9713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [9.9714] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [9.9714] ----------------------------------------
+Cocos2d: [10.0207] ----------------------------------------
+Cocos2d: [10.0207] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.0207] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.0207] ----------------------------------------
+Cocos2d: [10.0712] ----------------------------------------
+Cocos2d: [10.0713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.0713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.0713] ----------------------------------------
+Cocos2d: [10.1213] ----------------------------------------
+Cocos2d: [10.1213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.1213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.1213] ----------------------------------------
+Cocos2d: [10.1546] [INFO] LUA VM MEMORY USED: 3081.75 KB
+Cocos2d: [10.1823] ----------------------------------------
+Cocos2d: [10.1824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.1824] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.1824] ----------------------------------------
+Cocos2d: [10.2206] ----------------------------------------
+Cocos2d: [10.2207] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.2207] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.2207] ----------------------------------------
+Cocos2d: [10.2877] ----------------------------------------
+Cocos2d: [10.2878] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.2878] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.2878] ----------------------------------------
+Cocos2d: [10.3208] ----------------------------------------
+Cocos2d: [10.3208] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.3208] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.3208] ----------------------------------------
+Cocos2d: [10.3712] ----------------------------------------
+Cocos2d: [10.3713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.3713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.3713] ----------------------------------------
+Cocos2d: [10.4212] ----------------------------------------
+Cocos2d: [10.4213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.4213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.4213] ----------------------------------------
+Cocos2d: [10.4712] ----------------------------------------
+Cocos2d: [10.4713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.4713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.4713] ----------------------------------------
+Cocos2d: [10.5211] ----------------------------------------
+Cocos2d: [10.5212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.5213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.5213] ----------------------------------------
+Cocos2d: [10.5712] ----------------------------------------
+Cocos2d: [10.5713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.5713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.5713] ----------------------------------------
+Cocos2d: [10.6213] ----------------------------------------
+Cocos2d: [10.6213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.6214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.6214] ----------------------------------------
+Cocos2d: [10.6879] ----------------------------------------
+Cocos2d: [10.6880] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.6880] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.6880] ----------------------------------------
+Cocos2d: [10.7375] ----------------------------------------
+Cocos2d: [10.7376] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.7376] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.7376] ----------------------------------------
+Cocos2d: [10.7873] ----------------------------------------
+Cocos2d: [10.7874] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.7874] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.7874] ----------------------------------------
+Cocos2d: [10.8211] ----------------------------------------
+Cocos2d: [10.8212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.8212] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.8212] ----------------------------------------
+Cocos2d: [10.8712] ----------------------------------------
+Cocos2d: [10.8712] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.8712] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.8712] ----------------------------------------
+Cocos2d: [10.9212] ----------------------------------------
+Cocos2d: [10.9212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.9212] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.9212] ----------------------------------------
+Cocos2d: [10.9712] ----------------------------------------
+Cocos2d: [10.9713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [10.9713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [10.9713] ----------------------------------------
+Cocos2d: [11.0213] ----------------------------------------
+Cocos2d: [11.0213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.0214] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.0214] ----------------------------------------
+Cocos2d: [11.0879] ----------------------------------------
+Cocos2d: [11.0881] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.0881] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.0881] ----------------------------------------
+Cocos2d: [11.1378] ----------------------------------------
+Cocos2d: [11.1378] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.1378] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.1378] ----------------------------------------
+Cocos2d: [11.1710] ----------------------------------------
+Cocos2d: [11.1711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.1711] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.1711] ----------------------------------------
+Cocos2d: [11.2211] ----------------------------------------
+Cocos2d: [11.2213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.2213] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.2213] ----------------------------------------
+Cocos2d: [11.2708] ----------------------------------------
+Cocos2d: [11.2709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.2709] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.2709] ----------------------------------------
+Cocos2d: [11.3211] ----------------------------------------
+Cocos2d: [11.3212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.3212] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.3212] ----------------------------------------
+Cocos2d: [11.3707] ----------------------------------------
+Cocos2d: [11.3708] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.3709] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.3709] ----------------------------------------
+Cocos2d: [11.4211] ----------------------------------------
+Cocos2d: [11.4211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.4211] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.4211] ----------------------------------------
+Cocos2d: [11.4705] ----------------------------------------
+Cocos2d: [11.4707] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.4707] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.4707] ----------------------------------------
+Cocos2d: [11.5205] ----------------------------------------
+Cocos2d: [11.5206] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.5206] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.5206] ----------------------------------------
+Cocos2d: [11.5711] ----------------------------------------
+Cocos2d: [11.5712] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.5713] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.5713] ----------------------------------------
+Cocos2d: [11.6206] ----------------------------------------
+Cocos2d: [11.6206] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.6206] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.6206] ----------------------------------------
+Cocos2d: [11.6708] ----------------------------------------
+Cocos2d: [11.6709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.6709] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.6709] ----------------------------------------
+Cocos2d: [11.7377] ----------------------------------------
+Cocos2d: [11.7378] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.7379] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.7379] ----------------------------------------
+Cocos2d: [11.7875] ----------------------------------------
+Cocos2d: [11.7875] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.7875] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.7875] ----------------------------------------
+Cocos2d: [11.8210] ----------------------------------------
+Cocos2d: [11.8210] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.8211] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.8211] ----------------------------------------
+Cocos2d: [11.8710] ----------------------------------------
+Cocos2d: [11.8711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.8711] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.8711] ----------------------------------------
+Cocos2d: [11.9208] ----------------------------------------
+Cocos2d: [11.9208] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.9208] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.9208] ----------------------------------------
+Cocos2d: [11.9711] ----------------------------------------
+Cocos2d: [11.9711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [11.9711] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [11.9712] ----------------------------------------
+Cocos2d: [12.0211] ----------------------------------------
+Cocos2d: [12.0211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [12.0211] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [12.0211] ----------------------------------------
+Cocos2d: [12.0708] ----------------------------------------
+Cocos2d: [12.0709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [12.0709] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [12.0709] ----------------------------------------
+Cocos2d: [12.1210] ----------------------------------------
+Cocos2d: [12.1211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [12.1211] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [12.1211] ----------------------------------------
+Cocos2d: [12.1709] ----------------------------------------
+Cocos2d: [12.1709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+
+Cocos2d: [12.1709] 
+stack traceback:
+	[C]: in function 'error'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [12.1709] ----------------------------------------

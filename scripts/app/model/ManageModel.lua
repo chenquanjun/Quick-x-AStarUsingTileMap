@@ -78,24 +78,83 @@ function ManageModel:onEnter()
 	self:addPlayer()
 	-- addNPCTest() --批量测试
 
+
 	do
 				local productList = {
 										{
-											{elfId = 106, curState = 0},
-											-- {elfId = 105, curState = 0},
-											-- {elfId = 101, curState = 0},
-											-- {elfId = 106, curState = 0}
+											{elfId = 101, curState = 0},
 										},
-										-- {
-										-- 	{elfId = 106, curState = 0},
-										-- 	{elfId = 105, curState = 0},
-										-- 	{elfId = 101, curState = 0},
-										-- 	-- {elfId = 106, curState = 0}
-										-- },
 									}
 
 				self:addNPC(productList) --单个测试		
 	end
+	do
+				local productList = {
+										{
+											{elfId = 102, curState = 0},
+										},
+									}
+
+				self:addNPC(productList) --单个测试		
+	end
+	do
+				local productList = {
+										{
+											{elfId = 103, curState = 0},
+										},
+									}
+
+				self:addNPC(productList) --单个测试		
+	end
+	do
+				local productList = {
+										{
+											{elfId = 104, curState = 0},
+										},
+									}
+
+				self:addNPC(productList) --单个测试		
+	end
+	do
+				local productList = {
+										{
+											{elfId = 105, curState = 0},
+										},
+									}
+
+				self:addNPC(productList) --单个测试		
+	end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 106, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+
+
+
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 106, curState = 0},
+	-- 										-- {elfId = 105, curState = 0},
+	-- 										-- {elfId = 101, curState = 0},
+	-- 										-- {elfId = 106, curState = 0}
+	-- 									},
+	-- 									-- {
+	-- 									-- 	{elfId = 106, curState = 0},
+	-- 									-- 	{elfId = 105, curState = 0},
+	-- 									-- 	{elfId = 101, curState = 0},
+	-- 									-- 	-- {elfId = 106, curState = 0}
+	-- 									-- },
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试	
+
+	-- end
 
 	-- do
 	-- 			local productList = {
@@ -157,7 +216,7 @@ function ManageModel:initProduct()
 		local name = "id:"..elfId
 		local productType = 1
 
-		local duration = math.random(1, 3)
+		local duration = math.random(1, 1)
 
 		local productInfo = {}
 			productInfo.duration = duration
@@ -181,9 +240,11 @@ function ManageModel:initProduct()
 		--定时器 test
 		G_modelDelegate:coolDownProduct(elfId, duration)
 
-		G_timer:addTimerListener(elfId, duration, function()
-			self:onCoolDown(elfId) --回调
-		end)
+		local function productCallback()
+			self:TD_callbackProduct(elfId)
+		end
+
+		G_timer:addTimerListener(elfId, duration, self)
 	end
 
 end
@@ -380,10 +441,12 @@ function ManageModel:npcStateControl(elfId)
 				totalTime = G_modelDelegate:moveNPC(elfId, mapId) 
 				npcInfo.mapId = mapId --保存目标位置
 			end
+
+			local function npcCallback()
+				self:TD_callbackNPC(elfId)
+			end
 			
-			G_timer:addTimerListener(elfId, totalTime, function()
-			self:npcStateControl(elfId)
-		end) --加入时间控制
+			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
 			if productVec then
 				G_modelDelegate:addRequest(elfId, productVec)
@@ -541,9 +604,7 @@ function ManageModel:playerQueue(playerInfo)
 
 				G_modelDelegate:coolDownProduct(productElfId, duration)
 
-				G_timer:addTimerListener(productElfId, duration, function()
-			self:onCoolDown(productElfId)
-		end)
+				G_timer:addTimerListener(productElfId, duration, self)
 				--玩家进入下个状态
 
 			else --不满足需求
@@ -600,9 +661,7 @@ function ManageModel:playerQueue(playerInfo)
 
 		local totalTime = G_modelDelegate:movePlayer(elfId, mapId)
 
-		G_timer:addTimerListener(elfId, totalTime, function ()
-			self:playerQueue(playerInfo)
-		end) --加入时间控制
+		G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
 	else --不存在
 		playerInfo.curState = PlayerStateType.Idle --空闲状态
@@ -741,27 +800,22 @@ function ManageModel:onTrayProductBtn(index)
 end
 
 --[[-------------------
-	---Timer Delegate-----
-	---时间管理的核心-----]]
+	---timer call-----
+	---------------------]]
+function ManageModel:TD_onTimeOver(elfId)
+	if elfId >= ElfIdList.NpcOffset then
+		self:npcStateControl(elfId)
 
--- function ManageModel:TD_onTimOver(listenerId)
--- 	if listenerId >= ElfIdList.NpcOffset then --npcId回调
-	
--- 		--npc状态控制
--- 		self:npcStateControl(listenerId)
+	elseif elfId >= ElfIdList.ProductOffset then
+		self:onCoolDown(elfId) --产品冷却回调
 
--- 	elseif listenerId >= ElfIdList.ProductOffset then --产品id回调
-	
--- 		self:onCoolDown(listenerId)
+	else
+		local testPlayerId = 1
 
--- 	else --玩家id回调
+		local playerInfo = self._playerInfoMap[testPlayerId]
 
--- 		local playerInfo = self._playerInfoMap[listenerId]
-
--- 		if playerInfo then
--- 			--处理队列
--- 			self:playerQueue(playerInfo)
--- 		end
-
--- 	end	
--- end
+		if playerInfo then
+			self:playerQueue(playerInfo)
+		end
+	end
+end

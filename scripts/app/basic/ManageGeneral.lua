@@ -38,7 +38,8 @@ ElfIdList = {
 	PayQueCrtl		 = 50,   --支付控制，             --payControl
 	PayQueCheck		 = 51,   --支付队列检测			--payControl
 	ProductOffset    = 100,  --100~1000是物品id		--model
-	NpcOffset        = 1000, --1000以后是npcId		--model
+	NpcOffset        = 1000, --1000~2000以后是npcId	--model
+	PayNpcOffset     = 2000  --2000 + npcId(= 3000 ~ 4000)是支付npc回调
 }
 
 --[[-------------------

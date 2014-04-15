@@ -328,7 +328,7 @@ function ManageView:MD_moveNPC(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
         -- print("npc move")
-        totalTime = npcSprite:easeWalkTo(0.05, mapPath)
+        totalTime = npcSprite:easeWalkTo(0.1, mapPath)
     end
 
     return totalTime
