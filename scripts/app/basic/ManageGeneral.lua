@@ -106,6 +106,7 @@ NPCPayType = {
 				Moving 	  =    2,
 				MoveEnd   =    3,
 				Prepare   =    4,
+				PrepareEnd=    5,
 				Normal    =    10,
 				Anger     =    11,
 				Cancel    =    15,

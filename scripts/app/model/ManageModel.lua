@@ -9,8 +9,6 @@ end)
 --index
 ManageModel.__index = ManageModel
 --private
-ManageModel._delegate  			= nil --model delegate
-
 ManageModel._seatToServeDic		= nil --座位id与服务id的对应表
 
 ---------info map---------
@@ -46,10 +44,6 @@ function ManageModel:init()
 	self._productInfoMap 	= {}
 	self._trayInfo = TrayInfo:create(5)
 
-end
-
-function ManageModel:setDelegate(delegate)
-	--G_modelDelegate = delegate
 end
 
 function ManageModel:setSeatToServeDic(seatToServeDic)
@@ -187,7 +181,9 @@ function ManageModel:initProduct()
 		--定时器 test
 		G_modelDelegate:coolDownProduct(elfId, duration)
 
-		G_timer:addTimerListener(elfId, duration, self)
+		G_timer:addTimerListener(elfId, duration, function()
+			self:onCoolDown(elfId) --回调
+		end)
 	end
 
 end
@@ -358,23 +354,23 @@ function ManageModel:npcStateControl(elfId)
 		local returnValue = npcInfo:npcState() --执行状态方法
 
 		local isRelease = returnValue.isRelease --是否已经释放
-		local isEnterPay = returnValueisEnterPay --转交给支付模块控制
+		local isEnterPay = returnValue.isEnterPay --转交给支付模块控制
 		local totalTime = returnValue.totalTime --回调时间
 		local mapId = returnValue.mapId --移动目标id
 		local productVec = returnValue.productVec --产品数组
 		local testStateStr = returnValue.testStateStr
 
-		if isEnterPay then
+		if isEnterPay then --新模块
 			--转交给支付控制模块
 			G_payControl:addPayNpc(npcInfo)
 
-			--释放
+			--model不再持有此npc信息，释放
 			self._npcInfoMap[elfId] = nil --释放
 
 			return
 		end
 
-		if isRelease then
+		if isRelease then-- 废弃
 			--释放
 			self._npcInfoMap[elfId] = nil --释放
 			G_modelDelegate:removeNPC(elfId)
@@ -385,7 +381,9 @@ function ManageModel:npcStateControl(elfId)
 				npcInfo.mapId = mapId --保存目标位置
 			end
 			
-			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
+			G_timer:addTimerListener(elfId, totalTime, function()
+			self:npcStateControl(elfId)
+		end) --加入时间控制
 
 			if productVec then
 				G_modelDelegate:addRequest(elfId, productVec)
@@ -543,7 +541,9 @@ function ManageModel:playerQueue(playerInfo)
 
 				G_modelDelegate:coolDownProduct(productElfId, duration)
 
-				G_timer:addTimerListener(productElfId, duration, self)
+				G_timer:addTimerListener(productElfId, duration, function()
+			self:onCoolDown(productElfId)
+		end)
 				--玩家进入下个状态
 
 			else --不满足需求
@@ -600,7 +600,9 @@ function ManageModel:playerQueue(playerInfo)
 
 		local totalTime = G_modelDelegate:movePlayer(elfId, mapId)
 
-		G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
+		G_timer:addTimerListener(elfId, totalTime, function ()
+			self:playerQueue(playerInfo)
+		end) --加入时间控制
 
 	else --不存在
 		playerInfo.curState = PlayerStateType.Idle --空闲状态
@@ -741,24 +743,25 @@ end
 --[[-------------------
 	---Timer Delegate-----
 	---时间管理的核心-----]]
-function ManageModel:TD_onTimOver(listenerId)
-	if listenerId >= ElfIdList.NpcOffset then --npcId回调
+
+-- function ManageModel:TD_onTimOver(listenerId)
+-- 	if listenerId >= ElfIdList.NpcOffset then --npcId回调
 	
-		--npc状态控制
-		self:npcStateControl(listenerId)
+-- 		--npc状态控制
+-- 		self:npcStateControl(listenerId)
 
-	elseif listenerId >= ElfIdList.ProductOffset then --产品id回调
+-- 	elseif listenerId >= ElfIdList.ProductOffset then --产品id回调
 	
-		self:onCoolDown(listenerId)
+-- 		self:onCoolDown(listenerId)
 
-	else --玩家id回调
+-- 	else --玩家id回调
 
-		local playerInfo = self._playerInfoMap[listenerId]
+-- 		local playerInfo = self._playerInfoMap[listenerId]
 
-		if playerInfo then
-			--处理队列
-			self:playerQueue(playerInfo)
-		end
+-- 		if playerInfo then
+-- 			--处理队列
+-- 			self:playerQueue(playerInfo)
+-- 		end
 
-	end	
-end
+-- 	end	
+-- end

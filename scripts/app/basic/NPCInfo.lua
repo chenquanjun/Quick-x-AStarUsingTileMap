@@ -127,6 +127,22 @@ function NPCInfo:meetProductNeed()
 	end
 end
 
+function NPCInfo:enterPayState(isWaitPay)
+	if isWaitPay then
+		self.curState = NPCStateType.WaitPay
+		self.curFeel = NPCFeelType.Normal --情感
+	else
+		self.curState = NPCStateType.NormalPay
+		self.curPay = NPCPayType.Moving --支付情感
+
+	end
+end
+
+function NPCInfo:setPayStateNormal()
+	assert(self.curState == NPCStateType.NormalPay and self.curPay == NPCPayType.Prepare, "error set")
+	self.curPay = NPCPayType.Normal
+end
+
 --npc主状态转换
 function NPCInfo:npcState()
 	local elfId = self.elfId --npcId --NPC的id，具有唯一性
@@ -145,7 +161,7 @@ function NPCInfo:npcState()
 		--开始位置
 		[NPCStateType.Start]					= function()
 		stateStr = "start"
-			totalTime = math.random(1, 3)
+			totalTime = math.random(0.1, 0.5)
 			self.curState = NPCStateType.GoToDoor --状态切换
 
 		end,
@@ -168,7 +184,7 @@ function NPCInfo:npcState()
 		[NPCStateType.Door] 					= function()
 		stateStr = "Door"
 			--在门口稍微停留再看看有没位置
-			totalTime = math.random(0.2, 0.5)
+			totalTime = math.random(0.1, 0.2)
 			self.curState = NPCStateType.FindSeat
 
 		end,
@@ -215,20 +231,22 @@ function NPCInfo:npcState()
 		end,
 		--在座位吃东西
 		[NPCStateType.SeatEating] 				= function()
-		stateStr = "Eat"
+		
 			local productVec = self:nextProduct()
 			totalTime = math.random(1, 2)
 			if productVec then
+				stateStr = "Eat"
 
 				--还有需求
 				self.curState = NPCStateType.SeatRequest --状态切换
 				self.curFeel = NPCFeelType.Prepare --进入子状态
 
 			else
+				stateStr = "Pay"
 				--没有需求，进入支付状态
 				self.curState = NPCStateType.Pay
 
-				isEnterPay = true
+				
 
 
 				--进入支付状态，feel状态进入normal（由于支付是马上执行？）
@@ -238,25 +256,33 @@ function NPCInfo:npcState()
 
 		end,
 		[NPCStateType.Pay] 							= function()
-				local isWaitPay = G_payControl:joinPay(elfId)
-				totalTime = 0.1
+				isEnterPay = true
+				--npc进入支付状态，model把npc交给G_payControl
+				--G_payControl决定玩家进入等待支付还是普通支付
+				--进入普通支付时，清除npc的时间回调再进入npcState，并加入时间回调
+				--进入等待支付，调用npcState，并加入时间回调
 
-				if isWaitPay then --等待支付状态
-					stateStr = "WaitPay"
-					self.curState = NPCStateType.WaitPay
-					self.curFeel = NPCFeelType.Normal --原地感情变化
 
-				else --普通支付状态
-					stateStr = "NorPay"
-					self.curState = NPCStateType.NormalPay
-					self.curPay = NPCPayType.Moving --准备进入排队队列
-				end
+				-- local isWaitPay = G_payControl:joinPay(elfId)
+				-- totalTime = 0.1
+
+				-- if isWaitPay then --等待支付状态
+				-- 	stateStr = "WaitPay"
+				-- 	self.curState = NPCStateType.WaitPay
+				-- 	self.curFeel = NPCFeelType.Normal --原地感情变化
+
+				-- else --普通支付状态
+				-- 	stateStr = "NorPay"
+				-- 	self.curState = NPCStateType.NormalPay
+				-- 	self.curPay = NPCPayType.Moving --准备进入排队队列
+				-- end
 		end,
 		[NPCStateType.NormalPay] 					= function()
 			print("normal pay")
 			totalTime, mapId = self:npcPayOnNorPay()
 		end,
 		[NPCStateType.WaitPay] 						= function()
+			print("wait pay")
 		end,
 		[NPCStateType.LeavePay] 					= function()
 		end,
@@ -414,7 +440,7 @@ function NPCInfo:npcFeelOnRequest(isWaitSeat)
 		[NPCFeelType.Prepare]					= function()
 		testStateStr = "Pre"
 			-- print("prepare")
-			totalTime = math.random(1, 2)
+			totalTime = math.random(0.1, 0.2)
 			self.curFeel = NPCFeelType.Normal
 		end,
 		--点菜完毕，进入普通等待

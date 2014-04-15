@@ -31,7 +31,21 @@ function PayControl:getPayPointMapId()
  	return self._payPointMapId
 end
 
+--增加支付的npc
 function PayControl:addPayNpc(npcInfo)
+	local elfId = npcInfo.elfId
+	print("addPay:"..elfId)
+
+	self._npcInfoMap[elfId] = npcInfo
+
+	--进入支付
+	local isWaitPay = self:joinPay(elfId)
+
+	--设置npc状态
+	npcInfo:enterPayState(isWaitPay)
+
+	--调用npc信息控制方法
+	self:npcStateControl(elfId)
 
 end
 
@@ -47,7 +61,7 @@ function PayControl:joinPay(elfId)
 	if isFull then --加入等待支付队列
 		self._waitPayQueue:pushQueue(data)
 		isWaitPay = true
-	else --成功进入普通支付队列
+	else --将进入普通支付队列
 		--但是要等移动到指定位置时候才加入队列
 		isWaitPay = false
 	end
@@ -58,7 +72,17 @@ function PayControl:joinNormalPay(npcInfo)
 	--已经到达普通支付的等待位置，准备进入队列
 	local elfId = npcInfo.elfId
 
+	local data = {}
+	data.elfId = elfId
+
+	--进入普通队列
+	local pushIndex = self._norPayQueue:pushQueue(data)
+
+	npcInfo:setPayStateNormal() --npc支付情感开始变化 normal anger cancel
+
 	--获得即将进入的位置
+
+	local mapId = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
 
 	--转变状态
 end
@@ -72,8 +96,59 @@ function PayControl:onRelease()
 	self._waitPayQueue        = nil  
 end
 
+--npc主状态转换
+function PayControl:npcStateControl(elfId)
+
+	local npcInfo = self._npcInfoMap[elfId]
+
+	if npcInfo then
+		local returnValue = npcInfo:npcState() --执行状态方法
+		dump(returnValue, "value")
+		local isRelease = returnValue.isRelease --是否已经释放
+		local totalTime = returnValue.totalTime --回调时间
+		local mapId = returnValue.mapId --移动目标id
+
+		local testStateStr = returnValue.testStateStr
 
 
+		if isRelease then-- 废弃
+			--释放
+			self._npcInfoMap[elfId] = nil --释放
+			G_modelDelegate:removeNPC(elfId)
+		else
+			if mapId ~= -1 then
+				--mapId存在说明需要自动寻路，totalTime由view控制
+				totalTime = G_modelDelegate:moveNPC(elfId, mapId) 
+				npcInfo.mapId = mapId --保存目标位置
+			end
+			
+			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
+
+			if productVec then
+				G_modelDelegate:addRequest(elfId, productVec)
+			end
+
+
+		end
+
+		if testStateStr then
+				G_modelDelegate:setStateStr(elfId, testStateStr)
+		end
+
+
+	else
+		error("error call")
+	end
+end
+
+
+function PayControl:TD_onTimOver(listenerId)
+	if listenerId >= ElfIdList.NpcOffset then --npcId回调
+		self:npcStateControl(listenerId)
+	else --控制回调
+
+	end	
+end
 
 
 

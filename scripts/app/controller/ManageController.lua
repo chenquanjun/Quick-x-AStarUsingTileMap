@@ -102,8 +102,8 @@ function ManageController:init()
     local mapDataDic = self._mapInfo:getMapDataDic()
 
     do  --全局变量(所有全局变量均由controller控制生命周期与释放)
-    	G_modelDelegate = modelDelegate
-    	G_viewDelegate = viewDelegate
+    	G_modelDelegate = modelDelegate --model delegate
+    	G_viewDelegate = viewDelegate  --view delegate
 
 	    G_seatControl = SeatControl:create(mapDataDic)  --座位控制
 	    G_scheduler = require("framework.scheduler")    --scheduler

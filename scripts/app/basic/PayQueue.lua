@@ -50,7 +50,7 @@ end
 
 --push
 function PayQueue:pushQueue(data)
-	local isSuccess = false
+	local pushIndex = -1
 	local queueData = self._queueData
 	local index = #queueData + 1
 	local maxNum = self._maxNum
@@ -59,10 +59,10 @@ function PayQueue:pushQueue(data)
 
 		self._queueData[index] = data
 
-		isSuccess = true
+		pushIndex = index
 	end
 
-	return isSuccess
+	return pushIndex
 
 end
 
