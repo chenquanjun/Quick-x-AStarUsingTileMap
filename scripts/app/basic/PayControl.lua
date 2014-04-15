@@ -6,7 +6,8 @@ PayControl.__index = PayControl
 PayControl._norPayQueue        = nil   --普通支付队列
 PayControl._waitPayQueue        = nil  --等待支付队列
 PayControl._payPointMapId       = -1
-
+PayControl._npcInfoMap          = nil
+ 
 function PayControl:create()
 	local ret = {}
 	setmetatable(ret, PayControl)
@@ -22,10 +23,16 @@ function PayControl:init()
 
 	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
 	self._payPointMapId = payVec[maxNum + 1]
+
+	self._npcInfoMap = {}
 end
 
 function PayControl:getPayPointMapId()
  	return self._payPointMapId
+end
+
+function PayControl:addPayNpc(npcInfo)
+
 end
 
 --加入支付大军
@@ -48,8 +55,12 @@ function PayControl:joinPay(elfId)
 end
 
 function PayControl:joinNormalPay(npcInfo)
-	--已经到达普通支付的候选位置
+	--已经到达普通支付的等待位置，准备进入队列
 	local elfId = npcInfo.elfId
+
+	--获得即将进入的位置
+
+	--转变状态
 end
 
 function PayControl:leavePay(elfId)

@@ -1,9 +1,9 @@
---general
-require "app/basic/ManageGeneral"
-
 --[[-------------------
     -------Require-----
     ---------------------]]
+--general 所有常量定义
+require "app/basic/ManageGeneral"
+
 --继承2dx对象基类
 require "app/basic/extern"
 
@@ -56,8 +56,8 @@ ManageController.__index = ManageController
 
 ManageController._view          = nil
 ManageController._model         = nil
-ManageController._viewDelegate  = nil
-ManageController._modelDelegate = nil
+-- ManageController._viewDelegate  = nil
+-- ManageController._modelDelegate = nil
 ManageController._mapInfo       = nil
 
 --[[-------------------
@@ -82,13 +82,13 @@ function ManageController:init()
 	self:addChild(self._model)--model
 
 	--model delegate 指向view
-	self._modelDelegate = ManageModelDelegate:setRefer(self._view)
+	local modelDelegate = ManageModelDelegate:setRefer(self._view)
 	--view delegate 指向controller
-	self._viewDelegate = ManageViewDelegate:setRefer(self)
+	local viewDelegate = ManageViewDelegate:setRefer(self)
 
 	--delegate
-	self._model:setDelegate(self._modelDelegate)
-	self._view:setDelegate(self._viewDelegate)
+	-- self._model:setDelegate(self._modelDelegate)
+	-- self._view:setDelegate(self._viewDelegate)
 
 	--地图信息 controller保存
 	self._mapInfo = MapInfo:create("map.tmx")
@@ -102,6 +102,8 @@ function ManageController:init()
     local mapDataDic = self._mapInfo:getMapDataDic()
 
     do  --全局变量(所有全局变量均由controller控制生命周期与释放)
+    	G_modelDelegate = modelDelegate
+    	G_viewDelegate = viewDelegate
 
 	    G_seatControl = SeatControl:create(mapDataDic)  --座位控制
 	    G_scheduler = require("framework.scheduler")    --scheduler
@@ -145,15 +147,17 @@ end
 --统一用此方法，scene负责通知controller,controller再通知view和model
 function ManageController:onRelease()
 	print("Controller on release")
-	self._viewDelegate:removeRefer()
-	self._modelDelegate:removeRefer()
+	G_viewDelegate:removeRefer()
+	G_modelDelegate:removeRefer()
 	self._view:onRelease()
 	self._model:onRelease()
 	self._mapInfo = nil
 	self._view = nil
 	self._model = nil
-	self._viewDelegate = nil
-	self._modelDelegate = nil
+	-- self._viewDelegate = nil
+
+	G_viewDelegate = nil
+	G_modelDelegate = nil
 
 	G_seatControl = nil
 	G_scheduler = nil

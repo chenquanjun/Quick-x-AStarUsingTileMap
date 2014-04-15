@@ -10,7 +10,7 @@ end)
 
 ManageView.__index      = ManageView
 
-ManageView._delegate    = nil --view delegate
+-- ManageView._delegate    = nil --view delegate
 ManageView._mapInfo     = nil
 ManageView._npcMap      = nil    --存放elfId和npcSprite的对应字典
 ManageView._playerMap   = nil --存放playerId和精灵的对应字典
@@ -32,11 +32,11 @@ function ManageView:create()
 	return ret
 end
 
-function ManageView:setDelegate(delegate)
-    self._delegate = delegate
+-- function ManageView:setDelegate(delegate)
+--     self._delegate = delegate
 
-    self._trayLayer:setDelegate(self._delegate) --同样的delegate
-end
+--     self._trayLayer:setDelegate(self._delegate) --同样的delegate
+-- end
 
 function ManageView:initBtns(mapIdVec, callBack)
     local size = self._mapInfo._mapUnit
@@ -151,7 +151,7 @@ function ManageView:onRelease()
 	print("View on release")
     self._trayLayer:onRelease()
 
-    self._delegate = nil
+    -- self._delegate = nil
 	self._mapInfo = nil
 
     local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
@@ -220,7 +220,7 @@ function ManageView:MD_addProduct(data)
             elseif event == "ended" then
                 if touchInSprite then 
                     --回调
-                    self._delegate:onProductBtn(elfId)
+                   G_viewDelegate:onProductBtn(elfId)
                 end
 
             else

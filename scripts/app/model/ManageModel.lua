@@ -49,7 +49,7 @@ function ManageModel:init()
 end
 
 function ManageModel:setDelegate(delegate)
-	self._delegate = delegate
+	--G_modelDelegate = delegate
 end
 
 function ManageModel:setSeatToServeDic(seatToServeDic)
@@ -132,7 +132,7 @@ end
 function ManageModel:onRelease()
 	print("Model on release")
 
-	self._delegate = nil
+	--G_modelDelegate = nil
 
 	self._seatVector = nil
 	self._waitSeatVector = nil
@@ -182,10 +182,10 @@ function ManageModel:initProduct()
 			data.type = productType
 			data.mapId = mapId
 
-		self._delegate:addProduct(data)
+		G_modelDelegate:addProduct(data)
 
 		--定时器 test
-		self._delegate:coolDownProduct(elfId, duration)
+		G_modelDelegate:coolDownProduct(elfId, duration)
 
 		G_timer:addTimerListener(elfId, duration, self)
 	end
@@ -209,7 +209,7 @@ function ManageModel:addPlayer()
 		data.elfId = elfId
 		data.modelId = 1
 		data.mapId = mapId
-		self._delegate:addPlayer(data)
+		G_modelDelegate:addPlayer(data)
 	end
 
 	--废弃
@@ -229,7 +229,7 @@ function ManageModel:addPlayer()
 		data.elfId = elfId
 		data.modelId = 2
 		data.mapId = mapId
-		self._delegate:addPlayer(data)
+		G_modelDelegate:addPlayer(data)
 	end
 end
 
@@ -323,7 +323,7 @@ function ManageModel:addNPC(productList)
 		data.elfId = elfId
 		data.modelId = modelId
 		data.mapId = startMapId
-		self._delegate:addNPC(data)
+		G_modelDelegate:addNPC(data)
 	end
 	self._npcTestFlag = self._npcTestFlag + 1
 
@@ -358,33 +358,44 @@ function ManageModel:npcStateControl(elfId)
 		local returnValue = npcInfo:npcState() --执行状态方法
 
 		local isRelease = returnValue.isRelease --是否已经释放
+		local isEnterPay = returnValueisEnterPay --转交给支付模块控制
 		local totalTime = returnValue.totalTime --回调时间
 		local mapId = returnValue.mapId --移动目标id
 		local productVec = returnValue.productVec --产品数组
 		local testStateStr = returnValue.testStateStr
 
+		if isEnterPay then
+			--转交给支付控制模块
+			G_payControl:addPayNpc(npcInfo)
+
+			--释放
+			self._npcInfoMap[elfId] = nil --释放
+
+			return
+		end
+
 		if isRelease then
 			--释放
 			self._npcInfoMap[elfId] = nil --释放
-			self._delegate:removeNPC(elfId)
+			G_modelDelegate:removeNPC(elfId)
 		else
 			if mapId ~= -1 then
 				--mapId存在说明需要自动寻路，totalTime由view控制
-				totalTime = self._delegate:moveNPC(elfId, mapId) 
+				totalTime = G_modelDelegate:moveNPC(elfId, mapId) 
 				npcInfo.mapId = mapId --保存目标位置
 			end
 			
 			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
 			if productVec then
-				self._delegate:addRequest(elfId, productVec)
+				G_modelDelegate:addRequest(elfId, productVec)
 			end
 
 
 		end
 
 		if testStateStr then
-				self._delegate:setStateStr(elfId, testStateStr)
+				G_modelDelegate:setStateStr(elfId, testStateStr)
 		end
 
 
@@ -432,8 +443,8 @@ function ManageModel:playerOnSeat(npcInfo)
 		self._trayInfo:removeProductWithVec(trayIndexVec)  --删除model中托盘物品
 
 		--view删除
-		self._delegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
-		self._delegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
+		G_modelDelegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
+		G_modelDelegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
 
 	else --没有一个产品满足npc（赶走npc）
 
@@ -526,11 +537,11 @@ function ManageModel:playerQueue(playerInfo)
 				--改变面板信息（把面板对应的产品改成complete状态）
 				local trayIndex = self._trayInfo:setProductFinish(productElfId)--返回物品在面板的位置
 
-				self._delegate:setProductFinishAtIndex(trayIndex)
+				G_modelDelegate:setProductFinishAtIndex(trayIndex)
 				--物品触发冷却
 				local duration = productInfo.duration
 
-				self._delegate:coolDownProduct(productElfId, duration)
+				G_modelDelegate:coolDownProduct(productElfId, duration)
 
 				G_timer:addTimerListener(productElfId, duration, self)
 				--玩家进入下个状态
@@ -587,7 +598,7 @@ function ManageModel:playerQueue(playerInfo)
 
 		playerInfo.curState = queueData.state --保存状态
 
-		local totalTime = self._delegate:movePlayer(elfId, mapId)
+		local totalTime = G_modelDelegate:movePlayer(elfId, mapId)
 
 		G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
@@ -683,7 +694,7 @@ function ManageModel:onProductBtn(elfId)
 	--model保存product信息
 	local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
 	--view显示product增加
-	self._delegate:addProductAtIndex(productIndex, productType)
+	G_modelDelegate:addProductAtIndex(productIndex, productType)
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		print("idle")
@@ -723,7 +734,7 @@ function ManageModel:onTrayProductBtn(index)
 	end
 
 	--删除面板上的值
-	self._delegate:removeProductAtIndex(index) 
+	G_modelDelegate:removeProductAtIndex(index) 
 	
 end
 

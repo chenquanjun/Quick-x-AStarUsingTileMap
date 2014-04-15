@@ -133,6 +133,7 @@ function NPCInfo:npcState()
 	local totalTime = -1 --回调参数, 若此值为-1则timercontrol不回调，若为0则直接回调，大于0则延迟回调
 	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
 	local productVec = nil
+	local isEnterPay = false
 
 	local stateStr = nil
 	--switch....
@@ -226,6 +227,8 @@ function NPCInfo:npcState()
 			else
 				--没有需求，进入支付状态
 				self.curState = NPCStateType.Pay
+
+				isEnterPay = true
 
 
 				--进入支付状态，feel状态进入normal（由于支付是马上执行？）
@@ -379,6 +382,7 @@ function NPCInfo:npcState()
 
 	local returnValue      = {}
 	returnValue.isRelease  = isRelease
+	returnValue.isEnterPay = isEnterPay
 	returnValue.totalTime  = totalTime
 	returnValue.mapId      = mapId
 	returnValue.productVec = productVec

@@ -122,6 +122,7 @@ function GlobalTimer:timerUpdate()
 			if timerUnit then
 				local endTime = timerUnit.endTime
 				if endTime == self._nTimePast then
+					--此处通过addTimer时候的传入的指针delegate调用通用TD_onTimOver方法
 					timerUnit.delegate:TD_onTimOver(listenerId)
 				end
 			end

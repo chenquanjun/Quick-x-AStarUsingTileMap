@@ -6,7 +6,7 @@ ManageTrayView = class("ManageTrayView", function()
 end)			
 --index
 ManageTrayView.__index  			= ManageTrayView
-ManageTrayView._delegate      		= nil --view delegate
+-- ManageTrayView._delegate      		= nil --view delegate
 ManageTrayView._maxNum              = 5 --默认最大5个
 ManageTrayView._productVec          = nil         
 
@@ -25,12 +25,12 @@ function ManageTrayView:init(maxNum)
 	self._productVec = {}
 end
 
-function ManageTrayView:setDelegate(delegate)
-    self._delegate = delegate
-end
+-- function ManageTrayView:setDelegate(delegate)
+--     self._delegate = delegate
+-- end
 
 function ManageTrayView:onRelease()
-	self._delegate = nil
+	-- self._delegate = nil
 	self._productVec = nil
 end
 
@@ -68,7 +68,7 @@ function ManageTrayView:addProductAtIndex(index, productType)
                 if touchInSprite then 
                 	for i,v in ipairs(self._productVec) do
                 		if v == sprite then
-                			self._delegate:onTrayProductBtn(i)
+                			G_viewDelegate:onTrayProductBtn(i)
                 			return
                 		end
                 	end
