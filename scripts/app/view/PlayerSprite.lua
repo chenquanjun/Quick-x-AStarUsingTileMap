@@ -1,5 +1,4 @@
-require "app/basic/extern"
-
+--玩家精灵
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 PlayerSprite = class("PlayerSprite", function()
 	return CCNode:create()

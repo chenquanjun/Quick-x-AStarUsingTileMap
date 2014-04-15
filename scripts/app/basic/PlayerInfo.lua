@@ -1,14 +1,4 @@
-PlayerStateType = {
-				Invalid                = 1,
-
-				Idle                   = 2, --空闲状态
-
-				Seat                   = 3, --座位位置
-				WaitSeat               = 4, --等待座位位置
-				Product                = 5, --产品位置
-				WaitProduct            = 6, --等待产品完成
-}
-
+--玩家通用信息
 PlayerInfo = {}
 --index
 PlayerInfo.__index = PlayerInfo

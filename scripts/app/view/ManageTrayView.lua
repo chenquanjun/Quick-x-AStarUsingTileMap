@@ -1,5 +1,4 @@
---托盘
-require "app/basic/extern"
+--托盘view
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageTrayView = class("ManageTrayView", function()

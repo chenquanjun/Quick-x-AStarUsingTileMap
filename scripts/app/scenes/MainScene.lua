@@ -1,4 +1,3 @@
-require "app/view/NPCSprite"
 require "app/controller/ManageController"
 
 --local var

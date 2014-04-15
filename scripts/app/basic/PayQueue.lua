@@ -1,4 +1,4 @@
---收银队列
+--队列（支付专用）
 PayQueue = {}
 --index
 PayQueue.__index = PayQueue

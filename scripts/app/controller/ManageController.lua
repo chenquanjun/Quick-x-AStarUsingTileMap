@@ -1,12 +1,33 @@
---继承
+--general
+require "app/basic/ManageGeneral"
+
+--[[-------------------
+    -------Require-----
+    ---------------------]]
+--继承2dx对象基类
 require "app/basic/extern"
+
+--队列
+require "app/basic/PayQueue"
+
+--timer
+require "app/timer/GlobalTimer"
+
 --地图基础信息
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
 require "app/basic/SeatControl"
 require "app/basic/PayControl"
---timer
-require "app/timer/GlobalTimer"
+
+--信息组件
+require "app/basic/NPCInfo"
+require "app/basic/PlayerInfo"
+require "app/basic/TrayInfo"
+
+--view组件
+require "app/view/ManageTrayView"
+require "app/view/PlayerSprite"
+require "app/view/NPCSprite"
 
 --mvc
 ----model

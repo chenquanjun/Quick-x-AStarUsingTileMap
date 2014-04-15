@@ -1,3 +1,4 @@
+--座位控制，包括占座离座
 SeatControl = {}
 --index
 SeatControl.__index = SeatControl

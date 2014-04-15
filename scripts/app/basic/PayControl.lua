@@ -1,6 +1,4 @@
-require "app/basic/PayQueue"
-
---收银队列
+--支付队列控制（包括等待支付与普通支付）
 PayControl = {}
 --index
 PayControl.__index = PayControl

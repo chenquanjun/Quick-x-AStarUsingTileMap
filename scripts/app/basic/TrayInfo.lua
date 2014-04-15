@@ -1,11 +1,4 @@
-ProductStateType = {
-				Invalid                = 1,
-				NotComplete            = 2,
-				Complete               = 3,    
-
-}
-
---托盘
+--托盘信息控制
 TrayInfo = {}
 --index
 TrayInfo.__index = TrayInfo

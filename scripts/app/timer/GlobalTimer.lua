@@ -1,5 +1,3 @@
-require "app/basic/extern"
-
 TimerEvent = {
 	Invalid          = 1,
     Running          = 2,

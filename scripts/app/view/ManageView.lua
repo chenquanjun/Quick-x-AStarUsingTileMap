@@ -1,8 +1,4 @@
-require "app/basic/extern"
-require "app/view/ManageTrayView"
-require "app/view/PlayerSprite"
-require "app/view/NPCSprite"
-
+--主view
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageView = class("ManageView", function()
 	return CCNode:create()

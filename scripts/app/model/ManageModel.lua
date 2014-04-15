@@ -1,12 +1,7 @@
-require "app/basic/extern"
-require "app/basic/NPCInfo"
-require "app/basic/PlayerInfo"
-require "app/basic/TrayInfo"
-
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageModel = class("ManageModel", function()
 	return CCNode:create()
-end)			
+end)	
 
 --[[-------------------
 	---Init Value-----
@@ -27,12 +22,9 @@ ManageModel._productInfoMap     = nil
 ManageModel._trayInfo           = nil --面板信息
 
 -------------------------
-ManageModel._productIdOffset	= 100   --100~1000是物品id
-ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
+-- ManageModel._productIdOffset	= 100   --100~1000是物品id
+-- ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
 ManageModel._npcTestFlag        = 0
-
-
-
 
 --[[-------------------
 	---Init Method-----
@@ -166,7 +158,7 @@ function ManageModel:initProduct()
 	-- self._mapDataDic[kMapDataProduct]
 
 	for i,mapId in ipairs(productVec) do
-		local elfId = self._productIdOffset + i
+		local elfId = ElfIdList.ProductOffset + i
 
 		local name = "id:"..elfId
 		local productType = 1
@@ -202,7 +194,7 @@ end
 
 function ManageModel:addPlayer()
 	do --init 保存到字典
-		local elfId = 1
+		local elfId = ElfIdList.Player     		
 		local mapId = G_seatControl:getMapIdOfType(kMapDataCook)
 	
 		local playerInfo = PlayerInfo:create()
@@ -220,6 +212,7 @@ function ManageModel:addPlayer()
 		self._delegate:addPlayer(data)
 	end
 
+	--废弃
 	do --init 保存到字典
 		local elfId = 2
 		local mapId = G_seatControl:getMapIdOfType(kMapDataCashier)
@@ -243,7 +236,7 @@ end
 --增加NPC
 function ManageModel:addNPC(productList)
 	
-	local elfId = self._npcIdOffset + self._npcTestFlag
+	local elfId = ElfIdList.NpcOffset + self._npcTestFlag
 
 	do --init 保存到字典
 		local startMapId = G_seatControl:getMapIdOfType(kMapDataStart)
@@ -738,12 +731,12 @@ end
 	---Timer Delegate-----
 	---时间管理的核心-----]]
 function ManageModel:TD_onTimOver(listenerId)
-	if listenerId >= self._npcIdOffset then --npcId回调
+	if listenerId >= ElfIdList.NpcOffset then --npcId回调
 	
 		--npc状态控制
 		self:npcStateControl(listenerId)
 
-	elseif listenerId >= self._productIdOffset then --产品id回调
+	elseif listenerId >= ElfIdList.ProductOffset then --产品id回调
 	
 		self:onCoolDown(listenerId)
 
