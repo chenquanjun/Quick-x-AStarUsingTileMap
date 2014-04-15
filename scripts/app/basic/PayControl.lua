@@ -79,6 +79,9 @@ function PayControl:joinNormalPay(npcInfo)
 	local data = {}
 	data.elfId = elfId
 
+	--标记状态
+	-- self._statusDic[elfId] == 0
+
 	--进入普通队列
 	local pushIndex = self._norPayQueue:pushQueue(data)
 
@@ -90,16 +93,39 @@ function PayControl:joinNormalPay(npcInfo)
 
 	local mapId = payVec[pushIndex] --目的地id
 
-	local totalTime = G_modelDelegate:moveNPC(elfId, mapId) --移动到指定地方
+	-- local totalTime = G_modelDelegate:moveNPC(elfId, mapId) --移动到指定地方
+	-- npcInfo.mapId = mapId --保存mapId
 
 	--注意此处的listenerId需要作偏移处理，防止干扰npcStateControl方法中npc自己状态的改变
-	G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
+	-- G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
 
-	--转变状态
+	--调用npc信息控制方法
+	self:npcStateControl(elfId)
+
+	self:moveToQueuePoint(npcInfo, pushIndex)
+
+end
+
+function PayControl:moveToQueuePoint(npcInfo, queueIndex)
+	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
+
+	local mapId = payVec[queueIndex] --目的地id
+
+	if npcInfo.mapId ~= mapId then--不在该位置上
+		local elfId = npcInfo.elfId
+		self._statusDic[elfId] = 0
+		local totalTime = G_modelDelegate:moveNPC(elfId, mapId) --移动到指定地方
+		npcInfo.mapId = mapId --保存mapId
+
+		--注意此处的listenerId需要作偏移处理，防止干扰npcStateControl方法中npc自己状态的改变
+		G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
+	else --已经在该位置
+
+	end
 end
 
 function PayControl:leavePay(elfId)
-
+	--npc进入了愤怒离开状态，离开队列
 end
 
 function PayControl:onRelease()
@@ -108,20 +134,73 @@ function PayControl:onRelease()
 end
 
 function PayControl:npcMoveEnded(elfId)
-	--npc进入指定位置
+	local npcInfo = self._npcInfoMap[elfId]
 
-	self._statusDic[elfId] = 1 --标记为到达指定位置
-
-	local queueIndex = self._norPayQueue:getQueueIndex(elfId)
-
-	if queueIndex == 1 then--玩家在第一位
+	if npcInfo then--npc到达指定位置
 		
-		--收银开动
-		G_timer:addTimerListener(ElfIdList.PayQueCheck, totalTime, self) --加入时间控制
-		--玩家状态改变
-		
+		assert(self._statusDic[elfId] == 0, "error") --移动之前应该改变标志
 
+		self._statusDic[elfId] = 1 --标记为到达指定位置
+
+		local queueIndex = self._norPayQueue:getQueueIndex(elfId)
+
+		if queueIndex == 1 then --npc在第一位
+			local duration = 3.0--收银时间
+
+			--收银开动
+			G_timer:addTimerListener(ElfIdList.PayQueCheck, duration, self) --加入时间控制
+
+			--删除定时器
+			G_timer:removeTimerListener(elfId)
+
+			--玩家状态改变
+			npcInfo:setPayStatePaying()
+
+		else --npc在其他位
+
+		end--index if ended
+	else 
+		error("error elfId")
+	end --npcInfo if ended
+
+end
+
+function PayControl:payEnded()
+	--收银完毕
+
+	--pop队列
+	local data = self._norPayQueue:popQueue()
+
+	local elfId = data.elfId
+
+	local npcInfo = self._npcInfoMap[elfId]
+
+	--标记状态
+	self._statusDic[elfId] = 0
+	
+	--赶走第一个玩家
+	npcInfo:setPayStatePayEnded()
+
+	--进入控制
+	self:npcStateControl(elfId)
+	
+	--移动队列（从1开始移动，仅移动标记为1的npc，遇到标记为0的玩家则break）
+	local queueNum = self._norPayQueue:getQueueNum()
+	for i = 1, queueNum do
+		local data = self._norPayQueue:queueDataAtIndex(i)
+		local queElfId = data.elfId
+		local status = self._statusDic[queElfId] --1表示已经移动完毕
+
+		if status == 1 then
+			self:moveToQueuePoint(npcInfo, queueIndex) --移动到指定位置（若在该位置则无效果）
+
+		else --0的忽略不计
+
+		end
 	end
+
+
+	--等待支付队列的玩家进入普通支付队列
 end
 
 --npc主状态转换
@@ -131,7 +210,7 @@ function PayControl:npcStateControl(elfId)
 
 	if npcInfo then
 		local returnValue = npcInfo:npcState() --执行状态方法
-		-- dump(returnValue, "value")
+		dump(returnValue, "value") 
 		local isRelease = returnValue.isRelease --是否已经释放
 		local totalTime = returnValue.totalTime --回调时间
 		local mapId = returnValue.mapId --移动目标id
@@ -176,6 +255,8 @@ function PayControl:TD_onTimeOver(listenerId)
 	elseif listenerId >= ElfIdList.NpcOffset then
 		--todo
 		self:npcStateControl(listenerId)
+	elseif listenerId == ElfIdList.PayQueCheck then
+		self:payEnded() --收银完毕
 	end	
 end
 

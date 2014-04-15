@@ -74,44 +74,35 @@ NPCStateType = {
 				FindSeat               = 20,            --尝试寻找座位
 				SeatRequest            = 21,            --在座位请求状态 包含子状态NPCFeelType
 				SeatEating             = 22,            --在座位吃饭状态
-				SeatPay                = 23,            --在座位支付状态 包含子状态NPCFeelType
-				SeatPaySuccess         = 24,
-				LeaveSeat              = 25,            --离开座位
+				LeaveSeat              = 23,            --离开座位
 
 				FindWaitSeat           = 30,            --寻找等待座位
-				WaitSeatRequest        = 31,
-				WaitSeatPay            = 32,
-				WaitSeatIdle           = 33,            --等于SeatEating
-				WaitSeatPaySuccess     = 34,      
-				LeaveWaitSeat          = 35,            --离开等待座位
 
 				Pay                    = 40,            --支付
 				NormalPay              = 41, 			--普通支付
 				WaitPay                = 42, 			--等待支付
 				LeavePay               = 43, 			--离开支付
-
-
 }
 
 NPCFeelType = {
-				Invalid   =    1,
-				Prepare   =    2,
-				Normal    =    10,
-				Anger     =    11,
-				Cancel    =    12,
+				Invalid   =    101,
+				Prepare   =    102,
+				Normal    =    110,
+				Anger     =    111,
+				Cancel    =    112,
 }
 
 --移动到支付的位置，移动结束，准备，等待支付控制进入normal状态
 NPCPayType = {
-				Invalid   =    1,
-				Moving 	  =    2,
-				MoveEnd   =    3,
-				Prepare   =    4,
-				PrepareEnd=    5,
-				Normal    =    10,
-				Anger     =    11,
-				Cancel    =    15,
-				Paying    =    16
+				Invalid   =    201,
+				Moving 	  =    202,
+				MoveEnd   =    203,
+				Prepare   =    204,
+				PrepareEnd=    205,
+				Normal    =    210,
+				Anger     =    211,
+				Cancel    =    215,
+				Paying    =    216,
 }
 
 --[[-------------------

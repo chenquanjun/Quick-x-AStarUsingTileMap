@@ -76,27 +76,9 @@ function ManageModel:onEnter()
 	end
 
 	self:addPlayer()
-	addNPCTest() --批量测试
+	-- addNPCTest() --批量测试
 
 
-	do
-				local productList = {
-										{
-											{elfId = 101, curState = 0},
-										},
-									}
-
-				self:addNPC(productList) --单个测试		
-	end
-	do
-				local productList = {
-										{
-											{elfId = 102, curState = 0},
-										},
-									}
-
-				self:addNPC(productList) --单个测试		
-	end
 	do
 				local productList = {
 										{
@@ -106,24 +88,42 @@ function ManageModel:onEnter()
 
 				self:addNPC(productList) --单个测试		
 	end
-	do
-				local productList = {
-										{
-											{elfId = 104, curState = 0},
-										},
-									}
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 102, curState = 0},
+	-- 									},
+	-- 								}
 
-				self:addNPC(productList) --单个测试		
-	end
-	do
-				local productList = {
-										{
-											{elfId = 105, curState = 0},
-										},
-									}
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 103, curState = 0},
+	-- 									},
+	-- 								}
 
-				self:addNPC(productList) --单个测试		
-	end
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 104, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 105, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
 	-- do
 	-- 			local productList = {
 	-- 									{

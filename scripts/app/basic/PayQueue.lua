@@ -48,6 +48,17 @@ function PayQueue:addTargetNum(num)
 	self._targetNum = self._targetNum + num
 end
 
+function PayQueue:getQueueNum()
+	local num = #self._queueData
+	return num
+end
+
+function PayQueue:getDataAtIndex(index)
+	local queueData = self._queueData
+	local data = queueData[index]
+	return data
+end
+
 function PayQueue:getQueueIndex(elfId)
 	local queueData = self._queueData
 	local index = -1
