@@ -150,7 +150,7 @@ function GlobalTimer:addTimerListener(listenerId, duration, delegate)
 		--对于时间为0先清空map对应的数据，然后直接回调
 		--防止同一个id在同一帧里面多次addTimer造成bug
 		self._timerUnitLstIdKey[listenerId] = nil
-		delegate:TD_onTimOver(listenerId)
+		delegate:TD_onTimeOver(listenerId)
 		return
 	end
 

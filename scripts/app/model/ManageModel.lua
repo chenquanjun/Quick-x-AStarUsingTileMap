@@ -76,7 +76,7 @@ function ManageModel:onEnter()
 	end
 
 	self:addPlayer()
-	-- addNPCTest() --批量测试
+	addNPCTest() --批量测试
 
 
 	do
@@ -467,6 +467,10 @@ end
 
 --玩家去到座位时候调用此方法（仅当座位上存在npc）
 function ManageModel:playerOnSeat(npcInfo)
+	if npcInfo == nil then
+		return --防止离开model进入支付等待列表的npc
+	end
+
 	local elfId = npcInfo.elfId
 
 	if npcInfo:isRequest() == false then
@@ -552,6 +556,7 @@ function ManageModel:playerQueue(playerInfo)
 			if elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
 				--处理需求
+
 				self:playerOnSeat(npcInfo)
 
 			end-- if end

@@ -7,6 +7,7 @@ PayControl._norPayQueue        = nil   --普通支付队列
 PayControl._waitPayQueue        = nil  --等待支付队列
 PayControl._payPointMapId       = -1
 PayControl._npcInfoMap          = nil
+PayControl._statusDic           = nil
  
 function PayControl:create()
 	local ret = {}
@@ -25,6 +26,8 @@ function PayControl:init()
 	self._payPointMapId = payVec[maxNum + 1]
 
 	self._npcInfoMap = {}
+
+	self._statusDic = {}
 end
 
 function PayControl:getPayPointMapId()
@@ -104,6 +107,23 @@ function PayControl:onRelease()
 	self._waitPayQueue        = nil  
 end
 
+function PayControl:npcMoveEnded(elfId)
+	--npc进入指定位置
+
+	self._statusDic[elfId] = 1 --标记为到达指定位置
+
+	local queueIndex = self._norPayQueue:getQueueIndex(elfId)
+
+	if queueIndex == 1 then--玩家在第一位
+		
+		--收银开动
+		G_timer:addTimerListener(ElfIdList.PayQueCheck, totalTime, self) --加入时间控制
+		--玩家状态改变
+		
+
+	end
+end
+
 --npc主状态转换
 function PayControl:npcStateControl(elfId)
 
@@ -152,7 +172,7 @@ end
 
 function PayControl:TD_onTimeOver(listenerId)
 	if listenerId >= ElfIdList.NpcOffset + ElfIdList.PayNpcOffset then --npcId回调
-		
+		self:npcMoveEnded(listenerId - ElfIdList.PayNpcOffset)--减去偏移
 	elseif listenerId >= ElfIdList.NpcOffset then
 		--todo
 		self:npcStateControl(listenerId)

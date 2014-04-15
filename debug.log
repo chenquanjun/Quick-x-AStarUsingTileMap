@@ -19,735 +19,1128 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0102] [INFO] 
-Cocos2d: [0.0102] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0102] [INFO] #
-Cocos2d: [0.0103] [INFO] # device.platform              = mac
-Cocos2d: [0.0103] [INFO] # device.model                 = unknown
-Cocos2d: [0.0103] [INFO] # device.language              = cn
-Cocos2d: [0.0103] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0103] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0103] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0103] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0103] [INFO] #
-Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0115] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0115] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0115] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0115] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0115] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0115] [INFO] # display.height               = 640.00
-Cocos2d: [0.0115] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0115] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0116] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0116] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0116] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0116] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0116] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0116] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0116] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0116] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0116] [INFO] #
-Cocos2d: [0.0171] Controller init
-Cocos2d: [0.0171] View init
+Cocos2d: [0.0088] [INFO] 
+Cocos2d: [0.0088] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0088] [INFO] #
+Cocos2d: [0.0088] [INFO] # device.platform              = mac
+Cocos2d: [0.0088] [INFO] # device.model                 = unknown
+Cocos2d: [0.0088] [INFO] # device.language              = cn
+Cocos2d: [0.0088] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0088] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0088] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0089] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0089] [INFO] #
+Cocos2d: [0.0100] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0100] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0100] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0100] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0100] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0100] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0100] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0100] [INFO] # display.height               = 640.00
+Cocos2d: [0.0100] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0100] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0100] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0101] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0101] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0101] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0101] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0101] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0101] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0101] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0101] [INFO] #
+Cocos2d: [0.0155] Controller init
+Cocos2d: [0.0155] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0446] Model init
+Cocos2d: [0.0408] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0631] GridSize: 36, 20
-Cocos2d: [0.0631] PointSize: 32, 32
-Cocos2d: [0.1544] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1544] model onEnter
-Cocos2d: [0.1683] add cache:player1_%i_%i.png1
-Cocos2d: [0.1692] mapId91
-Cocos2d: [0.1692] add cache:player2_%i_%i.png1
-Cocos2d: [0.1710] add cache:player4_%i_%i.png1
-Cocos2d: [0.1731] add cache:player3_%i_%i.png1
-Cocos2d: [0.1744] start timer
-Cocos2d: [1.3852] QUEUE:0
-Cocos2d: [1.3852] index1
-Cocos2d: [1.3872] idle
-Cocos2d: [1.8414] QUEUE:1
-Cocos2d: [1.8414] index2
-Cocos2d: [2.2126] QUEUE:2
-Cocos2d: [2.2126] index3
-Cocos2d: [2.2136] idle
-Cocos2d: [2.6626] QUEUE:3
-Cocos2d: [2.6626] index4
-Cocos2d: [2.6638] idle
-Cocos2d: [3.2027] QUEUE:4
-Cocos2d: [3.2027] index5
-Cocos2d: [3.2039] idle
-Cocos2d: [5.5714] 1
-Cocos2d: [5.5714] size:4
-Cocos2d: [7.4213] 1
-Cocos2d: [7.4213] size:3
-Cocos2d: [7.5707] addPay:1002
-Cocos2d: [7.5708] normal pay
-Cocos2d: [7.8214] 1
-Cocos2d: [7.8214] size:2
-Cocos2d: [8.4213] addPay:1004
-Cocos2d: [8.4214] normal pay
-Cocos2d: [8.6713] normal pay
-Cocos2d: [8.6714] move ended
-Cocos2d: [8.7271] QUEUE:9
-Cocos2d: [8.7271] index3
-Cocos2d: [8.7282] idle
-Cocos2d: [8.8213] addPay:1001
-Cocos2d: [8.8213] normal pay
-Cocos2d: [9.2713] ----------------------------------------
-Cocos2d: [9.2714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [0.0592] GridSize: 36, 20
+Cocos2d: [0.0592] PointSize: 32, 32
+Cocos2d: [0.1488] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1488] model onEnter
+Cocos2d: [0.1614] add cache:player1_%i_%i.png1
+Cocos2d: [0.1621] mapId91
+Cocos2d: [0.1621] add cache:player2_%i_%i.png1
+Cocos2d: [0.1630] add cache:player3_%i_%i.png1
+Cocos2d: [0.1647] add cache:player4_%i_%i.png1
+Cocos2d: [0.1669] start timer
+Cocos2d: [1.3311] QUEUE:0
+Cocos2d: [1.3311] index1
+Cocos2d: [1.3329] idle
+Cocos2d: [1.8661] QUEUE:1
+Cocos2d: [1.8661] index2
+Cocos2d: [1.8672] idle
+Cocos2d: [2.4156] QUEUE:2
+Cocos2d: [2.4156] index3
+Cocos2d: [2.4168] idle
+Cocos2d: [2.9124] QUEUE:3
+Cocos2d: [2.9124] index4
+Cocos2d: [2.9135] idle
+Cocos2d: [3.5311] QUEUE:4
+Cocos2d: [3.5311] index5
+Cocos2d: [3.5321] idle
+Cocos2d: [10.1507] [INFO] LUA VM MEMORY USED: 2948.46 KB
+Cocos2d: [17.1831] 2
+Cocos2d: [17.1831] 1
+Cocos2d: [17.1832] size:3
+Cocos2d: [18.1833] addPay:1005
+Cocos2d: [18.1833] normal pay
+Cocos2d: [18.2017] QUEUE:6
+Cocos2d: [18.2017] index4
+Cocos2d: [18.2029] idle
+Cocos2d: [18.8830] normal pay
+Cocos2d: [18.8830] move ended
+Cocos2d: [19.8339] 2
+Cocos2d: [19.8340] size:3
+Cocos2d: [20.1672] [INFO] LUA VM MEMORY USED: 3172.75 KB
+Cocos2d: [21.3293] QUEUE:8
+Cocos2d: [21.3293] index4
+Cocos2d: [21.3303] idle
+Cocos2d: [23.2338] 1
+Cocos2d: [23.2339] size:3
+Cocos2d: [25.2338] addPay:1006
+Cocos2d: [25.2339] normal pay
+Cocos2d: [26.1329] normal pay
+Cocos2d: [26.1329] move ended
+Cocos2d: [29.5286] QUEUE:10
+Cocos2d: [29.5286] index4
+Cocos2d: [29.5297] idle
+Cocos2d: [30.1831] [INFO] LUA VM MEMORY USED: 3831.49 KB
+Cocos2d: [30.3299] QUEUE:11
+Cocos2d: [30.3300] index5
+Cocos2d: [30.3309] idle
+Cocos2d: [33.2334] 3
+Cocos2d: [33.2334] 2
+Cocos2d: [33.2334] 1
+Cocos2d: [33.2335] size:2
+Cocos2d: [34.2338] addPay:1015
+Cocos2d: [34.2338] normal pay
+Cocos2d: [34.9338] normal pay
+Cocos2d: [34.9339] move ended
+Cocos2d: [38.5989] QUEUE:13
+Cocos2d: [38.5989] index3
+Cocos2d: [38.6007] idle
+Cocos2d: [39.1276] QUEUE:14
+Cocos2d: [39.1276] index4
+Cocos2d: [39.5904] QUEUE:15
+Cocos2d: [39.5904] index5
+Cocos2d: [39.5914] idle
+Cocos2d: [40.1839] [INFO] LUA VM MEMORY USED: 4625.44 KB
+Cocos2d: [41.1338] 1
+Cocos2d: [41.1339] size:4
+Cocos2d: [43.5437] QUEUE:19
+Cocos2d: [43.5438] index5
+Cocos2d: [43.5448] idle
+Cocos2d: [45.2331] 1
+Cocos2d: [45.2332] size:4
+Cocos2d: [46.2331] addPay:1021
+Cocos2d: [46.2331] normal pay
+Cocos2d: [46.4330] 2
+Cocos2d: [46.4331] 1
+Cocos2d: [46.4331] size:2
+Cocos2d: [46.9329] 1
+Cocos2d: [46.9330] size:1
+Cocos2d: [47.1328] normal pay
+Cocos2d: [47.1329] move ended
+Cocos2d: [47.8334] 2
+Cocos2d: [47.8335] size:0
+Cocos2d: [48.4338] addPay:1028
+Cocos2d: [48.4338] normal pay
+Cocos2d: [49.2417] QUEUE:27
+Cocos2d: [49.2417] index1
+Cocos2d: [49.2426] idle
+Cocos2d: [49.5333] normal pay
+Cocos2d: [49.5333] move ended
+Cocos2d: [50.2006] [INFO] LUA VM MEMORY USED: 4885.65 KB
+Cocos2d: [51.0846] 1
+Cocos2d: [51.0846] size:0
+Cocos2d: [53.0837] addPay:1024
+Cocos2d: [53.0838] wait pay
+Cocos2d: [53.1569] QUEUE:29
+Cocos2d: [53.1569] index1
+Cocos2d: [53.1579] idle
+Cocos2d: [54.4332] 1
+Cocos2d: [54.4333] size:0
+Cocos2d: [55.4328] addPay:1035
+Cocos2d: [55.4328] wait pay
+Cocos2d: [56.0144] QUEUE:31
+Cocos2d: [56.0144] index1
+Cocos2d: [56.0154] idle
+Cocos2d: [57.6770] QUEUE:33
+Cocos2d: [57.6770] index2
+Cocos2d: [57.7335] 2
+Cocos2d: [57.7336] size:1
+Cocos2d: [58.7951] 1
+Cocos2d: [58.7952] size:0
+Cocos2d: [60.2167] [INFO] LUA VM MEMORY USED: 5818.48 KB
+Cocos2d: [60.7831] addPay:1037
+Cocos2d: [60.7832] wait pay
+Cocos2d: [62.7988] QUEUE:35
+Cocos2d: [62.7988] index1
+Cocos2d: [62.7997] idle
+Cocos2d: [64.4852] ----------------------------------------
+Cocos2d: [64.4852] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.2714] 
+Cocos2d: [64.4853] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.2714] ----------------------------------------
-Cocos2d: [9.3211] ----------------------------------------
-Cocos2d: [9.3211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.4853] ----------------------------------------
+Cocos2d: [64.5334] ----------------------------------------
+Cocos2d: [64.5334] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.3212] 
+Cocos2d: [64.5334] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.3212] ----------------------------------------
-Cocos2d: [9.3880] ----------------------------------------
-Cocos2d: [9.3880] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.5335] ----------------------------------------
+Cocos2d: [64.5837] ----------------------------------------
+Cocos2d: [64.5837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.3880] 
+Cocos2d: [64.5838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.3880] ----------------------------------------
-Cocos2d: [9.4213] ----------------------------------------
-Cocos2d: [9.4214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.5838] ----------------------------------------
+Cocos2d: [64.6337] ----------------------------------------
+Cocos2d: [64.6337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.4214] 
+Cocos2d: [64.6338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.4214] ----------------------------------------
-Cocos2d: [9.4713] ----------------------------------------
-Cocos2d: [9.4714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.6338] ----------------------------------------
+Cocos2d: [64.6837] ----------------------------------------
+Cocos2d: [64.6837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.4714] 
+Cocos2d: [64.6838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.4714] ----------------------------------------
-Cocos2d: [9.5213] ----------------------------------------
-Cocos2d: [9.5213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.6838] ----------------------------------------
+Cocos2d: [64.7337] ----------------------------------------
+Cocos2d: [64.7337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.5213] 
+Cocos2d: [64.7338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.5214] ----------------------------------------
-Cocos2d: [9.5713] ----------------------------------------
-Cocos2d: [9.5713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.7338] ----------------------------------------
+Cocos2d: [64.7837] ----------------------------------------
+Cocos2d: [64.7837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.5713] 
+Cocos2d: [64.7838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.5713] ----------------------------------------
-Cocos2d: [9.6213] ----------------------------------------
-Cocos2d: [9.6214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.7838] ----------------------------------------
+Cocos2d: [64.8337] ----------------------------------------
+Cocos2d: [64.8337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.6214] 
+Cocos2d: [64.8338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.6214] ----------------------------------------
-Cocos2d: [9.6713] ----------------------------------------
-Cocos2d: [9.6714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.8338] ----------------------------------------
+Cocos2d: [64.8837] ----------------------------------------
+Cocos2d: [64.8837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.6714] 
+Cocos2d: [64.8838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.6714] ----------------------------------------
-Cocos2d: [9.7213] ----------------------------------------
-Cocos2d: [9.7213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.8838] ----------------------------------------
+Cocos2d: [64.9337] ----------------------------------------
+Cocos2d: [64.9337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.7213] 
+Cocos2d: [64.9338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.7213] ----------------------------------------
-Cocos2d: [9.7713] ----------------------------------------
-Cocos2d: [9.7713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.9338] ----------------------------------------
+Cocos2d: [64.9835] ----------------------------------------
+Cocos2d: [64.9835] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.7714] 
+Cocos2d: [64.9835] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.7714] ----------------------------------------
-Cocos2d: [9.8213] ----------------------------------------
-Cocos2d: [9.8214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [64.9835] ----------------------------------------
+Cocos2d: [65.0337] ----------------------------------------
+Cocos2d: [65.0337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.8214] 
+Cocos2d: [65.0338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.8214] ----------------------------------------
-Cocos2d: [9.8705] ----------------------------------------
-Cocos2d: [9.8705] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.0338] ----------------------------------------
+Cocos2d: [65.0837] ----------------------------------------
+Cocos2d: [65.0837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.8705] 
+Cocos2d: [65.0838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.8705] ----------------------------------------
-Cocos2d: [9.9213] ----------------------------------------
-Cocos2d: [9.9214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.0838] ----------------------------------------
+Cocos2d: [65.1337] ----------------------------------------
+Cocos2d: [65.1337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.9214] 
+Cocos2d: [65.1338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.9214] ----------------------------------------
-Cocos2d: [9.9713] ----------------------------------------
-Cocos2d: [9.9713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.1338] ----------------------------------------
+Cocos2d: [65.1837] ----------------------------------------
+Cocos2d: [65.1837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [9.9714] 
+Cocos2d: [65.1838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [9.9714] ----------------------------------------
-Cocos2d: [10.0207] ----------------------------------------
-Cocos2d: [10.0207] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.1838] ----------------------------------------
+Cocos2d: [65.2334] ----------------------------------------
+Cocos2d: [65.2334] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.0207] 
+Cocos2d: [65.2334] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.0207] ----------------------------------------
-Cocos2d: [10.0712] ----------------------------------------
-Cocos2d: [10.0713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.2334] ----------------------------------------
+Cocos2d: [65.2830] ----------------------------------------
+Cocos2d: [65.2830] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.0713] 
+Cocos2d: [65.2831] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.0713] ----------------------------------------
-Cocos2d: [10.1213] ----------------------------------------
-Cocos2d: [10.1213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.2831] ----------------------------------------
+Cocos2d: [65.3337] ----------------------------------------
+Cocos2d: [65.3337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.1213] 
+Cocos2d: [65.3337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.1213] ----------------------------------------
-Cocos2d: [10.1546] [INFO] LUA VM MEMORY USED: 3081.75 KB
-Cocos2d: [10.1823] ----------------------------------------
-Cocos2d: [10.1824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.3337] ----------------------------------------
+Cocos2d: [65.3836] ----------------------------------------
+Cocos2d: [65.3836] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.1824] 
+Cocos2d: [65.3837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.1824] ----------------------------------------
-Cocos2d: [10.2206] ----------------------------------------
-Cocos2d: [10.2207] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.3837] ----------------------------------------
+Cocos2d: [65.4334] ----------------------------------------
+Cocos2d: [65.4334] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.2207] 
+Cocos2d: [65.4334] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.2207] ----------------------------------------
-Cocos2d: [10.2877] ----------------------------------------
-Cocos2d: [10.2878] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.4334] ----------------------------------------
+Cocos2d: [65.4831] ----------------------------------------
+Cocos2d: [65.4831] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.2878] 
+Cocos2d: [65.4832] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.2878] ----------------------------------------
-Cocos2d: [10.3208] ----------------------------------------
-Cocos2d: [10.3208] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.4832] ----------------------------------------
+Cocos2d: [65.5337] ----------------------------------------
+Cocos2d: [65.5337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.3208] 
+Cocos2d: [65.5337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.3208] ----------------------------------------
-Cocos2d: [10.3712] ----------------------------------------
-Cocos2d: [10.3713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.5337] ----------------------------------------
+Cocos2d: [65.5831] ----------------------------------------
+Cocos2d: [65.5831] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.3713] 
+Cocos2d: [65.5831] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.3713] ----------------------------------------
-Cocos2d: [10.4212] ----------------------------------------
-Cocos2d: [10.4213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.5831] ----------------------------------------
+Cocos2d: [65.6332] ----------------------------------------
+Cocos2d: [65.6332] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.4213] 
+Cocos2d: [65.6332] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.4213] ----------------------------------------
-Cocos2d: [10.4712] ----------------------------------------
-Cocos2d: [10.4713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.6332] ----------------------------------------
+Cocos2d: [65.6837] ----------------------------------------
+Cocos2d: [65.6837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.4713] 
+Cocos2d: [65.6837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.4713] ----------------------------------------
-Cocos2d: [10.5211] ----------------------------------------
-Cocos2d: [10.5212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.6838] ----------------------------------------
+Cocos2d: [65.7337] ----------------------------------------
+Cocos2d: [65.7337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.5213] 
+Cocos2d: [65.7337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.5213] ----------------------------------------
-Cocos2d: [10.5712] ----------------------------------------
-Cocos2d: [10.5713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.7338] ----------------------------------------
+Cocos2d: [65.7837] ----------------------------------------
+Cocos2d: [65.7837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.5713] 
+Cocos2d: [65.7838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.5713] ----------------------------------------
-Cocos2d: [10.6213] ----------------------------------------
-Cocos2d: [10.6213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.7838] ----------------------------------------
+Cocos2d: [65.8337] ----------------------------------------
+Cocos2d: [65.8337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.6214] 
+Cocos2d: [65.8337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.6214] ----------------------------------------
-Cocos2d: [10.6879] ----------------------------------------
-Cocos2d: [10.6880] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.8338] ----------------------------------------
+Cocos2d: [65.8837] ----------------------------------------
+Cocos2d: [65.8837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.6880] 
+Cocos2d: [65.8837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.6880] ----------------------------------------
-Cocos2d: [10.7375] ----------------------------------------
-Cocos2d: [10.7376] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.8838] ----------------------------------------
+Cocos2d: [65.9337] ----------------------------------------
+Cocos2d: [65.9337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.7376] 
+Cocos2d: [65.9337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.7376] ----------------------------------------
-Cocos2d: [10.7873] ----------------------------------------
-Cocos2d: [10.7874] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.9338] ----------------------------------------
+Cocos2d: [65.9837] ----------------------------------------
+Cocos2d: [65.9837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.7874] 
+Cocos2d: [65.9837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.7874] ----------------------------------------
-Cocos2d: [10.8211] ----------------------------------------
-Cocos2d: [10.8212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [65.9837] ----------------------------------------
+Cocos2d: [66.0337] ----------------------------------------
+Cocos2d: [66.0337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.8212] 
+Cocos2d: [66.0337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.8212] ----------------------------------------
-Cocos2d: [10.8712] ----------------------------------------
-Cocos2d: [10.8712] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.0337] ----------------------------------------
+Cocos2d: [66.0831] ----------------------------------------
+Cocos2d: [66.0832] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.8712] 
+Cocos2d: [66.0832] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.8712] ----------------------------------------
-Cocos2d: [10.9212] ----------------------------------------
-Cocos2d: [10.9212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.0832] ----------------------------------------
+Cocos2d: [66.1332] ----------------------------------------
+Cocos2d: [66.1333] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.9212] 
+Cocos2d: [66.1333] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.9212] ----------------------------------------
-Cocos2d: [10.9712] ----------------------------------------
-Cocos2d: [10.9713] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.1333] ----------------------------------------
+Cocos2d: [66.1836] ----------------------------------------
+Cocos2d: [66.1836] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [10.9713] 
+Cocos2d: [66.1836] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [10.9713] ----------------------------------------
-Cocos2d: [11.0213] ----------------------------------------
-Cocos2d: [11.0213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.1836] ----------------------------------------
+Cocos2d: [66.2337] ----------------------------------------
+Cocos2d: [66.2337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.0214] 
+Cocos2d: [66.2337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.0214] ----------------------------------------
-Cocos2d: [11.0879] ----------------------------------------
-Cocos2d: [11.0881] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.2337] ----------------------------------------
+Cocos2d: [66.2837] ----------------------------------------
+Cocos2d: [66.2837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.0881] 
+Cocos2d: [66.2838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.0881] ----------------------------------------
-Cocos2d: [11.1378] ----------------------------------------
-Cocos2d: [11.1378] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.2838] ----------------------------------------
+Cocos2d: [66.3337] ----------------------------------------
+Cocos2d: [66.3337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.1378] 
+Cocos2d: [66.3337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.1378] ----------------------------------------
-Cocos2d: [11.1710] ----------------------------------------
-Cocos2d: [11.1711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.3337] ----------------------------------------
+Cocos2d: [66.3837] ----------------------------------------
+Cocos2d: [66.3837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.1711] 
+Cocos2d: [66.3838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.1711] ----------------------------------------
-Cocos2d: [11.2211] ----------------------------------------
-Cocos2d: [11.2213] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.3838] ----------------------------------------
+Cocos2d: [66.4333] ----------------------------------------
+Cocos2d: [66.4333] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.2213] 
+Cocos2d: [66.4333] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.2213] ----------------------------------------
-Cocos2d: [11.2708] ----------------------------------------
-Cocos2d: [11.2709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.4333] ----------------------------------------
+Cocos2d: [66.4837] ----------------------------------------
+Cocos2d: [66.4837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.2709] 
+Cocos2d: [66.4837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.2709] ----------------------------------------
-Cocos2d: [11.3211] ----------------------------------------
-Cocos2d: [11.3212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.4838] ----------------------------------------
+Cocos2d: [66.5332] ----------------------------------------
+Cocos2d: [66.5332] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.3212] 
+Cocos2d: [66.5332] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.3212] ----------------------------------------
-Cocos2d: [11.3707] ----------------------------------------
-Cocos2d: [11.3708] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.5332] ----------------------------------------
+Cocos2d: [66.5828] ----------------------------------------
+Cocos2d: [66.5828] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.3709] 
+Cocos2d: [66.5829] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.3709] ----------------------------------------
-Cocos2d: [11.4211] ----------------------------------------
-Cocos2d: [11.4211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.5829] ----------------------------------------
+Cocos2d: [66.6338] ----------------------------------------
+Cocos2d: [66.6338] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.4211] 
+Cocos2d: [66.6338] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.4211] ----------------------------------------
-Cocos2d: [11.4705] ----------------------------------------
-Cocos2d: [11.4707] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.6338] ----------------------------------------
+Cocos2d: [66.6829] ----------------------------------------
+Cocos2d: [66.6829] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.4707] 
+Cocos2d: [66.6830] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.4707] ----------------------------------------
-Cocos2d: [11.5205] ----------------------------------------
-Cocos2d: [11.5206] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.6830] ----------------------------------------
+Cocos2d: [66.7337] ----------------------------------------
+Cocos2d: [66.7337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.5206] 
+Cocos2d: [66.7337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.5206] ----------------------------------------
-Cocos2d: [11.5711] ----------------------------------------
-Cocos2d: [11.5712] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.7337] ----------------------------------------
+Cocos2d: [66.7828] ----------------------------------------
+Cocos2d: [66.7828] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.5713] 
+Cocos2d: [66.7828] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.5713] ----------------------------------------
-Cocos2d: [11.6206] ----------------------------------------
-Cocos2d: [11.6206] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.7828] ----------------------------------------
+Cocos2d: [66.8330] ----------------------------------------
+Cocos2d: [66.8330] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.6206] 
+Cocos2d: [66.8330] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.6206] ----------------------------------------
-Cocos2d: [11.6708] ----------------------------------------
-Cocos2d: [11.6709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.8331] ----------------------------------------
+Cocos2d: [66.8837] ----------------------------------------
+Cocos2d: [66.8837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.6709] 
+Cocos2d: [66.8838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.6709] ----------------------------------------
-Cocos2d: [11.7377] ----------------------------------------
-Cocos2d: [11.7378] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.8838] ----------------------------------------
+Cocos2d: [66.9337] ----------------------------------------
+Cocos2d: [66.9337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.7379] 
+Cocos2d: [66.9337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.7379] ----------------------------------------
-Cocos2d: [11.7875] ----------------------------------------
-Cocos2d: [11.7875] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.9337] ----------------------------------------
+Cocos2d: [66.9832] ----------------------------------------
+Cocos2d: [66.9832] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.7875] 
+Cocos2d: [66.9832] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.7875] ----------------------------------------
-Cocos2d: [11.8210] ----------------------------------------
-Cocos2d: [11.8210] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [66.9832] ----------------------------------------
+Cocos2d: [67.0337] ----------------------------------------
+Cocos2d: [67.0337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.8211] 
+Cocos2d: [67.0337] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.8211] ----------------------------------------
-Cocos2d: [11.8710] ----------------------------------------
-Cocos2d: [11.8711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.0338] ----------------------------------------
+Cocos2d: [67.0837] ----------------------------------------
+Cocos2d: [67.0837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.8711] 
+Cocos2d: [67.0837] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.8711] ----------------------------------------
-Cocos2d: [11.9208] ----------------------------------------
-Cocos2d: [11.9208] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.0838] ----------------------------------------
+Cocos2d: [67.1331] ----------------------------------------
+Cocos2d: [67.1331] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.9208] 
+Cocos2d: [67.1331] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.9208] ----------------------------------------
-Cocos2d: [11.9711] ----------------------------------------
-Cocos2d: [11.9711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.1332] ----------------------------------------
+Cocos2d: [67.1828] ----------------------------------------
+Cocos2d: [67.1828] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [11.9711] 
+Cocos2d: [67.1828] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [11.9712] ----------------------------------------
-Cocos2d: [12.0211] ----------------------------------------
-Cocos2d: [12.0211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.1828] ----------------------------------------
+Cocos2d: [67.2333] ----------------------------------------
+Cocos2d: [67.2334] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [12.0211] 
+Cocos2d: [67.2334] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [12.0211] ----------------------------------------
-Cocos2d: [12.0708] ----------------------------------------
-Cocos2d: [12.0709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.2334] ----------------------------------------
+Cocos2d: [67.2829] ----------------------------------------
+Cocos2d: [67.2830] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [12.0709] 
+Cocos2d: [67.2830] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [12.0709] ----------------------------------------
-Cocos2d: [12.1210] ----------------------------------------
-Cocos2d: [12.1211] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.2830] ----------------------------------------
+Cocos2d: [67.3334] ----------------------------------------
+Cocos2d: [67.3334] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [12.1211] 
+Cocos2d: [67.3334] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [12.1211] ----------------------------------------
-Cocos2d: [12.1709] ----------------------------------------
-Cocos2d: [12.1709] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: error call
+Cocos2d: [67.3334] ----------------------------------------
+Cocos2d: [67.3837] ----------------------------------------
+Cocos2d: [67.3837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
 
-Cocos2d: [12.1709] 
+Cocos2d: [67.3838] 
 stack traceback:
-	[C]: in function 'error'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:148: in function 'npcStateControl'
-	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:155: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
 	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
-Cocos2d: [12.1709] ----------------------------------------
+Cocos2d: [67.3838] ----------------------------------------
+Cocos2d: [67.4333] ----------------------------------------
+Cocos2d: [67.4333] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.4333] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.4333] ----------------------------------------
+Cocos2d: [67.4837] ----------------------------------------
+Cocos2d: [67.4837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.4837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.4837] ----------------------------------------
+Cocos2d: [67.5337] ----------------------------------------
+Cocos2d: [67.5337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.5337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.5338] ----------------------------------------
+Cocos2d: [67.5837] ----------------------------------------
+Cocos2d: [67.5837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.5837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.5837] ----------------------------------------
+Cocos2d: [67.6337] ----------------------------------------
+Cocos2d: [67.6337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.6338] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.6338] ----------------------------------------
+Cocos2d: [67.6837] ----------------------------------------
+Cocos2d: [67.6837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.6837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.6837] ----------------------------------------
+Cocos2d: [67.7336] ----------------------------------------
+Cocos2d: [67.7337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.7337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.7337] ----------------------------------------
+Cocos2d: [67.7837] ----------------------------------------
+Cocos2d: [67.7837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.7837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.7837] ----------------------------------------
+Cocos2d: [67.8337] ----------------------------------------
+Cocos2d: [67.8337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.8337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.8338] ----------------------------------------
+Cocos2d: [67.8829] ----------------------------------------
+Cocos2d: [67.8830] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.8830] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.8830] ----------------------------------------
+Cocos2d: [67.9328] ----------------------------------------
+Cocos2d: [67.9328] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.9329] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.9329] ----------------------------------------
+Cocos2d: [67.9827] ----------------------------------------
+Cocos2d: [67.9827] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [67.9827] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [67.9827] ----------------------------------------
+Cocos2d: [68.0337] ----------------------------------------
+Cocos2d: [68.0337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.0337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.0338] ----------------------------------------
+Cocos2d: [68.0837] ----------------------------------------
+Cocos2d: [68.0837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.0837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.0837] ----------------------------------------
+Cocos2d: [68.1337] ----------------------------------------
+Cocos2d: [68.1337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.1337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.1337] ----------------------------------------
+Cocos2d: [68.1837] ----------------------------------------
+Cocos2d: [68.1837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.1837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.1838] ----------------------------------------
+Cocos2d: [68.2337] ----------------------------------------
+Cocos2d: [68.2337] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.2337] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.2337] ----------------------------------------
+Cocos2d: [68.2837] ----------------------------------------
+Cocos2d: [68.2837] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.2837] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.2837] ----------------------------------------
+Cocos2d: [68.3329] ----------------------------------------
+Cocos2d: [68.3329] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.3330] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.3330] ----------------------------------------
+Cocos2d: [68.3827] ----------------------------------------
+Cocos2d: [68.3828] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.3828] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.3828] ----------------------------------------
+Cocos2d: [68.4336] ----------------------------------------
+Cocos2d: [68.4336] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: attempt to index local 'npcInfo' (a nil value)
+
+Cocos2d: [68.4336] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:470: in function 'playerOnSeat'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:572: in function 'fSwitch'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:634: in function 'playerQueue'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/model/ManageModel.lua"]:818: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [68.4336] ----------------------------------------

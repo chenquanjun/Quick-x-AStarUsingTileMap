@@ -48,6 +48,20 @@ function PayQueue:addTargetNum(num)
 	self._targetNum = self._targetNum + num
 end
 
+function PayQueue:getQueueIndex(elfId)
+	local queueData = self._queueData
+	local index = -1
+
+	for i, data in ipairs(queueData) do
+		if data.elfId == elfId then
+			index = i
+			break
+		end
+	end
+
+	return index	
+end
+
 --push
 function PayQueue:pushQueue(data)
 	local pushIndex = -1
@@ -69,20 +83,18 @@ end
 --
 function PayQueue:removeQueue(elfId)
 	local queueData = self._queueData
+
+	local index = getQueueIndex(elfId)
+
 	local isSuccess = false
-	local remomveIndex = -1 
-	for i, data in ipairs(queueData) do
-		if data.elfId == elfId then
-			table.remove(queueData, i)
 
-			self:addTargetNum(-1) --减1
+	if index > -1 then
+		table.remove(queueData, index)
 
-			isSuccess = true
+		self:addTargetNum(-1) --减1
 
-			break
-		end
+		isSuccess = true	
 	end
-
 	return isSuccess
 
 end
