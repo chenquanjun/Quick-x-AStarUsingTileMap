@@ -304,7 +304,6 @@ function NPCInfo:npcState()
 		stateStr = "M-End"
 		-- 已到达埋单候选位置
 		-- 加入队列
-		-- 	print("move ended")
 			self.curState = NPCStateType.NorPayPrePare --
 			isMoveEnd = true
 			-- G_payControl:joinNormalPay(self) --加入普通支付
@@ -322,9 +321,11 @@ function NPCInfo:npcState()
 			stateStr = "Nor-"..feelStr
 		end,
 		[NPCStateType.WaitPay] 						= function()
+		stateStr = "WaitPay"
 			-- print("wait pay")
 		end,
 		[NPCStateType.LeavePay] 					= function()
+		stateStr = "L-Pay"
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
 			self.curState = NPCStateType.Release --进入销毁状态
@@ -408,14 +409,14 @@ function NPCInfo:npcFeelOnRequest()
 			--点餐
 			productVec = self:getCurProduct()
 
-			totalTime = math.random(5, 12)
+			totalTime = math.random(50, 50)
 			self.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
 		testStateStr = "Ang"
 			-- print("Anger")
-			totalTime = math.random(5, 15)
+			totalTime = math.random(50, 50)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
@@ -455,13 +456,13 @@ function NPCInfo:npcPayOnNorPay()
 		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
-			totalTime = math.random(1, 3)
+			totalTime = math.random(10, 20)
 			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
-			totalTime = math.random(1, 3)
+			totalTime = math.random(10, 20)
 			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦
@@ -473,7 +474,7 @@ function NPCInfo:npcPayOnNorPay()
 		end,
 
 		[NPCPayType.Paying]						= function()
-
+		testStateStr = "Paying"
 		end,
 
 	} --switch end

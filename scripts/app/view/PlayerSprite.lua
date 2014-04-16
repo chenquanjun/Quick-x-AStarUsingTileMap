@@ -113,7 +113,7 @@ function PlayerSprite:playAnim(startPoint, endPoint)
     local lastActionTag = self._lastActionTag
     --相同动作直接返回
     if actionType == lastActionTag then
-        -- print("return")
+
     	return
     end
 
@@ -136,7 +136,7 @@ end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
 function PlayerSprite:easeWalkTo(speed, mapPath)
-        -- print("WalkTo:"..startId.." "..endId)
+
         --A星寻路 地图路径
 
         if mapPath == nil then
@@ -152,7 +152,7 @@ function PlayerSprite:easeWalkTo(speed, mapPath)
         local totalTime = speed * pointNum
 
         if self.handler then
-            -- print("exist")
+    
             G_scheduler.unscheduleGlobal(self.handler)
             self.handler = nil
         end
@@ -168,7 +168,7 @@ function PlayerSprite:easeWalkTo(speed, mapPath)
 
                             if index < pointNum then
                                 local curPoint = mapPath:getPointAtIndex(index)
-                                -- print(index..":"..curPoint.x..", "..curPoint.y)
+                  
                                 local nextPoint = mapPath:getPointAtIndex(index + 1)
                                 local offset = fIndex - index
                                 local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
@@ -185,7 +185,7 @@ function PlayerSprite:easeWalkTo(speed, mapPath)
                                 G_scheduler.unscheduleGlobal(self.handler)
                                 self.handler = nil
                                 self:stopAnim()
-                                -- print("move end~")
+                         
                             end
         end)
 

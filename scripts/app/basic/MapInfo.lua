@@ -296,7 +296,6 @@ function MapInfo:findPath(startMapId, endMapId)
 	--MapPath是自动释放对象，需要addchild
 	self:addChild(pathRevert) 
 	self:addChild(path)
-	-- print("save key:"..key)
 
 	return path
 end

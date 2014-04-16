@@ -95,7 +95,7 @@ end
 function PayQueue:removeQueue(elfId)
 	local queueData = self._queueData
 
-	local index = getQueueIndex(elfId)
+	local index = self:getQueueIndex(elfId)
 
 	local isSuccess = false
 
@@ -120,8 +120,7 @@ function PayQueue:popQueue()
 		table.remove(queueData, 1)
 
 		self:addTargetNum(-1)
-
-		dump(queueData, "queueData")
+		-- dump(queueData, "queueData")
 	end
 
 	return data

@@ -8,6 +8,7 @@ PayControl._waitPayQueue        = nil  --等待支付队列
 PayControl._payPointMapId       = -1
 PayControl._npcInfoMap          = nil
 PayControl._statusDic           = nil
+PayControl._norQueMaxNum     	= -1
  
 function PayControl:create()
 	local ret = {}
@@ -18,6 +19,7 @@ end
 
 function PayControl:init()
 	local maxNum = 5
+	self._norQueMaxNum = maxNum
 	self._waitPayQueue = PayQueue:create(-1) --等待支付队列无限
 
 	self._norPayQueue  = PayQueue:create(maxNum) --普通支付队列有限
@@ -81,9 +83,6 @@ function PayControl:joinNormalPay(npcInfo)
 	local data = {}
 	data.elfId = elfId
 
-	--标记状态
-	-- self._statusDic[elfId] == 0
-
 	--进入普通队列
 	local pushIndex = self._norPayQueue:pushQueue(data)
 
@@ -96,15 +95,6 @@ function PayControl:joinNormalPay(npcInfo)
 	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
 
 	local mapId = payVec[pushIndex] --目的地id
-
-	-- local totalTime = G_modelDelegate:moveNPC(elfId, mapId) --移动到指定地方
-	-- npcInfo.mapId = mapId --保存mapId
-
-	--注意此处的listenerId需要作偏移处理，防止干扰npcStateControl方法中npc自己状态的改变
-	-- G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
-
-	--调用npc信息控制方法
-	
 
 	self:moveToQueuePoint(npcInfo, pushIndex)
 
@@ -131,8 +121,8 @@ function PayControl:moveToQueuePoint(npcInfo, queueIndex)
 end
 
 function PayControl:leavePay(elfId)
+	--此处不需要改变npc状态，仅通知payControl该npc离开队列
 
-	return
 	--npc进入了愤怒离开状态，离开队列
 
 	--从队列中删除
@@ -142,19 +132,60 @@ function PayControl:leavePay(elfId)
 	local state = self._statusDic[elfId] 
 	
 	if state == 1 then --npc已经在位置上
-		
+		self._statusDic[elfId] = 0 --in case
 
-	else --npc还在移动状态 强制移动
+	else --npc还在移动状态 
 		G_timer:removeTimerListener(elfId + ElfIdList.PayNpcOffset) --删除移动回调
-
 
 	end
 
+	--强制修正所有在队列里面的npc位置
+	self:adjustQueuePoint()
+end
+
+--核心位置修正方法
+--强制修正所有在队列里面的npc位置
+--同时将等待队列里面的npc加入到普通支付队列
+function PayControl:adjustQueuePoint()
+	--普通支付队列
 	--强制修正其他npc位置
+	local queueNum = self._norPayQueue:getQueueNum() --获得队列数目
+	for i = 1, queueNum do
+		local data = self._norPayQueue:getDataAtIndex(i) --获得队列位置i的数据
+		local queElfId = data.elfId
 
+		local queNpcInfo = self._npcInfoMap[queElfId]
 
-	self._statusDic[elfId] = 0
-	
+		self:moveToQueuePoint(queNpcInfo, i) --移动到指定位置（若在该位置则无效果）
+	end
+
+	--等待队列
+	local emptyNum = self._norQueMaxNum - queueNum --空位
+
+	for i = 1, emptyNum do
+		local data = self._waitPayQueue:popQueue()
+
+		if data == nil then
+			--等待队列已空
+			break
+		end
+
+		local queElfId = data.elfId
+
+		local queNpcInfo = self._npcInfoMap[queElfId]
+
+		--进入支付
+		local isWaitPay = self:joinPay(elfId)
+
+		assert(isWaitPay == false, "should be false")
+
+		--设置npc状态
+		queNpcInfo:enterPayState(isWaitPay)
+
+		--调用npc信息控制方法
+		self:npcStateControl(queElfId)
+	end
+
 end
 
 function PayControl:onRelease()
@@ -174,7 +205,7 @@ function PayControl:npcMoveEnded(elfId)
 		local queueIndex = self._norPayQueue:getQueueIndex(elfId)
 
 		if queueIndex == 1 then --npc在第一位
-			local duration = 3.0--收银时间
+			local duration = 10.0--收银时间
 
 			--收银开动
 			G_timer:addTimerListener(ElfIdList.PayQueCheck, duration, self) --加入时间控制
@@ -184,6 +215,8 @@ function PayControl:npcMoveEnded(elfId)
 
 			--玩家状态改变
 			npcInfo:setPayStatePaying()
+
+			G_modelDelegate:setStateStr(elfId, "Paying")
 
 		else --npc在其他位
 
@@ -218,22 +251,25 @@ function PayControl:payEnded()
 	--进入控制
 	self:npcStateControl(elfId)
 	
-	--移动队列（从1开始移动，仅移动标记为1的npc，遇到标记为0的玩家则break）
-	local queueNum = self._norPayQueue:getQueueNum() --获得队列数目
-	for i = 1, queueNum do
-		local data = self._norPayQueue:getDataAtIndex(i) --获得队列位置i的数据
-		local queElfId = data.elfId
-		local status = self._statusDic[queElfId] --1表示已经移动完毕
+	-- --移动队列（从1开始移动，仅移动标记为1的npc，遇到标记为0的玩家则break）
+	-- local queueNum = self._norPayQueue:getQueueNum() --获得队列数目
+	-- for i = 1, queueNum do
+	-- 	local data = self._norPayQueue:getDataAtIndex(i) --获得队列位置i的数据
+	-- 	local queElfId = data.elfId
+	-- 	local status = self._statusDic[queElfId] --1表示已经移动完毕
 
-		local queNpcInfo = self._npcInfoMap[queElfId]
+	-- 	local queNpcInfo = self._npcInfoMap[queElfId]
 
-		if status == 1 then
-			self:moveToQueuePoint(queNpcInfo, i) --移动到指定位置（若在该位置则无效果）
+	-- 	if status == 1 then
+	-- 		self:moveToQueuePoint(queNpcInfo, i) --移动到指定位置（若在该位置则无效果）
 
-		else --0的忽略不计
+	-- 	else --0的忽略不计
 
-		end
-	end
+	-- 	end
+	-- end
+
+	--强制修正所有在队列里面的npc位置
+	self:adjustQueuePoint()
 
 
 	--等待支付队列的玩家进入普通支付队列

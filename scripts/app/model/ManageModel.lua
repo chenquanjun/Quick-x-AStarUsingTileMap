@@ -65,6 +65,8 @@ function ManageModel:onEnter()
 	    return sequence
 	end
 
+	self:addPlayer()
+
 	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
@@ -75,46 +77,92 @@ function ManageModel:onEnter()
 		end, math.random(5, 10))
 	end
 
-	self:addPlayer()
+	local function addSimpleNPCTest()
+		performWithDelay(self, function() 
+			for i=101 ,106 do
+				local productList = {
+										{
+											{elfId = i, curState = 0},
+										},
+									}
+
+				self:addNPC(productList) --单个测试	
+			end
+			addSimpleNPCTest()
+		end, math.random(5, 10))
+	end
+
+
+	
 	-- addNPCTest() --批量测试
+	-- addSimpleNPCTest() --批量单个测试
 
-
-	do
+			for i=101 ,106 do
 				local productList = {
 										{
-											{elfId = 103, curState = 0},
+											{elfId = i, curState = 0},
 										},
 									}
 
-				self:addNPC(productList) --单个测试		
-	end
-	do
+				self:addNPC(productList) --单个测试	
+			end
+
+			for i=101 ,106 do
 				local productList = {
 										{
-											{elfId = 102, curState = 0},
+											{elfId = i, curState = 0},
 										},
 									}
 
-				self:addNPC(productList) --单个测试		
-	end
-	do
+				self:addNPC(productList) --单个测试	
+			end
+
+			for i=101 ,106 do
 				local productList = {
 										{
-											{elfId = 104, curState = 0},
+											{elfId = i, curState = 0},
 										},
 									}
 
-				self:addNPC(productList) --单个测试		
-	end
-	do
-				local productList = {
-										{
-											{elfId = 105, curState = 0},
-										},
-									}
+				self:addNPC(productList) --单个测试	
+			end
 
-				self:addNPC(productList) --单个测试		
-	end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 103, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 102, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 104, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
+	-- do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 105, curState = 0},
+	-- 									},
+	-- 								}
+
+	-- 			self:addNPC(productList) --单个测试		
+	-- end
 	-- do
 	-- 			local productList = {
 	-- 									{
@@ -273,7 +321,7 @@ function ManageModel:addPlayer()
 	do --init 保存到字典
 		local elfId = 2
 		local mapId = G_seatControl:getMapIdOfType(kMapDataCashier)
-		print("mapId"..mapId)
+		-- print("mapId"..mapId)
 
 		local playerInfo = PlayerInfo:create()
 		playerInfo.mapId = mapId
@@ -755,7 +803,7 @@ function ManageModel:onProductBtn(elfId)
 	local playerInfo = self._playerInfoMap[testPlayerId]
 
 	local queueId = playerInfo:pushQueue(queueData)
-	print("QUEUE:"..queueId)
+	-- print("QUEUE:"..queueId)
 
 	--model保存product信息
 	local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
@@ -763,7 +811,7 @@ function ManageModel:onProductBtn(elfId)
 	G_modelDelegate:addProductAtIndex(productIndex, productType)
 
 	if playerInfo.curState == PlayerStateType.Idle then
-		print("idle")
+		-- print("idle")
 		--当前状态为空闲，直接执行命令
 		self:playerQueue(playerInfo)
 	end

@@ -19,173 +19,1289 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0089] [INFO] 
-Cocos2d: [0.0089] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0089] [INFO] #
-Cocos2d: [0.0090] [INFO] # device.platform              = mac
-Cocos2d: [0.0090] [INFO] # device.model                 = unknown
-Cocos2d: [0.0090] [INFO] # device.language              = cn
-Cocos2d: [0.0090] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0090] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0090] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0090] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0090] [INFO] #
-Cocos2d: [0.0102] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0102] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0103] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0103] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0103] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0103] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0103] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0103] [INFO] # display.height               = 640.00
-Cocos2d: [0.0103] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0103] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0103] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0103] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0103] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0103] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0103] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0103] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0103] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0103] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0103] [INFO] #
-Cocos2d: [0.0161] Controller init
-Cocos2d: [0.0161] View init
+Cocos2d: [0.0086] [INFO] 
+Cocos2d: [0.0087] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0087] [INFO] #
+Cocos2d: [0.0087] [INFO] # device.platform              = mac
+Cocos2d: [0.0087] [INFO] # device.model                 = unknown
+Cocos2d: [0.0087] [INFO] # device.language              = cn
+Cocos2d: [0.0087] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0087] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0087] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0087] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0087] [INFO] #
+Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0099] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0099] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0099] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0099] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0099] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0099] [INFO] # display.height               = 640.00
+Cocos2d: [0.0099] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0099] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0099] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0099] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0099] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0099] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0100] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0100] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0100] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0100] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0100] [INFO] #
+Cocos2d: [0.0155] Controller init
+Cocos2d: [0.0155] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0438] Model init
+Cocos2d: [0.0411] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0616] GridSize: 36, 20
-Cocos2d: [0.0616] PointSize: 32, 32
-Cocos2d: [0.1869] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1869] model onEnter
-Cocos2d: [0.1995] add cache:player1_%i_%i.png1
-Cocos2d: [0.2003] mapId91
-Cocos2d: [0.2003] add cache:player2_%i_%i.png1
-Cocos2d: [0.2011] add cache:player3_%i_%i.png1
-Cocos2d: [0.2019] add cache:player4_%i_%i.png1
-Cocos2d: [0.2040] start timer
-Cocos2d: [1.5500] QUEUE:0
-Cocos2d: [1.5501] index1
-Cocos2d: [1.5520] idle
-Cocos2d: [2.5738] QUEUE:1
-Cocos2d: [2.5738] index2
-Cocos2d: [2.5749] idle
-Cocos2d: [3.1709] QUEUE:2
-Cocos2d: [3.1709] index3
-Cocos2d: [3.1720] idle
-Cocos2d: [3.7888] QUEUE:3
-Cocos2d: [3.7888] index4
-Cocos2d: [3.7898] idle
-Cocos2d: [4.9350] 1
-Cocos2d: [4.9350] size:3
-Cocos2d: [5.4855] 1
-Cocos2d: [5.4856] size:2
-Cocos2d: [5.5859] 1
-Cocos2d: [5.5860] size:1
-Cocos2d: [6.3359] 1
-Cocos2d: [6.3360] size:0
-Cocos2d: [6.5860] addPay:1001
-Cocos2d: [6.9359] addPay:1003
-Cocos2d: [7.4859] addPay:1000
-Cocos2d: [8.3359] addPay:1002
-Cocos2d: [10.2024] [INFO] LUA VM MEMORY USED: 2960.19 KB
-Cocos2d: [10.7356] dump from: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayQueue.lua"]:124: in function 'popQueue'
-Cocos2d: [10.7357] - "queueData" = {
-Cocos2d: [10.7357] -     1 = {
-Cocos2d: [10.7357] -         "elfId" = 1003
-Cocos2d: [10.7357] -     }
-Cocos2d: [10.7357] -     2 = {
-Cocos2d: [10.7357] -         "elfId" = 1000
-Cocos2d: [10.7357] -     }
-Cocos2d: [10.7357] -     3 = {
-Cocos2d: [10.7357] -         "elfId" = 1002
-Cocos2d: [10.7357] -     }
-Cocos2d: [10.7357] - }
-Cocos2d: [10.7357] payEnded:1001
-Cocos2d: [13.8351] dump from: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayQueue.lua"]:124: in function 'popQueue'
-Cocos2d: [13.8352] - "queueData" = {
-Cocos2d: [13.8352] -     1 = {
-Cocos2d: [13.8352] -         "elfId" = 1000
-Cocos2d: [13.8353] -     }
-Cocos2d: [13.8353] -     2 = {
-Cocos2d: [13.8353] -         "elfId" = 1002
-Cocos2d: [13.8353] -     }
-Cocos2d: [13.8353] - }
-Cocos2d: [13.8353] payEnded:1003
-Cocos2d: [16.9351] dump from: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayQueue.lua"]:124: in function 'popQueue'
-Cocos2d: [16.9351] - "queueData" = {
-Cocos2d: [16.9351] -     1 = {
-Cocos2d: [16.9351] -         "elfId" = 1002
-Cocos2d: [16.9352] -     }
-Cocos2d: [16.9352] - }
-Cocos2d: [16.9352] payEnded:1000
-Cocos2d: [20.0359] dump from: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayQueue.lua"]:124: in function 'popQueue'
-Cocos2d: [20.0359] - "queueData" = {
-Cocos2d: [20.0359] - }
-Cocos2d: [20.0359] payEnded:1002
-Cocos2d: [20.2192] [INFO] LUA VM MEMORY USED: 3059.61 KB
-Cocos2d: [30.4517] [INFO] LUA VM MEMORY USED: 3068.24 KB
-Cocos2d: [40.4524] [INFO] LUA VM MEMORY USED: 3068.34 KB
-Cocos2d: [50.4687] [INFO] LUA VM MEMORY USED: 3068.44 KB
-Cocos2d: [60.4690] [INFO] LUA VM MEMORY USED: 3068.54 KB
-Cocos2d: [70.4856] [INFO] LUA VM MEMORY USED: 3068.64 KB
-Cocos2d: [80.5017] [INFO] LUA VM MEMORY USED: 3068.74 KB
-Cocos2d: [90.5022] [INFO] LUA VM MEMORY USED: 3068.83 KB
-Cocos2d: [100.5189] [INFO] LUA VM MEMORY USED: 3068.93 KB
-Cocos2d: [110.5355] [INFO] LUA VM MEMORY USED: 3069.03 KB
-Cocos2d: [120.5521] [INFO] LUA VM MEMORY USED: 3069.13 KB
-Cocos2d: [130.5687] [INFO] LUA VM MEMORY USED: 3069.23 KB
-Cocos2d: [140.5854] [INFO] LUA VM MEMORY USED: 3069.33 KB
-Cocos2d: [150.6013] [INFO] LUA VM MEMORY USED: 3069.43 KB
-Cocos2d: [160.6020] [INFO] LUA VM MEMORY USED: 3069.52 KB
-Cocos2d: [170.6180] [INFO] LUA VM MEMORY USED: 3069.62 KB
-Cocos2d: [180.6186] [INFO] LUA VM MEMORY USED: 3069.72 KB
-Cocos2d: [190.6346] [INFO] LUA VM MEMORY USED: 3069.82 KB
-Cocos2d: [200.6350] [INFO] LUA VM MEMORY USED: 3069.92 KB
-Cocos2d: [210.6351] [INFO] LUA VM MEMORY USED: 3070.02 KB
-Cocos2d: [220.6517] [INFO] LUA VM MEMORY USED: 3070.12 KB
-Cocos2d: [230.6684] [INFO] LUA VM MEMORY USED: 3070.21 KB
-Cocos2d: [240.6843] [INFO] LUA VM MEMORY USED: 3070.31 KB
-Cocos2d: [250.6850] [INFO] LUA VM MEMORY USED: 3070.41 KB
-Cocos2d: [260.7016] [INFO] LUA VM MEMORY USED: 3070.51 KB
-Cocos2d: [270.7182] [INFO] LUA VM MEMORY USED: 3070.61 KB
-Cocos2d: [280.7340] [INFO] LUA VM MEMORY USED: 3070.71 KB
-Cocos2d: [290.7348] [INFO] LUA VM MEMORY USED: 3070.81 KB
-Cocos2d: [300.7348] [INFO] LUA VM MEMORY USED: 3070.91 KB
-Cocos2d: [310.7515] [INFO] LUA VM MEMORY USED: 3071.00 KB
-Cocos2d: [320.7680] [INFO] LUA VM MEMORY USED: 3071.10 KB
-Cocos2d: [330.7847] [INFO] LUA VM MEMORY USED: 3071.20 KB
-Cocos2d: [340.8007] [INFO] LUA VM MEMORY USED: 3071.30 KB
-Cocos2d: [350.8013] [INFO] LUA VM MEMORY USED: 3071.40 KB
-Cocos2d: [360.8175] [INFO] LUA VM MEMORY USED: 3071.50 KB
-Cocos2d: [370.8178] [INFO] LUA VM MEMORY USED: 3071.60 KB
-Cocos2d: [380.8178] [INFO] LUA VM MEMORY USED: 3071.69 KB
-Cocos2d: [390.8338] [INFO] LUA VM MEMORY USED: 3071.79 KB
-Cocos2d: [400.8344] [INFO] LUA VM MEMORY USED: 3071.89 KB
-Cocos2d: [410.8511] [INFO] LUA VM MEMORY USED: 3071.99 KB
-Cocos2d: [420.8677] [INFO] LUA VM MEMORY USED: 3072.09 KB
-Cocos2d: [430.8843] [INFO] LUA VM MEMORY USED: 3072.19 KB
-Cocos2d: [440.9009] [INFO] LUA VM MEMORY USED: 3072.29 KB
-Cocos2d: [450.9169] [INFO] LUA VM MEMORY USED: 3072.38 KB
-Cocos2d: [460.9175] [INFO] LUA VM MEMORY USED: 3072.48 KB
-Cocos2d: [470.9338] [INFO] LUA VM MEMORY USED: 3072.58 KB
-Cocos2d: [480.9502] [INFO] LUA VM MEMORY USED: 3072.68 KB
-Cocos2d: [490.9507] [INFO] LUA VM MEMORY USED: 3072.78 KB
-Cocos2d: [500.9671] [INFO] LUA VM MEMORY USED: 3072.88 KB
-Cocos2d: [510.9832] [INFO] LUA VM MEMORY USED: 3072.98 KB
-Cocos2d: [521.0006] [INFO] LUA VM MEMORY USED: 3073.08 KB
-Cocos2d: [531.0173] [INFO] LUA VM MEMORY USED: 3073.17 KB
-Cocos2d: [541.0333] [INFO] LUA VM MEMORY USED: 3073.27 KB
-Cocos2d: [551.0338] [INFO] LUA VM MEMORY USED: 3073.37 KB
-Cocos2d: [561.0505] [INFO] LUA VM MEMORY USED: 3073.47 KB
-Cocos2d: [571.0663] [INFO] LUA VM MEMORY USED: 3073.57 KB
-Cocos2d: [581.0666] [INFO] LUA VM MEMORY USED: 3073.67 KB
-Cocos2d: [591.0670] [INFO] LUA VM MEMORY USED: 3073.77 KB
-Cocos2d: [601.0829] [INFO] LUA VM MEMORY USED: 3073.86 KB
-Cocos2d: [611.0994] [INFO] LUA VM MEMORY USED: 3073.96 KB
+Cocos2d: [0.0586] GridSize: 36, 20
+Cocos2d: [0.0586] PointSize: 32, 32
+Cocos2d: [0.1319] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1319] model onEnter
+Cocos2d: [0.1444] add cache:player1_%i_%i.png1
+Cocos2d: [0.1452] add cache:player2_%i_%i.png1
+Cocos2d: [0.1459] add cache:player3_%i_%i.png1
+Cocos2d: [0.1468] add cache:player4_%i_%i.png1
+Cocos2d: [0.1621] start timer
+Cocos2d: [6.4326] addPay:1007
+Cocos2d: [7.5826] addPay:1004
+Cocos2d: [7.9327] addPay:1000
+Cocos2d: [7.9347] addPay:1008
+Cocos2d: [8.2327] addPay:1005
+Cocos2d: [10.1328] [INFO] LUA VM MEMORY USED: 3227.52 KB
+Cocos2d: [14.2822] addPay:1002
+Cocos2d: [17.2317] payEnded:1007
+Cocos2d: [20.1490] [INFO] LUA VM MEMORY USED: 3547.89 KB
+Cocos2d: [22.7819] addPay:1016
+Cocos2d: [27.3323] payEnded:1004
+Cocos2d: [30.1653] [INFO] LUA VM MEMORY USED: 3635.82 KB
+Cocos2d: [34.6822] addPay:1011
+Cocos2d: [35.0826] addPay:1010
+Cocos2d: [37.4326] payEnded:1000
+Cocos2d: [40.1660] [INFO] LUA VM MEMORY USED: 3876.31 KB
+Cocos2d: [47.5319] payEnded:1008
+Cocos2d: [50.1822] [INFO] LUA VM MEMORY USED: 3943.25 KB
+Cocos2d: [56.9323] addPay:1006
+Cocos2d: [57.5322] addPay:1003
+Cocos2d: [57.6323] payEnded:1002
+Cocos2d: [57.7821] addPay:1015
+Cocos2d: [60.0318] addPay:1012
+Cocos2d: [60.1985] [INFO] LUA VM MEMORY USED: 4183.42 KB
+Cocos2d: [64.4825] addPay:1014
+Cocos2d: [67.5324] addPay:1009
+Cocos2d: [67.7318] payEnded:1011
+Cocos2d: [69.4825] addPay:1013
+Cocos2d: [70.1991] [INFO] LUA VM MEMORY USED: 4429.41 KB
+Cocos2d: [71.3323] addPay:1017
+Cocos2d: [74.0819] addPay:1001
+Cocos2d: [77.8321] payEnded:1010
+Cocos2d: [80.2158] [INFO] LUA VM MEMORY USED: 4486.09 KB
+Cocos2d: [87.9321] payEnded:1006
+Cocos2d: [87.9335] ----------------------------------------
+Cocos2d: [87.9335] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:180: should be false
+
+Cocos2d: [87.9335] 
+stack traceback:
+	[C]: in function 'assert'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:180: in function 'adjustQueuePoint'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:272: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [87.9335] ----------------------------------------
+Cocos2d: [87.9818] payEnded:1003
+Cocos2d: [87.9818] ----------------------------------------
+Cocos2d: [87.9818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: error pay state
+
+Cocos2d: [87.9819] 
+stack traceback:
+	[C]: in function 'assert'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: in function 'setPayStatePayEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:249: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [87.9819] ----------------------------------------
+Cocos2d: [88.0434] payEnded:1012
+Cocos2d: [88.0434] ----------------------------------------
+Cocos2d: [88.0434] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: error pay state
+
+Cocos2d: [88.0434] 
+stack traceback:
+	[C]: in function 'assert'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: in function 'setPayStatePayEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:249: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.0434] ----------------------------------------
+Cocos2d: [88.0820] payEnded:1014
+Cocos2d: [88.0821] ----------------------------------------
+Cocos2d: [88.0821] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: error pay state
+
+Cocos2d: [88.0821] 
+stack traceback:
+	[C]: in function 'assert'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/NPCInfo.lua"]:156: in function 'setPayStatePayEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:249: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.0821] ----------------------------------------
+Cocos2d: [88.1320] ----------------------------------------
+Cocos2d: [88.1320] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.1320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.1320] ----------------------------------------
+Cocos2d: [88.1820] ----------------------------------------
+Cocos2d: [88.1820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.1820] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.1820] ----------------------------------------
+Cocos2d: [88.2320] ----------------------------------------
+Cocos2d: [88.2320] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.2321] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.2321] ----------------------------------------
+Cocos2d: [88.2820] ----------------------------------------
+Cocos2d: [88.2820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.2821] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.2821] ----------------------------------------
+Cocos2d: [88.3319] ----------------------------------------
+Cocos2d: [88.3319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.3319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.3319] ----------------------------------------
+Cocos2d: [88.3820] ----------------------------------------
+Cocos2d: [88.3820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.3820] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.3820] ----------------------------------------
+Cocos2d: [88.4319] ----------------------------------------
+Cocos2d: [88.4319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.4320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.4320] ----------------------------------------
+Cocos2d: [88.4820] ----------------------------------------
+Cocos2d: [88.4820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.4820] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.4820] ----------------------------------------
+Cocos2d: [88.5314] ----------------------------------------
+Cocos2d: [88.5315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.5315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.5315] ----------------------------------------
+Cocos2d: [88.5819] ----------------------------------------
+Cocos2d: [88.5819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.5819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.5819] ----------------------------------------
+Cocos2d: [88.6319] ----------------------------------------
+Cocos2d: [88.6319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.6320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.6320] ----------------------------------------
+Cocos2d: [88.6818] ----------------------------------------
+Cocos2d: [88.6819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.6819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.6819] ----------------------------------------
+Cocos2d: [88.7319] ----------------------------------------
+Cocos2d: [88.7320] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.7320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.7320] ----------------------------------------
+Cocos2d: [88.7818] ----------------------------------------
+Cocos2d: [88.7818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.7819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.7819] ----------------------------------------
+Cocos2d: [88.8318] ----------------------------------------
+Cocos2d: [88.8319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.8319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.8319] ----------------------------------------
+Cocos2d: [88.8818] ----------------------------------------
+Cocos2d: [88.8818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.8819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.8819] ----------------------------------------
+Cocos2d: [88.9318] ----------------------------------------
+Cocos2d: [88.9319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.9319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.9319] ----------------------------------------
+Cocos2d: [88.9819] ----------------------------------------
+Cocos2d: [88.9819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [88.9819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [88.9819] ----------------------------------------
+Cocos2d: [89.0319] ----------------------------------------
+Cocos2d: [89.0319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.0319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.0319] ----------------------------------------
+Cocos2d: [89.0818] ----------------------------------------
+Cocos2d: [89.0819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.0819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.0819] ----------------------------------------
+Cocos2d: [89.1318] ----------------------------------------
+Cocos2d: [89.1319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.1319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.1319] ----------------------------------------
+Cocos2d: [89.1816] ----------------------------------------
+Cocos2d: [89.1817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.1817] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.1817] ----------------------------------------
+Cocos2d: [89.2318] ----------------------------------------
+Cocos2d: [89.2318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.2318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.2318] ----------------------------------------
+Cocos2d: [89.2818] ----------------------------------------
+Cocos2d: [89.2818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.2818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.2818] ----------------------------------------
+Cocos2d: [89.3318] ----------------------------------------
+Cocos2d: [89.3319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.3319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.3319] ----------------------------------------
+Cocos2d: [89.3818] ----------------------------------------
+Cocos2d: [89.3819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.3819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.3819] ----------------------------------------
+Cocos2d: [89.4318] ----------------------------------------
+Cocos2d: [89.4319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.4319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.4319] ----------------------------------------
+Cocos2d: [89.4819] ----------------------------------------
+Cocos2d: [89.4819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.4819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.4820] ----------------------------------------
+Cocos2d: [89.5318] ----------------------------------------
+Cocos2d: [89.5318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.5318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.5318] ----------------------------------------
+Cocos2d: [89.5818] ----------------------------------------
+Cocos2d: [89.5819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.5819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.5819] ----------------------------------------
+Cocos2d: [89.6318] ----------------------------------------
+Cocos2d: [89.6318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.6318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.6318] ----------------------------------------
+Cocos2d: [89.6817] ----------------------------------------
+Cocos2d: [89.6817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.6818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.6818] ----------------------------------------
+Cocos2d: [89.7317] ----------------------------------------
+Cocos2d: [89.7318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.7318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.7318] ----------------------------------------
+Cocos2d: [89.7817] ----------------------------------------
+Cocos2d: [89.7817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.7817] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.7817] ----------------------------------------
+Cocos2d: [89.8318] ----------------------------------------
+Cocos2d: [89.8318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.8318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.8318] ----------------------------------------
+Cocos2d: [89.8817] ----------------------------------------
+Cocos2d: [89.8818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.8818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.8818] ----------------------------------------
+Cocos2d: [89.9317] ----------------------------------------
+Cocos2d: [89.9318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.9318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.9318] ----------------------------------------
+Cocos2d: [89.9818] ----------------------------------------
+Cocos2d: [89.9818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [89.9818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [89.9818] ----------------------------------------
+Cocos2d: [90.0318] ----------------------------------------
+Cocos2d: [90.0318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.0318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.0318] ----------------------------------------
+Cocos2d: [90.0817] ----------------------------------------
+Cocos2d: [90.0817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.0818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.0818] ----------------------------------------
+Cocos2d: [90.1324] ----------------------------------------
+Cocos2d: [90.1324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.1324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.1324] ----------------------------------------
+Cocos2d: [90.1824] ----------------------------------------
+Cocos2d: [90.1824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.1824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.1824] ----------------------------------------
+Cocos2d: [90.2324] ----------------------------------------
+Cocos2d: [90.2324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.2324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.2324] ----------------------------------------
+Cocos2d: [90.2325] [INFO] LUA VM MEMORY USED: 4565.38 KB
+Cocos2d: [90.2814] ----------------------------------------
+Cocos2d: [90.2814] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.2814] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.2815] ----------------------------------------
+Cocos2d: [90.3324] ----------------------------------------
+Cocos2d: [90.3324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.3324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.3324] ----------------------------------------
+Cocos2d: [90.3824] ----------------------------------------
+Cocos2d: [90.3824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.3824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.3824] ----------------------------------------
+Cocos2d: [90.4324] ----------------------------------------
+Cocos2d: [90.4324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.4324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.4324] ----------------------------------------
+Cocos2d: [90.4819] ----------------------------------------
+Cocos2d: [90.4820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.4820] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.4820] ----------------------------------------
+Cocos2d: [90.5315] ----------------------------------------
+Cocos2d: [90.5315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.5315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.5315] ----------------------------------------
+Cocos2d: [90.5824] ----------------------------------------
+Cocos2d: [90.5824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.5824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.5824] ----------------------------------------
+Cocos2d: [90.6317] ----------------------------------------
+Cocos2d: [90.6317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.6317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.6318] ----------------------------------------
+Cocos2d: [90.6818] ----------------------------------------
+Cocos2d: [90.6818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.6819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.6819] ----------------------------------------
+Cocos2d: [90.7316] ----------------------------------------
+Cocos2d: [90.7316] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.7316] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.7316] ----------------------------------------
+Cocos2d: [90.7815] ----------------------------------------
+Cocos2d: [90.7815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.7816] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.7816] ----------------------------------------
+Cocos2d: [90.8314] ----------------------------------------
+Cocos2d: [90.8315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.8315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.8315] ----------------------------------------
+Cocos2d: [90.8814] ----------------------------------------
+Cocos2d: [90.8814] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.8814] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.8815] ----------------------------------------
+Cocos2d: [90.9316] ----------------------------------------
+Cocos2d: [90.9317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.9317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.9317] ----------------------------------------
+Cocos2d: [90.9817] ----------------------------------------
+Cocos2d: [90.9817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [90.9817] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [90.9817] ----------------------------------------
+Cocos2d: [91.0316] ----------------------------------------
+Cocos2d: [91.0316] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.0316] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.0317] ----------------------------------------
+Cocos2d: [91.0815] ----------------------------------------
+Cocos2d: [91.0815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.0815] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.0815] ----------------------------------------
+Cocos2d: [91.1316] ----------------------------------------
+Cocos2d: [91.1316] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.1317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.1317] ----------------------------------------
+Cocos2d: [91.1972] ----------------------------------------
+Cocos2d: [91.1972] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.1972] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.1972] ----------------------------------------
+Cocos2d: [91.2315] ----------------------------------------
+Cocos2d: [91.2315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.2315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.2315] ----------------------------------------
+Cocos2d: [91.2815] ----------------------------------------
+Cocos2d: [91.2815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.2816] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.2816] ----------------------------------------
+Cocos2d: [91.3321] ----------------------------------------
+Cocos2d: [91.3322] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.3322] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.3322] ----------------------------------------
+Cocos2d: [91.3824] ----------------------------------------
+Cocos2d: [91.3824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.3824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.3824] ----------------------------------------
+Cocos2d: [91.4314] ----------------------------------------
+Cocos2d: [91.4315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.4315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.4315] ----------------------------------------
+Cocos2d: [91.4823] ----------------------------------------
+Cocos2d: [91.4823] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.4823] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.4823] ----------------------------------------
+Cocos2d: [91.5315] ----------------------------------------
+Cocos2d: [91.5315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.5315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.5315] ----------------------------------------
+Cocos2d: [91.5814] ----------------------------------------
+Cocos2d: [91.5815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.5815] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.5815] ----------------------------------------
+Cocos2d: [91.6490] ----------------------------------------
+Cocos2d: [91.6490] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.6490] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.6490] ----------------------------------------
+Cocos2d: [91.6814] ----------------------------------------
+Cocos2d: [91.6815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.6815] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.6815] ----------------------------------------
+Cocos2d: [91.7316] ----------------------------------------
+Cocos2d: [91.7317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.7317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.7317] ----------------------------------------
+Cocos2d: [91.7822] ----------------------------------------
+Cocos2d: [91.7823] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.7823] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.7823] ----------------------------------------
+Cocos2d: [91.8315] ----------------------------------------
+Cocos2d: [91.8316] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.8316] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.8316] ----------------------------------------
+Cocos2d: [91.8819] ----------------------------------------
+Cocos2d: [91.8819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.8819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.8819] ----------------------------------------
+Cocos2d: [91.9315] ----------------------------------------
+Cocos2d: [91.9315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.9315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.9315] ----------------------------------------
+Cocos2d: [91.9817] ----------------------------------------
+Cocos2d: [91.9818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [91.9818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [91.9818] ----------------------------------------
+Cocos2d: [92.0319] ----------------------------------------
+Cocos2d: [92.0319] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.0319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.0319] ----------------------------------------
+Cocos2d: [92.0819] ----------------------------------------
+Cocos2d: [92.0819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.0819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.0819] ----------------------------------------
+Cocos2d: [92.1317] ----------------------------------------
+Cocos2d: [92.1317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.1317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.1317] ----------------------------------------
+Cocos2d: [92.1818] ----------------------------------------
+Cocos2d: [92.1818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.1818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.1818] ----------------------------------------
+Cocos2d: [92.2317] ----------------------------------------
+Cocos2d: [92.2317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.2318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.2318] ----------------------------------------
+Cocos2d: [92.2815] ----------------------------------------
+Cocos2d: [92.2816] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.2816] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.2816] ----------------------------------------
+Cocos2d: [92.3318] ----------------------------------------
+Cocos2d: [92.3318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.3319] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.3319] ----------------------------------------
+Cocos2d: [92.3823] ----------------------------------------
+Cocos2d: [92.3823] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.3823] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.3823] ----------------------------------------
+Cocos2d: [92.4320] ----------------------------------------
+Cocos2d: [92.4320] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.4320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.4320] ----------------------------------------
+Cocos2d: [92.4823] ----------------------------------------
+Cocos2d: [92.4824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.4824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.4824] ----------------------------------------
+Cocos2d: [92.5324] ----------------------------------------
+Cocos2d: [92.5324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.5324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.5324] ----------------------------------------
+Cocos2d: [92.5823] ----------------------------------------
+Cocos2d: [92.5823] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.5824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.5824] ----------------------------------------
+Cocos2d: [92.6322] ----------------------------------------
+Cocos2d: [92.6322] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.6322] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.6322] ----------------------------------------
+Cocos2d: [92.6823] ----------------------------------------
+Cocos2d: [92.6823] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.6823] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.6823] ----------------------------------------
+Cocos2d: [92.7317] ----------------------------------------
+Cocos2d: [92.7317] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.7317] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.7317] ----------------------------------------
+Cocos2d: [92.7823] ----------------------------------------
+Cocos2d: [92.7824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.7824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.7824] ----------------------------------------
+Cocos2d: [92.8314] ----------------------------------------
+Cocos2d: [92.8315] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.8315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.8315] ----------------------------------------
+Cocos2d: [92.8814] ----------------------------------------
+Cocos2d: [92.8814] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.8814] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.8814] ----------------------------------------
+Cocos2d: [92.9316] ----------------------------------------
+Cocos2d: [92.9316] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.9316] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.9316] ----------------------------------------
+Cocos2d: [92.9815] ----------------------------------------
+Cocos2d: [92.9815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [92.9815] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [92.9815] ----------------------------------------
+Cocos2d: [93.0314] ----------------------------------------
+Cocos2d: [93.0314] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.0315] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.0315] ----------------------------------------
+Cocos2d: [93.0820] ----------------------------------------
+Cocos2d: [93.0820] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.0821] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.0821] ----------------------------------------
+Cocos2d: [93.1322] ----------------------------------------
+Cocos2d: [93.1322] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.1322] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.1322] ----------------------------------------
+Cocos2d: [93.1818] ----------------------------------------
+Cocos2d: [93.1819] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.1819] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.1819] ----------------------------------------
+Cocos2d: [93.2321] ----------------------------------------
+Cocos2d: [93.2321] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.2321] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.2321] ----------------------------------------
+Cocos2d: [93.2821] ----------------------------------------
+Cocos2d: [93.2821] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.2821] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.2821] ----------------------------------------
+Cocos2d: [93.3321] ----------------------------------------
+Cocos2d: [93.3322] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.3322] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.3322] ----------------------------------------
+Cocos2d: [93.3816] ----------------------------------------
+Cocos2d: [93.3817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.3817] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.3817] ----------------------------------------
+Cocos2d: [93.4323] ----------------------------------------
+Cocos2d: [93.4324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.4324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.4324] ----------------------------------------
+Cocos2d: [93.4817] ----------------------------------------
+Cocos2d: [93.4817] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.4817] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.4817] ----------------------------------------
+Cocos2d: [93.5322] ----------------------------------------
+Cocos2d: [93.5323] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.5323] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.5323] ----------------------------------------
+Cocos2d: [93.5817] ----------------------------------------
+Cocos2d: [93.5818] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.5818] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.5818] ----------------------------------------
+Cocos2d: [93.6324] ----------------------------------------
+Cocos2d: [93.6324] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.6324] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.6324] ----------------------------------------
+Cocos2d: [93.6815] ----------------------------------------
+Cocos2d: [93.6815] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.6815] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.6816] ----------------------------------------
+Cocos2d: [93.7317] ----------------------------------------
+Cocos2d: [93.7318] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.7318] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.7318] ----------------------------------------
+Cocos2d: [93.7824] ----------------------------------------
+Cocos2d: [93.7824] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.7824] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.7824] ----------------------------------------
+Cocos2d: [93.8319] ----------------------------------------
+Cocos2d: [93.8320] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: attempt to index local 'data' (a nil value)
+
+Cocos2d: [93.8320] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:240: in function 'payEnded'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/basic/PayControl.lua"]:339: in function 'TD_onTimeOver'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:125: in function 'timerUpdate'
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/timer/GlobalTimer.lua"]:51>
+Cocos2d: [93.8320] ----------------------------------------

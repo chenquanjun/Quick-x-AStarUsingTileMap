@@ -89,7 +89,7 @@ function ManageTrayView:addProductAtIndex(index, productType)
 end
 
 function ManageTrayView:removeProductAtIndex(index)
-	print("remove"..index)
+	-- print("remove"..index)
 	local sprite = self._productVec[index]
 
 	self._productVec[index] = nil
@@ -148,7 +148,7 @@ function ManageTrayView:removeProductWithVec(indexVec)
 
     end
 
-    print("size:"..#productVec)
+    -- print("size:"..#productVec)
 
     if indexSize < size then
         for i, product in ipairs(productVec) do

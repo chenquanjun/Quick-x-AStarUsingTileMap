@@ -86,7 +86,7 @@ function TrayInfo:addProduct(elfId, queueId)
 		return -1, -1
 	end
 
-	print("index"..index)
+	-- print("index"..index)
 
 	local product = {}
 	product.elfId = elfId

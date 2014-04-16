@@ -103,8 +103,6 @@ function NPCSprite:removeRequest(indexVec)
 
         local index = indexVec[iRevert] --从后面删除
 
-        print(index)
-
         local product = productVec[index]
 
         local sequence = CCSequence:createWithTwoActions(CCFadeOut:create(0.2), CCRemoveSelf:create(true))
@@ -193,7 +191,6 @@ function NPCSprite:playAnim(startPoint, endPoint)
     local lastActionTag = self._lastActionTag
     --相同动作直接返回
     if actionType == lastActionTag then
-        -- print("return")
     	return
     end
 
@@ -216,7 +213,6 @@ end
 
 --sprite: 精灵，speed: 移动一格的速度, startId:开始id，endId:结束id
 function NPCSprite:easeWalkTo(speed, mapPath)
-        -- print("WalkTo:"..startId.." "..endId)
         --A星寻路 地图路径
 
         if mapPath == nil then
