@@ -191,7 +191,7 @@ function ManageController:init()
 
 		local dumpModelBtn = createDump("model", function ()
 			-- self._model:dumpAllData()
-			print("dump model")
+			-- print("dump model")
 		end)
 
 		local dumpPayControlBtn = createDump("payControl", function ()
