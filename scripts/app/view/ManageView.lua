@@ -19,6 +19,9 @@ ManageView._playerLayer = nil
 ManageView._productLayer= nil
 ManageView._btnLayer    = nil
 ManageView._trayLayer   = nil
+ManageView._timerLabel  = nil
+ManageView._testTimerSpr= nil
+ManageView._statsMap    = nil
 
 --[[-------------------
     ---Init Method-----
@@ -28,6 +31,61 @@ function ManageView:create()
 	local ret = ManageView.new()
 	ret:init()
 	return ret
+end
+
+function ManageView:toggleTimer(isOn)
+   if isOn then
+        self._testTimerSpr:setColor(ccc3(0, 0, 255))
+   else
+        self._testTimerSpr:setColor(ccc3(255, 0, 0))
+   end
+end
+
+function ManageView:initTimer(callBack)
+    local timerLabel = CCLabelTTF:create("0", "Arial", 40)
+    timerLabel:setPosition(ccp(display.cx, display.top - 50))
+    timerLabel:setColor(ccc3(0, 0, 255))
+
+    self:addChild(timerLabel)
+
+    self._timerLabel = timerLabel
+
+    --暂停按钮
+    local stopBtn = display.newSprite("product.png")
+    stopBtn:setPosition(ccp(display.cx - 150, display.top - 50))
+    self:addChild(stopBtn)
+
+    self._testTimerSpr = stopBtn
+    self:toggleTimer(true)
+
+    stopBtn:setTouchEnabled(true)
+
+    stopBtn:addTouchEventListener(function(event, x, y)
+
+        if event == "began" then
+            return true -- catch touch event, stop event dispatching
+        end
+
+        local touchInSprite = stopBtn:getCascadeBoundingBox():containsPoint(CCPoint(x, y))
+        if event == "moved" then
+            if touchInSprite then
+
+            else
+
+            end
+        elseif event == "ended" then
+            if touchInSprite then 
+                callBack() --回调
+            end
+
+        else
+
+        end
+    end)
+end
+
+function ManageView:setTimer(num)
+    self._timerLabel:setString(num)
 end
 
 function ManageView:initBtns(mapIdVec, callBack)
@@ -131,11 +189,30 @@ function ManageView:init()
     end
 
     do --tray 托盘
-        local trayView = ManageTrayView:create(10)
+        local trayView = ManageTrayView:create(14)
         trayView:setPosition(ccp(display.left + 80, display.top - 50))
 
         self:addChild(trayView)
         self._trayLayer = trayView
+    end
+
+    do --统计
+        self._statsMap = {}
+        local statsLayer = display.newLayer()
+        self:addChild(statsLayer, 100)
+        statsLayer:setPosition(ccp(display.cx - 350, display.top - 50))
+
+        for k,v in pairs(LeaveReason) do
+            local infoLabel = CCLabelTTF:create(k..":0", "Arial", 18)
+
+            infoLabel:setColor(ccc3(0, 0, 255))
+
+            infoLabel:setPosition(ccp(0, - 24 * v))
+
+            statsLayer:addChild(infoLabel)
+
+            self._statsMap[k] = infoLabel
+        end
     end
 end
 
@@ -157,6 +234,11 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
+function ManageView:MD_setStatsReason(leaveReason, num)
+    local label = self._statsMap[leaveReason]
+    label:setString(leaveReason..":"..num)
+end
+
 function ManageView:MD_addProduct(data)
         local elfId = data.elfId
         local name = data.name

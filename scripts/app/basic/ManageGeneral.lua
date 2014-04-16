@@ -17,7 +17,7 @@ kMapDataStart         	= 10 --开始坐标
 kMapDataThing         	= 11 --物体
 kMapDataServe         	= 12 --服务位置
 kMapDataProduct       	= 13 --产品位置
-kMapDataPayQueue    	= 14 --收银台队列
+kMapDataPayQueue    	= 14 --收银台队列（标记着1，2，3，4）
 
 kActionTagInvalid     	= 0 --默认
 kActionTagDown        	= 1 --下
@@ -37,6 +37,7 @@ ElfIdList = {
 	Player     		 = 1,    --玩家id，史迪奇1         --model 
 	PayQueCrtl		 = 50,   --支付控制，             --payControl 暂时废弃
 	PayQueCheck		 = 51,   --支付队列检测			--payControl
+	TimerPast        = 52,   --流逝时间
 	ProductOffset    = 100,  --100~1000是物品id		--model
 	NpcOffset        = 1000, --1000~2000以后是npcId	--model
 	PayNpcOffset     = 2000  --2000 + npcId(= 3000 ~ 4000)是支付npc回调
@@ -85,6 +86,17 @@ NPCStateType = {
 				NormalPay              = 45, 			--普通支付
 				WaitPay                = 46, 			--等待支付
 				LeavePay               = 49, 			--离开支付（与LeaveSeat类似）
+}
+
+LeaveReason = {
+				Total           =  0,
+				NoSeat 			=  1, --没有位置离开
+				SeatAnger       =  2, --座位愤怒离开
+				WaitSeatAnger 	=  3, --等待座位愤怒离开
+				GetOut 			=  4, --被赶
+				WaitPayAnger	=  5, --等待支付愤怒离开
+				NorPayAnger     =  6, --普通支付愤怒离开
+				PayEnded        =  7, --正常支付离开
 }
 
 NPCFeelType = {

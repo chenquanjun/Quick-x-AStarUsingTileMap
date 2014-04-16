@@ -18,6 +18,10 @@ function ManageModelDelegate:removeRefer()
 	self._refer = nil
 end
 
+function ManageModelDelegate:setStatsReason(leaveReason, num)
+	self._refer:MD_setStatsReason(leaveReason, num)
+end
+
 --添加产品
 function ManageModelDelegate:addProduct(data)
 	self._refer:MD_addProduct(data)

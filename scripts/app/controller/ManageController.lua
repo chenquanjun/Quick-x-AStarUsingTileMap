@@ -13,6 +13,9 @@ require "app/basic/PayQueue"
 --timer
 require "app/timer/GlobalTimer"
 
+--统计模块
+require "app/basic/Stats"
+
 --地图基础信息
 require "app/basic/MapPath"
 require "app/basic/MapInfo"
@@ -59,6 +62,8 @@ ManageController._model         = nil
 -- ManageController._viewDelegate  = nil
 -- ManageController._modelDelegate = nil
 ManageController._mapInfo       = nil
+
+ManageController._timerPast     = 0
 
 --[[-------------------
 	---Init Method-----
@@ -112,9 +117,9 @@ function ManageController:init()
 
 	    G_timer = GlobalTimer:create()                  --全局时间控制
 		self:addChild(G_timer)
+
+		G_stats = Stats:create() --统计模块
     end
-
-
 
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
 
@@ -139,10 +144,92 @@ function ManageController:init()
 		-- 	end)
 	end
 
+	--启动定时器
+	G_timer:startTimer()
+
+	local isOn = true
+
+
+	do --dump btn
+		local pointX = display.right - 50
+		local pointY = display.bottom + 50
+
+		local function createDump(name, callback)
+			local dumpBtn = CCLabelTTF:create(name, "Arial", 20)
+			dumpBtn:setColor(ccc3(255, 0, 0))
+			dumpBtn:setPosition(ccp(pointX, pointY))
+			pointY = pointY + 30
+			self:addChild(dumpBtn, 100)
+
+			dumpBtn:setTouchEnabled(true)
+			dumpBtn:setVisible(false)
+	        dumpBtn:addTouchEventListener(function(event, x, y)
+
+	            if event == "began" then
+	                return true -- catch touch event, stop event dispatching
+	            end
+
+	            local touchInSprite = dumpBtn:getCascadeBoundingBox():containsPoint(CCPoint(x, y))
+	            if event == "moved" then
+	                if touchInSprite then
+
+	                else
+
+	                end
+	            elseif event == "ended" then
+	                if touchInSprite then 
+	                	callback()
+	                end
+
+	            else
+
+	            end
+	        end)
+
+	        return dumpBtn
+		end
+
+		local dumpModelBtn = createDump("model", function ()
+			-- self._model:dumpAllData()
+			print("dump model")
+		end)
+
+		local dumpPayControlBtn = createDump("payControl", function ()
+
+			print("dump pay control")
+		end)
+
+
+
+		--timer
+		self._view:initTimer(function()  
+			self._view:toggleTimer(not isOn)
+
+			if isOn then
+				-- G_timer:pauseTimer()
+				dumpModelBtn:setVisible(true)
+				dumpPayControlBtn:setVisible(true)
+				CCDirector:sharedDirector():pause()
+				
+			else 
+				-- G_timer:resumeTimer()
+				dumpModelBtn:setVisible(false)
+				dumpPayControlBtn:setVisible(false)
+				CCDirector:sharedDirector():resume()
+			end
+			isOn = not isOn	
+
+
+				end)
+		
+	end
 end
 
 function ManageController:onEnter()
 	self._model:onEnter()
+
+	self._timerPast = -1 --第一次调用变成0
+	self:TD_onTimeOver(ElfIdList.TimerPast)--相当于启动定时器
 end
 --统一用此方法，scene负责通知controller,controller再通知view和model
 function ManageController:onRelease()
@@ -176,4 +263,17 @@ end
 
 function ManageController:VD_onTrayProductBtn(index)
 	self._model:onTrayProductBtn(index)
+end
+
+--[[-------------------
+	---timer call-----
+	---------------------]]
+function ManageController:TD_onTimeOver(elfId)
+	if elfId == ElfIdList.TimerPast then
+		local num = self._timerPast + 1
+		self._timerPast = num
+		self._view:setTimer(num)
+		--不断重复加入
+		G_timer:addTimerListener(elfId, 1, self)
+	end
 end

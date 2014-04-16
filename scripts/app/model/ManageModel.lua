@@ -42,7 +42,7 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
-	self._trayInfo = TrayInfo:create(10)
+	self._trayInfo = TrayInfo:create(14)
 
 end
 
@@ -95,7 +95,7 @@ function ManageModel:onEnter()
 
 	
 	-- addNPCTest() --批量测试
-	-- addSimpleNPCTest() --批量单个测试
+	addSimpleNPCTest() --批量单个测试
 
 			for i=101 ,106 do
 				local productList = {
@@ -223,11 +223,6 @@ function ManageModel:onEnter()
 	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
 	-- self:addNPC() --单个测试
-
-	--启动定时器
-	G_timer:startTimer()
-
-
 end
 
 function ManageModel:onRelease()
@@ -425,6 +420,45 @@ function ManageModel:addNPC(productList)
 		data.modelId = modelId
 		data.mapId = startMapId
 		G_modelDelegate:addNPC(data)
+
+			-- 			local productList = {
+	-- 									{
+	-- 										{elfId = 106, curState = 0},
+	-- 										-- {elfId = 105, curState = 0},
+	-- 										-- {elfId = 101, curState = 0},
+	-- 										-- {elfId = 106, curState = 0}
+	-- 									},
+	-- 									-- {
+	-- 									-- 	{elfId = 106, curState = 0},
+	-- 									-- 	{elfId = 105, curState = 0},
+	-- 									-- 	{elfId = 101, curState = 0},
+	-- 									-- 	-- {elfId = 106, curState = 0}
+	-- 									-- },
+	-- 								}
+
+		do--统计信息
+
+			local productVec = {}
+
+			local data = {}
+			data.elfId = elfId
+			data.productVec = productVec
+			
+
+			local index = 1
+
+			for i, productTable in ipairs(productList) do
+				for j,product in ipairs(productTable) do
+					local productId = product.elfId
+					productVec[index] = productId
+					index = index + 1
+				end
+			end
+
+			G_stats:addNPC(data)
+		end
+
+		
 	end
 	self._npcTestFlag = self._npcTestFlag + 1
 
@@ -604,8 +638,7 @@ function ManageModel:playerQueue(playerInfo)
 				self:playerOnSeat(npcInfo)
 
 			end-- if end
-			
-
+		
 		end,
 		--3
 		[PlayerStateType.WaitSeat]		= function()
@@ -867,4 +900,14 @@ function ManageModel:TD_onTimeOver(elfId)
 			self:playerQueue(playerInfo)
 		end
 	end
+end
+
+--[[-------------------
+	---dump  data-----
+	---------------------]]
+function ManageModel:dumpAllData()
+	dump(self._npcInfoMap , "npcInfo")
+	dump(self._playerInfoMap , "playernfo")
+	dump(self._productInfoMap , "productInfo")
+	-- dump(self._trayInfo , "trayInfo")
 end

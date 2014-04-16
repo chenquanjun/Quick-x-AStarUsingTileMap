@@ -195,7 +195,7 @@ function PayControl:adjustQueuePoint()
 		assert(isWaitPay == false, "should be false")
 
 		--设置npc状态
-		queNpcInfo:enterPayState(isWaitPay)
+		queNpcInfo:setPayStateBegin(isWaitPay)
 
 		--调用npc信息控制方法
 		self:npcStateControl(queElfId)
@@ -220,7 +220,7 @@ function PayControl:npcMoveEnded(elfId)
 		local queueIndex = self._norPayQueue:getQueueIndex(elfId)
 
 		if queueIndex == 1 then --npc在第一位
-			local duration = 10.0--收银时间
+			local duration = 3.0--收银时间
 
 			--收银开动
 			G_timer:addTimerListener(ElfIdList.PayQueCheck, duration, self) --加入时间控制

@@ -169,6 +169,9 @@ function NPCInfo:setPayStatePayEnded()
 	assert(self.curPay == NPCPayType.Paying, "error pay state")
 
 	self.curState = NPCStateType.LeavePay
+
+	--统计信息
+	G_stats:leaveFor(self.elfId, LeaveReason.PayEnded)
 end
 
 --赶走npc
@@ -181,6 +184,9 @@ function NPCInfo:setSeatStateGetOut()
 	assert(self:isRequest(), "error state, should be request")
 
 	self.curState = NPCStateType.LeaveSeat
+
+	--统计信息
+	G_stats:leaveFor(self.elfId, LeaveReason.GetOut)
 end
 
 --[[-------------------
@@ -228,13 +234,16 @@ function NPCInfo:npcState()
 		[NPCStateType.Door] 					= function()
 		stateStr = "Door"
 			--在门口稍微停留再看看有没位置
-			totalTime = math.random(0.1, 0.2)
+			totalTime = math.random(0.1, 0.3)
 			self.curState = NPCStateType.FindSeat
 
 		end,
 		--离开门口
 		[NPCStateType.LeaveDoor] 				= function()
 		stateStr = "L-Door"	
+			--统计信息
+			G_stats:leaveFor(self.elfId, LeaveReason.NoSeat)
+
 			--获得开始位置的mapId
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 			--改变状态
@@ -301,7 +310,7 @@ function NPCInfo:npcState()
 		[NPCStateType.SeatEating] 				= function()
 		
 			local productVec = self:nextProduct()
-			totalTime = math.random(1, 2)
+			totalTime = math.random(0.5, 0.6)
 			if productVec then
 				stateStr = "Eat"
 
@@ -445,19 +454,28 @@ function NPCInfo:npcFeelOnRequest()
 			--点餐
 			productVec = self:getCurProduct()
 
-			totalTime = math.random(50, 50)
+			totalTime = math.random(3, 5)
 			self.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
 		testStateStr = "Ang"
 			-- print("Anger")
-			totalTime = math.random(50, 50)
+			totalTime = math.random(3, 5)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCFeelType.Cancel] 					= function()
 		testStateStr = "XX"
+
+			--统计信息
+			if self.seatType == kMapDataSeat then --座位
+				G_stats:leaveFor(self.elfId, LeaveReason.SeatAnger)
+
+			elseif self.seatType == kMapDataWaitSeat then --等待座位
+				G_stats:leaveFor(self.elfId, LeaveReason.WaitSeatAnger)
+			end
+			
 			-- print("Cancel")
 			totalTime = 0.8 --预留播放动画时间
 
@@ -492,18 +510,21 @@ function NPCInfo:npcPayOnWaitPay()
 		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
-			totalTime = math.random(10, 20)
+			totalTime = math.random(10, 15)
 			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
-			totalTime = math.random(10, 20)
+			totalTime = math.random(10, 15)
 			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCPayType.Cancel] 					= function()
 		testStateStr = "Can"
+			--统计信息
+			G_stats:leaveFor(self.elfId, LeaveReason.WaitPayAnger)
+
 			totalTime = 0 
 			G_seatControl:leaveSeat(self.seatType, self.mapId, self.elfId) --离开座位
 			self.curState = NPCStateType.LeavePay --进入离开状态
@@ -540,18 +561,21 @@ function NPCInfo:npcPayOnNorPay()
 		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
-			totalTime = math.random(10, 20)
+			totalTime = math.random(3, 5)
 			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
-			totalTime = math.random(10, 20)
+			totalTime = math.random(3, 5)
 			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCPayType.Cancel] 					= function()
 		testStateStr = "Can"
+			--统计信息
+			G_stats:leaveFor(self.elfId, LeaveReason.NorPayAnger)
+
 			totalTime = 0 
 			self.curState = NPCStateType.LeavePay --进入离开状态
 			G_payControl:leavePay(self.elfId) --通知payControl进入离开队列

@@ -4,7 +4,7 @@ TimerEvent = {
     Pause            = 3, 
     Stop             = 4,
 }
---最小单位为0.1f
+--最小单位为0.1f（_timerInterval）
 --对于同一个listenerid，只有最后一次的定时有效
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
