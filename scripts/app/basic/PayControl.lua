@@ -44,10 +44,10 @@ function PayControl:addPayNpc(npcInfo)
 	self._npcInfoMap[elfId] = npcInfo
 
 	--进入支付
-	local isWaitPay = self:joinPay(elfId)
+	local isWaitPay = self:joinPay(elfId)--返回在普通支付队列(false)还是等待支付队列(true)
 
 	--设置npc状态
-	npcInfo:enterPayState(isWaitPay)
+	npcInfo:setPayStateBegin(isWaitPay)
 
 	--调用npc信息控制方法
 	self:npcStateControl(elfId)

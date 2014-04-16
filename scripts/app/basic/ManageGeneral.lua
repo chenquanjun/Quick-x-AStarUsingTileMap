@@ -35,7 +35,7 @@ kMapKeyOffset         	= 100000 --地图路径的保存偏移量 startId * kMapK
 --确保每个使用到时间调用的元素都有一个唯一的id
 ElfIdList = {
 	Player     		 = 1,    --玩家id，史迪奇1         --model 
-	PayQueCrtl		 = 50,   --支付控制，             --payControl
+	PayQueCrtl		 = 50,   --支付控制，             --payControl 暂时废弃
 	PayQueCheck		 = 51,   --支付队列检测			--payControl
 	ProductOffset    = 100,  --100~1000是物品id		--model
 	NpcOffset        = 1000, --1000~2000以后是npcId	--model
@@ -79,12 +79,12 @@ NPCStateType = {
 				FindWaitSeat           = 30,            --寻找等待座位
 
 				Pay                    = 40,            --支付
-				NorPayMoving          = 41,
+				NorPayMoving           = 41,
 				NorPayMoveEnd          = 42,
 				NorPayPrePare          = 43,
 				NormalPay              = 45, 			--普通支付
 				WaitPay                = 46, 			--等待支付
-				LeavePay               = 49, 			--离开支付
+				LeavePay               = 49, 			--离开支付（与LeaveSeat类似）
 }
 
 NPCFeelType = {

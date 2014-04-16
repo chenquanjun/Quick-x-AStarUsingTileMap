@@ -34,6 +34,7 @@ end
 --3、 再遍历玩家身上的完成物品表，调用isNeedProduct方法判断是否满足npc需求
 --4、npc本次需求满足后，进入进食状态，调用nextProduct方法，返回nil退出，否则重复2，3
 
+
 function NPCInfo:setProductList(productList)
 	self._productList = productList
 	self._productIndex = 1
@@ -117,32 +118,42 @@ function NPCInfo:isAllProductOK()
 	return isAllOK
 end
 
-function NPCInfo:meetProductNeed()
-	if self.seatType == kMapDataSeat or self.seatType == kMapDataWaitSeat then
-		self.curState = NPCStateType.SeatEating
-		self.curFeel = NPCFeelType.Invalid
-	else 
-		error("error call")
-	end
+--[[-------------------
+	---set  state -----
+	---------------------]]
+
+--外部改变npc状态：满足npc需求，赶走npc，进入排队队列等等，使用setxxxx方法
+--改变状态后需要调用npcstate方法才能真正执行该状态
+function NPCInfo:setSeatStateEating()
+	--只有在座位/等待座位请求的npc
+	--并且情感状态为普通/愤怒（下个状态）
+	-- assert(self.curState == NPCStateType.SeatRequest or self.curState == NPCStateType.WaitSeatRequest, "error state")
+	-- assert(self.curFeel == NPCFeelType.Anger or self.curFeel == NPCFeelType.Cancel, "error feel state")
+
+	assert(self:isRequest(), "error state, should be request")
+
+	self.curState = NPCStateType.SeatEating
+	self.curFeel = NPCFeelType.Invalid
 end
 
-function NPCInfo:enterPayState(isWaitPay)
-	if isWaitPay then
+function NPCInfo:setPayStateBegin(isWaitPay)
+	if isWaitPay then --等待支付（支付情感控制）
 		self.curState = NPCStateType.WaitPay
 		self.curPay = NPCPayType.Normal --情感
-	else
+	else --普通支付（移动）
 		self.curState = NPCStateType.NorPayMoving
-		-- self.curPay = NPCPayType.Moving --支付情感
-
 	end
 end
 
+--普通支付状态:npc情感开始变化
 function NPCInfo:setPayStateNormal()
 	assert(self.curState == NPCStateType.NorPayPrePare, "error state")
+
 	self.curState = NPCStateType.NormalPay
 	self.curPay = NPCPayType.Normal
 end
 
+--普通支付状态:正在支付
 function NPCInfo:setPayStatePaying()
 	--玩家在normalpay状态，支付状态为普通或者愤怒（要延后一个状态）
 	assert(self.curState == NPCStateType.NormalPay, "error state")
@@ -151,13 +162,30 @@ function NPCInfo:setPayStatePaying()
 	self.curPay = NPCPayType.Paying
 end
 
+--普通支付状态:支付结束
 function NPCInfo:setPayStatePayEnded()
+	--主状态:普通支付，支付状态:正在支付
 	assert(self.curState == NPCStateType.NormalPay, "error state")
 	assert(self.curPay == NPCPayType.Paying, "error pay state")
 
 	self.curState = NPCStateType.LeavePay
 end
 
+--赶走npc
+function NPCInfo:setSeatStateGetOut()
+	--只有在座位/等待座位请求的npc
+	--并且情感状态为普通/愤怒（下个状态）
+	-- assert(self.curState == NPCStateType.SeatRequest or self.curState == NPCStateType.WaitSeatRequest, "error state")
+	-- assert(self.curFeel == NPCFeelType.Anger or self.curFeel == NPCFeelType.Cancel, "error feel state")
+
+	assert(self:isRequest(), "error state, should be request")
+
+	self.curState = NPCStateType.LeaveSeat
+end
+
+--[[-------------------
+	---set change -----
+	---------------------]]
 --npc主状态转换
 function NPCInfo:npcState()
 	local elfId = self.elfId --npcId --NPC的id，具有唯一性
@@ -383,6 +411,7 @@ function NPCInfo:npcState()
 	return returnValue
 end
 
+--npc是否在请求状态
 function NPCInfo:isRequest()
 	local isRequest = false
 

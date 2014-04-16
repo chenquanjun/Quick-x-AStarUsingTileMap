@@ -485,10 +485,6 @@ function ManageModel:npcStateControl(elfId)
 				totalTime = G_modelDelegate:moveNPC(elfId, mapId) 
 				npcInfo.mapId = mapId --保存目标位置
 			end
-
-			local function npcCallback()
-				self:TD_callbackNPC(elfId)
-			end
 			
 			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
 
@@ -556,8 +552,12 @@ function ManageModel:playerOnSeat(npcInfo)
 		G_modelDelegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
 
 	else --没有一个产品满足npc（赶走npc）
+		print("get out:"..elfId)
+		--前面已经判断npc是否在请求状态，此处不用判断（实际上方法内部有assert判断）
+		npcInfo:setSeatStateGetOut()
 
-
+		--进入下一个状态
+		self:npcStateControl(elfId)
 		return
 	end --if end
 
@@ -569,7 +569,7 @@ function ManageModel:playerOnSeat(npcInfo)
 		G_timer:removeTimerListener(elfId)
 
 		--改变npc状态
-		npcInfo:meetProductNeed()
+		npcInfo:setSeatStateEating()
 
 		--进入下一个状态
 		self:npcStateControl(elfId)
