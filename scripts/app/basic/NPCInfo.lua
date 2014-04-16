@@ -129,7 +129,7 @@ end
 function NPCInfo:enterPayState(isWaitPay)
 	if isWaitPay then
 		self.curState = NPCStateType.WaitPay
-		self.curFeel = NPCFeelType.Normal --情感
+		self.curPay = NPCPayType.Normal --情感
 	else
 		self.curState = NPCStateType.NorPayMoving
 		-- self.curPay = NPCPayType.Moving --支付情感
@@ -288,11 +288,13 @@ function NPCInfo:npcState()
 			end
 
 		end,
+		--进入支付状态
 		[NPCStateType.Pay] 							= function()
 		stateStr = "Pay"
 			isEnterPay = true
 
 		end,
+		--普通支付移动
 		[NPCStateType.NorPayMoving] 				= function()
 		stateStr = "Mov"
 			G_seatControl:leaveSeat(self.seatType, self.mapId, self.elfId) --离开座位
@@ -300,6 +302,7 @@ function NPCInfo:npcState()
 		    mapId = G_payControl:getPayPointMapId()
 			self.curState = NPCStateType.NorPayMoveEnd
 		end,
+		--普通支付移动结束
 		[NPCStateType.NorPayMoveEnd] 				= function()
 		stateStr = "M-End"
 		-- 已到达埋单候选位置
@@ -308,29 +311,33 @@ function NPCInfo:npcState()
 			isMoveEnd = true
 			-- G_payControl:joinNormalPay(self) --加入普通支付
 		end,
+		--普通支付等待
 		[NPCStateType.NorPayPrePare] 			= function()
 		stateStr = "Pre"
 		-- 	--npc进入指定位置后变成Prepare，然后由支付control统一控制进入normal
 		    error("pay control should change it to normal")
 		end,
-
+		--普通支付
 		[NPCStateType.NormalPay] 					= function()
 			-- print("normal pay")
 			totalTime, mapId, feelStr = self:npcPayOnNorPay()
 
 			stateStr = "Nor-"..feelStr
 		end,
+		--等待支付
 		[NPCStateType.WaitPay] 						= function()
-		stateStr = "WaitPay"
 			-- print("wait pay")
+			totalTime, mapId, feelStr = self:npcPayOnWaitPay()
+			stateStr = "Wait-"..feelStr
 		end,
+		--离开支付状态
 		[NPCStateType.LeavePay] 					= function()
 		stateStr = "L-Pay"
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
 			self.curState = NPCStateType.Release --进入销毁状态
 		end,
-		--离开座位
+		--离开座位状态
 		[NPCStateType.LeaveSeat] 				= function()
 		stateStr = "L-S"
 			G_seatControl:leaveSeat(self.seatType, self.mapId, elfId)
@@ -443,6 +450,54 @@ function NPCInfo:npcFeelOnRequest()
 	end
 
 	return totalTime, productVec, testStateStr
+end
+
+--normal pay
+function NPCInfo:npcPayOnWaitPay()
+	local payType = self.curPay
+	local totalTime = -1
+	local mapId = -1
+	local testStateStr = nil
+
+	local switchType = {
+		--普通等待
+		[NPCPayType.Normal]					= function()
+		testStateStr = "Nor"
+			totalTime = math.random(10, 20)
+			self.curPay = NPCPayType.Anger
+		end,
+		--普通等待完毕，进入愤怒状态
+		[NPCPayType.Anger]						= function()
+		testStateStr = "Ang"
+			totalTime = math.random(10, 20)
+			self.curPay = NPCPayType.Cancel
+		end,
+		--不理客人,客人要走啦
+		[NPCPayType.Cancel] 					= function()
+		testStateStr = "Can"
+			totalTime = 0 
+			G_seatControl:leaveSeat(self.seatType, self.mapId, self.elfId) --离开座位
+			self.curState = NPCStateType.LeavePay --进入离开状态
+			G_payControl:leaveWaitPay(self.elfId) --通知payControl进入离开队列
+		end,
+
+		[NPCPayType.Paying]						= function()
+		error("wait pay no paying type")
+		end,
+
+	} --switch end
+
+	local fSwitch = switchType[payType] --switch 方法
+
+	--存在switch（必然存在）
+	if fSwitch then
+		local result = fSwitch() --执行function
+	else
+		error("error state") --没有枚举
+		return
+	end
+
+	return totalTime, mapId, testStateStr
 end
 
 --normal pay

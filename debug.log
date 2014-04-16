@@ -22,127 +22,119 @@ Cocos2d: ------------------------------------------------
 Cocos2d: [0.0092] [INFO] 
 Cocos2d: [0.0092] [INFO] # DEBUG                        = 2
 Cocos2d: [0.0092] [INFO] #
-Cocos2d: [0.0092] [INFO] # device.platform              = mac
-Cocos2d: [0.0092] [INFO] # device.model                 = unknown
-Cocos2d: [0.0092] [INFO] # device.language              = cn
-Cocos2d: [0.0092] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0092] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0093] [INFO] # device.platform              = mac
+Cocos2d: [0.0093] [INFO] # device.model                 = unknown
+Cocos2d: [0.0093] [INFO] # device.language              = cn
+Cocos2d: [0.0093] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0093] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
 Cocos2d: [0.0093] [INFO] # device.directorySeparator    = /
 Cocos2d: [0.0093] [INFO] # device.pathSeparator         = :
 Cocos2d: [0.0093] [INFO] #
-Cocos2d: [0.0104] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0104] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0104] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0104] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0104] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0104] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0104] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0104] [INFO] # display.height               = 640.00
-Cocos2d: [0.0104] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0104] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0104] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0104] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0104] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0104] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0104] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0104] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0104] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0105] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0105] [INFO] #
+Cocos2d: [0.0105] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0105] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0105] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0106] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0106] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0106] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0106] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0106] [INFO] # display.height               = 640.00
+Cocos2d: [0.0106] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0106] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0106] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0106] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0106] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0106] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0106] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0106] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0106] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0106] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0106] [INFO] #
 Cocos2d: [0.0161] Controller init
 Cocos2d: [0.0161] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0419] Model init
+Cocos2d: [0.0423] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.0594] GridSize: 36, 20
-Cocos2d: [0.0594] PointSize: 32, 32
-Cocos2d: [0.1689] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.1689] model onEnter
-Cocos2d: [0.1814] add cache:player1_%i_%i.png1
-Cocos2d: [0.1823] add cache:player2_%i_%i.png1
-Cocos2d: [0.1830] add cache:player4_%i_%i.png1
-Cocos2d: [0.1853] add cache:player3_%i_%i.png1
-Cocos2d: [0.2004] start timer
-Cocos2d: [6.6667] addPay:1002
-Cocos2d: [7.1667] addPay:1005
-Cocos2d: [7.9658] addPay:1010
-Cocos2d: [10.1831] [INFO] LUA VM MEMORY USED: 3321.95 KB
-Cocos2d: [10.6163] addPay:1006
-Cocos2d: [15.9666] addPay:1008
-Cocos2d: [16.1666] addPay:1000
-Cocos2d: [16.1666] join Wait:1000
-Cocos2d: [17.7167] addPay:1004
-Cocos2d: [17.7167] join Wait:1004
-Cocos2d: [17.7667] payEnded:1002
-Cocos2d: [17.7702] WaitToNor:1000
-Cocos2d: [20.1833] [INFO] LUA VM MEMORY USED: 3576.48 KB
-Cocos2d: [23.0660] addPay:1013
-Cocos2d: [23.0661] join Wait:1013
-Cocos2d: [24.4162] addPay:1017
-Cocos2d: [24.4162] join Wait:1017
-Cocos2d: [27.8659] payEnded:1005
-Cocos2d: [27.8669] WaitToNor:1004
-Cocos2d: [29.7666] addPay:1016
-Cocos2d: [29.7667] join Wait:1016
-Cocos2d: [30.1999] [INFO] LUA VM MEMORY USED: 3526.83 KB
-Cocos2d: [30.3157] addPay:1011
-Cocos2d: [30.3157] join Wait:1011
-Cocos2d: [31.0158] addPay:1001
-Cocos2d: [31.0158] join Wait:1001
-Cocos2d: [34.7166] addPay:1007
-Cocos2d: [34.7166] join Wait:1007
-Cocos2d: [36.2166] addPay:1003
-Cocos2d: [36.2166] join Wait:1003
-Cocos2d: [36.4666] addPay:1015
-Cocos2d: [36.4666] join Wait:1015
-Cocos2d: [37.9658] payEnded:1010
-Cocos2d: [37.9667] WaitToNor:1013
-Cocos2d: [39.0657] addPay:1012
-Cocos2d: [39.0657] join Wait:1012
-Cocos2d: [40.2163] [INFO] LUA VM MEMORY USED: 3810.73 KB
-Cocos2d: [42.3660] addPay:1014
-Cocos2d: [42.3660] join Wait:1014
-Cocos2d: [42.6159] addPay:1009
-Cocos2d: [42.6159] join Wait:1009
-Cocos2d: [47.2666] angerLeave:1000
-Cocos2d: [47.2667] WaitToNor:1017
-Cocos2d: [48.0664] payEnded:1006
-Cocos2d: [48.0674] WaitToNor:1016
-Cocos2d: [50.2165] [INFO] LUA VM MEMORY USED: 3912.99 KB
-Cocos2d: [51.7166] angerLeave:1004
-Cocos2d: [51.7167] WaitToNor:1011
-Cocos2d: [58.1657] payEnded:1008
-Cocos2d: [58.1667] WaitToNor:1001
-Cocos2d: [60.2324] [INFO] LUA VM MEMORY USED: 4011.65 KB
-Cocos2d: [68.2664] payEnded:1013
-Cocos2d: [68.2673] WaitToNor:1007
-Cocos2d: [70.2328] [INFO] LUA VM MEMORY USED: 4050.35 KB
-Cocos2d: [78.3660] payEnded:1017
-Cocos2d: [78.3669] WaitToNor:1003
-Cocos2d: [79.5165] angerLeave:1011
-Cocos2d: [79.5166] WaitToNor:1015
-Cocos2d: [80.2331] [INFO] LUA VM MEMORY USED: 4123.23 KB
-Cocos2d: [88.4655] payEnded:1016
-Cocos2d: [88.4664] WaitToNor:1012
-Cocos2d: [90.2497] [INFO] LUA VM MEMORY USED: 4165.22 KB
-Cocos2d: [90.6158] angerLeave:1007
-Cocos2d: [90.6159] WaitToNor:1014
-Cocos2d: [98.5662] payEnded:1001
-Cocos2d: [98.5672] WaitToNor:1009
-Cocos2d: [100.2654] [INFO] LUA VM MEMORY USED: 4240.28 KB
-Cocos2d: [108.6663] payEnded:1003
-Cocos2d: [110.2660] [INFO] LUA VM MEMORY USED: 4262.79 KB
-Cocos2d: [118.1656] angerLeave:1014
-Cocos2d: [118.7654] payEnded:1015
-Cocos2d: [120.2661] [INFO] LUA VM MEMORY USED: 4289.09 KB
-Cocos2d: [124.0163] angerLeave:1009
-Cocos2d: [128.8661] payEnded:1012
-Cocos2d: [130.2825] [INFO] LUA VM MEMORY USED: 4313.38 KB
-Cocos2d: [140.5495] [INFO] LUA VM MEMORY USED: 4313.48 KB
-Cocos2d: [150.5657] [INFO] LUA VM MEMORY USED: 4313.58 KB
+Cocos2d: [0.0595] GridSize: 36, 20
+Cocos2d: [0.0595] PointSize: 32, 32
+Cocos2d: [0.1578] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [0.1579] model onEnter
+Cocos2d: [0.1702] add cache:player1_%i_%i.png1
+Cocos2d: [0.1709] add cache:player2_%i_%i.png1
+Cocos2d: [0.1715] add cache:player4_%i_%i.png1
+Cocos2d: [0.1724] add cache:player3_%i_%i.png1
+Cocos2d: [0.1878] start timer
+Cocos2d: [7.9993] addPay:1005
+Cocos2d: [9.2002] addPay:1002
+Cocos2d: [9.3002] addPay:1003
+Cocos2d: [9.3496] addPay:1004
+Cocos2d: [9.9002] addPay:1000
+Cocos2d: [10.1667] [INFO] LUA VM MEMORY USED: 3417.74 KB
+Cocos2d: [10.7002] addPay:1007
+Cocos2d: [10.7003] join Wait:1007
+Cocos2d: [11.0002] addPay:1001
+Cocos2d: [11.0003] join Wait:1001
+Cocos2d: [13.6001] addPay:1010
+Cocos2d: [13.6002] join Wait:1010
+Cocos2d: [14.0502] addPay:1011
+Cocos2d: [14.0502] join Wait:1011
+Cocos2d: [17.8499] addPay:1017
+Cocos2d: [17.8500] join Wait:1017
+Cocos2d: [18.3500] addPay:1016
+Cocos2d: [18.3500] join Wait:1016
+Cocos2d: [18.8499] payEnded:1005
+Cocos2d: [18.8528] WaitToNor:1007
+Cocos2d: [18.9496] addPay:1014
+Cocos2d: [18.9496] join Wait:1014
+Cocos2d: [19.3996] addPay:1015
+Cocos2d: [19.3997] join Wait:1015
+Cocos2d: [20.1829] [INFO] LUA VM MEMORY USED: 3643.82 KB
+Cocos2d: [21.2494] addPay:1013
+Cocos2d: [21.2495] join Wait:1013
+Cocos2d: [23.4492] addPay:1009
+Cocos2d: [23.4492] join Wait:1009
+Cocos2d: [25.9002] addPay:1012
+Cocos2d: [25.9002] join Wait:1012
+Cocos2d: [26.2501] addPay:1006
+Cocos2d: [26.2502] join Wait:1006
+Cocos2d: [27.4501] addPay:1008
+Cocos2d: [27.4501] join Wait:1008
+Cocos2d: [28.9501] payEnded:1003
+Cocos2d: [28.9510] WaitToNor:1001
+Cocos2d: [30.2001] [INFO] LUA VM MEMORY USED: 3808.23 KB
+Cocos2d: [35.5995] angerLeaveWaitPay:1010
+Cocos2d: [35.6495] angerLeavePay:1000
+Cocos2d: [35.6496] WaitToNor:1011
+Cocos2d: [39.0491] payEnded:1002
+Cocos2d: [39.0500] WaitToNor:1017
+Cocos2d: [40.2165] [INFO] LUA VM MEMORY USED: 3945.01 KB
+Cocos2d: [42.3501] angerLeaveWaitPay:1016
+Cocos2d: [46.2509] angerLeaveWaitPay:1013
+Cocos2d: [47.9000] angerLeavePay:1007
+Cocos2d: [47.9001] WaitToNor:1014
+Cocos2d: [49.1497] payEnded:1004
+Cocos2d: [49.1507] WaitToNor:1015
+Cocos2d: [50.2329] [INFO] LUA VM MEMORY USED: 4142.81 KB
+Cocos2d: [56.2497] angerLeaveWaitPay:1006
+Cocos2d: [57.4500] angerLeaveWaitPay:1009
+Cocos2d: [59.2496] payEnded:1001
+Cocos2d: [59.2506] WaitToNor:1012
+Cocos2d: [59.4500] angerLeaveWaitPay:1008
+Cocos2d: [60.2501] [INFO] LUA VM MEMORY USED: 4279.15 KB
+Cocos2d: [68.8500] angerLeavePay:1017
+Cocos2d: [69.3491] payEnded:1011
+Cocos2d: [70.2667] [INFO] LUA VM MEMORY USED: 4318.67 KB
+Cocos2d: [79.4495] payEnded:1014
+Cocos2d: [80.2827] [INFO] LUA VM MEMORY USED: 4334.13 KB
+Cocos2d: [89.5499] payEnded:1015
+Cocos2d: [90.2833] [INFO] LUA VM MEMORY USED: 4387.15 KB
+Cocos2d: [99.6495] payEnded:1012
+Cocos2d: [100.2996] [INFO] LUA VM MEMORY USED: 4402.91 KB
+Cocos2d: [110.3160] [INFO] LUA VM MEMORY USED: 4419.38 KB
+Cocos2d: [120.3165] [INFO] LUA VM MEMORY USED: 4419.47 KB
+Cocos2d: [130.3331] [INFO] LUA VM MEMORY USED: 4419.57 KB

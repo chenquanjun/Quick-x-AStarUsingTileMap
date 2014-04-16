@@ -122,11 +122,20 @@ function PayControl:moveToQueuePoint(npcInfo, queueIndex)
 	end
 end
 
+--离开等待支付队列
+function PayControl:leaveWaitPay(elfId)
+	--npc进入了愤怒离开状态，离开队列
+	print("angerLeaveWaitPay:"..elfId)
+
+	--删除等待支付队列
+	self._waitPayQueue:removeQueue(elfId)
+end
+
 function PayControl:leavePay(elfId)
 	--此处不需要改变npc状态，仅通知payControl该npc离开队列
 
 	--npc进入了愤怒离开状态，离开队列
-	print("angerLeave:"..elfId)
+	print("angerLeavePay:"..elfId)
 
 	--从队列中删除
 	self._norPayQueue:removeQueue(elfId)

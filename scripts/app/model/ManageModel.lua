@@ -42,7 +42,7 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
-	self._trayInfo = TrayInfo:create(5)
+	self._trayInfo = TrayInfo:create(10)
 
 end
 
@@ -264,7 +264,7 @@ function ManageModel:initProduct()
 		local name = "id:"..elfId
 		local productType = 1
 
-		local duration = math.random(1, 1)
+		local duration = math.random(0.5, 0.5)
 
 		local productInfo = {}
 			productInfo.duration = duration
@@ -287,10 +287,6 @@ function ManageModel:initProduct()
 
 		--定时器 test
 		G_modelDelegate:coolDownProduct(elfId, duration)
-
-		local function productCallback()
-			self:TD_callbackProduct(elfId)
-		end
 
 		G_timer:addTimerListener(elfId, duration, self)
 	end
