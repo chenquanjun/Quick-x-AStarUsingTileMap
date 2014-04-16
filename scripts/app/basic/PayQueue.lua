@@ -48,6 +48,12 @@ function PayQueue:addTargetNum(num)
 	self._targetNum = self._targetNum + num
 end
 
+--获得实际队列数目，包括移动到普通支付队列的npc
+function PayQueue:getRealQueueNum()
+	local num = self._targetNum
+	return num
+end
+--获得队列数目，表示在普通支付队列中npc数目
 function PayQueue:getQueueNum()
 	local num = #self._queueData
 	return num

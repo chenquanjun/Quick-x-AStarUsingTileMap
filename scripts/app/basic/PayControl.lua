@@ -61,13 +61,15 @@ function PayControl:joinPay(elfId)
 	--首先检查普通支付队列
 	local data = {}
 	data.elfId = elfId
-	local isFull = self._norPayQueue:isFull()
+	local isFull = self._norPayQueue:isFull() --调用此方法时自增计数
 
 	local isWaitPay = false
 
 	if isFull then --加入等待支付队列
 		self._waitPayQueue:pushQueue(data)
 		isWaitPay = true
+
+		print("join Wait:"..elfId)
 	else --将进入普通支付队列
 		--但是要等移动到指定位置时候才加入队列
 		isWaitPay = false
@@ -124,6 +126,7 @@ function PayControl:leavePay(elfId)
 	--此处不需要改变npc状态，仅通知payControl该npc离开队列
 
 	--npc进入了愤怒离开状态，离开队列
+	print("angerLeave:"..elfId)
 
 	--从队列中删除
 	self._norPayQueue:removeQueue(elfId)
@@ -160,7 +163,8 @@ function PayControl:adjustQueuePoint()
 	end
 
 	--等待队列
-	local emptyNum = self._norQueMaxNum - queueNum --空位
+	local realQueueNum = self._norPayQueue:getRealQueueNum()--注意此处需要使用到真实的队列人数！
+	local emptyNum = self._norQueMaxNum - realQueueNum --空位
 
 	for i = 1, emptyNum do
 		local data = self._waitPayQueue:popQueue()
@@ -174,8 +178,10 @@ function PayControl:adjustQueuePoint()
 
 		local queNpcInfo = self._npcInfoMap[queElfId]
 
+		print("WaitToNor:"..queElfId)
+
 		--进入支付
-		local isWaitPay = self:joinPay(elfId)
+		local isWaitPay = self:joinPay(queElfId)
 
 		assert(isWaitPay == false, "should be false")
 
@@ -250,29 +256,9 @@ function PayControl:payEnded()
 
 	--进入控制
 	self:npcStateControl(elfId)
-	
-	-- --移动队列（从1开始移动，仅移动标记为1的npc，遇到标记为0的玩家则break）
-	-- local queueNum = self._norPayQueue:getQueueNum() --获得队列数目
-	-- for i = 1, queueNum do
-	-- 	local data = self._norPayQueue:getDataAtIndex(i) --获得队列位置i的数据
-	-- 	local queElfId = data.elfId
-	-- 	local status = self._statusDic[queElfId] --1表示已经移动完毕
-
-	-- 	local queNpcInfo = self._npcInfoMap[queElfId]
-
-	-- 	if status == 1 then
-	-- 		self:moveToQueuePoint(queNpcInfo, i) --移动到指定位置（若在该位置则无效果）
-
-	-- 	else --0的忽略不计
-
-	-- 	end
-	-- end
 
 	--强制修正所有在队列里面的npc位置
 	self:adjustQueuePoint()
-
-
-	--等待支付队列的玩家进入普通支付队列
 end
 
 --npc主状态转换
