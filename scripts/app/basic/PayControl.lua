@@ -50,6 +50,8 @@ function PayControl:addPayNpc(npcInfo)
 	--调用npc信息控制方法
 	self:npcStateControl(elfId)
 
+	--此处返回值待修改
+
 end
 
 --加入支付大军
@@ -85,7 +87,9 @@ function PayControl:joinNormalPay(npcInfo)
 	--进入普通队列
 	local pushIndex = self._norPayQueue:pushQueue(data)
 
-	npcInfo:setPayStateNormal() --npc支付情感开始变化 normal anger cancel
+	--npc支付情感开始变化 normal anger cancel
+	npcInfo:setPayStateNormal() --设置状态
+	self:npcStateControl(elfId) --开启定时器
 
 	--获得即将进入的位置
 
@@ -100,12 +104,14 @@ function PayControl:joinNormalPay(npcInfo)
 	-- G_timer:addTimerListener(elfId + ElfIdList.PayNpcOffset, totalTime, self) --加入时间控制
 
 	--调用npc信息控制方法
-	self:npcStateControl(elfId)
+	
 
 	self:moveToQueuePoint(npcInfo, pushIndex)
 
 end
 
+--根据队列顺序修正npc的位置
+--此方法若成功执行到addTimerListener会触发npcMoveEnded方法
 function PayControl:moveToQueuePoint(npcInfo, queueIndex)
 	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
 
@@ -125,7 +131,30 @@ function PayControl:moveToQueuePoint(npcInfo, queueIndex)
 end
 
 function PayControl:leavePay(elfId)
+
+	return
 	--npc进入了愤怒离开状态，离开队列
+
+	--从队列中删除
+	self._norPayQueue:removeQueue(elfId)
+
+	--两种情况？
+	local state = self._statusDic[elfId] 
+	
+	if state == 1 then --npc已经在位置上
+		
+
+	else --npc还在移动状态 强制移动
+		G_timer:removeTimerListener(elfId + ElfIdList.PayNpcOffset) --删除移动回调
+
+
+	end
+
+	--强制修正其他npc位置
+
+
+	self._statusDic[elfId] = 0
+	
 end
 
 function PayControl:onRelease()
@@ -160,13 +189,17 @@ function PayControl:npcMoveEnded(elfId)
 
 		end--index if ended
 	else 
+		print("error:"..elfId)
 		error("error elfId")
 	end --npcInfo if ended
 
 end
 
 function PayControl:payEnded()
-	--收银完毕
+	--第一个npc收银完毕，
+	--1、处理第一个npc，删除其所在的队列
+	--2、遍历所有在队列里面的npc（第一个已经离开队列），
+	--   凡是标记移动状态为1（移动结束）的npc都强制修正为队列位置（已经在该位置的无影响）
 
 	--pop队列
 	local data = self._norPayQueue:popQueue()
@@ -175,6 +208,7 @@ function PayControl:payEnded()
 
 	local npcInfo = self._npcInfoMap[elfId]
 
+	print("payEnded:"..elfId)
 	--标记状态
 	self._statusDic[elfId] = 0
 	
@@ -185,14 +219,16 @@ function PayControl:payEnded()
 	self:npcStateControl(elfId)
 	
 	--移动队列（从1开始移动，仅移动标记为1的npc，遇到标记为0的玩家则break）
-	local queueNum = self._norPayQueue:getQueueNum()
+	local queueNum = self._norPayQueue:getQueueNum() --获得队列数目
 	for i = 1, queueNum do
-		local data = self._norPayQueue:queueDataAtIndex(i)
+		local data = self._norPayQueue:getDataAtIndex(i) --获得队列位置i的数据
 		local queElfId = data.elfId
 		local status = self._statusDic[queElfId] --1表示已经移动完毕
 
+		local queNpcInfo = self._npcInfoMap[queElfId]
+
 		if status == 1 then
-			self:moveToQueuePoint(npcInfo, queueIndex) --移动到指定位置（若在该位置则无效果）
+			self:moveToQueuePoint(queNpcInfo, i) --移动到指定位置（若在该位置则无效果）
 
 		else --0的忽略不计
 
@@ -210,12 +246,18 @@ function PayControl:npcStateControl(elfId)
 
 	if npcInfo then
 		local returnValue = npcInfo:npcState() --执行状态方法
-		dump(returnValue, "value") 
+		-- dump(returnValue, "value") 
 		local isRelease = returnValue.isRelease --是否已经释放
 		local totalTime = returnValue.totalTime --回调时间
+		local isMoveEnd = returnValue.isMoveEnd
 		local mapId = returnValue.mapId --移动目标id
 
 		local testStateStr = returnValue.testStateStr
+
+		if isMoveEnd then
+			G_payControl:joinNormalPay(npcInfo) --加入普通支付
+			return --忽略
+		end
 
 
 		if isRelease then-- 废弃
@@ -251,9 +293,11 @@ end
 
 function PayControl:TD_onTimeOver(listenerId)
 	if listenerId >= ElfIdList.NpcOffset + ElfIdList.PayNpcOffset then --npcId回调
+		--npc移动到指定位置的回调
 		self:npcMoveEnded(listenerId - ElfIdList.PayNpcOffset)--减去偏移
+
 	elseif listenerId >= ElfIdList.NpcOffset then
-		--todo
+		--npc状态的回调
 		self:npcStateControl(listenerId)
 	elseif listenerId == ElfIdList.PayQueCheck then
 		self:payEnded() --收银完毕

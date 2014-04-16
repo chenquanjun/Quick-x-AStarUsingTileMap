@@ -79,9 +79,12 @@ NPCStateType = {
 				FindWaitSeat           = 30,            --寻找等待座位
 
 				Pay                    = 40,            --支付
-				NormalPay              = 41, 			--普通支付
-				WaitPay                = 42, 			--等待支付
-				LeavePay               = 43, 			--离开支付
+				NorPayMoving          = 41,
+				NorPayMoveEnd          = 42,
+				NorPayPrePare          = 43,
+				NormalPay              = 45, 			--普通支付
+				WaitPay                = 46, 			--等待支付
+				LeavePay               = 49, 			--离开支付
 }
 
 NPCFeelType = {

@@ -120,6 +120,8 @@ function PayQueue:popQueue()
 		table.remove(queueData, 1)
 
 		self:addTargetNum(-1)
+
+		dump(queueData, "queueData")
 	end
 
 	return data

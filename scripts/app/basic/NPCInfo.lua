@@ -131,14 +131,15 @@ function NPCInfo:enterPayState(isWaitPay)
 		self.curState = NPCStateType.WaitPay
 		self.curFeel = NPCFeelType.Normal --情感
 	else
-		self.curState = NPCStateType.NormalPay
-		self.curPay = NPCPayType.Moving --支付情感
+		self.curState = NPCStateType.NorPayMoving
+		-- self.curPay = NPCPayType.Moving --支付情感
 
 	end
 end
 
 function NPCInfo:setPayStateNormal()
-	assert(self.curState == NPCStateType.NormalPay and self.curPay == NPCPayType.Prepare, "error state")
+	assert(self.curState == NPCStateType.NorPayPrePare, "error state")
+	self.curState = NPCStateType.NormalPay
 	self.curPay = NPCPayType.Normal
 end
 
@@ -164,6 +165,7 @@ function NPCInfo:npcState()
 	local mapId = -1 --npc的目标mapId，若此值为-1则不向view发起寻路命令
 	local productVec = nil
 	local isEnterPay = false
+	local isMoveEnd  = false
 
 	local stateStr = nil
 	--switch....
@@ -287,17 +289,40 @@ function NPCInfo:npcState()
 
 		end,
 		[NPCStateType.Pay] 							= function()
+		stateStr = "Pay"
 			isEnterPay = true
 
 		end,
+		[NPCStateType.NorPayMoving] 				= function()
+		stateStr = "Mov"
+			G_seatControl:leaveSeat(self.seatType, self.mapId, self.elfId) --离开座位
+
+		    mapId = G_payControl:getPayPointMapId()
+			self.curState = NPCStateType.NorPayMoveEnd
+		end,
+		[NPCStateType.NorPayMoveEnd] 				= function()
+		stateStr = "M-End"
+		-- 已到达埋单候选位置
+		-- 加入队列
+		-- 	print("move ended")
+			self.curState = NPCStateType.NorPayPrePare --
+			isMoveEnd = true
+			-- G_payControl:joinNormalPay(self) --加入普通支付
+		end,
+		[NPCStateType.NorPayPrePare] 			= function()
+		stateStr = "Pre"
+		-- 	--npc进入指定位置后变成Prepare，然后由支付control统一控制进入normal
+		    error("pay control should change it to normal")
+		end,
+
 		[NPCStateType.NormalPay] 					= function()
-			print("normal pay")
+			-- print("normal pay")
 			totalTime, mapId, feelStr = self:npcPayOnNorPay()
 
 			stateStr = "Nor-"..feelStr
 		end,
 		[NPCStateType.WaitPay] 						= function()
-			print("wait pay")
+			-- print("wait pay")
 		end,
 		[NPCStateType.LeavePay] 					= function()
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
@@ -338,13 +363,14 @@ function NPCInfo:npcState()
 	--否则totalTime小于0是设置错误
 	--如果mapId不为-1则移动npc
 
-	local returnValue      = {}
-	returnValue.isRelease  = isRelease
-	returnValue.isEnterPay = isEnterPay
-	returnValue.totalTime  = totalTime
-	returnValue.mapId      = mapId
-	returnValue.productVec = productVec
-	returnValue.testStateStr = stateStr
+	local returnValue        = {}
+	returnValue.isRelease    = isRelease 	--是否已经释放
+	returnValue.isEnterPay   = isEnterPay 	--是否进入支付状态（model交给paycontrol控制）
+	returnValue.isMoveEnd    = isMoveEnd 	--是否移动到普通支付候选位置
+	returnValue.totalTime    = totalTime 	--总时间
+	returnValue.mapId        = mapId     	--移动位置
+	returnValue.productVec   = productVec 	--产品数组
+	returnValue.testStateStr = stateStr 	--测试状态string
 
 	return returnValue
 end
@@ -426,46 +452,24 @@ function NPCInfo:npcPayOnNorPay()
 	local testStateStr = nil
 
 	local switchType = {
-		[NPCPayType.Moving]					= function()
-		testStateStr = "M"
-		
-			G_seatControl:leaveSeat(self.seatType, self.mapId, self.elfId) --离开座位
-
-		    mapId = G_payControl:getPayPointMapId()
-			self.curPay = NPCPayType.MoveEnd
-		end,
-		[NPCPayType.MoveEnd]					= function()
-		testStateStr = "M-End"
-		--已到达埋单候选位置
-			--加入队列
-			print("move ended")
-			self.curPay = NPCPayType.Prepare --不会有时间回调
-			G_payControl:joinNormalPay(self) --加入普通支付
-
-			
-		end,
-		[NPCPayType.Prepare]						= function()
-		testStateStr = "Pre"
-			--npc进入指定位置后变成Prepare，然后由支付control统一控制进入normal
-		    error("pay control should change it to normal")
-		end,
-
-		--吃完饭，普通等待埋单
+		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
 			totalTime = math.random(1, 3)
-			self.curFeel = NPCPayType.Anger
+			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
 			totalTime = math.random(1, 3)
-			self.curFeel = NPCPayType.Cancel
+			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦
 		[NPCPayType.Cancel] 					= function()
 		testStateStr = "Can"
-			G_payControl:leavePay(self.elfId)
+			totalTime = 0 
+			self.curState = NPCStateType.LeavePay --进入离开状态
+			G_payControl:leavePay(self.elfId) --通知payControl进入离开队列
 		end,
 
 		[NPCPayType.Paying]						= function()
