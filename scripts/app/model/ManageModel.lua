@@ -42,7 +42,7 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
-	self._trayInfo = TrayInfo:create(14)
+	self._trayInfo = TrayInfo:create(5)
 
 end
 
@@ -74,7 +74,7 @@ function ManageModel:onEnter()
 			self:addNPC()
 			end
 			addNPCTest()
-		end, math.random(5, 10))
+		end, 5)
 	end
 
 	local function addSimpleNPCTest()
@@ -92,95 +92,12 @@ function ManageModel:onEnter()
 		end, math.random(5, 10))
 	end
 
-
+	for i=1,6 do
+		self:addNPC()
+	end
 	
-	-- addNPCTest() --批量测试
-	addSimpleNPCTest() --批量单个测试
-
-			for i=101 ,106 do
-				local productList = {
-										{
-											{elfId = i, curState = 0},
-										},
-									}
-
-				self:addNPC(productList) --单个测试	
-			end
-
-			for i=101 ,106 do
-				local productList = {
-										{
-											{elfId = i, curState = 0},
-										},
-									}
-
-				self:addNPC(productList) --单个测试	
-			end
-
-			for i=101 ,106 do
-				local productList = {
-										{
-											{elfId = i, curState = 0},
-										},
-									}
-
-				self:addNPC(productList) --单个测试	
-			end
-
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 103, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 102, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 104, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 105, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 105, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 106, curState = 0},
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
+	addNPCTest() --批量测试
+	-- addSimpleNPCTest() --批量单个测试
 
 
 
@@ -259,7 +176,7 @@ function ManageModel:initProduct()
 		local name = "id:"..elfId
 		local productType = 1
 
-		local duration = math.random(0.5, 0.5)
+		local duration = 2--math.random(0.5, 0.5)
 
 		local productInfo = {}
 			productInfo.duration = duration
@@ -906,8 +823,43 @@ end
 	---dump  data-----
 	---------------------]]
 function ManageModel:dumpAllData()
+	local function serialize(obj)
+	      local lua = ""
+	      local t = type(obj)
+	      if t == "number" then
+	          lua = lua .. obj
+	      elseif t == "boolean" then
+	          lua = lua .. tostring(obj)
+	      elseif t == "string" then
+	          lua = lua .. string.format("%q", obj)
+	      elseif t == "table" then
+	          lua = lua .. "{\n"
+	          for k, v in pairs(obj) do
+	              lua = lua .. "[" .. serialize(k) .. "]=" .. serialize(v) .. ",\n"
+	          end
+	          local metatable = getmetatable(obj)
+	          if metatable ~= nil and type(metatable.__index) == "table" then
+	              for k, v in pairs(metatable.__index) do
+	                  lua = lua .. "[" .. serialize(k) .. "]=" .. serialize(v) .. ",\n"
+	              end
+	          end
+	          lua = lua .. "}"
+	      elseif t == "nil" then
+	          return nil
+	      elseif t == "function" then
+	      	  lua = lua .. "function"--跳过function
+	      else
+	          error("can not serialize a " .. t .. " type.")
+	      end
+	      return lua
+	  end
+
 	dump(self._npcInfoMap , "npcInfo")
 	dump(self._playerInfoMap , "playernfo")
 	dump(self._productInfoMap , "productInfo")
 	-- dump(self._trayInfo , "trayInfo")
+
+	-- print(serialize(self._npcInfoMap)) 
 end
+
+

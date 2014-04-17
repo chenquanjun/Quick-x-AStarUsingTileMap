@@ -234,3 +234,15 @@ end
 function GlobalTimer:int(x) 
 	return x>=0 and math.floor(x) or math.ceil(x)
 end
+
+
+--[[-------------------
+	---dump  data-----
+	---------------------]]
+function GlobalTimer:dumpAllData()
+	print("timerPast:"..self._nTimePast)
+
+	dump(self._lstIdsTimerKey , "lstIdsTimerKey")
+	dump(self._timerUnitLstIdKey , "timerUnitLstIdKey")
+
+end

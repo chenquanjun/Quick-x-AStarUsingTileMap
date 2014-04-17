@@ -1,7 +1,9 @@
 --npc精灵
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 NPCSprite = class("NPCSprite", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+	return node
 end)			
 --index
 NPCSprite.__index  			= NPCSprite
@@ -267,6 +269,19 @@ function NPCSprite:easeWalkTo(speed, mapPath)
 
         return totalTime
  
+end
+
+function NPCSprite:onEnter()
+    -- print("enter")
+end
+
+function NPCSprite:onExit()
+    -- print("exit")
+
+    if self.handler then
+        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.handler)
+    end
+    
 end
 
 function NPCSprite:int(x) 

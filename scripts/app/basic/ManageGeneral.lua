@@ -89,14 +89,15 @@ NPCStateType = {
 }
 
 LeaveReason = {
-				Total           =  0,
-				NoSeat 			=  1, --没有位置离开
-				SeatAnger       =  2, --座位愤怒离开
-				WaitSeatAnger 	=  3, --等待座位愤怒离开
-				GetOut 			=  4, --被赶
-				WaitPayAnger	=  5, --等待支付愤怒离开
-				NorPayAnger     =  6, --普通支付愤怒离开
-				PayEnded        =  7, --正常支付离开
+				TotalIn         =  1,
+				TotalLeave      =  2,
+				NoSeat 			=  3, --没有位置离开
+				SeatAnger       =  4, --座位愤怒离开
+				WaitSeatAnger 	=  5, --等待座位愤怒离开
+				GetOut 			=  6, --被赶
+				WaitPayAnger	=  7, --等待支付愤怒离开
+				NorPayAnger     =  8, --普通支付愤怒离开
+				PayEnded        =  9, --正常支付离开
 }
 
 NPCFeelType = {

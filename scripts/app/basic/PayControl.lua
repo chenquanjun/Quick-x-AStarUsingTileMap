@@ -10,21 +10,21 @@ PayControl._npcInfoMap          = nil
 PayControl._statusDic           = nil
 PayControl._norQueMaxNum     	= -1
  
-function PayControl:create()
+function PayControl:create(payMapIdVec)
 	local ret = {}
 	setmetatable(ret, PayControl)
-	ret:init()
+	ret:init(payMapIdVec)
     return ret
 end
 
-function PayControl:init()
+function PayControl:init(payMapIdVec)
 	local maxNum = 5
 	self._norQueMaxNum = maxNum
 	self._waitPayQueue = PayQueue:create(-1) --等待支付队列无限
 
 	self._norPayQueue  = PayQueue:create(maxNum) --普通支付队列有限
 
-	local payVec = G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
+	local payVec = payMapIdVec --G_seatControl:getMapIdVecOfType(kMapDataPayQueue)
 	self._payPointMapId = payVec[maxNum + 1]
 
 	self._npcInfoMap = {}
@@ -335,7 +335,17 @@ function PayControl:TD_onTimeOver(listenerId)
 	end	
 end
 
+--[[-------------------
+	---dump  data-----
+	---------------------]]
+function PayControl:dumpAllData()
 
+	dump(self._norPayQueue , "norPayQueue")
+	dump(self._waitPayQueue , "waitPayQueue")
+	dump(self._npcInfoMap , "npcInfoMap")
+	dump(self._statusDic , "statusDic")
+
+end
 
 
 

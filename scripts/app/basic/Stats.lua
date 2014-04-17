@@ -3,6 +3,7 @@ Stats = {}
 --index
 Stats.__index = Stats
 Stats._npcInfoDic 				= nil --npc信息字典（加入后不可修改）
+Stats._totalNum            = 0
 
 Stats._leaveDic             = nil
 
@@ -15,7 +16,7 @@ function Stats:create()
 end
 
 function Stats:init()
-    self._npcInfoDic    = {} 
+    self._npcInfoDic  = {} 
  
     self._leaveDic = {}
 
@@ -36,8 +37,14 @@ end
 --添加npc信息
 function Stats:addNPC(data)
 	local elfId = data.elfId
+	self._totalNum = self._totalNum + 1 --增加数目
 
-	local productVec = data.productVec
+	self._npcInfoDic[elfId] = data
+
+	do --总共信息 test
+
+		G_modelDelegate:setStatsReason("TotalIn", self._totalNum)
+	end
 end
 
 --按照顺序存储
@@ -88,7 +95,7 @@ function Stats:leaveFor(elfId, leaveReason)
 	end
 
 	do --总共信息
-		local totalVec = self._leaveDic["Total"]
+		local totalVec = self._leaveDic["TotalLeave"]
 
 		local index = #totalVec + 1
 
@@ -98,7 +105,7 @@ function Stats:leaveFor(elfId, leaveReason)
 
 		totalVec[index] = data
 
-		G_modelDelegate:setStatsReason("Total", index)
+		G_modelDelegate:setStatsReason("TotalLeave", index)
 	end
 
 	do --单独信息

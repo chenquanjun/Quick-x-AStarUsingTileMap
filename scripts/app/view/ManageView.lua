@@ -189,7 +189,7 @@ function ManageView:init()
     end
 
     do --tray 托盘
-        local trayView = ManageTrayView:create(14)
+        local trayView = ManageTrayView:create(5)
         trayView:setPosition(ccp(display.left + 80, display.top - 50))
 
         self:addChild(trayView)
@@ -200,7 +200,7 @@ function ManageView:init()
         self._statsMap = {}
         local statsLayer = display.newLayer()
         self:addChild(statsLayer, 100)
-        statsLayer:setPosition(ccp(display.cx - 350, display.top - 50))
+        statsLayer:setPosition(ccp(display.right - 150, display.top - 20))
 
         for k,v in pairs(LeaveReason) do
             local infoLabel = CCLabelTTF:create(k..":0", "Arial", 18)
@@ -410,7 +410,7 @@ function ManageView:MD_moveNPC(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = npcSprite:easeWalkTo(0.05, mapPath)
+        totalTime = npcSprite:easeWalkTo(0.4, mapPath)
     end
 
     return totalTime
@@ -431,7 +431,7 @@ function ManageView:MD_movePlayer(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = playerSprite:easeWalkTo(0.05, mapPath)
+        totalTime = playerSprite:easeWalkTo(0.2, mapPath)
     end
 
     return totalTime

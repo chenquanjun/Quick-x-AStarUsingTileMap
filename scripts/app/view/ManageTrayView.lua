@@ -63,6 +63,8 @@ function ManageTrayView:addProductAtIndex(index, productType)
                 	for i,v in ipairs(self._productVec) do
                 		if v == sprite then
                 			G_viewDelegate:onTrayProductBtn(i)
+                			--只接收一次点击
+                			sprite:setTouchEnabled(false)
                 			return
                 		end
                 	end

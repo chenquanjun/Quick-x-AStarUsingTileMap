@@ -59,11 +59,19 @@ ManageController.__index = ManageController
 
 ManageController._view          = nil
 ManageController._model         = nil
--- ManageController._viewDelegate  = nil
--- ManageController._modelDelegate = nil
+
 ManageController._mapInfo       = nil
 
 ManageController._timerPast     = 0
+
+--global全局变量
+ManageController._viewDelegate = nil
+ManageController._modelDelegate = nil
+ManageController._seatControl = nil
+ManageController._scheduler = nil
+ManageController._payControl = nil
+ManageController._timer = nil
+ManageController._stats = nil
 
 --[[-------------------
 	---Init Method-----
@@ -91,10 +99,6 @@ function ManageController:init()
 	--view delegate 指向controller
 	local viewDelegate = ManageViewDelegate:setRefer(self)
 
-	--delegate
-	-- self._model:setDelegate(self._modelDelegate)
-	-- self._view:setDelegate(self._viewDelegate)
-
 	--地图信息 controller保存
 	self._mapInfo = MapInfo:create("map.tmx")
     self:addChild(self._mapInfo)
@@ -107,23 +111,24 @@ function ManageController:init()
     local mapDataDic = self._mapInfo:getMapDataDic()
 
     do  --全局变量(所有全局变量均由controller控制生命周期与释放)
-    	G_modelDelegate = modelDelegate --model delegate
-    	G_viewDelegate = viewDelegate  --view delegate
 
-	    G_seatControl = SeatControl:create(mapDataDic)  --座位控制
-	    G_scheduler = require("framework.scheduler")    --scheduler
- 
-	    G_payControl = PayControl:create()              --支付控制
+		self._viewDelegate = viewDelegate  --view delegate
+		self._modelDelegate = modelDelegate --model delegate
+		self._seatControl = SeatControl:create(mapDataDic)  --座位控制
+		self._scheduler = require("framework.scheduler")    --scheduler
 
-	    G_timer = GlobalTimer:create()                  --全局时间控制
-		self:addChild(G_timer)
+		local payMapIdVec = self._seatControl:getMapIdVecOfType(kMapDataPayQueue)
 
-		G_stats = Stats:create() --统计模块
+		self._payControl = PayControl:create(payMapIdVec)              --支付控制
+		self._timer = GlobalTimer:create()                  --全局时间控制
+
+		self:addChild(self._timer)
+
+		self._stats = Stats:create() --统计模块
     end
 
     local seatToServeDic = self._mapInfo:getSeatToServeDic()
 
-    -- self._model:setMapDataDic(mapDataDic)
     self._model:setSeatToServeDic(seatToServeDic)
 
 	local seatVec = mapDataDic[kMapDataSeat]
@@ -138,18 +143,30 @@ function ManageController:init()
 		self._view:initBtns(waitSeatVec, function(mapId)  
 					self._model:onWaitSeatBtn(mapId)
 			end)
-
-		-- self._view:initBtns(productVec, function(mapId)  
-		-- 			self._model:onProductBtn(mapId)
-		-- 	end)
 	end
+
+
+end
+
+function ManageController:onEnter()
+	--全局变量
+	G_modelDelegate = self._modelDelegate 
+	G_viewDelegate = self._viewDelegate 
+
+    G_seatControl = self._seatControl
+    G_scheduler = self._scheduler
+
+    G_payControl = self._payControl
+
+    G_timer = self._timer
+	
+
+	G_stats = self._stats
 
 	--启动定时器
 	G_timer:startTimer()
 
 	local isOn = true
-
-
 	do --dump btn
 		local pointX = display.right - 50
 		local pointY = display.bottom + 50
@@ -189,14 +206,29 @@ function ManageController:init()
 	        return dumpBtn
 		end
 
+
+		local exitBtn = createDump("退出场景", function ()
+
+            local scene = require("app/scenes/StartScene")
+            display.replaceScene(scene.new())
+		end)
+
 		local dumpModelBtn = createDump("model", function ()
-			-- self._model:dumpAllData()
-			-- print("dump model")
+			print("dump model")
+			self._model:dumpAllData()
+			-- 
 		end)
 
 		local dumpPayControlBtn = createDump("payControl", function ()
 
 			print("dump pay control")
+			G_payControl:dumpAllData()
+		end)
+
+		local dumpTimerBtn = createDump("timer", function ()
+
+			print("dump timer")
+			G_timer:dumpAllData()
 		end)
 
 
@@ -207,14 +239,18 @@ function ManageController:init()
 
 			if isOn then
 				-- G_timer:pauseTimer()
+				exitBtn:setVisible(true)
 				dumpModelBtn:setVisible(true)
 				dumpPayControlBtn:setVisible(true)
+				dumpTimerBtn:setVisible(true)
 				CCDirector:sharedDirector():pause()
 				
 			else 
 				-- G_timer:resumeTimer()
+				exitBtn:setVisible(false)
 				dumpModelBtn:setVisible(false)
 				dumpPayControlBtn:setVisible(false)
+				dumpTimerBtn:setVisible(false)
 				CCDirector:sharedDirector():resume()
 			end
 			isOn = not isOn	
@@ -223,9 +259,7 @@ function ManageController:init()
 				end)
 		
 	end
-end
 
-function ManageController:onEnter()
 	self._model:onEnter()
 
 	self._timerPast = -1 --第一次调用变成0
@@ -236,21 +270,33 @@ function ManageController:onRelease()
 	print("Controller on release")
 	G_viewDelegate:removeRefer()
 	G_modelDelegate:removeRefer()
+
 	self._view:onRelease()
 	self._model:onRelease()
+
 	self._mapInfo = nil
 	self._view = nil
 	self._model = nil
 	-- self._viewDelegate = nil
 
+	self._viewDelegate = nil
+	self._modelDelegate = nil
+	self._seatControl = nil
+	self._scheduler = nil
+	self._payControl = nil
+	self._timer = nil
+	self._stats = nil
+
+	-- CCDirector:sharedDirector():getScheduler():unscheduleAll()
+
 	G_viewDelegate = nil
 	G_modelDelegate = nil
-
 	G_seatControl = nil
 	G_scheduler = nil
 	G_payControl = nil
-
 	G_timer = nil
+	G_stats = nil
+
 end
 
 --[[
@@ -271,6 +317,48 @@ end
 function ManageController:TD_onTimeOver(elfId)
 	if elfId == ElfIdList.TimerPast then
 		local num = self._timerPast + 1
+
+		if num == 90 then
+				CCDirector:sharedDirector():pause()
+				local point = ccp(display.cx, display.cy)
+
+				local label = CCLabelTTF:create("游戏结束，重新运行游戏", "Arial", 50)
+				self:addChild(label, 1001)
+				label:setPosition(point)
+            -- local scene = require("app/scenes/StartScene")
+            -- display.replaceScene(scene.new())
+            	local rect = CCRect(0, 0, 1136, 768)
+		        local sprite = CCSprite:createWithTexture(nil, rect)
+		        
+		        sprite:setPosition(point)
+		        sprite:setTouchEnabled(true)
+		        sprite:setOpacity(0)
+		        self:addChild(sprite, 1000)
+
+		        sprite:addTouchEventListener(function(event, x, y)
+
+		            if event == "began" then
+		                return true -- catch touch event, stop event dispatching
+		            end
+
+		            local touchInSprite = sprite:getCascadeBoundingBox():containsPoint(CCPoint(x, y))
+		            if event == "moved" then
+		                if touchInSprite then
+
+		                else
+
+		                end
+		            elseif event == "ended" then
+		                if touchInSprite then 
+		                    CCDirector:sharedDirector():endToLua()
+		                end
+
+		            else
+
+		            end
+		        end)
+
+		end
 		self._timerPast = num
 		self._view:setTimer(num)
 		--不断重复加入
