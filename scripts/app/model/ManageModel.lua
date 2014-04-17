@@ -70,7 +70,7 @@ function ManageModel:onEnter()
 	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
-			for i=1,6 do
+			for i=1,3 do
 			self:addNPC()
 			end
 			addNPCTest()
@@ -92,7 +92,7 @@ function ManageModel:onEnter()
 		end, math.random(5, 10))
 	end
 
-	for i=1,6 do
+	for i=1,3 do
 		self:addNPC()
 	end
 	
@@ -173,7 +173,7 @@ function ManageModel:initProduct()
 	for i,mapId in ipairs(productVec) do
 		local elfId = ElfIdList.ProductOffset + i
 
-		local name = "id:"..elfId
+		local name = "id:"..(elfId - 100)
 		local productType = 1
 
 		local duration = 2--math.random(0.5, 0.5)
@@ -247,8 +247,9 @@ function ManageModel:addPlayer()
 end
 
 --增加NPC
+
 function ManageModel:addNPC(productList)
-	
+
 	local elfId = ElfIdList.NpcOffset + self._npcTestFlag
 
 	do --init 保存到字典

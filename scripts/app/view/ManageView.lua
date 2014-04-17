@@ -90,7 +90,7 @@ end
 
 function ManageView:initBtns(mapIdVec, callBack)
     local size = self._mapInfo._mapUnit
-    local rect = CCRect(0, 0, size.width * 1.5, size.height * 1.5)
+    local rect = CCRect(0, 0, size.width * 2, size.height * 2)
     for i,v in ipairs(mapIdVec) do
         local sprite = CCSprite:createWithTexture(nil, rect)
         local point = self._mapInfo:convertIdToPointMid(v) --mapId转换成中点
@@ -248,7 +248,7 @@ function ManageView:MD_addProduct(data)
         local point = self._mapInfo:convertIdToPointMid(mapId)
 
         local size = self._mapInfo._mapUnit
-        local rect = CCRect(0, 0, size.width * 1.5, size.height * 1.5)
+        local rect = CCRect(0, 0, size.width * 2, size.height * 2)
 
         local label = CCLabelTTF:create(name, "Arial", 20)
 
@@ -261,7 +261,7 @@ function ManageView:MD_addProduct(data)
 
         sprite:setTouchEnabled(true)
 
-        label:setAnchorPoint(ccp(0.5, - 0.5))
+        label:setAnchorPoint(ccp(0.5, - 0.7))
         label:setColor(ccc3(255, 0, 0))
         
         -- sprite:setOpacity(100)
@@ -466,7 +466,11 @@ function ManageView:MD_removeNPC(elfId)
 
     if npcSprite then
         self._npcMap[elfId] = nil
-        G_scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
+
+        if npcSprite.handler then
+            G_scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
+        end
+        
         npcSprite:removeFromParentAndCleanup(true)
 
     end

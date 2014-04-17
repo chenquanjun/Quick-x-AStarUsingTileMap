@@ -34,11 +34,11 @@ function ManageTrayView:addProductAtIndex(index, productType)
 
 	local sprite = display.newSprite("product_1.jpg")
 
-	local testFlag = "id:"..productType
+	local testFlag = "id:"..(productType - 100) --test
 
 	local label = CCLabelTTF:create(testFlag, "Arial", 50)
 
-	label:setPosition(ccp(50, 90))
+	label:setPosition(ccp(180, 50))
 
 	label:setColor(ccc3(255, 0, 0))
 

@@ -317,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch \"$PROJECT_DIR\"/../scripts";
+			shellScript = "touch \"$PROJECT_DIR\"/../scripts\ntouch \"$PROJECT_DIR\"/../res";
 		};
 /* End PBXShellScriptBuildPhase section */
 

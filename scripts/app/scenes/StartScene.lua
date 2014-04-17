@@ -5,7 +5,7 @@ local StartScene = class("StartScene", function()
 end)
 
 function StartScene:ctor()
-    local label = CCLabelTTF:create("开始游戏", "Arial", 30)
+    local label = CCLabelTTF:create("开始游戏", "Arial", 50)
     self:addChild(label)
     label:setPosition(ccp(display.cx, display.cy))
 

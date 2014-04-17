@@ -319,10 +319,13 @@ function ManageController:TD_onTimeOver(elfId)
 		local num = self._timerPast + 1
 
 		if num == 90 then
+				-- dump(G_stats._leaveDic, "leave")
+
 				CCDirector:sharedDirector():pause()
 				local point = ccp(display.cx, display.cy)
 
 				local label = CCLabelTTF:create("游戏结束，重新运行游戏", "Arial", 50)
+				label:setColor(ccc3(255, 0, 0))
 				self:addChild(label, 1001)
 				label:setPosition(point)
             -- local scene = require("app/scenes/StartScene")
@@ -350,7 +353,7 @@ function ManageController:TD_onTimeOver(elfId)
 		                end
 		            elseif event == "ended" then
 		                if touchInSprite then 
-		                    CCDirector:sharedDirector():endToLua()
+		                    -- CCDirector:sharedDirector():endToLua()
 		                end
 
 		            else

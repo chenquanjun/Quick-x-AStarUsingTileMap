@@ -57,7 +57,7 @@ function NPCSprite:init(fileNameFormat, elfId)
     self:addChild(layer)
 
     local testLabel = CCLabelTTF:create(elfId, "Arial", 15)
-    testLabel:setPosition(ccp(0, 70))
+    testLabel:setPosition(ccp(0, 80))
     testLabel:setColor(ccc3(0, 0, 255))
 
     self:addChild(testLabel)
@@ -75,10 +75,10 @@ function NPCSprite:addRequest(productVec)
         local elfId = value.elfId
         local productType = value.productType
 
-        local name = elfId --test
-        local label = CCLabelTTF:create(name, "Arial", 16)
+        local name = elfId - 100 --test
+        local label = CCLabelTTF:create(name, "Arial-BoldMT", 20)
 
-        label:setPosition(ccp(i * 28, 0))
+        label:setPosition(ccp(i * 28, 10))
         label:setColor(ccc3(255, 0, 0))
 
         --保存
@@ -127,7 +127,7 @@ function NPCSprite:removeRequest(indexVec)
         for i, product in ipairs(productVec) do
             local sprite = product.sprite
 
-            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(i * 28, 0)))
+            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(i * 28, 10)))
 
             sprite:runAction(sequence)
         end
