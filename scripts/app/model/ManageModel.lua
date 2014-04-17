@@ -70,11 +70,11 @@ function ManageModel:onEnter()
 	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
-			for i=1,3 do
+			for i=1, GlobalValue.PerWaveNum.value do
 			self:addNPC()
 			end
 			addNPCTest()
-		end, 10)
+		end, GlobalValue.PerWaveTime.value)
 	end
 
 	local function addSimpleNPCTest()

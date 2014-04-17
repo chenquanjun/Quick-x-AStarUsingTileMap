@@ -90,11 +90,11 @@ end
 
 function ManageView:initBtns(mapIdVec, callBack)
     local size = self._mapInfo._mapUnit
-    local rect = CCRect(0, 0, size.width * 2, size.height * 2)
+    local rect = CCRect(0, 0, size.width * 2.5, size.height * 4.5)
     for i,v in ipairs(mapIdVec) do
         local sprite = CCSprite:createWithTexture(nil, rect)
         local point = self._mapInfo:convertIdToPointMid(v) --mapId转换成中点
-        sprite:setPosition(point)
+        sprite:setPosition(ccpAdd(point, ccp(0, size.height * 2.3)))
         sprite:setTouchEnabled(true)
         sprite:setOpacity(0)
         self._btnLayer:addChild(sprite)
@@ -200,14 +200,14 @@ function ManageView:init()
         self._statsMap = {}
         local statsLayer = display.newLayer()
         self:addChild(statsLayer, 100)
-        statsLayer:setPosition(ccp(display.right - 150, display.top - 20))
+        statsLayer:setPosition(ccp(display.right - 150, display.top))
 
         for k,v in pairs(LeaveReason) do
-            local infoLabel = CCLabelTTF:create(k..":0", "Arial", 18)
+            local infoLabel = CCLabelTTF:create(k..":0", "Arial", 15)
 
             infoLabel:setColor(ccc3(0, 0, 255))
 
-            infoLabel:setPosition(ccp(0, - 24 * v))
+            infoLabel:setPosition(ccp(0, - 20 * v))
 
             statsLayer:addChild(infoLabel)
 
@@ -250,7 +250,7 @@ function ManageView:MD_addProduct(data)
         local size = self._mapInfo._mapUnit
         local rect = CCRect(0, 0, size.width * 2, size.height * 2)
 
-        local label = CCLabelTTF:create(name, "Arial", 20)
+        local label = CCLabelTTF:create(name, "Arial-BoldMT", 30)
 
         local progressBar = CCProgressTimer:create(display.newSprite("product.png"))
 
@@ -410,7 +410,8 @@ function ManageView:MD_moveNPC(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = npcSprite:easeWalkTo(0.2, mapPath)
+        local speed = 50 / GlobalValue.NPCMoveSpeed.value
+        totalTime = npcSprite:easeWalkTo(speed, mapPath)
     end
 
     return totalTime
@@ -431,7 +432,8 @@ function ManageView:MD_movePlayer(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = playerSprite:easeWalkTo(0.1, mapPath)
+        local speed = 50 / GlobalValue.PlayerMoveSpeed.value
+        totalTime = playerSprite:easeWalkTo(speed, mapPath)
     end
 
     return totalTime

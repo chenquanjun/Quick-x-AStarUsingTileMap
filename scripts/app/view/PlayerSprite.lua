@@ -40,7 +40,7 @@ function PlayerSprite:init(fileNameFormat, elfId)
 
 	self._sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
 
-    self._sprite:setScale(1.5)
+    self._sprite:setScale(2.5)
 
     self._sprite:setAnchorPoint(ccp(0.5, 0))
 

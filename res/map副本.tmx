@@ -5,7 +5,7 @@
  </tileset>
  <layer name="background" width="36" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA92SwQrCMAyGc7UeBNGDClvxsqkw+/5PZ4S/GAszi25x7PDR8i8kH10iEUUHqoFYaj1Yos9GIeK0+Gg9NTrwqcbLpysYOtvTx0p2kT5BfLfef2XOPmP1LDkwR3BScg+fmjmDWslLn1BgyabyaYCc3QKZJaD5XJgruCm5h8+/9rmvx1L2ucLb30EQWSP+V85SUffst2O2zH5in5ZeOyXrEr37rNF7JeZ+u895jsSSjb3Pc+IBvK3Y7UALAAA=
+   H4sIAAAAAAAAA92SwQ7CIBBEuUoPJkYP1aRFPbRqUvn/r5MmSxzJFgqCIR5eaGbJzpRdJYRQldFVwr/m2QZQdObIE/KyTITvTq48Enpy35PDGu+S71Nbnti5lJ4XlyflH2yelDcI9Z7P1nAkTlDn9F/kORsuxBXqnO7mkQ4x2lKeHnx7qHM6l2cg0HskUNNEKM/NcCceUOf0knlSZ4x5vmGpRy377NvbNfvc0ds/CQnaAPOymnbuzf32hp3hAL6p++zLM4r3TuE9LT7zNNR7A76p+2x9kBgt9z7XxAsWylU3QAsAAA==
   </data>
  </layer>
  <objectgroup name="object" width="36" height="20">
@@ -1067,7 +1067,17 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="832" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="832" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="800" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1077,7 +1087,17 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="768" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="704" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="736" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1087,7 +1107,17 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="704" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="1024" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="960" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1098,6 +1128,11 @@
    </properties>
   </object>
   <object name="b" x="960" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="928" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1122,6 +1157,16 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="896" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="1056" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="992" y="160" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
@@ -1132,7 +1177,72 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="1024" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="1056" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="992" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="256" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="288" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="320" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="352" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="384" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="768" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="800" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="704" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="736" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="832" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="1056" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1142,12 +1252,47 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="992" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="1024" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="1120" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="864" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="864" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="864" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="960" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="928" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="896" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1742,6 +1887,16 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
+  <object name="watiseat" x="288" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="9"/>
+   </properties>
+  </object>
+  <object name="b" x="672" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="door" x="544" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="7"/>
@@ -1807,6 +1962,21 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
+  <object name="r" x="320" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="320" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="320" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
   <object name="r" x="320" y="288" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -1818,6 +1988,21 @@
    </properties>
   </object>
   <object name="r" x="512" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="416" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="448" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="480" y="128" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -1847,7 +2032,22 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="352" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="320" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="352" y="96" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="384" y="128" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -1882,12 +2082,32 @@
     <property name="objectid" value="9"/>
    </properties>
   </object>
+  <object name="watiseat" x="384" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="9"/>
+   </properties>
+  </object>
   <object name="watiseat" x="480" y="256" width="32" height="32">
    <properties>
     <property name="objectid" value="9"/>
    </properties>
   </object>
+  <object name="watiseat" x="480" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="9"/>
+   </properties>
+  </object>
+  <object name="r" x="448" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
   <object name="r" x="448" y="256" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="448" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -2071,6 +2291,27 @@
     <property name="seaty" value="3"/>
    </properties>
   </object>
+  <object name="serve" x="288" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="12"/>
+    <property name="seatx" value="9"/>
+    <property name="seaty" value="14"/>
+   </properties>
+  </object>
+  <object name="serve" x="384" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="12"/>
+    <property name="seatx" value="12"/>
+    <property name="seaty" value="14"/>
+   </properties>
+  </object>
+  <object name="serve" x="480" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="12"/>
+    <property name="seatx" value="15"/>
+    <property name="seaty" value="14"/>
+   </properties>
+  </object>
   <object name="serve" x="288" y="288" width="32" height="32">
    <properties>
     <property name="objectid" value="12"/>
@@ -2117,7 +2358,67 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="96" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="160" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="224" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="128" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="288" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="224" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="192" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="224" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="32" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="64" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="192" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="128" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="160" y="160" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -2127,12 +2428,67 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="256" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="160" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="64" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="128" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="256" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="64" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="32" y="160" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="192" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="96" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="96" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="256" y="128" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="32" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="96" y="256" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -2147,12 +2503,42 @@
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="96" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="64" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="160" y="256" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
   </object>
+  <object name="b" x="256" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="192" y="256" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="160" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
   <object name="b" x="32" y="256" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="128" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -2163,6 +2549,16 @@
    </properties>
   </object>
   <object name="b" x="224" y="256" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="224" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="-1"/>
+   </properties>
+  </object>
+  <object name="b" x="192" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
    </properties>
@@ -2182,6 +2578,11 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
+  <object name="r" x="192" y="288" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
   <object name="r" x="224" y="288" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -2193,6 +2594,11 @@
    </properties>
   </object>
   <object name="r" x="288" y="320" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="96" y="288" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -3097,6 +3503,11 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
+  <object name="r" x="288" y="224" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
   <object name="r" x="384" y="224" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -3127,6 +3538,16 @@
     <property name="objectid" value="1"/>
    </properties>
   </object>
+  <object name="r" x="352" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="352" y="192" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
   <object name="r" x="416" y="256" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
@@ -3138,6 +3559,16 @@
    </properties>
   </object>
   <object name="r" x="416" y="288" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="416" y="160" width="32" height="32">
+   <properties>
+    <property name="objectid" value="1"/>
+   </properties>
+  </object>
+  <object name="r" x="416" y="192" width="32" height="32">
    <properties>
     <property name="objectid" value="1"/>
    </properties>
@@ -3230,435 +3661,6 @@
   <object name="b" x="1056" y="128" width="32" height="32">
    <properties>
     <property name="objectid" value="-1"/>
-   </properties>
-  </object>
-  <object name="r" x="288" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="160" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="320" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="256" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="224" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="192" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="64" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="96" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="128" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="160" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="288" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="480" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="352" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="192" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="224" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="320" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="448" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="96" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="64" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="128" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="256" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="416" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="384" y="128" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="160" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="288" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="480" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="352" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="192" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="224" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="320" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="448" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="96" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="64" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="128" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="256" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="416" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="384" y="160" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="160" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="288" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="480" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="352" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="192" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="224" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="320" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="448" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="96" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="64" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="128" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="256" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="416" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="384" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="watiseat" x="192" y="256" width="32" height="32">
-   <properties>
-    <property name="objectid" value="9"/>
-   </properties>
-  </object>
-  <object name="watiseat" x="96" y="256" width="32" height="32">
-   <properties>
-    <property name="objectid" value="9"/>
-   </properties>
-  </object>
-  <object name="serve" x="192" y="288" width="32" height="32">
-   <properties>
-    <property name="objectid" value="12"/>
-    <property name="seatx" value="6"/>
-    <property name="seaty" value="11"/>
-   </properties>
-  </object>
-  <object name="serve" x="96" y="288" width="32" height="32">
-   <properties>
-    <property name="objectid" value="12"/>
-    <property name="seatx" value="3"/>
-    <property name="seaty" value="11"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="384" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="256" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="352" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="288" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="672" y="320" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="704" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="992" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="768" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="1024" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="1056" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="832" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="736" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="896" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="800" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="960" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="864" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="928" y="192" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="704" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="992" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="768" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="1024" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="1056" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="832" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="736" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="896" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="800" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="960" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="864" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
-   </properties>
-  </object>
-  <object name="r" x="928" y="224" width="32" height="32">
-   <properties>
-    <property name="objectid" value="1"/>
    </properties>
   </object>
  </objectgroup>

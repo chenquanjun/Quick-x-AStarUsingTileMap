@@ -454,14 +454,28 @@ function NPCInfo:npcFeelOnRequest()
 			--点餐
 			productVec = self:getCurProduct()
 
-			totalTime = 25--math.random(3, 5)
+			if self.seatType == kMapDataSeat then --座位
+				totalTime = GlobalValue.NPCSeatNormal.value
+
+			elseif self.seatType == kMapDataWaitSeat then --等待座位
+				totalTime = GlobalValue.NPCWaitSeatNormal.value
+			end
+
+			-- totalTime = 25--math.random(3, 5)
 			self.curFeel = NPCFeelType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCFeelType.Anger]						= function()
 		testStateStr = "Ang"
+
+			if self.seatType == kMapDataSeat then --座位
+				totalTime = GlobalValue.NPCSeatAnger.value
+
+			elseif self.seatType == kMapDataWaitSeat then --等待座位
+				totalTime = GlobalValue.NPCWaitSeatAnger.value
+			end
 			-- print("Anger")
-			totalTime = 20--math.random(3, 5)
+			-- totalTime = 20--math.random(3, 5)
 			self.curFeel = NPCFeelType.Cancel
 		end,
 		--不理客人,客人要走啦
@@ -510,13 +524,13 @@ function NPCInfo:npcPayOnWaitPay()
 		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
-			totalTime = 25--math.random(3, 5)
+			totalTime = GlobalValue.NPCWaitPayNormal.value--math.random(3, 5)
 			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
-			totalTime = 20--math.random(3, 5)
+			totalTime = GlobalValue.NPCWaitPayAnger.value--math.random(3, 5)
 			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦
@@ -561,13 +575,13 @@ function NPCInfo:npcPayOnNorPay()
 		--普通等待
 		[NPCPayType.Normal]					= function()
 		testStateStr = "Nor"
-			totalTime = 25--math.random(3, 5)
+			totalTime = GlobalValue.NPCNorPayNormal.value--math.random(3, 5)
 			self.curPay = NPCPayType.Anger
 		end,
 		--普通等待完毕，进入愤怒状态
 		[NPCPayType.Anger]						= function()
 		testStateStr = "Ang"
-			totalTime = 20--math.random(3, 5)
+			totalTime = GlobalValue.NPCNorPayAnger.value--math.random(3, 5)
 			self.curPay = NPCPayType.Cancel
 		end,
 		--不理客人,客人要走啦

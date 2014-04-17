@@ -47,6 +47,8 @@ ElfIdList = {
     -------Player info-----
     ---------------------]]
 
+
+
 PlayerStateType = {
 				Invalid                = 1,
 

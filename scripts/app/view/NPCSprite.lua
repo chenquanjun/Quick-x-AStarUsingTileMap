@@ -46,19 +46,19 @@ function NPCSprite:init(fileNameFormat, elfId)
 
 	self._sprite = CCSprite:createWithSpriteFrameName(string.format(fileNameFormat, 0, 0))
 
-    self._sprite:setScale(1.5)
+    self._sprite:setScale(2.5)
 
     self._sprite:setAnchorPoint(ccp(0.5, 0))
 
     self:addChild(self._sprite)
 
     local layer = CCLayer:create()
-    layer:setPosition(ccp(-55, 50))
+    layer:setPosition(ccp(-55, 100))
 
     self._productLayer = layer
     self:addChild(layer)
 
-    local testLabel = CCLabelTTF:create(elfId, "Arial", 15)
+    local testLabel = CCLabelTTF:create(elfId, "Arial-BoldMT", 20)
     testLabel:setPosition(ccp(0, 110))
     testLabel:setColor(ccc3(0, 0, 255))
 
@@ -78,7 +78,7 @@ function NPCSprite:addRequest(productVec)
         local productType = value.productType
 
         local name = elfId - 100 --test
-        local label = CCLabelTTF:create(name, "Arial-BoldMT", 20)
+        local label = CCLabelTTF:create(name, "Arial-BoldMT", 30)
 
         label:setPosition(ccp(i * 28, 35))
         label:setColor(ccc3(255, 0, 0))

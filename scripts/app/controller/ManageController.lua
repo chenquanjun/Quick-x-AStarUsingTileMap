@@ -315,7 +315,7 @@ end
 	---timer call-----
 	---------------------]]
 function ManageController:TD_onTimeOver(elfId)
-	local totalTime = 120
+	local totalTime = GlobalValue.TotalTime.value
 	if elfId == ElfIdList.TimerPast then
 		local num = self._timerPast + 1
 
