@@ -19,53 +19,53 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0098] [INFO] 
-Cocos2d: [0.0098] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0098] [INFO] #
-Cocos2d: [0.0099] [INFO] # device.platform              = mac
-Cocos2d: [0.0099] [INFO] # device.model                 = unknown
-Cocos2d: [0.0099] [INFO] # device.language              = cn
-Cocos2d: [0.0099] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0099] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0099] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0099] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0099] [INFO] #
-Cocos2d: [0.0111] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0111] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0111] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0111] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0111] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0111] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0111] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0111] [INFO] # display.height               = 640.00
-Cocos2d: [0.0111] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0111] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0111] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0111] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0111] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0111] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0112] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0112] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0112] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0112] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0112] [INFO] #
-Cocos2d: [0.1362] [INFO] Scene "StartScene:onEnter()"
-Cocos2d: [0.6930] Controller init
-Cocos2d: [0.6931] View init
+Cocos2d: [0.0096] [INFO] 
+Cocos2d: [0.0096] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0096] [INFO] #
+Cocos2d: [0.0097] [INFO] # device.platform              = mac
+Cocos2d: [0.0097] [INFO] # device.model                 = unknown
+Cocos2d: [0.0097] [INFO] # device.language              = cn
+Cocos2d: [0.0097] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0097] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0097] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0097] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0097] [INFO] #
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0109] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0109] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0109] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0109] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0109] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0109] [INFO] # display.height               = 640.00
+Cocos2d: [0.0109] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0109] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0110] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0110] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0110] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0110] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0110] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0110] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0110] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0110] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0110] [INFO] #
+Cocos2d: [0.1288] [INFO] Scene "StartScene:onEnter()"
+Cocos2d: [0.9688] Controller init
+Cocos2d: [0.9689] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.7242] Model init
+Cocos2d: [1.0015] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [0.7416] GridSize: 36, 20
-Cocos2d: [0.7416] PointSize: 32, 32
-Cocos2d: [0.7497] [INFO] Scene "StartScene:onExit()"
-Cocos2d: [0.7498] [INFO] ----------------------------------------
-Cocos2d: [0.7498] [INFO] LUA VM MEMORY USED: 2156.43 KB
+Cocos2d: [1.0194] GridSize: 36, 20
+Cocos2d: [1.0195] PointSize: 32, 32
+Cocos2d: [1.0276] [INFO] Scene "StartScene:onExit()"
+Cocos2d: [1.0276] [INFO] ----------------------------------------
+Cocos2d: [1.0276] [INFO] LUA VM MEMORY USED: 2157.42 KB
 Cocos2d: cocos2d: "cc_fps_images" rc=4 id=2 256 x 32 @ 16 bpp => 16 KB
 Cocos2d: cocos2d: "cc_2x2_white_image" rc=15 id=3 2 x 2 @ 32 bpp => 0 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/map.png" rc=5 id=1 265 x 199 @ 32 bpp => 205 KB
@@ -74,16 +74,19 @@ Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player3.png" rc=17 id=7 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player4.png" rc=17 id=8 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: CCTextureCache dumpDebugInfo: 7 textures, for 606 KB (0.59 MB)
-Cocos2d: [0.7498] [INFO] ----------------------------------------
-Cocos2d: [0.7499] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [0.7499] start timer
-Cocos2d: [0.7551] model onEnter
-Cocos2d: [0.7590] add cache:player1_%i_%i.png1
-Cocos2d: [0.7597] add cache:player2_%i_%i.png1
-Cocos2d: [0.7603] add cache:player3_%i_%i.png1
-Cocos2d: [0.7617] add cache:player4_%i_%i.png1
-Cocos2d: [10.1426] [INFO] LUA VM MEMORY USED: 2930.50 KB
-Cocos2d: [20.1585] [INFO] LUA VM MEMORY USED: 3177.24 KB
-Cocos2d: [30.1591] [INFO] LUA VM MEMORY USED: 3615.54 KB
-Cocos2d: [40.1758] [INFO] LUA VM MEMORY USED: 4061.23 KB
-Cocos2d: [50.4590] [INFO] LUA VM MEMORY USED: 6315.80 KB
+Cocos2d: [1.0276] [INFO] ----------------------------------------
+Cocos2d: [1.0277] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [1.0277] start timer
+Cocos2d: [1.0329] model onEnter
+Cocos2d: [1.0368] add cache:player1_%i_%i.png1
+Cocos2d: [1.0375] add cache:player2_%i_%i.png1
+Cocos2d: [1.0381] add cache:player3_%i_%i.png1
+Cocos2d: [10.1300] [INFO] LUA VM MEMORY USED: 2591.84 KB
+Cocos2d: [14.6131] 1
+Cocos2d: [15.6128] 1
+Cocos2d: [17.1127] addPay:1002
+Cocos2d: [20.1301] [INFO] LUA VM MEMORY USED: 2941.98 KB
+Cocos2d: [24.5134] payEnded:1002
+Cocos2d: [30.1458] [INFO] LUA VM MEMORY USED: 3622.83 KB
+Cocos2d: [31.1340] add cache:player4_%i_%i.png1
+Cocos2d: [40.1459] [INFO] LUA VM MEMORY USED: 3778.82 KB

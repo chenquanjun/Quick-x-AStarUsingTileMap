@@ -315,10 +315,11 @@ end
 	---timer call-----
 	---------------------]]
 function ManageController:TD_onTimeOver(elfId)
+	local totalTime = 120
 	if elfId == ElfIdList.TimerPast then
 		local num = self._timerPast + 1
 
-		if num == 90 then
+		if num == totalTime then
 				-- dump(G_stats._leaveDic, "leave")
 
 				CCDirector:sharedDirector():pause()

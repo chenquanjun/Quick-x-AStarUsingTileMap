@@ -74,7 +74,7 @@ function ManageModel:onEnter()
 			self:addNPC()
 			end
 			addNPCTest()
-		end, 5)
+		end, 10)
 	end
 
 	local function addSimpleNPCTest()
@@ -491,6 +491,7 @@ function ManageModel:playerOnSeat(npcInfo)
 		end
 	end
 
+	--满足需求
 	if isProductNeed then
 		--删除操作 indexVec 按从小到大的顺序放置，删除时从大到小删除
 
@@ -502,6 +503,13 @@ function ManageModel:playerOnSeat(npcInfo)
 		--view删除
 		G_modelDelegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
 		G_modelDelegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
+
+		local deleteNum = #requestIndexVec
+
+		--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
+		for i = 1, deleteNum do
+			print(i)
+		end
 
 	else --没有一个产品满足npc（赶走npc）
 		print("get out:"..elfId)
@@ -581,6 +589,10 @@ function ManageModel:playerQueue(playerInfo)
 
 			if preQueueData.isDelete then --先判断是否已经删除
 				-- print("delete")
+				return
+			end
+
+			if not preQueueData.isAddTray then
 				return
 			end
 
@@ -725,12 +737,7 @@ end
 function ManageModel:onProductBtn(elfId)
 	-- print("on product btn:"..elfId)
 
-	local isFull = self._trayInfo:isFull()
 
-	if isFull then
-		-- print("product full")
-		return
-	end
 
 
 	--填队列结构
@@ -752,10 +759,22 @@ function ManageModel:onProductBtn(elfId)
 	local queueId = playerInfo:pushQueue(queueData)
 	-- print("QUEUE:"..queueId)
 
-	--model保存product信息
-	local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
-	--view显示product增加
-	G_modelDelegate:addProductAtIndex(productIndex, productType)
+	local isFull = self._trayInfo:isFull()
+
+	if isFull then
+		queueData.isAddTray = false
+		-- print("product full")
+		--满了只加入到队列里面
+
+	else
+		queueData.isAddTray = true
+		--model保存product信息
+		local productIndex, productType = self._trayInfo:addProduct(elfId, queueId)
+		--view显示product增加
+		G_modelDelegate:addProductAtIndex(productIndex, productType)
+	
+	end
+
 
 	if playerInfo.curState == PlayerStateType.Idle then
 		-- print("idle")

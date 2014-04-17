@@ -410,7 +410,7 @@ function ManageView:MD_moveNPC(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = npcSprite:easeWalkTo(0.4, mapPath)
+        totalTime = npcSprite:easeWalkTo(0.2, mapPath)
     end
 
     return totalTime
@@ -431,7 +431,7 @@ function ManageView:MD_movePlayer(elfId, mapId)
 
         local mapPath = self._mapInfo:findPath(newPreMapId, newTargetMapId) --地图路径类
 
-        totalTime = playerSprite:easeWalkTo(0.2, mapPath)
+        totalTime = playerSprite:easeWalkTo(0.1, mapPath)
     end
 
     return totalTime
