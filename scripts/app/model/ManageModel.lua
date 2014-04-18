@@ -303,21 +303,6 @@ function ManageModel:addNPC(productList)
 		data.mapId = startMapId
 		G_modelDelegate:addNPC(data)
 
-			-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 106, curState = 0},
-	-- 										-- {elfId = 105, curState = 0},
-	-- 										-- {elfId = 101, curState = 0},
-	-- 										-- {elfId = 106, curState = 0}
-	-- 									},
-	-- 									-- {
-	-- 									-- 	{elfId = 106, curState = 0},
-	-- 									-- 	{elfId = 105, curState = 0},
-	-- 									-- 	{elfId = 101, curState = 0},
-	-- 									-- 	-- {elfId = 106, curState = 0}
-	-- 									-- },
-	-- 								}
-
 		do--统计信息
 
 			local productVec = {}
@@ -343,8 +328,6 @@ function ManageModel:addNPC(productList)
 		
 	end
 	self._npcTestFlag = self._npcTestFlag + 1
-
-
 
 end
 
@@ -470,7 +453,9 @@ function ManageModel:playerOnSeat(npcInfo)
 
 		-- local deleteNum = #requestIndexVec
 
-		self:refreshTrayProduct() --补充托盘
+		local addNum = self:refreshTrayProduct() --补充托盘
+
+		assert(#requestIndexVec == addNum, "error num")
 
 	else --没有一个产品满足npc（赶走npc）
 		print("get out:"..elfId)
@@ -503,42 +488,42 @@ function ManageModel:refreshTrayProduct()
 
 	local emptyNum = self._trayInfo:getEmptyNum()
 
-	if emptyNum == 0 then
-		return
-	end
+	if emptyNum > 0 then
+		local testPlayerId = 1
 
-	local testPlayerId = 1
+		local playerInfo = self._playerInfoMap[testPlayerId] --npcinfo
 
-	local playerInfo = self._playerInfoMap[testPlayerId] --npcinfo
+		--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
+		local playerQueNum = playerInfo:getCurQueueNum()
+		local playerQueIndex = playerInfo:getCurQueueIndex()
 
-	--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
-	local playerQueNum = playerInfo:getCurQueueNum()
-	local playerQueIndex = playerInfo:getCurQueueIndex()
+		local addNum = 0
 
-	local addNum = 0
+		for i = 1, playerQueNum do
+			local index = playerQueIndex + i - 1
+			local queueData = playerInfo:atQueue(index)
+			--产品信息
+			if queueData.state == PlayerStateType.Product and queueData.isAddTray == false then
+				--找到了
+				queueData.isAddTray = true --标记
 
-	for i = 1, playerQueNum do
-		local index = playerQueIndex + i - 1
-		local queueData = playerInfo:atQueue(index)
-		--产品信息
-		if queueData.state == PlayerStateType.Product and queueData.isAddTray == false then
-			--找到了
-			queueData.isAddTray = true --标记
+				local productId = queueData.elfId
+				local queueId = index
+				--model保存product信息
+				local productIndex, productType = self._trayInfo:addProduct(productId, queueId)
+				--view显示product增加
+				G_modelDelegate:addProductAtIndex(productIndex, productType)
 
-			local productId = queueData.elfId
-			local queueId = index
-			--model保存product信息
-			local productIndex, productType = self._trayInfo:addProduct(productId, queueId)
-			--view显示product增加
-			G_modelDelegate:addProductAtIndex(productIndex, productType)
+				addNum = addNum + 1
 
-			addNum = addNum + 1
-
-			if addNum == emptyNum then
-				break --增加的和删除的相同了
+				if addNum == emptyNum then
+					break --增加的和删除的相同了
+				end
 			end
 		end
 	end
+
+	return emptyNum
 	
 end
 

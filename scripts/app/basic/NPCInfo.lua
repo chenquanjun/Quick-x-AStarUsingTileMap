@@ -254,7 +254,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找座位
 		[NPCStateType.FindSeat] 				= function()
-		stateStr = "F-Seat"
+		-- stateStr = "F-Seat"
 			mapId = G_seatControl:occupySeat(kMapDataSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -276,7 +276,7 @@ function NPCInfo:npcState()
 		end,
 		--寻找外卖座位
 		[NPCStateType.FindWaitSeat] 			= function()
-		stateStr = "F-Wait-S"
+		-- stateStr = "F-Wait-S"
 			mapId = G_seatControl:occupySeat(kMapDataWaitSeat, elfId)
 
 			if mapId > -1 then--占位成功
@@ -290,7 +290,7 @@ function NPCInfo:npcState()
 
 			else --寻找外卖座位
 				--在开始位置找不到空位怎么处理，继续停留在开始位置等待随机时间？
-				stateStr = "L-Door"
+				-- stateStr = "L-Door"
 				totalTime = 0.1
 				self.curState = NPCStateType.LeaveDoor
 
@@ -304,7 +304,7 @@ function NPCInfo:npcState()
 
 			totalTime, productVec, feelStr = self:npcFeelOnRequest()
 
-			stateStr = "Req-"..feelStr
+			stateStr = feelStr
 		end,
 		--在座位吃东西/外卖稍微收拾一下
 		[NPCStateType.SeatEating] 				= function()
@@ -341,7 +341,7 @@ function NPCInfo:npcState()
 		end,
 		--普通支付移动结束
 		[NPCStateType.NorPayMoveEnd] 				= function()
-		stateStr = "M-End"
+		-- stateStr = "M-End"
 		-- 已到达埋单候选位置
 		-- 加入队列
 			self.curState = NPCStateType.NorPayPrePare --
@@ -369,14 +369,14 @@ function NPCInfo:npcState()
 		end,
 		--离开支付状态
 		[NPCStateType.LeavePay] 					= function()
-		stateStr = "L-Pay"
+		-- stateStr = "L-Pay"
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
 			self.curState = NPCStateType.Release --进入销毁状态
 		end,
 		--离开座位状态
 		[NPCStateType.LeaveSeat] 				= function()
-		stateStr = "L-S"
+		-- stateStr = "L-S"
 			G_seatControl:leaveSeat(self.seatType, self.mapId, elfId)
 			mapId = G_seatControl:getMapIdOfType(kMapDataStart)
 
