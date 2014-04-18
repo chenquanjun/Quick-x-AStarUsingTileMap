@@ -475,10 +475,42 @@ function ManageModel:playerOnSeat(npcInfo)
 
 		local deleteNum = #requestIndexVec
 
-		--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
-		for i = 1, deleteNum do
-			print(i)
+		do
+			local testPlayerId = 1
+
+			local playerInfo = self._playerInfoMap[testPlayerId] --npcinfo
+
+			--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
+			local playerQueNum = playerInfo:getCurQueueNum()
+			local playerQueIndex = playerInfo:getCurQueueIndex()
+
+			local addNum = 0
+
+			for i = 1, playerQueNum do
+				local index = playerQueIndex + i - 1
+				local queueData = playerInfo:atQueue(index)
+				--产品信息
+				if queueData.state == PlayerStateType.Product and queueData.isAddTray == false then
+					--找到了
+					queueData.isAddTray = true --标记
+
+					local productId = queueData.elfId
+					local queueId = index
+					--model保存product信息
+					local productIndex, productType = self._trayInfo:addProduct(productId, queueId)
+					--view显示product增加
+					G_modelDelegate:addProductAtIndex(productIndex, productType)
+
+					addNum = addNum + 1
+
+					if addNum == deleteNum then
+						break --增加的和删除的相同了
+					end
+				end
+			end
 		end
+
+
 
 	else --没有一个产品满足npc（赶走npc）
 		print("get out:"..elfId)

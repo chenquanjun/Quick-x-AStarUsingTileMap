@@ -19,101 +19,101 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0101] [INFO] 
-Cocos2d: [0.0101] [INFO] # DEBUG                        = 2
-Cocos2d: [0.0101] [INFO] #
-Cocos2d: [0.0102] [INFO] # device.platform              = mac
-Cocos2d: [0.0102] [INFO] # device.model                 = unknown
-Cocos2d: [0.0102] [INFO] # device.language              = cn
-Cocos2d: [0.0102] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0102] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.0102] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0102] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0102] [INFO] #
-Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.0113] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0114] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0114] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.0114] [INFO] # display.width                = 1136.00
-Cocos2d: [0.0114] [INFO] # display.height               = 640.00
-Cocos2d: [0.0114] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.0114] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.0114] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0114] [INFO] # display.right                = 1136.00
-Cocos2d: [0.0114] [INFO] # display.top                  = 640.00
-Cocos2d: [0.0114] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0114] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.0114] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.0114] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.0114] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.0114] [INFO] #
-Cocos2d: [0.0406] 6 0 6
+Cocos2d: [0.1163] [INFO] 
+Cocos2d: [0.1163] [INFO] # DEBUG                        = 2
+Cocos2d: [0.1163] [INFO] #
+Cocos2d: [0.1164] [INFO] # device.platform              = mac
+Cocos2d: [0.1164] [INFO] # device.model                 = unknown
+Cocos2d: [0.1164] [INFO] # device.language              = cn
+Cocos2d: [0.1164] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.1164] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.1164] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.1164] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.1164] [INFO] #
+Cocos2d: [0.1175] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.1175] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.1175] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.1175] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.1175] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.1176] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.1176] [INFO] # display.width                = 1136.00
+Cocos2d: [0.1176] [INFO] # display.height               = 640.00
+Cocos2d: [0.1176] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.1176] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.1176] [INFO] # display.left                 = 0.00
+Cocos2d: [0.1176] [INFO] # display.right                = 1136.00
+Cocos2d: [0.1176] [INFO] # display.top                  = 640.00
+Cocos2d: [0.1176] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.1176] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.1176] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.1176] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.1176] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.1176] [INFO] #
+Cocos2d: [0.2023] 6 0 6
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 360.000000
-Cocos2d: [0.0490] 13 1 2
+Cocos2d: [0.2631] 13 1 2
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 560.000000
-Cocos2d: [0.0529] 10 0 10
+Cocos2d: [0.2670] 10 0 10
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 160.000000
-Cocos2d: [0.0563] 9 0 9
+Cocos2d: [0.2707] 9 0 9
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 210.000000
-Cocos2d: [0.0622] 4 0 4
+Cocos2d: [0.2737] 4 0 4
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 460.000000
-Cocos2d: [0.0678] 8 0 8
+Cocos2d: [0.2784] 8 0 8
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 260.000000
-Cocos2d: [0.0711] 3 0 3
+Cocos2d: [0.2814] 3 0 3
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 510.000000
-Cocos2d: [0.0818] 14 1 3
+Cocos2d: [0.2855] 14 1 3
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 510.000000
-Cocos2d: [0.0860] 16 1 5
+Cocos2d: [0.2893] 16 1 5
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 410.000000
-Cocos2d: [0.0896] 11 0 11
+Cocos2d: [0.2928] 11 0 11
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 110.000000
-Cocos2d: [0.0963] 12 1 1
+Cocos2d: [0.2955] 12 1 1
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 610.000000
-Cocos2d: [0.0999] 5 0 5
+Cocos2d: [0.2991] 5 0 5
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 410.000000
-Cocos2d: [0.1036] 17 1 6
+Cocos2d: [0.3022] 17 1 6
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 360.000000
-Cocos2d: [0.1115] 2 0 2
+Cocos2d: [0.3051] 2 0 2
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
-Cocos2d: [0.1150] 15 1 4
+Cocos2d: [0.3086] 15 1 4
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
-Cocos2d: [0.1185] 7 0 7
+Cocos2d: [0.3120] 7 0 7
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
-Cocos2d: [0.1216] 1 0 1
+Cocos2d: [0.3151] 1 0 1
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
@@ -134,23 +134,23 @@ Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
-Cocos2d: [0.2769] [INFO] Scene "StartScene:onEnter()"
-Cocos2d: [1.1322] Controller init
-Cocos2d: [1.1323] View init
+Cocos2d: [0.4690] [INFO] Scene "StartScene:onEnter()"
+Cocos2d: [2.0920] Controller init
+Cocos2d: [2.0920] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [1.1660] Model init
+Cocos2d: [2.1614] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [1.1838] GridSize: 36, 20
-Cocos2d: [1.1838] PointSize: 32, 32
-Cocos2d: [1.2253] [INFO] Scene "StartScene:onExit()"
-Cocos2d: [1.2253] [INFO] ----------------------------------------
-Cocos2d: [1.2253] [INFO] LUA VM MEMORY USED: 2205.64 KB
+Cocos2d: [2.1785] GridSize: 36, 20
+Cocos2d: [2.1785] PointSize: 32, 32
+Cocos2d: [2.2384] [INFO] Scene "StartScene:onExit()"
+Cocos2d: [2.2385] [INFO] ----------------------------------------
+Cocos2d: [2.2385] [INFO] LUA VM MEMORY USED: 2208.59 KB
 Cocos2d: cocos2d: "cc_fps_images" rc=4 id=2 256 x 32 @ 16 bpp => 16 KB
 Cocos2d: cocos2d: "cc_2x2_white_image" rc=31 id=3 2 x 2 @ 32 bpp => 0 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/green_edit.png" rc=171 id=5 28 x 28 @ 32 bpp => 3 KB
@@ -160,33 +160,1163 @@ Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player3.png" rc=17 id=25 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player4.png" rc=17 id=26 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: CCTextureCache dumpDebugInfo: 8 textures, for 609 KB (0.59 MB)
-Cocos2d: [1.2254] [INFO] ----------------------------------------
-Cocos2d: [1.2362] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [1.2362] start timer
-Cocos2d: [1.2410] model onEnter
-Cocos2d: [1.2446] add cache:player1_%i_%i.png1
-Cocos2d: [1.2452] add cache:player2_%i_%i.png1
-Cocos2d: [1.2457] perWaveNum3
-Cocos2d: [1.2458] add cache:player3_%i_%i.png1
-Cocos2d: [1.2470] add cache:player4_%i_%i.png1
-Cocos2d: [8.3138] 1
-Cocos2d: [10.2803] [INFO] LUA VM MEMORY USED: 3099.31 KB
-Cocos2d: [11.5136] get out:1001
-Cocos2d: [20.5293] [INFO] LUA VM MEMORY USED: 3150.37 KB
-Cocos2d: [27.0129] 1
-Cocos2d: [27.5135] addPay:1002
-Cocos2d: [28.2635] 1
-Cocos2d: [28.2636] 2
-Cocos2d: [28.6142] get out:1008
-Cocos2d: [29.4632] get out:1003
-Cocos2d: [30.5299] [INFO] LUA VM MEMORY USED: 3682.60 KB
-Cocos2d: [30.7131] get out:1004
-Cocos2d: [32.9128] payEnded:1002
-Cocos2d: [38.7135] get out:1017
-Cocos2d: [39.5632] get out:1019
-Cocos2d: [40.5302] [INFO] LUA VM MEMORY USED: 4358.99 KB
-Cocos2d: [50.5459] [INFO] LUA VM MEMORY USED: 4676.77 KB
-Cocos2d: [60.5464] [INFO] LUA VM MEMORY USED: 4234.94 KB
-Cocos2d: [70.5469] [INFO] LUA VM MEMORY USED: 4889.17 KB
-Cocos2d: [80.5634] [INFO] LUA VM MEMORY USED: 4944.68 KB
-Cocos2d: [90.5797] [INFO] LUA VM MEMORY USED: 4844.12 KB
+Cocos2d: [2.2385] [INFO] ----------------------------------------
+Cocos2d: [2.2483] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [2.2484] start timer
+Cocos2d: [2.2758] model onEnter
+Cocos2d: [2.2792] add cache:player1_%i_%i.png1
+Cocos2d: [2.2798] add cache:player2_%i_%i.png1
+Cocos2d: [2.2802] perWaveNum3
+Cocos2d: [2.2803] add cache:player3_%i_%i.png1
+Cocos2d: [2.2818] add cache:player4_%i_%i.png1
+Cocos2d: [11.0363] [INFO] LUA VM MEMORY USED: 3071.33 KB
+Cocos2d: [20.2528] addPay:1000
+Cocos2d: [21.0524] [INFO] LUA VM MEMORY USED: 3225.66 KB
+Cocos2d: [26.1520] get out:1001
+Cocos2d: [26.6519] payEnded:1000
+Cocos2d: [31.0525] [INFO] LUA VM MEMORY USED: 3545.86 KB
+Cocos2d: [35.3020] get out:1010
+Cocos2d: [36.2526] addPay:1002
+Cocos2d: [41.0535] [INFO] LUA VM MEMORY USED: 4260.46 KB
+Cocos2d: [42.8528] payEnded:1002
+Cocos2d: [50.5028] get out:1008
+Cocos2d: [50.5522] addPay:1004
+Cocos2d: [51.0695] [INFO] LUA VM MEMORY USED: 4418.84 KB
+Cocos2d: [56.7527] payEnded:1004
+Cocos2d: [61.0856] [INFO] LUA VM MEMORY USED: 4580.29 KB
+Cocos2d: [63.3519] get out:1018
+Cocos2d: [71.0862] [INFO] LUA VM MEMORY USED: 5287.26 KB
+Cocos2d: [72.9027] get out:1035
+Cocos2d: [81.1023] [INFO] LUA VM MEMORY USED: 5910.29 KB
+Cocos2d: [87.1026] get out:1047
+Cocos2d: [89.2024] get out:1031
+Cocos2d: [90.4519] get out:1044
+Cocos2d: [91.1038] [INFO] LUA VM MEMORY USED: 5979.11 KB
+Cocos2d: [92.9059] 6 0 6
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 360.000000
+Cocos2d: [92.9080] 13 1 2
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 560.000000
+Cocos2d: [92.9098] 10 0 10
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 160.000000
+Cocos2d: [92.9116] 9 0 9
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 210.000000
+Cocos2d: [92.9133] 4 0 4
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 460.000000
+Cocos2d: [92.9153] 8 0 8
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 260.000000
+Cocos2d: [92.9177] 3 0 3
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 510.000000
+Cocos2d: [92.9195] 14 1 3
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 510.000000
+Cocos2d: [92.9213] 16 1 5
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 410.000000
+Cocos2d: [92.9232] 11 0 11
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 110.000000
+Cocos2d: [92.9250] 12 1 1
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 610.000000
+Cocos2d: [92.9269] 5 0 5
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 410.000000
+Cocos2d: [92.9288] 17 1 6
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 360.000000
+Cocos2d: [92.9306] 2 0 2
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
+Cocos2d: [92.9326] 15 1 4
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
+Cocos2d: [92.9345] 7 0 7
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
+Cocos2d: [92.9366] 1 0 1
+Cocos2d: [Edit text] content size = (100.000000, 40.000000)
+Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
+Cocos2d: [92.9593] [INFO] Scene "MainScene:onExit()"
+Cocos2d: [92.9593] Controller on release
+Cocos2d: [92.9593] View delegate remove
+Cocos2d: [92.9593] Model delegate remove
+Cocos2d: [92.9593] View on release
+Cocos2d: [92.9604] Model on release
+Cocos2d: [92.9605] [INFO] ----------------------------------------
+Cocos2d: [92.9605] [INFO] LUA VM MEMORY USED: 6071.09 KB
+Cocos2d: cocos2d: "cc_fps_images" rc=4 id=2 256 x 32 @ 16 bpp => 16 KB
+Cocos2d: cocos2d: "cc_2x2_white_image" rc=38 id=3 2 x 2 @ 32 bpp => 0 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/green_edit.png" rc=171 id=5 28 x 28 @ 32 bpp => 3 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/map.png" rc=3 id=1 265 x 199 @ 32 bpp => 205 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player1.png" rc=18 id=23 128 x 192 @ 32 bpp => 96 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player2.png" rc=18 id=24 128 x 192 @ 32 bpp => 96 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player3.png" rc=23 id=25 128 x 192 @ 32 bpp => 96 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player4.png" rc=26 id=26 128 x 192 @ 32 bpp => 96 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/product.png" rc=8 id=11 50 x 50 @ 32 bpp => 9 KB
+Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/product_1.jpg" rc=6 id=27 98 x 92 @ 32 bpp => 35 KB
+Cocos2d: cocos2d: CCTextureCache dumpDebugInfo: 10 textures, for 654 KB (0.64 MB)
+Cocos2d: [92.9605] [INFO] ----------------------------------------
+Cocos2d: [EditBox] pos x = 250.000000, y = 360.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 560.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 160.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 210.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 460.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 260.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 510.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 510.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 410.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 110.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 610.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 410.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 360.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
+Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
+Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
+Cocos2d: [92.9648] [INFO] Scene "StartScene:onEnter()"
+Cocos2d: [93.0415] ----------------------------------------
+Cocos2d: [93.0415] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.0415] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.0415] ----------------------------------------
+Cocos2d: [93.0904] ----------------------------------------
+Cocos2d: [93.0904] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.0904] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.0904] ----------------------------------------
+Cocos2d: [93.1173] ----------------------------------------
+Cocos2d: [93.1173] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.1173] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.1173] ----------------------------------------
+Cocos2d: [93.1562] ----------------------------------------
+Cocos2d: [93.1562] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.1562] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.1562] ----------------------------------------
+Cocos2d: [93.1858] ----------------------------------------
+Cocos2d: [93.1858] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.1858] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.1858] ----------------------------------------
+Cocos2d: [93.2199] ----------------------------------------
+Cocos2d: [93.2199] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.2199] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.2199] ----------------------------------------
+Cocos2d: [93.2530] ----------------------------------------
+Cocos2d: [93.2530] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.2530] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.2530] ----------------------------------------
+Cocos2d: [93.2865] ----------------------------------------
+Cocos2d: [93.2865] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.2865] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.2865] ----------------------------------------
+Cocos2d: [93.3191] ----------------------------------------
+Cocos2d: [93.3191] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.3191] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.3191] ----------------------------------------
+Cocos2d: [93.3529] ----------------------------------------
+Cocos2d: [93.3529] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.3529] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.3530] ----------------------------------------
+Cocos2d: [93.4170] ----------------------------------------
+Cocos2d: [93.4170] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.4170] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.4170] ----------------------------------------
+Cocos2d: [93.4363] ----------------------------------------
+Cocos2d: [93.4363] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.4363] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.4364] ----------------------------------------
+Cocos2d: [93.5009] ----------------------------------------
+Cocos2d: [93.5009] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.5009] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.5010] ----------------------------------------
+Cocos2d: [93.5505] ----------------------------------------
+Cocos2d: [93.5505] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.5505] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.5505] ----------------------------------------
+Cocos2d: [93.5898] ----------------------------------------
+Cocos2d: [93.5898] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.5898] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.5899] ----------------------------------------
+Cocos2d: [93.6515] ----------------------------------------
+Cocos2d: [93.6515] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.6516] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.6516] ----------------------------------------
+Cocos2d: [93.7005] ----------------------------------------
+Cocos2d: [93.7005] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.7005] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.7005] ----------------------------------------
+Cocos2d: [93.7339] ----------------------------------------
+Cocos2d: [93.7339] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.7339] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.7339] ----------------------------------------
+Cocos2d: [93.7675] ----------------------------------------
+Cocos2d: [93.7676] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.7676] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.7676] ----------------------------------------
+Cocos2d: [93.8012] ----------------------------------------
+Cocos2d: [93.8012] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.8013] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.8013] ----------------------------------------
+Cocos2d: [93.8344] ----------------------------------------
+Cocos2d: [93.8345] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.8345] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.8345] ----------------------------------------
+Cocos2d: [93.8679] ----------------------------------------
+Cocos2d: [93.8680] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.8680] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.8680] ----------------------------------------
+Cocos2d: [93.8866] ----------------------------------------
+Cocos2d: [93.8867] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.8867] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.8867] ----------------------------------------
+Cocos2d: [93.9517] ----------------------------------------
+Cocos2d: [93.9517] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.9517] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.9517] ----------------------------------------
+Cocos2d: [93.9716] ----------------------------------------
+Cocos2d: [93.9716] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [93.9717] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [93.9717] ----------------------------------------
+Cocos2d: [94.0123] ----------------------------------------
+Cocos2d: [94.0123] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.0123] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.0123] ----------------------------------------
+Cocos2d: [94.0369] ----------------------------------------
+Cocos2d: [94.0369] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.0369] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.0370] ----------------------------------------
+Cocos2d: [94.0711] ----------------------------------------
+Cocos2d: [94.0711] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.0711] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.0711] ----------------------------------------
+Cocos2d: [94.1039] ----------------------------------------
+Cocos2d: [94.1039] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.1039] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.1039] ----------------------------------------
+Cocos2d: [94.1518] ----------------------------------------
+Cocos2d: [94.1519] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.1519] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.1519] ----------------------------------------
+Cocos2d: [94.1685] ----------------------------------------
+Cocos2d: [94.1685] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.1685] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.1685] ----------------------------------------
+Cocos2d: [94.1853] ----------------------------------------
+Cocos2d: [94.1854] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.1854] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.1854] ----------------------------------------
+Cocos2d: [94.2021] ----------------------------------------
+Cocos2d: [94.2021] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.2021] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.2021] ----------------------------------------
+Cocos2d: [94.2220] ----------------------------------------
+Cocos2d: [94.2220] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.2220] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.2220] ----------------------------------------
+Cocos2d: [94.2537] ----------------------------------------
+Cocos2d: [94.2537] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.2537] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.2537] ----------------------------------------
+Cocos2d: [94.2848] ----------------------------------------
+Cocos2d: [94.2848] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.2848] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.2848] ----------------------------------------
+Cocos2d: [94.3017] ----------------------------------------
+Cocos2d: [94.3017] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.3017] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.3018] ----------------------------------------
+Cocos2d: [94.3216] ----------------------------------------
+Cocos2d: [94.3216] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.3216] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.3217] ----------------------------------------
+Cocos2d: [94.3540] ----------------------------------------
+Cocos2d: [94.3540] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.3540] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.3541] ----------------------------------------
+Cocos2d: [94.3885] ----------------------------------------
+Cocos2d: [94.3885] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.3885] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.3885] ----------------------------------------
+Cocos2d: [94.4204] ----------------------------------------
+Cocos2d: [94.4204] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.4204] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.4205] ----------------------------------------
+Cocos2d: [94.4519] ----------------------------------------
+Cocos2d: [94.4519] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.4519] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.4519] ----------------------------------------
+Cocos2d: [94.4688] ----------------------------------------
+Cocos2d: [94.4689] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.4689] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.4689] ----------------------------------------
+Cocos2d: [94.4884] ----------------------------------------
+Cocos2d: [94.4885] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.4885] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.4885] ----------------------------------------
+Cocos2d: [94.5224] ----------------------------------------
+Cocos2d: [94.5224] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.5224] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.5224] ----------------------------------------
+Cocos2d: [94.5553] ----------------------------------------
+Cocos2d: [94.5554] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.5554] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.5554] ----------------------------------------
+Cocos2d: [94.5878] ----------------------------------------
+Cocos2d: [94.5878] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.5878] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.5878] ----------------------------------------
+Cocos2d: [94.6218] ----------------------------------------
+Cocos2d: [94.6218] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.6218] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.6218] ----------------------------------------
+Cocos2d: [94.6690] ----------------------------------------
+Cocos2d: [94.6690] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.6691] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.6691] ----------------------------------------
+Cocos2d: [94.6850] ----------------------------------------
+Cocos2d: [94.6850] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.6850] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.6850] ----------------------------------------
+Cocos2d: [94.7025] ----------------------------------------
+Cocos2d: [94.7025] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.7025] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.7025] ----------------------------------------
+Cocos2d: [94.7195] ----------------------------------------
+Cocos2d: [94.7195] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.7195] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.7195] ----------------------------------------
+Cocos2d: [94.7361] ----------------------------------------
+Cocos2d: [94.7361] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.7361] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.7361] ----------------------------------------
+Cocos2d: [94.7560] ----------------------------------------
+Cocos2d: [94.7560] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.7560] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.7560] ----------------------------------------
+Cocos2d: [94.8021] ----------------------------------------
+Cocos2d: [94.8022] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.8022] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.8022] ----------------------------------------
+Cocos2d: [94.8350] ----------------------------------------
+Cocos2d: [94.8350] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.8350] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.8350] ----------------------------------------
+Cocos2d: [94.8525] ----------------------------------------
+Cocos2d: [94.8525] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.8525] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.8526] ----------------------------------------
+Cocos2d: [94.8726] ----------------------------------------
+Cocos2d: [94.8726] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.8726] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.8727] ----------------------------------------
+Cocos2d: [94.9058] ----------------------------------------
+Cocos2d: [94.9058] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.9058] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.9058] ----------------------------------------
+Cocos2d: [94.9382] ----------------------------------------
+Cocos2d: [94.9383] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.9383] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.9383] ----------------------------------------
+Cocos2d: [94.9853] ----------------------------------------
+Cocos2d: [94.9854] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [94.9854] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [94.9854] ----------------------------------------
+Cocos2d: [95.0047] ----------------------------------------
+Cocos2d: [95.0048] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.0048] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.0048] ----------------------------------------
+Cocos2d: [95.0227] ----------------------------------------
+Cocos2d: [95.0227] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.0227] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.0227] ----------------------------------------
+Cocos2d: [95.0563] ----------------------------------------
+Cocos2d: [95.0563] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.0563] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.0563] ----------------------------------------
+Cocos2d: [95.1027] ----------------------------------------
+Cocos2d: [95.1027] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.1027] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.1027] ----------------------------------------
+Cocos2d: [95.1196] ----------------------------------------
+Cocos2d: [95.1196] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.1197] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.1197] ----------------------------------------
+Cocos2d: [95.1393] ----------------------------------------
+Cocos2d: [95.1393] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.1393] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.1393] ----------------------------------------
+Cocos2d: [95.1868] ----------------------------------------
+Cocos2d: [95.1868] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.1868] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.1868] ----------------------------------------
+Cocos2d: [95.2062] ----------------------------------------
+Cocos2d: [95.2062] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.2062] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.2062] ----------------------------------------
+Cocos2d: [95.2374] ----------------------------------------
+Cocos2d: [95.2375] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.2375] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.2375] ----------------------------------------
+Cocos2d: [95.2574] ----------------------------------------
+Cocos2d: [95.2574] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.2574] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.2574] ----------------------------------------
+Cocos2d: [95.3035] ----------------------------------------
+Cocos2d: [95.3035] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.3035] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.3035] ----------------------------------------
+Cocos2d: [95.3209] ----------------------------------------
+Cocos2d: [95.3209] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.3209] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.3209] ----------------------------------------
+Cocos2d: [95.3382] ----------------------------------------
+Cocos2d: [95.3382] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.3382] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.3382] ----------------------------------------
+Cocos2d: [95.3547] ----------------------------------------
+Cocos2d: [95.3547] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.3547] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.3548] ----------------------------------------
+Cocos2d: [95.3874] ----------------------------------------
+Cocos2d: [95.3874] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.3874] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.3874] ----------------------------------------
+Cocos2d: [95.4048] ----------------------------------------
+Cocos2d: [95.4048] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.4048] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.4048] ----------------------------------------
+Cocos2d: [95.4371] ----------------------------------------
+Cocos2d: [95.4371] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.4371] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.4371] ----------------------------------------
+Cocos2d: [95.4542] ----------------------------------------
+Cocos2d: [95.4542] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.4542] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.4543] ----------------------------------------
+Cocos2d: [95.4732] ----------------------------------------
+Cocos2d: [95.4732] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.4732] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.4732] ----------------------------------------
+Cocos2d: [95.5191] ----------------------------------------
+Cocos2d: [95.5191] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.5191] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.5191] ----------------------------------------
+Cocos2d: [95.5390] ----------------------------------------
+Cocos2d: [95.5391] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.5391] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.5391] ----------------------------------------
+Cocos2d: [95.5726] ----------------------------------------
+Cocos2d: [95.5727] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.5727] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.5727] ----------------------------------------
+Cocos2d: [95.6202] ----------------------------------------
+Cocos2d: [95.6203] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.6203] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.6203] ----------------------------------------
+Cocos2d: [95.6375] ----------------------------------------
+Cocos2d: [95.6376] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.6376] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.6376] ----------------------------------------
+Cocos2d: [95.6548] ----------------------------------------
+Cocos2d: [95.6548] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.6548] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.6548] ----------------------------------------
+Cocos2d: [95.6713] ----------------------------------------
+Cocos2d: [95.6714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.6714] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.6714] ----------------------------------------
+Cocos2d: [95.6881] ----------------------------------------
+Cocos2d: [95.6882] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.6882] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.6882] ----------------------------------------
+Cocos2d: [95.7047] ----------------------------------------
+Cocos2d: [95.7047] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.7047] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.7047] ----------------------------------------
+Cocos2d: [95.7213] ----------------------------------------
+Cocos2d: [95.7214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.7214] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.7214] ----------------------------------------
+Cocos2d: [95.7532] ----------------------------------------
+Cocos2d: [95.7533] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.7533] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.7533] ----------------------------------------
+Cocos2d: [95.7706] ----------------------------------------
+Cocos2d: [95.7706] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.7706] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.7706] ----------------------------------------
+Cocos2d: [95.8032] ----------------------------------------
+Cocos2d: [95.8032] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8032] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8032] ----------------------------------------
+Cocos2d: [95.8212] ----------------------------------------
+Cocos2d: [95.8212] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8212] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8212] ----------------------------------------
+Cocos2d: [95.8380] ----------------------------------------
+Cocos2d: [95.8380] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8381] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8381] ----------------------------------------
+Cocos2d: [95.8547] ----------------------------------------
+Cocos2d: [95.8547] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8548] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8548] ----------------------------------------
+Cocos2d: [95.8714] ----------------------------------------
+Cocos2d: [95.8714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8714] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8715] ----------------------------------------
+Cocos2d: [95.8880] ----------------------------------------
+Cocos2d: [95.8880] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.8881] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.8881] ----------------------------------------
+Cocos2d: [95.9047] ----------------------------------------
+Cocos2d: [95.9047] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9047] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9047] ----------------------------------------
+Cocos2d: [95.9213] ----------------------------------------
+Cocos2d: [95.9214] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9214] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9214] ----------------------------------------
+Cocos2d: [95.9380] ----------------------------------------
+Cocos2d: [95.9381] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9381] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9381] ----------------------------------------
+Cocos2d: [95.9547] ----------------------------------------
+Cocos2d: [95.9547] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9548] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9548] ----------------------------------------
+Cocos2d: [95.9714] ----------------------------------------
+Cocos2d: [95.9714] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9714] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9715] ----------------------------------------
+Cocos2d: [95.9880] ----------------------------------------
+Cocos2d: [95.9881] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [95.9881] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [95.9881] ----------------------------------------
+Cocos2d: [96.0072] ----------------------------------------
+Cocos2d: [96.0073] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.0073] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.0073] ----------------------------------------
+Cocos2d: [96.0437] ----------------------------------------
+Cocos2d: [96.0437] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.0438] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.0438] ----------------------------------------
+Cocos2d: [96.0788] ----------------------------------------
+Cocos2d: [96.0788] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.0788] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.0789] ----------------------------------------
+Cocos2d: [96.0955] ----------------------------------------
+Cocos2d: [96.0955] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.0955] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.0956] ----------------------------------------
+Cocos2d: [96.1274] ----------------------------------------
+Cocos2d: [96.1274] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.1274] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.1274] ----------------------------------------
+Cocos2d: [96.1460] ----------------------------------------
+Cocos2d: [96.1460] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.1460] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.1460] ----------------------------------------
+Cocos2d: [96.1767] ----------------------------------------
+Cocos2d: [96.1768] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.1768] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.1768] ----------------------------------------
+Cocos2d: [96.2253] ----------------------------------------
+Cocos2d: [96.2254] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.2254] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.2254] ----------------------------------------
+Cocos2d: [96.2791] ----------------------------------------
+Cocos2d: [96.2792] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.2792] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.2792] ----------------------------------------
+Cocos2d: [96.3050] ----------------------------------------
+Cocos2d: [96.3050] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.3050] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.3050] ----------------------------------------
+Cocos2d: [96.3415] ----------------------------------------
+Cocos2d: [96.3415] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.3415] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.3415] ----------------------------------------
+Cocos2d: [96.3655] ----------------------------------------
+Cocos2d: [96.3656] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.3656] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.3656] ----------------------------------------
+Cocos2d: [96.3872] ----------------------------------------
+Cocos2d: [96.3872] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.3872] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.3872] ----------------------------------------
+Cocos2d: [96.4045] ----------------------------------------
+Cocos2d: [96.4045] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.4045] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.4045] ----------------------------------------
+Cocos2d: [96.4232] ----------------------------------------
+Cocos2d: [96.4232] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.4232] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.4232] ----------------------------------------
+Cocos2d: [96.4616] ----------------------------------------
+Cocos2d: [96.4616] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.4616] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.4616] ----------------------------------------
+Cocos2d: [96.4832] ----------------------------------------
+Cocos2d: [96.4832] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.4832] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.4833] ----------------------------------------
+Cocos2d: [96.5287] ----------------------------------------
+Cocos2d: [96.5287] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.5287] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.5288] ----------------------------------------
+Cocos2d: [96.5551] ----------------------------------------
+Cocos2d: [96.5551] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.5551] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.5552] ----------------------------------------
+Cocos2d: [96.6098] ----------------------------------------
+Cocos2d: [96.6098] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.6098] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.6099] ----------------------------------------
+Cocos2d: [96.6479] ----------------------------------------
+Cocos2d: [96.6479] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.6479] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.6479] ----------------------------------------
+Cocos2d: [96.6938] ----------------------------------------
+Cocos2d: [96.6938] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.6938] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.6938] ----------------------------------------
+Cocos2d: [96.7259] ----------------------------------------
+Cocos2d: [96.7259] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.7259] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.7259] ----------------------------------------
+Cocos2d: [96.7542] ----------------------------------------
+Cocos2d: [96.7543] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.7543] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.7543] ----------------------------------------
+Cocos2d: [96.7965] ----------------------------------------
+Cocos2d: [96.7965] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.7965] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.7965] ----------------------------------------
+Cocos2d: [96.8130] ----------------------------------------
+Cocos2d: [96.8131] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.8131] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.8131] ----------------------------------------
+Cocos2d: [96.8485] ----------------------------------------
+Cocos2d: [96.8485] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.8486] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.8486] ----------------------------------------
+Cocos2d: [96.8962] ----------------------------------------
+Cocos2d: [96.8962] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.8962] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.8962] ----------------------------------------
+Cocos2d: [96.9771] ----------------------------------------
+Cocos2d: [96.9771] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [96.9771] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [96.9772] ----------------------------------------
+Cocos2d: [97.0051] ----------------------------------------
+Cocos2d: [97.0051] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.0052] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.0052] ----------------------------------------
+Cocos2d: [97.0760] ----------------------------------------
+Cocos2d: [97.0760] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.0760] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.0760] ----------------------------------------
+Cocos2d: [97.1607] ----------------------------------------
+Cocos2d: [97.1607] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.1607] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.1607] ----------------------------------------
+Cocos2d: [97.1877] ----------------------------------------
+Cocos2d: [97.1877] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.1877] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.1877] ----------------------------------------
+Cocos2d: [97.2058] ----------------------------------------
+Cocos2d: [97.2058] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.2059] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.2059] ----------------------------------------
+Cocos2d: [97.2292] ----------------------------------------
+Cocos2d: [97.2292] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.2292] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.2293] ----------------------------------------
+Cocos2d: [97.2805] ----------------------------------------
+Cocos2d: [97.2805] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.2805] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.2805] ----------------------------------------
+Cocos2d: [97.3040] ----------------------------------------
+Cocos2d: [97.3040] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.3040] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.3040] ----------------------------------------
+Cocos2d: [97.3581] ----------------------------------------
+Cocos2d: [97.3582] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.3582] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.3582] ----------------------------------------
+Cocos2d: [97.4231] ----------------------------------------
+Cocos2d: [97.4231] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.4231] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.4232] ----------------------------------------
+Cocos2d: [97.4559] ----------------------------------------
+Cocos2d: [97.4559] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.4559] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.4559] ----------------------------------------
+Cocos2d: [97.4787] ----------------------------------------
+Cocos2d: [97.4787] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.4787] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.4787] ----------------------------------------
+Cocos2d: [97.5133] ----------------------------------------
+Cocos2d: [97.5133] LUA ERROR: [string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: attempt to call method 'int' (a nil value)
+
+Cocos2d: [97.5133] 
+stack traceback:
+	[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:169: in function <[string "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/app/view/PlayerSprite.lua"]:162>
+Cocos2d: [97.5133] ----------------------------------------

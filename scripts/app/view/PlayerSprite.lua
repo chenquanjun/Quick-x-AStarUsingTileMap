@@ -1,7 +1,9 @@
 --玩家精灵
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 PlayerSprite = class("PlayerSprite", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+    return node
 end)			
 --index
 PlayerSprite.__index  			= PlayerSprite
@@ -193,6 +195,19 @@ function PlayerSprite:easeWalkTo(speed, mapPath)
 
         return totalTime
  
+end
+
+function PlayerSprite:onEnter()
+    -- print("enter")
+end
+
+function PlayerSprite:onExit()
+    -- print("exit")
+
+    if self.handler then
+        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.handler)
+    end
+    
 end
 
 function PlayerSprite:int(x) 

@@ -33,6 +33,17 @@ function PlayerInfo:atQueue(index)
 	return data
 end
 
+function PlayerInfo:getCurQueueIndex()
+	return self._first
+end
+
+--获得队列数目（未执行的）
+function PlayerInfo:getCurQueueNum()
+	local last = self._last
+	local first = self._first
+	return last - first + 1
+end
+
 --删除操作仅加入isDelete标志，防止打乱结构
 function PlayerInfo:removeQueue(index)
 	local data = self._queue[index]
