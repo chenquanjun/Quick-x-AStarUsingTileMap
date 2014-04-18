@@ -143,6 +143,11 @@ function TrayInfo:setProductFinish(elfId)
 	end
 end
 
+function TrayInfo:productIdAtIndex(index)
+	local data = self._productVec[index]
+	return data.elfId
+end
+
 
 
 

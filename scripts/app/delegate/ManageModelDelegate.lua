@@ -23,7 +23,11 @@ function ManageModelDelegate:setStatsReason(leaveReason, num)
 end
 
 function ManageModelDelegate:setStatsProductInfo(productId, num)
-	self._refer:setStatsProductInfo(productId, num)
+	self._refer:MD_setStatsProductInfo(productId, num)
+end
+
+function ManageModelDelegate:selectLight(mapId, isLight)
+	self._refer:MD_selectLight(mapId, isLight)
 end
 
 --添加产品

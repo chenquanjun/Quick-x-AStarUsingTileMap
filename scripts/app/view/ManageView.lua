@@ -25,6 +25,7 @@ ManageView._timerLabel  = nil
 ManageView._testTimerSpr= nil
 ManageView._statsReasonMap    = nil
 ManageView._statsProductInfoMap = nil
+ManageView._selectLightMap = nil
 
 --[[-------------------
     ---Init Method-----
@@ -130,15 +131,27 @@ function ManageView:initBtns(mapIdVec, callBack)
             end
         end)
 
+        --light
+        local light = CCSprite:createWithTexture(nil, rect)
+        light:setVisible(false)
+        light:setOpacity(100)
+        
+        light:setPosition(ccpAdd(point, ccp(0, size.height * 2.3)))
+        self._btnLayer:addChild(light)
+        self._selectLightMap[v] = light
+
         
     end
 end
 
 function ManageView:init()
+
 	print("View init")
     self._npcMap = {}
     self._playerMap = {}
     self._productMap = {}
+
+    self._selectLightMap = {} --elfId 与会发亮的物品对应
 
 	do   --tmx地图 单纯显示用
         local map = CCTMXTiledMap:create("map.tmx")
@@ -271,12 +284,27 @@ end
 ------Delegate Method------
 --MD_前缀代表model delegate---
 ----------------------------]]
+--选择物品，是否发光
+function ManageView:MD_selectLight(mapId, isLight)
+    local sprite = self._selectLightMap[mapId]
+    if sprite then
+        -- sprite:stopAllActions()
+        if isLight then
+            sprite:setVisible(true)
+            -- sprite:runAction(CCRepeatForever:create(CCBlink:create(5, 10)))
+        else
+            sprite:setVisible(false)
+        end
+
+    end
+end
+
 function ManageView:MD_setStatsReason(leaveReason, num)
     local label = self._statsReasonMap[leaveReason]
     label:setString(leaveReason..":"..num)
 end
 
-function ManageView:setStatsProductInfo(productId, num)
+function ManageView:MD_setStatsProductInfo(productId, num)
     local label = self._statsProductInfoMap[productId]
     label:setString("product"..(productId - 100)..":"..num)
 end
@@ -301,6 +329,13 @@ function ManageView:MD_addProduct(data)
 
         local sprite = CCSprite:createWithTexture(nil, rect)
 
+        local light = CCSprite:createWithTexture(nil, rect)
+
+        light:setVisible(false)
+        light:setOpacity(100)
+        light:setColor(ccc3(255, 0, 0))
+        -- light:runAction(CCRepeatForever:create(CCBlink:create(5, 10)))
+
         sprite:setTouchEnabled(true)
 
         label:setAnchorPoint(ccp(0.5, - 0.7))
@@ -311,11 +346,13 @@ function ManageView:MD_addProduct(data)
         sprite:setPosition(point)
         label:setPosition(point)
         progressBar:setPosition(point)
+        light:setPosition(point)
 
         
         self._productLayer:addChild(sprite)
         self._productLayer:addChild(progressBar)
         self._productLayer:addChild(label)
+        self._productLayer:addChild(light)
 
         self._productMap[elfId] = progressBar
 
@@ -342,6 +379,8 @@ function ManageView:MD_addProduct(data)
 
             end
         end)
+
+        self._selectLightMap[mapId] = light
 end
 
 function ManageView:MD_addPlayer(data)

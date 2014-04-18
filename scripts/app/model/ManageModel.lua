@@ -21,6 +21,8 @@ ManageModel._productInfoMap     = nil
 -------------------------
 ManageModel._trayInfo           = nil --面板信息
 
+ManageModel._lightMap           = nil --闪光信息
+
 -------------------------
 ManageModel._npcTestFlag        = 0
 
@@ -42,6 +44,7 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
+	self._lightMap          = {}
 	local trayNum = GlobalValue.TrayNum.value
 	self._trayInfo = TrayInfo:create(trayNum)
 
@@ -56,6 +59,16 @@ function ManageModel:onEnter()
 
 	--初始化产品
 	self:initProduct()
+
+	--初始化普通座位，外卖座位闪光
+	local seatVec = G_seatControl:getMapIdVecOfType(kMapDataSeat)
+	for i,v in ipairs(seatVec) do
+		self._lightMap[v] = 0
+	end
+	local waitSeatVec = G_seatControl:getMapIdVecOfType(kMapDataWaitSeat)
+	for i,v in ipairs(waitSeatVec) do
+		self._lightMap[v] = 0
+	end
 
 	--test
 	local function performWithDelay(node, callback, delay)
@@ -160,6 +173,9 @@ function ManageModel:initProduct()
 			data.mapId = mapId
 
 		G_modelDelegate:addProduct(data)
+
+		--选择闪光对应id
+		self._lightMap[mapId] = 0 
 
 		--定时器 test
 		G_modelDelegate:coolDownProduct(elfId, duration)
@@ -542,10 +558,12 @@ function ManageModel:playerQueue(playerInfo)
 		end,
 		--2
 		[PlayerStateType.Seat]	 		= function()
-			-- print("at seat")
+		    -- print("at seat")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 			local elfId = G_seatControl:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
+
+			self:addSelectLight(mapId, -1)--闪光次数减1
 
 			if elfId == ElfIdList.Rubbish then --清理垃圾
 				G_seatControl:leaveSeat(kMapDataSeat, mapId, elfId)
@@ -565,8 +583,10 @@ function ManageModel:playerQueue(playerInfo)
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 
+			self:addSelectLight(mapId, -1)--闪光次数减1
+
 			local elfId = G_seatControl:getSeatInfo(kMapDataWaitSeat, mapId) --取出占座位的npc
-			
+
 			if elfId == ElfIdList.Rubbish then --清理垃圾
 				G_seatControl:leaveSeat(kMapDataWaitSeat, mapId, elfId)
 
@@ -575,13 +595,17 @@ function ManageModel:playerQueue(playerInfo)
 				--处理需求
 				self:playerOnSeat(npcInfo)
 
-			end-- if end
+			end-- if end	
 		end,
 		--4
 		[PlayerStateType.Product]		= function()
 			-- print("at product")
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			assert(preQueueData ~= nil, "error,queue should not nil")
+
+			local mapId = preQueueData.originMapId
+
+			self:addSelectLight(mapId, -1)--闪光次数减1
 
 			if preQueueData.isDelete then --先判断是否已经删除
 				-- print("delete")
@@ -615,12 +639,16 @@ function ManageModel:playerQueue(playerInfo)
 				G_timer:addTimerListener(productElfId, duration, self)
 				--玩家进入下个状态
 
+
+
 			else --不满足需求
 				--玩家保持等待状态
 				playerInfo.curState = PlayerStateType.WaitProduct
 				playerInfo.waitProductId = productElfId --等待id
 
 				--等待产品cooldown回调
+
+				self:addSelectLight(mapId, 1)--闪光次数减1
 
 				return true --注意此值是fSwitch()的返回值
 
@@ -679,13 +707,17 @@ function ManageModel:playerQueue(playerInfo)
 
 		if queueData then
 			local isDelete = queueData.isDelete
-			--是否已经取消，若取消则执行下一个队列
+			-- --是否已经取消，若取消则执行下一个队列
+
 			if isDelete then
+				-- if playerInfo.curState == PlayerStateType.Product then
+					-- self:addSelectLight(queueData.originMapId, -1)--闪光次数减1
+				-- end
+
 				playerInfo.curState = PlayerStateType.Idle --空闲状态
 				self:playerQueue(playerInfo)
 				return
 			end
-
 			--当前数据, 执行逻辑
 			local mapId = queueData.mapId
 
@@ -712,6 +744,8 @@ function ManageModel:onSeatBtn(mapId)
 	-- print("on seat btn:"..mapId)
 	--这里应该按照地图对应的座位/位置发生的事件派发给对应的player，然后等待回调
 
+	self:addSelectLight(mapId, 1)--闪光次数加1
+
 	--填队列结构
 	local serveId = self._seatToServeDic[mapId]
 
@@ -735,6 +769,8 @@ end
 --点击外卖座位事件
 function ManageModel:onWaitSeatBtn(mapId)
 	-- print("on wait seat btn:"..mapId)
+
+	self:addSelectLight(mapId, 1)--闪光次数加1
 
 	--填队列结构
 	local serveId = self._seatToServeDic[mapId]
@@ -762,6 +798,8 @@ function ManageModel:onProductBtn(elfId)
 	--填队列结构
 	local productInfo = self._productInfoMap[elfId]
 	local mapId = productInfo.mapId
+
+	self:addSelectLight(mapId, 1)--闪光次数加1
 
 	local serveId = self._seatToServeDic[mapId]
 
@@ -805,10 +843,18 @@ end
 --点击托盘食物回调
 function ManageModel:onTrayProductBtn(index)
 	--逻辑上删除面板index的值，若产品是未完成的则返回加入产品时候的队列值
-	--该队列值是playerInfo动作队列中加入产品动作时候返回的
+	--该队列值是playerInfo动作队列中加入产品动作时候返回的	
+
+	local productId = self._trayInfo:productIdAtIndex(index)
+
 	local queueId = self._trayInfo:removeProduct(index)
 
 	if queueId then --queueId存在说明物品未完成状态
+		--删除闪光
+		
+		local productInfo = self._productInfoMap[productId]
+		local mapId = productInfo.mapId
+		self:addSelectLight(mapId, -1)--闪光次数减1
 		
 		local testPlayerId = 1
 
@@ -821,10 +867,18 @@ function ManageModel:onTrayProductBtn(index)
 			--删除第一个队列的值
 			--判断玩家是否在等待该产品
 			if playerInfo.curState == PlayerStateType.WaitProduct then
+
+				-- local productInfo = self._productInfoMap[playerInfo.waitProductId]
+				-- local mapId = productInfo.mapId
+
+				-- self:addSelectLight(mapId, -1)--闪光次数减1
+
 				--切换状态，执行下一条命令
 				playerInfo.curState = PlayerStateType.Idle --设置空闲状态
 				playerInfo.waitProductId = -1
 				self:playerQueue(playerInfo)
+
+
 			end
 
 		end
@@ -837,6 +891,27 @@ function ManageModel:onTrayProductBtn(index)
 
 	self:refreshTrayProduct() --补充托盘
 	
+end
+
+
+function ManageModel:addSelectLight(mapId, num)
+	local originNum = self._lightMap[mapId]
+	local newNum = originNum + num
+	print("add"..mapId.." "..originNum.." "..newNum)
+
+	if originNum == 0 and newNum == 1 then
+		G_modelDelegate:selectLight(mapId, true)
+		-- print("light:"..mapId.."light")		
+
+	elseif originNum == 1 and newNum == 0 then
+		G_modelDelegate:selectLight(mapId, false)
+		-- print("light:"..mapId.."dark")	
+	end
+
+	self._lightMap[mapId] = newNum
+
+	-- dump(self._lightMap, "light")
+
 end
 
 --[[-------------------
