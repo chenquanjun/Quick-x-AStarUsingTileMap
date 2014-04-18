@@ -1,7 +1,9 @@
 --主view
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageView = class("ManageView", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+    return node
 end)			
 
 --[[-------------------
@@ -133,8 +135,6 @@ function ManageView:init()
     self._playerMap = {}
     self._productMap = {}
 
-    -- self._scheduler = require("framework.scheduler")
-
 	do   --tmx地图 单纯显示用
         local map = CCTMXTiledMap:create("map.tmx")
         self:addChild(map)
@@ -246,11 +246,15 @@ function ManageView:init()
     end
 end
 
-function ManageView:onRelease()
-	print("View on release")
-    self._trayLayer:onRelease()
+function ManageView:onEnter()
 
-	self._mapInfo = nil
+end
+
+function ManageView:onExit()
+    print("View on release")
+    -- self._trayLayer:onRelease()
+
+    self._mapInfo = nil
 
     local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
     cache:removeSpriteFramesFromFile("player1.plist")
@@ -258,6 +262,10 @@ function ManageView:onRelease()
     cache:removeSpriteFramesFromFile("player3.plist")
     cache:removeSpriteFramesFromFile("player4.plist")
 end
+
+-- function ManageView:onRelease()
+
+-- end
 
 --[[
 --------------------------
@@ -503,10 +511,6 @@ function ManageView:MD_removeNPC(elfId)
 
     if npcSprite then
         self._npcMap[elfId] = nil
-
-        if npcSprite.handler then
-            G_scheduler.unscheduleGlobal(npcSprite.handler) --防止继续执行动作
-        end
         
         npcSprite:removeFromParentAndCleanup(true)
 

@@ -11,8 +11,7 @@ NPCSprite.__mode = "v" --弱引用
 
 --public
 NPCSprite.nPreMapId      = -1
-NPCSprite.nTargetMapId   = -1
-NPCSprite.handler        = nil       
+NPCSprite.nTargetMapId   = -1    
 
 --private
 NPCSprite._fileName      = nil --文件名
@@ -219,57 +218,54 @@ end
 function NPCSprite:easeWalkTo(speed, mapPath)
         --A星寻路 地图路径
 
-        if mapPath == nil then
-            return --没有路径
-        end
+    if mapPath == nil then
+        return --没有路径
+    end
 
-        local startPoint = mapPath:getPointAtIndex(1) --第一个点
-        local pointNum = mapPath:getPointArrCount()
+    local startPoint = mapPath:getPointAtIndex(1) --第一个点
+    local pointNum = mapPath:getPointArrCount()
 
-        self:setPosition(startPoint)
+    self:setPosition(startPoint)
 
-        local curTime = 0
-        local totalTime = speed * pointNum
+    local curTime = 0
+    local totalTime = speed * pointNum
 
-        if self.handler then
-            -- print("exist")
-            G_scheduler.unscheduleGlobal(self.handler)
-            self.handler = nil
-        end
-        --定时器
-        self.handler = G_scheduler.scheduleUpdateGlobal(function(dt)
-                            curTime = curTime + dt
+    local function updatePosition(dt)
+                curTime = curTime + dt
 
-                            --这个类似动作里面的update的time参数
-                            local time = curTime / totalTime
+                --这个类似动作里面的update的time参数
+                local time = curTime / totalTime
 
-                            local fIndex = (pointNum - 1) * time + 1 --从1开始
-                            local index  = self:int(fIndex)
+                local fIndex = (pointNum - 1) * time + 1 --从1开始
+                local index  = self:int(fIndex)
 
-                            if index < pointNum then
-                                local curPoint = mapPath:getPointAtIndex(index)
-                                -- print(index..":"..curPoint.x..", "..curPoint.y)
-                                local nextPoint = mapPath:getPointAtIndex(index + 1)
-                                local offset = fIndex - index
-                                local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
-                                local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
-                                curPoint = ccp(x, y) 
-                                self:setPosition(curPoint)
+                if index < pointNum then
+                    local curPoint = mapPath:getPointAtIndex(index)
 
+                    local nextPoint = mapPath:getPointAtIndex(index + 1)
+                    local offset = fIndex - index
+                    local x = curPoint.x + (nextPoint.x - curPoint.x) * offset
+                    local y = curPoint.y + (nextPoint.y - curPoint.y) * offset
+                    curPoint = ccp(x, y) 
+                    self:setPosition(curPoint)
 
-                                self:playAnim(curPoint, nextPoint)
+                    self:playAnim(curPoint, nextPoint)
 
-                            else --最后一个点
-                                local curPoint = mapPath:getPointAtIndex(pointNum)
-                                self:setPosition(curPoint)
-                                G_scheduler.unscheduleGlobal(self.handler)
-                                self.handler = nil
-                                self:stopAnim()
-                                -- print("move end~")
-                            end
-        end)
+                else --最后一个点
+                    local curPoint = mapPath:getPointAtIndex(pointNum)
+                    self:setPosition(curPoint)
 
-        return totalTime
+                    self:unscheduleUpdate()
+
+                    self:stopAnim()
+
+                end
+    end
+
+    self:unscheduleUpdate()
+    self:scheduleUpdate(updatePosition)
+
+    return totalTime
  
 end
 
@@ -278,12 +274,9 @@ function NPCSprite:onEnter()
 end
 
 function NPCSprite:onExit()
-    -- print("exit")
 
-    if self.handler then
-        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.handler)
-    end
-    
+    self:unscheduleUpdate()
+
 end
 
 function NPCSprite:int(x) 

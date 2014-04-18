@@ -2,7 +2,9 @@
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageTrayView = class("ManageTrayView", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+    return node
 end)			
 --index
 ManageTrayView.__index  			= ManageTrayView
@@ -24,7 +26,11 @@ function ManageTrayView:init(maxNum)
 	self._productVec = {}
 end
 
-function ManageTrayView:onRelease()
+function ManageTrayView:onEnter()
+
+end
+
+function ManageTrayView:onExit()
 	self._productVec = nil
 end
 
@@ -171,8 +177,6 @@ function ManageTrayView:removeProductWithVec(indexVec)
         end
 
     end
-
-    -- print("size:"..#productVec)
 
     if indexSize < size then
         for i, product in ipairs(productVec) do

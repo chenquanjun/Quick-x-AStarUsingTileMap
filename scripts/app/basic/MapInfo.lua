@@ -1,6 +1,8 @@
 --地图信息类
 MapInfo = class("MapInfo", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+    return node
 end)
 --index
 MapInfo.__index  		    	= MapInfo
@@ -17,6 +19,19 @@ function MapInfo:create(fileName)
 	local mapInfo = MapInfo.new()
 	mapInfo:init(fileName)
 	return mapInfo
+end
+
+function MapInfo:onEnter()
+
+end
+
+function MapInfo:onExit()
+    self._mapMatrix  		   		= nil      
+    self._mapUnit  				= nil      
+    self._mapDataVec  				= nil      
+    self._mapDataDic                 = nil
+    self._mapPathCache  			= nil   
+    self._mapSeatToServeDic      = nil
 end
 
 function MapInfo:init(fileName)

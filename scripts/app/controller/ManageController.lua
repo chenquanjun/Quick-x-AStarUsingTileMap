@@ -48,7 +48,9 @@ require "app/delegate/ManageViewDelegate"
 
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageController = class("ManageController", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+	return node
 end)	
 
 --[[-------------------
@@ -68,7 +70,6 @@ ManageController._timerPast     = 0
 ManageController._viewDelegate = nil
 ManageController._modelDelegate = nil
 ManageController._seatControl = nil
-ManageController._scheduler = nil
 ManageController._payControl = nil
 ManageController._timer = nil
 ManageController._stats = nil
@@ -115,7 +116,6 @@ function ManageController:init()
 		self._viewDelegate = viewDelegate  --view delegate
 		self._modelDelegate = modelDelegate --model delegate
 		self._seatControl = SeatControl:create(mapDataDic)  --座位控制
-		self._scheduler = require("framework.scheduler")    --scheduler
 
 		local payMapIdVec = self._seatControl:getMapIdVecOfType(kMapDataPayQueue)
 
@@ -145,16 +145,11 @@ function ManageController:init()
 			end)
 	end
 
-
-end
-
-function ManageController:onEnter()
 	--全局变量
 	G_modelDelegate = self._modelDelegate 
 	G_viewDelegate = self._viewDelegate 
 
     G_seatControl = self._seatControl
-    G_scheduler = self._scheduler
 
     G_payControl = self._payControl
 
@@ -162,6 +157,21 @@ function ManageController:onEnter()
 	
 
 	G_stats = self._stats
+end
+
+function ManageController:onEnter()
+	-- --全局变量
+	-- G_modelDelegate = self._modelDelegate 
+	-- G_viewDelegate = self._viewDelegate 
+
+ --    G_seatControl = self._seatControl
+
+ --    G_payControl = self._payControl
+
+ --    G_timer = self._timer
+	
+
+	-- G_stats = self._stats
 
 	--启动定时器
 	G_timer:startTimer()
@@ -274,43 +284,34 @@ function ManageController:onEnter()
 		
 	end
 
-	self._model:onEnter()
-
 	self._timerPast = -1 --第一次调用变成0
 	self:TD_onTimeOver(ElfIdList.TimerPast)--相当于启动定时器
 end
---统一用此方法，scene负责通知controller,controller再通知view和model
-function ManageController:onRelease()
+
+function ManageController:onExit()
 	print("Controller on release")
 	G_viewDelegate:removeRefer()
 	G_modelDelegate:removeRefer()
 
-	self._view:onRelease()
-	self._model:onRelease()
-
 	self._mapInfo = nil
 	self._view = nil
 	self._model = nil
-	-- self._viewDelegate = nil
 
 	self._viewDelegate = nil
 	self._modelDelegate = nil
 	self._seatControl = nil
-	self._scheduler = nil
+
 	self._payControl = nil
 	self._timer = nil
 	self._stats = nil
 
-	-- CCDirector:sharedDirector():getScheduler():unscheduleAll()
-
 	G_viewDelegate = nil
 	G_modelDelegate = nil
 	G_seatControl = nil
-	G_scheduler = nil
+
 	G_payControl = nil
 	G_timer = nil
 	G_stats = nil
-
 end
 
 --[[

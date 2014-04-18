@@ -1,6 +1,8 @@
 --此处继承CCNode,因为需要维持这个表，但是用object的话需要retian/release
 ManageModel = class("ManageModel", function()
-	return CCNode:create()
+    local node = display.newNode()
+    node:setNodeEventEnabled(true)
+    return node
 end)	
 
 --[[-------------------
@@ -105,7 +107,7 @@ function ManageModel:onEnter()
 
 end
 
-function ManageModel:onRelease()
+function ManageModel:onExit()
 	print("Model on release")
 
 	self._seatVector = nil
@@ -118,7 +120,6 @@ function ManageModel:onRelease()
 
 	self._npcInfoMap  	= nil
 	self._playerInfoMap  = nil
-
 end
 
 --[[-------------------
@@ -767,10 +768,6 @@ end
 --点击产品事件
 function ManageModel:onProductBtn(elfId)
 	-- print("on product btn:"..elfId)
-
-
-
-
 	--填队列结构
 	local productInfo = self._productInfoMap[elfId]
 	local mapId = productInfo.mapId

@@ -1,7 +1,7 @@
 require "app/controller/ManageController"
 
 --local var
-local _controller = nil
+-- local _controller = nil
 
 
 local MainScene = class("MainScene", function()
@@ -9,8 +9,8 @@ local MainScene = class("MainScene", function()
 end)
 
 function MainScene:ctor()
-    _controller = ManageController:create()
-    self:addChild(_controller)
+    local controller = ManageController:create()
+    self:addChild(controller)
 
 end
 
@@ -29,12 +29,12 @@ function MainScene:onEnter()
         end, 0.5)
     end
 
-    _controller:onEnter()
+    -- _controller:onEnter()
 end
 
 function MainScene:onExit()
-    _controller:onRelease()
-    _controller = nil
+    -- _controller:onRelease()
+    -- _controller = nil
 end
 
 return MainScene
