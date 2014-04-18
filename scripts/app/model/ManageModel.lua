@@ -455,7 +455,7 @@ function ManageModel:playerOnSeat(npcInfo)
 
 		local addNum = self:refreshTrayProduct() --补充托盘
 
-		assert(#requestIndexVec == addNum, "error num")
+		-- assert(#requestIndexVec == addNum, "error num")
 
 	else --没有一个产品满足npc（赶走npc）
 		print("get out:"..elfId)
@@ -547,7 +547,10 @@ function ManageModel:playerQueue(playerInfo)
 			local mapId = preQueueData.originMapId --取出座位id
 			local elfId = G_seatControl:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
 
-			if elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
+			if elfId == ElfIdList.Rubbish then --清理垃圾
+				G_seatControl:leaveSeat(kMapDataSeat, mapId, elfId)
+
+			elseif elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
 				--处理需求
 
@@ -563,8 +566,11 @@ function ManageModel:playerQueue(playerInfo)
 			local mapId = preQueueData.originMapId --取出座位id
 
 			local elfId = G_seatControl:getSeatInfo(kMapDataWaitSeat, mapId) --取出占座位的npc
+			
+			if elfId == ElfIdList.Rubbish then --清理垃圾
+				G_seatControl:leaveSeat(kMapDataWaitSeat, mapId, elfId)
 
-			if elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
+			elseif elfId ~= G_seatControl.SEAT_EMPTY  then --座位不为空！
 				local npcInfo = self._npcInfoMap[elfId]
 				--处理需求
 				self:playerOnSeat(npcInfo)

@@ -322,7 +322,43 @@ function PayControl:npcStateControl(elfId)
 	end
 end
 
+function PayControl:onGameOver()
+	print("pay control gameover")
+	--时间到了 游戏结束
 
+	--普通队列全部收款
+
+	--删除定时器
+
+	dump(self._norPayQueue._queueData, "queuedata")
+	G_timer:removeTimerListener(ElfIdList.PayQueCheck)
+
+	local queueNum = self._norPayQueue:getQueueNum()
+
+	for i= 1, queueNum do
+
+		local data = self._norPayQueue:popQueue()
+
+		local elfId = data.elfId
+
+		local npcInfo = self._npcInfoMap[elfId]
+
+		print("payEnded:"..elfId)
+		--标记状态
+		self._statusDic[elfId] = 0
+
+		G_stats:leaveFor(elfId, LeaveReason.PayEnded) --直接调用状态统计
+		
+		--进入控制（游戏已经暂停，不需要控制了？）
+		-- self:npcStateControl(elfId)
+	end
+
+end
+
+
+--[[-------------------
+	---timer call-----
+	---------------------]]
 function PayControl:TD_onTimeOver(listenerId)
 	if listenerId >= ElfIdList.NpcOffset + ElfIdList.PayNpcOffset then --npcId回调
 		--npc移动到指定位置的回调

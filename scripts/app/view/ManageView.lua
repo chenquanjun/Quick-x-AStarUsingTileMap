@@ -36,12 +36,21 @@ function ManageView:create()
 	return ret
 end
 
-function ManageView:toggleTimer(isOn)
-   if isOn then
-        self._testTimerSpr:setColor(ccc3(0, 0, 255))
-   else
-        self._testTimerSpr:setColor(ccc3(255, 0, 0))
-   end
+function ManageView:onEnter()
+
+end
+
+function ManageView:onExit()
+    print("View on release")
+    -- self._trayLayer:onRelease()
+
+    self._mapInfo = nil
+
+    local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
+    cache:removeSpriteFramesFromFile("player1.plist")
+    cache:removeSpriteFramesFromFile("player2.plist")
+    cache:removeSpriteFramesFromFile("player3.plist")
+    cache:removeSpriteFramesFromFile("player4.plist")
 end
 
 function ManageView:initTimer(callBack)
@@ -85,10 +94,6 @@ function ManageView:initTimer(callBack)
 
         end
     end)
-end
-
-function ManageView:setTimer(num)
-    self._timerLabel:setString(num)
 end
 
 function ManageView:initBtns(mapIdVec, callBack)
@@ -246,26 +251,20 @@ function ManageView:init()
     end
 end
 
-function ManageView:onEnter()
-
+--[[-------------------
+    ---Timer View-----
+    ------controller-------]]
+function ManageView:toggleTimer(isOn)
+   if isOn then
+        self._testTimerSpr:setColor(ccc3(0, 0, 255))
+   else
+        self._testTimerSpr:setColor(ccc3(255, 0, 0))
+   end
 end
 
-function ManageView:onExit()
-    print("View on release")
-    -- self._trayLayer:onRelease()
-
-    self._mapInfo = nil
-
-    local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
-    cache:removeSpriteFramesFromFile("player1.plist")
-    cache:removeSpriteFramesFromFile("player2.plist")
-    cache:removeSpriteFramesFromFile("player3.plist")
-    cache:removeSpriteFramesFromFile("player4.plist")
+function ManageView:setTimer(num)
+    self._timerLabel:setString(num)
 end
-
--- function ManageView:onRelease()
-
--- end
 
 --[[
 --------------------------
@@ -377,32 +376,6 @@ function ManageView:MD_addPlayer(data)
 
     --保存到Map里面
     self._playerMap[elfId] = npcSprite 
-
-    -- if elfId == 1 then
-    --     --test
-    --     local productVec = {}
-
-    --     for i=1,5 do
-    --         local product1 = {}
-    --         productVec[i] = product1
-    --         product1.elfId = i
-    --     end
-
-    --     npcSprite:addRequest(productVec)
-
-    --     local removeList = {}
-    --     removeList[1] = 2
-    --     removeList[2] = 3
-    --     removeList[3] = 5
-    --     -- removeList[4] = 4
-    --     -- removeList[5] = 5
-
-    --     npcSprite:removeRequest(removeList)
-    -- end
-
-
-
-
 end
 
 function ManageView:MD_addNPC(data)

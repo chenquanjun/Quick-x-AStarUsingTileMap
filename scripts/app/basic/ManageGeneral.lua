@@ -35,6 +35,7 @@ kMapKeyOffset         	= 100000 --地图路径的保存偏移量 startId * kMapK
 --确保每个使用到时间调用的元素都有一个唯一的id
 ElfIdList = {
 	Player     		 = 1,    --玩家id，史迪奇1         --model 
+	Rubbish          = 25,   --垃圾
 	PayQueCrtl		 = 50,   --支付控制，             --payControl 暂时废弃
 	PayQueCheck		 = 51,   --支付队列检测			--payControl
 	TimerPast        = 52,   --流逝时间

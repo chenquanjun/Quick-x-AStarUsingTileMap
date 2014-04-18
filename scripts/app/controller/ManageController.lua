@@ -336,11 +336,12 @@ function ManageController:TD_onTimeOver(elfId)
 
 		if num >= totalTime then
 				-- dump(G_stats._leaveDic, "leave")
+				G_payControl:onGameOver()
 
 				CCDirector:sharedDirector():pause()
 				local point = ccp(display.cx, display.cy)
 
-				local label = CCLabelTTF:create("游戏结束，点击屏幕重新运行游戏", "Arial", 50)
+				local label = CCLabelTTF:create("游戏结束，点击左上角退出重新运行游戏", "Arial", 50)
 				label:setColor(ccc3(255, 0, 0))
 				self:addChild(label, 1001)
 				label:setPosition(point)
@@ -352,7 +353,7 @@ function ManageController:TD_onTimeOver(elfId)
 		        sprite:setPosition(point)
 		        sprite:setTouchEnabled(true)
 		        sprite:setOpacity(0)
-		        self:addChild(sprite, 1000)
+		        -- self:addChild(sprite, 1000)
 
 		        sprite:addTouchEventListener(function(event, x, y)
 
@@ -369,9 +370,9 @@ function ManageController:TD_onTimeOver(elfId)
 		                end
 		            elseif event == "ended" then
 		                if touchInSprite then 
-		                	CCDirector:sharedDirector():resume()
-		                    local scene = require("app/scenes/StartScene")
-            				display.replaceScene(scene.new())
+		              --   	CCDirector:sharedDirector():resume()
+		              --       local scene = require("app/scenes/StartScene")
+            				-- display.replaceScene(scene.new())
 		                    -- CCDirector:sharedDirector():endToLua()
 		                end
 
