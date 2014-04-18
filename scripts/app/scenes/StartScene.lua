@@ -2,7 +2,7 @@
 GlobalValue = {
     TotalTime =  {
                     index = 1,
-                    name  = "总共时间(单位:秒)",
+                    name  = "总共时间(秒)",
                     value = 90,
                     max   = 999999999,
                     min   = 1,
@@ -18,8 +18,8 @@ GlobalValue = {
                     index = 3,
                     name  = "每波顾客人数(个)",
                     value = 3,
-                    max   = 999999999,
-                    min   = 1,
+                    max   = 30,
+                    min   = 0,
                  },
     PlayerMoveSpeed =  {
                     index = 4,
@@ -89,6 +89,27 @@ GlobalValue = {
                     name  = "支付愤怒(秒)",
                     value = 20,
                     max   = 1000,
+                    min   = 0,
+                 },
+    ProductCD =  {
+                    index = 14,
+                    name  = "物品CD(毫秒!)",
+                    value = 2000,
+                    max   = 1000000,
+                    min   = 0,
+                 },
+    PayCD =  {
+                    index = 15,
+                    name  = "收银CD(毫秒!)",
+                    value = 2000,
+                    max   = 1000000,
+                    min   = 0,
+                 },
+    TrayNum =  {
+                    index = 16,
+                    name  = "托盘物品(个)",
+                    value = 5,
+                    max   = 1000000,
                     min   = 0,
                  },
 }
@@ -183,13 +204,13 @@ function StartScene:createEidtBox(data, layer)
     local min = data.min
     local function editBoxTextEventHandle(strEventName,pSender)
         local edit = tolua.cast(pSender,"CCEditBox")
-        local strFmt
+        -- local strFmt
         if strEventName == "began" then
-            strFmt = string.format("editBox %p DidBegin !", edit)
-            print(strFmt)
+            -- strFmt = string.format("editBox %p DidBegin !", edit)
+            -- print(strFmt)
         elseif strEventName == "ended" then
-            strFmt = string.format("editBox %p DidEnd !", edit)
-            print(strFmt)
+            -- strFmt = string.format("editBox %p DidEnd !", edit)
+            -- print(strFmt)
 
             local editValueStr = edit:getText()
             local editValue = toint(editValueStr)
@@ -197,18 +218,27 @@ function StartScene:createEidtBox(data, layer)
             if editValue > min and editValue <= max then
                 data.value = editValue
             else
+                local warningLabel = CCLabelTTF:create(name.." 最大值:"..max.." 最小值:"..min.." 默认值:"..value, "Arial", 25)
+                warningLabel:setPosition(ccp(display.left + 100, display.bottom + 30))
+                warningLabel:setColor(ccc3(255, 0, 0))
+                warningLabel:setAnchorPoint(ccp(0, 0))
+                warningLabel:setTag(999)
+                layer:removeChildByTag(999, true)
+                layer:addChild(warningLabel)
+
+                warningLabel:runAction(CCSequence:createWithTwoActions(CCDelayTime:create(5), CCRemoveSelf:create(true)))
                 edit:setText(value)
             end
         elseif strEventName == "return" then
-            strFmt = string.format("editBox %p was returned !",edit)
+            -- strFmt = string.format("editBox %p was returned !",edit)
 
 
 
-            print(strFmt)
+            -- print(strFmt)
         elseif strEventName == "changed" then
 
-            strFmt = string.format("editBox %p TextChanged, text: %s ", edit, edit:getText())
-            print(strFmt)
+            -- strFmt = string.format("editBox %p TextChanged, text: %s ", edit, edit:getText())
+            -- print(strFmt)
         end
     end
     local offsetX = self:int(index / 12)

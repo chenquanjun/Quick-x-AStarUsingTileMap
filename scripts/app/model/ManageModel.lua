@@ -42,7 +42,8 @@ function ManageModel:init()
 	self._npcInfoMap 		= {}
 	self._playerInfoMap 	= {}
 	self._productInfoMap 	= {}
-	self._trayInfo = TrayInfo:create(5)
+	local trayNum = GlobalValue.TrayNum.value
+	self._trayInfo = TrayInfo:create(trayNum)
 
 end
 
@@ -67,14 +68,19 @@ function ManageModel:onEnter()
 
 	self:addPlayer()
 
+	local perWaveNum = GlobalValue.PerWaveNum.value
+	local perWaveTime = GlobalValue.PerWaveTime.value
+
+	print("perWaveNum"..perWaveNum)
+
 	--批量循环增加测试
 	local function addNPCTest()
 		performWithDelay(self, function() 
-			for i=1, GlobalValue.PerWaveNum.value do
+			for i=1, perWaveNum do
 			self:addNPC()
 			end
 			addNPCTest()
-		end, GlobalValue.PerWaveTime.value)
+		end, perWaveTime)
 	end
 
 	local function addSimpleNPCTest()
@@ -92,54 +98,13 @@ function ManageModel:onEnter()
 		end, math.random(5, 10))
 	end
 
-	for i=1,3 do
+	for i=1, perWaveNum do
 		self:addNPC()
 	end
 	
 	addNPCTest() --批量测试
 	-- addSimpleNPCTest() --批量单个测试
 
-
-
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 106, curState = 0},
-	-- 										-- {elfId = 105, curState = 0},
-	-- 										-- {elfId = 101, curState = 0},
-	-- 										-- {elfId = 106, curState = 0}
-	-- 									},
-	-- 									-- {
-	-- 									-- 	{elfId = 106, curState = 0},
-	-- 									-- 	{elfId = 105, curState = 0},
-	-- 									-- 	{elfId = 101, curState = 0},
-	-- 									-- 	-- {elfId = 106, curState = 0}
-	-- 									-- },
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试	
-
-	-- end
-
-	-- do
-	-- 			local productList = {
-	-- 									{
-	-- 										{elfId = 102, curState = 0},
-	-- 										{elfId = 103, curState = 0},
-	-- 										{elfId = 106, curState = 0},
-	-- 										-- {elfId = 106, curState = 0}
-	-- 									},
-	-- 								}
-
-	-- 			self:addNPC(productList) --单个测试		
-	-- end
-
-
-	-- self:addNPC() --单个测试
-	-- self:addNPC() --单个测试
-	-- self:addNPC() --单个测试
-	-- self:addNPC() --单个测试
-	-- self:addNPC() --单个测试
 end
 
 function ManageModel:onRelease()
@@ -176,7 +141,7 @@ function ManageModel:initProduct()
 		local name = "id:"..(elfId - 100)
 		local productType = 1
 
-		local duration = 2--math.random(0.5, 0.5)
+		local duration = GlobalValue.ProductCD.value / 1000--math.random(0.5, 0.5)
 
 		local productInfo = {}
 			productInfo.duration = duration

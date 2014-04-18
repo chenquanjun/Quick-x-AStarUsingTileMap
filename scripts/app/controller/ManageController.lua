@@ -208,7 +208,7 @@ function ManageController:onEnter()
 
 
 		local exitBtn = createDump("退出场景", function ()
-
+			CCDirector:sharedDirector():resume()
             local scene = require("app/scenes/StartScene")
             display.replaceScene(scene.new())
 		end)
@@ -230,6 +230,20 @@ function ManageController:onEnter()
 			print("dump timer")
 			G_timer:dumpAllData()
 		end)
+
+
+
+		do --另外一个按钮
+			local exitBtn = createDump("退出游戏", function ()
+				CCDirector:sharedDirector():resume()
+	            local scene = require("app/scenes/StartScene")
+	            display.replaceScene(scene.new())
+			end)
+			exitBtn:setPosition(ccp(display.left + 100, display.top - 50))
+			exitBtn:setVisible(true)
+			exitBtn:setScale(1.5)
+		end
+
 
 
 
@@ -319,13 +333,13 @@ function ManageController:TD_onTimeOver(elfId)
 	if elfId == ElfIdList.TimerPast then
 		local num = self._timerPast + 1
 
-		if num == totalTime then
+		if num >= totalTime then
 				-- dump(G_stats._leaveDic, "leave")
 
 				CCDirector:sharedDirector():pause()
 				local point = ccp(display.cx, display.cy)
 
-				local label = CCLabelTTF:create("游戏结束，重新运行游戏", "Arial", 50)
+				local label = CCLabelTTF:create("游戏结束，点击屏幕重新运行游戏", "Arial", 50)
 				label:setColor(ccc3(255, 0, 0))
 				self:addChild(label, 1001)
 				label:setPosition(point)
@@ -354,6 +368,9 @@ function ManageController:TD_onTimeOver(elfId)
 		                end
 		            elseif event == "ended" then
 		                if touchInSprite then 
+		                	CCDirector:sharedDirector():resume()
+		                    local scene = require("app/scenes/StartScene")
+            				display.replaceScene(scene.new())
 		                    -- CCDirector:sharedDirector():endToLua()
 		                end
 

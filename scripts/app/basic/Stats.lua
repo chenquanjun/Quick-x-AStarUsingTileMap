@@ -47,6 +47,10 @@ function Stats:addNPC(data)
 	end
 end
 
+function Stats:addProduct(data)
+	-- body
+end
+
 --按照顺序存储
 function Stats:leaveFor(elfId, leaveReason)
 

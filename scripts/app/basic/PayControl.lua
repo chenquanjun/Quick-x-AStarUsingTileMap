@@ -220,7 +220,7 @@ function PayControl:npcMoveEnded(elfId)
 		local queueIndex = self._norPayQueue:getQueueIndex(elfId)
 
 		if queueIndex == 1 then --npc在第一位
-			local duration = 3.0--收银时间
+			local duration = GlobalValue.PayCD.value--收银时间
 
 			--收银开动
 			G_timer:addTimerListener(ElfIdList.PayQueCheck, duration, self) --加入时间控制

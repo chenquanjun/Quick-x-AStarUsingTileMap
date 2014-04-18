@@ -91,8 +91,8 @@ NPCStateType = {
 }
 
 LeaveReason = {
-				TotalIn         =  1,
-				TotalLeave      =  2,
+				TotalIn         =  1, --总共进入
+				TotalLeave      =  2, --总共离开
 				NoSeat 			=  3, --没有位置离开
 				SeatAnger       =  4, --座位愤怒离开
 				WaitSeatAnger 	=  5, --等待座位愤怒离开
