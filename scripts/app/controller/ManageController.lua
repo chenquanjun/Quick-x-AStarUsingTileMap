@@ -262,20 +262,20 @@ function ManageController:onEnter()
 			self._view:toggleTimer(not isOn)
 
 			if isOn then
-				-- G_timer:pauseTimer()
+				G_timer:pauseTimer()
 				exitBtn:setVisible(true)
 				dumpModelBtn:setVisible(true)
 				dumpPayControlBtn:setVisible(true)
 				dumpTimerBtn:setVisible(true)
-				CCDirector:sharedDirector():pause()
+				-- CCDirector:sharedDirector():pause()
 				
 			else 
-				-- G_timer:resumeTimer()
+				G_timer:resumeTimer()
 				exitBtn:setVisible(false)
 				dumpModelBtn:setVisible(false)
 				dumpPayControlBtn:setVisible(false)
 				dumpTimerBtn:setVisible(false)
-				CCDirector:sharedDirector():resume()
+				-- CCDirector:sharedDirector():resume()
 			end
 			isOn = not isOn	
 

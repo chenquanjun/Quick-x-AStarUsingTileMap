@@ -19,6 +19,7 @@ GlobalTimer._timerInterval     = 0.05 --每0.1秒执行事件
 GlobalTimer._timerActionTag    = 99 
 GlobalTimer._lstIdsTimerKey    = nil --以结束时间为key保存listenerId的vec
 GlobalTimer._timerUnitLstIdKey = nil --以listenerId为key保存TimerUnit对象
+GlobalTimer._isRunning         = false
 
 --[[-------------------
     ---init Method-----
@@ -33,11 +34,17 @@ end
 function GlobalTimer:init()
     self._lstIdsTimerKey = {} --以结束时间为key保存listenerId的vec
     self._timerUnitLstIdKey = {} --以listenerId为key保存TimerUnit对象
+
+    self._isRunning = false
 end
 
 --[[-------------------
     ---Timer Method-----
     ---------------------]]
+
+function GlobalTimer:isRunning()
+	return self._isRunning
+end
 
 function GlobalTimer:startTimer()
 
@@ -57,11 +64,11 @@ function GlobalTimer:startTimer()
 
 	    self._timerEvent = TimerEvent.Running
 
+	    self._isRunning = true
+
 	elseif self._timerEvent == TimerEvent.Running or self._timerEvent == TimerEvent.Pause then
 		error("running should stop, pause should resume")
 	end
-
-
 
 end
 
@@ -71,6 +78,8 @@ function GlobalTimer:pauseTimer()
 		self:stopActionByTag(self._timerActionTag)
 
 		self._timerEvent = TimerEvent.Pause
+
+		self._isRunning = false
 	else
 		error("error call")
 	end
@@ -89,6 +98,8 @@ function GlobalTimer:resumeTimer()
 
 	    self._timerEvent = TimerEvent.Running
 
+	    self._isRunning = true
+
 	else
 		error("error call")
 	end
@@ -102,6 +113,8 @@ function GlobalTimer:stopTimer()
 
 	self._lstIdsTimerKey = {} 
     self._timerUnitLstIdKey = {} 
+
+    self._isRunning = false
 end
 
 --[[-------------------

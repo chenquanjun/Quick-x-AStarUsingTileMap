@@ -231,6 +231,10 @@ function NPCSprite:easeWalkTo(speed, mapPath)
     local totalTime = speed * pointNum
 
     local function updatePosition(dt)
+                if not G_timer:isRunning() then
+                    return
+                end
+
                 curTime = curTime + dt
 
                 --这个类似动作里面的update的time参数
