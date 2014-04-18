@@ -623,30 +623,52 @@ function ManageModel:playerQueue(playerInfo)
 		return
 	end
 
-	--弹出最上面的数据
-	local queueData = playerInfo:popQueue()
+	--稍微延迟执行
 
-	if queueData then
-		local isDelete = queueData.isDelete
-		--是否已经取消，若取消则执行下一个队列
-		if isDelete then
-			playerInfo.curState = PlayerStateType.Idle --空闲状态
-			self:playerQueue(playerInfo)
-			return
-		end
+	local function performWithDelay(node, callback, delay)
+	    local delay = CCDelayTime:create(delay)
+	    local callfunc = CCCallFunc:create(callback)
+	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+	    sequence:setTag(1024)
 
-		--当前数据, 执行逻辑
-		local mapId = queueData.mapId
+	    if node:getNumberOfRunningActions() > 1 then
+	    	-- print(node:stopActionByTag(1024)) 
+	    	assert(node:stopActionByTag(1024) ~= nil, "error multi")
+	    end
 
-		playerInfo.curState = queueData.state --保存状态
-
-		local totalTime = G_modelDelegate:movePlayer(elfId, mapId)
-
-		G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
-
-	else --不存在
-		playerInfo.curState = PlayerStateType.Idle --空闲状态
+	    node:runAction(sequence)
+	    return sequence
 	end
+
+	--稍微停顿
+	performWithDelay(self, function ()
+		--弹出最上面的数据
+		local queueData = playerInfo:popQueue()
+
+		if queueData then
+			local isDelete = queueData.isDelete
+			--是否已经取消，若取消则执行下一个队列
+			if isDelete then
+				playerInfo.curState = PlayerStateType.Idle --空闲状态
+				self:playerQueue(playerInfo)
+				return
+			end
+
+			--当前数据, 执行逻辑
+			local mapId = queueData.mapId
+
+			playerInfo.curState = queueData.state --保存状态
+
+			local totalTime = G_modelDelegate:movePlayer(elfId, mapId)
+
+			G_timer:addTimerListener(elfId, totalTime, self) --加入时间控制
+
+		else --不存在
+			playerInfo.curState = PlayerStateType.Idle --空闲状态
+		end	
+	end, 0.2)
+
+
 end
 
 

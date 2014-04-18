@@ -19,101 +19,101 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 54
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.3918] [INFO] 
-Cocos2d: [0.3918] [INFO] # DEBUG                        = 2
-Cocos2d: [0.3918] [INFO] #
-Cocos2d: [0.3919] [INFO] # device.platform              = mac
-Cocos2d: [0.3919] [INFO] # device.model                 = unknown
-Cocos2d: [0.3919] [INFO] # device.language              = cn
-Cocos2d: [0.3919] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.3919] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
-Cocos2d: [0.3919] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.3919] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.3919] [INFO] #
-Cocos2d: [0.3932] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.3932] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-Cocos2d: [0.3932] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
-Cocos2d: [0.3932] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.3932] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.3932] [INFO] # display.contentScaleFactor   = 1.00
-Cocos2d: [0.3932] [INFO] # display.width                = 1136.00
-Cocos2d: [0.3932] [INFO] # display.height               = 640.00
-Cocos2d: [0.3932] [INFO] # display.cx                   = 568.00
-Cocos2d: [0.3932] [INFO] # display.cy                   = 320.00
-Cocos2d: [0.3932] [INFO] # display.left                 = 0.00
-Cocos2d: [0.3932] [INFO] # display.right                = 1136.00
-Cocos2d: [0.3932] [INFO] # display.top                  = 640.00
-Cocos2d: [0.3932] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.3933] [INFO] # display.c_left               = -568.00
-Cocos2d: [0.3933] [INFO] # display.c_right              = 568.00
-Cocos2d: [0.3933] [INFO] # display.c_top                = 320.00
-Cocos2d: [0.3933] [INFO] # display.c_bottom             = -320.00
-Cocos2d: [0.3933] [INFO] #
-Cocos2d: [0.4212] 6 0 6
+Cocos2d: [0.0101] [INFO] 
+Cocos2d: [0.0101] [INFO] # DEBUG                        = 2
+Cocos2d: [0.0101] [INFO] #
+Cocos2d: [0.0102] [INFO] # device.platform              = mac
+Cocos2d: [0.0102] [INFO] # device.model                 = unknown
+Cocos2d: [0.0102] [INFO] # device.language              = cn
+Cocos2d: [0.0102] [INFO] # device.writablePath          = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0102] [INFO] # device.cachePath             = /Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/
+Cocos2d: [0.0102] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0102] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0102] [INFO] #
+Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0113] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0113] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0114] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0114] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0114] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0114] [INFO] # display.height               = 640.00
+Cocos2d: [0.0114] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0114] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0114] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0114] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0114] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0114] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0114] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0114] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0114] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0114] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0114] [INFO] #
+Cocos2d: [0.0406] 6 0 6
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 360.000000
-Cocos2d: [0.5647] 13 1 2
+Cocos2d: [0.0490] 13 1 2
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 560.000000
-Cocos2d: [0.5686] 10 0 10
+Cocos2d: [0.0529] 10 0 10
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 160.000000
-Cocos2d: [0.5723] 9 0 9
+Cocos2d: [0.0563] 9 0 9
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 210.000000
-Cocos2d: [0.5756] 4 0 4
+Cocos2d: [0.0622] 4 0 4
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 460.000000
-Cocos2d: [0.5804] 8 0 8
+Cocos2d: [0.0678] 8 0 8
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 260.000000
-Cocos2d: [0.5841] 3 0 3
+Cocos2d: [0.0711] 3 0 3
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 510.000000
-Cocos2d: [0.5884] 14 1 3
+Cocos2d: [0.0818] 14 1 3
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 510.000000
-Cocos2d: [0.5923] 16 1 5
+Cocos2d: [0.0860] 16 1 5
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 410.000000
-Cocos2d: [0.5961] 11 0 11
+Cocos2d: [0.0896] 11 0 11
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 110.000000
-Cocos2d: [0.5996] 12 1 1
+Cocos2d: [0.0963] 12 1 1
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 610.000000
-Cocos2d: [0.6031] 5 0 5
+Cocos2d: [0.0999] 5 0 5
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 410.000000
-Cocos2d: [0.6063] 17 1 6
+Cocos2d: [0.1036] 17 1 6
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 360.000000
-Cocos2d: [0.6094] 2 0 2
+Cocos2d: [0.1115] 2 0 2
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
-Cocos2d: [0.6127] 15 1 4
+Cocos2d: [0.1150] 15 1 4
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
-Cocos2d: [0.6160] 7 0 7
+Cocos2d: [0.1185] 7 0 7
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
-Cocos2d: [0.6197] 1 0 1
+Cocos2d: [0.1216] 1 0 1
 Cocos2d: [Edit text] content size = (100.000000, 40.000000)
 Cocos2d: [EditBox] pos x = -50.000000, y = 20.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
@@ -134,23 +134,23 @@ Cocos2d: [EditBox] pos x = 250.000000, y = 560.000000
 Cocos2d: [EditBox] pos x = 600.000000, y = 460.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 310.000000
 Cocos2d: [EditBox] pos x = 250.000000, y = 610.000000
-Cocos2d: [0.7066] [INFO] Scene "StartScene:onEnter()"
-Cocos2d: [1.6111] Controller init
-Cocos2d: [1.6111] View init
+Cocos2d: [0.2769] [INFO] Scene "StartScene:onEnter()"
+Cocos2d: [1.1322] Controller init
+Cocos2d: [1.1323] View init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [1.6436] Model init
+Cocos2d: [1.1660] Model init
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [253] to [338].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [338] to [452].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [452] to [604].
 Cocos2d: cocos2d: CCSpriteBatchNode: resizing TextureAtlas capacity from [604] to [806].
-Cocos2d: [1.6604] GridSize: 36, 20
-Cocos2d: [1.6604] PointSize: 32, 32
-Cocos2d: [1.6697] [INFO] Scene "StartScene:onExit()"
-Cocos2d: [1.6697] [INFO] ----------------------------------------
-Cocos2d: [1.6697] [INFO] LUA VM MEMORY USED: 2204.10 KB
+Cocos2d: [1.1838] GridSize: 36, 20
+Cocos2d: [1.1838] PointSize: 32, 32
+Cocos2d: [1.2253] [INFO] Scene "StartScene:onExit()"
+Cocos2d: [1.2253] [INFO] ----------------------------------------
+Cocos2d: [1.2253] [INFO] LUA VM MEMORY USED: 2205.64 KB
 Cocos2d: cocos2d: "cc_fps_images" rc=4 id=2 256 x 32 @ 16 bpp => 16 KB
 Cocos2d: cocos2d: "cc_2x2_white_image" rc=31 id=3 2 x 2 @ 32 bpp => 0 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/green_edit.png" rc=171 id=5 28 x 28 @ 32 bpp => 3 KB
@@ -160,16 +160,33 @@ Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player3.png" rc=17 id=25 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: "/Users/chenquanjun/Documents/gitHub/Quick-x-AStarUsingTileMap/res/player4.png" rc=17 id=26 128 x 192 @ 32 bpp => 96 KB
 Cocos2d: cocos2d: CCTextureCache dumpDebugInfo: 8 textures, for 609 KB (0.59 MB)
-Cocos2d: [1.6698] [INFO] ----------------------------------------
-Cocos2d: [1.6774] [INFO] Scene "MainScene:onEnter()"
-Cocos2d: [1.6774] start timer
-Cocos2d: [1.6822] model onEnter
-Cocos2d: [1.6858] add cache:player1_%i_%i.png1
-Cocos2d: [1.6864] add cache:player2_%i_%i.png1
-Cocos2d: [1.6869] perWaveNum3
-Cocos2d: [1.6870] add cache:player3_%i_%i.png1
-Cocos2d: [1.6895] add cache:player4_%i_%i.png1
-Cocos2d: [10.7069] [INFO] LUA VM MEMORY USED: 3004.38 KB
-Cocos2d: [20.7069] [INFO] LUA VM MEMORY USED: 3146.77 KB
-Cocos2d: [30.7237] [INFO] LUA VM MEMORY USED: 2977.17 KB
-Cocos2d: [40.7407] [INFO] LUA VM MEMORY USED: 3422.70 KB
+Cocos2d: [1.2254] [INFO] ----------------------------------------
+Cocos2d: [1.2362] [INFO] Scene "MainScene:onEnter()"
+Cocos2d: [1.2362] start timer
+Cocos2d: [1.2410] model onEnter
+Cocos2d: [1.2446] add cache:player1_%i_%i.png1
+Cocos2d: [1.2452] add cache:player2_%i_%i.png1
+Cocos2d: [1.2457] perWaveNum3
+Cocos2d: [1.2458] add cache:player3_%i_%i.png1
+Cocos2d: [1.2470] add cache:player4_%i_%i.png1
+Cocos2d: [8.3138] 1
+Cocos2d: [10.2803] [INFO] LUA VM MEMORY USED: 3099.31 KB
+Cocos2d: [11.5136] get out:1001
+Cocos2d: [20.5293] [INFO] LUA VM MEMORY USED: 3150.37 KB
+Cocos2d: [27.0129] 1
+Cocos2d: [27.5135] addPay:1002
+Cocos2d: [28.2635] 1
+Cocos2d: [28.2636] 2
+Cocos2d: [28.6142] get out:1008
+Cocos2d: [29.4632] get out:1003
+Cocos2d: [30.5299] [INFO] LUA VM MEMORY USED: 3682.60 KB
+Cocos2d: [30.7131] get out:1004
+Cocos2d: [32.9128] payEnded:1002
+Cocos2d: [38.7135] get out:1017
+Cocos2d: [39.5632] get out:1019
+Cocos2d: [40.5302] [INFO] LUA VM MEMORY USED: 4358.99 KB
+Cocos2d: [50.5459] [INFO] LUA VM MEMORY USED: 4676.77 KB
+Cocos2d: [60.5464] [INFO] LUA VM MEMORY USED: 4234.94 KB
+Cocos2d: [70.5469] [INFO] LUA VM MEMORY USED: 4889.17 KB
+Cocos2d: [80.5634] [INFO] LUA VM MEMORY USED: 4944.68 KB
+Cocos2d: [90.5797] [INFO] LUA VM MEMORY USED: 4844.12 KB
