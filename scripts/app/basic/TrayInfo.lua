@@ -32,6 +32,16 @@ function TrayInfo:isFull()
 	return value
 end
 
+function TrayInfo:getEmptyNum()
+	local size = #self._productVec
+
+	assert(size <= self._maxNum, "error num")
+
+	local num = self._maxNum - size
+
+	return num
+end
+
 --获得完成物品的id和elfId的数组
 function TrayInfo:getFinishProduct()
 	local finishProductVec = {}

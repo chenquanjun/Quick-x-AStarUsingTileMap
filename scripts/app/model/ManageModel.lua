@@ -20,8 +20,6 @@ ManageModel._productInfoMap     = nil
 ManageModel._trayInfo           = nil --面板信息
 
 -------------------------
--- ManageModel._productIdOffset	= 100   --100~1000是物品id
--- ManageModel._npcIdOffset  		= 1000  --1000以后是npcId
 ManageModel._npcTestFlag        = 0
 
 --[[-------------------
@@ -110,8 +108,6 @@ end
 function ManageModel:onRelease()
 	print("Model on release")
 
-	--G_modelDelegate = nil
-
 	self._seatVector = nil
 	self._waitSeatVector = nil
 	self._doorVector = nil
@@ -119,8 +115,6 @@ function ManageModel:onRelease()
 	self._seatMap = nil
 	self._waitSeatMap = nil
 	self._doorMap = nil
-
-	-- self._oneMapIdMap    = nil
 
 	self._npcInfoMap  	= nil
 	self._playerInfoMap  = nil
@@ -473,44 +467,9 @@ function ManageModel:playerOnSeat(npcInfo)
 		G_modelDelegate:removeRequest(elfId, requestIndexVec) --删除view中npc的需求
 		G_modelDelegate:removeProductWithVec(trayIndexVec)--删除view中托盘的物品
 
-		local deleteNum = #requestIndexVec
+		-- local deleteNum = #requestIndexVec
 
-		do
-			local testPlayerId = 1
-
-			local playerInfo = self._playerInfoMap[testPlayerId] --npcinfo
-
-			--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
-			local playerQueNum = playerInfo:getCurQueueNum()
-			local playerQueIndex = playerInfo:getCurQueueIndex()
-
-			local addNum = 0
-
-			for i = 1, playerQueNum do
-				local index = playerQueIndex + i - 1
-				local queueData = playerInfo:atQueue(index)
-				--产品信息
-				if queueData.state == PlayerStateType.Product and queueData.isAddTray == false then
-					--找到了
-					queueData.isAddTray = true --标记
-
-					local productId = queueData.elfId
-					local queueId = index
-					--model保存product信息
-					local productIndex, productType = self._trayInfo:addProduct(productId, queueId)
-					--view显示product增加
-					G_modelDelegate:addProductAtIndex(productIndex, productType)
-
-					addNum = addNum + 1
-
-					if addNum == deleteNum then
-						break --增加的和删除的相同了
-					end
-				end
-			end
-		end
-
-
+		self:refreshTrayProduct() --补充托盘
 
 	else --没有一个产品满足npc（赶走npc）
 		print("get out:"..elfId)
@@ -536,6 +495,50 @@ function ManageModel:playerOnSeat(npcInfo)
 		self:npcStateControl(elfId)
 	end
 
+end
+
+--补充托盘
+function ManageModel:refreshTrayProduct()
+
+	local emptyNum = self._trayInfo:getEmptyNum()
+
+	if emptyNum == 0 then
+		return
+	end
+
+	local testPlayerId = 1
+
+	local playerInfo = self._playerInfoMap[testPlayerId] --npcinfo
+
+	--删除多少个就加入多少个（如果队列后面有移动到产品的命令）
+	local playerQueNum = playerInfo:getCurQueueNum()
+	local playerQueIndex = playerInfo:getCurQueueIndex()
+
+	local addNum = 0
+
+	for i = 1, playerQueNum do
+		local index = playerQueIndex + i - 1
+		local queueData = playerInfo:atQueue(index)
+		--产品信息
+		if queueData.state == PlayerStateType.Product and queueData.isAddTray == false then
+			--找到了
+			queueData.isAddTray = true --标记
+
+			local productId = queueData.elfId
+			local queueId = index
+			--model保存product信息
+			local productIndex, productType = self._trayInfo:addProduct(productId, queueId)
+			--view显示product增加
+			G_modelDelegate:addProductAtIndex(productIndex, productType)
+
+			addNum = addNum + 1
+
+			if addNum == emptyNum then
+				break --增加的和删除的相同了
+			end
+		end
+	end
+	
 end
 
 
@@ -661,12 +664,17 @@ function ManageModel:playerQueue(playerInfo)
 	    local delay = CCDelayTime:create(delay)
 	    local callfunc = CCCallFunc:create(callback)
 	    local sequence = CCSequence:createWithTwoActions(delay, callfunc)
+
+	    -- if node:getActionByTag(1024) then
+	    	-- print("stop multi call")
+	    -- end
+	    node:stopActionByTag(1024) --此处需要stop，防止多次调用
 	    sequence:setTag(1024)
 
-	    if node:getNumberOfRunningActions() > 1 then
-	    	-- print(node:stopActionByTag(1024)) 
-	    	assert(node:stopActionByTag(1024) ~= nil, "error multi")
-	    end
+	    -- if node:getNumberOfRunningActions() > 1 then
+	    	--  print(node:stopActionByTag(1024)) 
+	    	-- assert(node:stopActionByTag(1024) ~= nil, "error multi")
+	    -- end
 
 	    node:runAction(sequence)
 	    return sequence
@@ -838,6 +846,8 @@ function ManageModel:onTrayProductBtn(index)
 
 	--删除面板上的值
 	G_modelDelegate:removeProductAtIndex(index) 
+
+	self:refreshTrayProduct() --补充托盘
 	
 end
 

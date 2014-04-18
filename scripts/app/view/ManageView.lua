@@ -192,7 +192,7 @@ function ManageView:init()
     do --tray 托盘
         local trayNum = GlobalValue.TrayNum.value
         local trayView = ManageTrayView:create(trayNum)
-        trayView:setPosition(ccp(display.left + 80, display.top - 50))
+        trayView:setPosition(ccp(display.left + 40, display.top - 50))
 
         self:addChild(trayView)
         self._trayLayer = trayView

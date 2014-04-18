@@ -34,13 +34,13 @@ function ManageTrayView:addProductAtIndex(index, productType)
 
 	local sprite = display.newSprite("product_1.jpg")
 
-	local testFlag = "id:"..(productType - 100) --test
+	local testFlag = (productType - 100) --test
 
-	local label = CCLabelTTF:create(testFlag, "Arial", 50)
+	local label = CCLabelTTF:create(testFlag, "Arial-BoldMT", 60)
 
-	label:setPosition(ccp(180, 50))
+	label:setPosition(ccp(50, 50))
 
-	label:setColor(ccc3(255, 0, 0))
+	label:setColor(ccc3(0, 0, 255))
 
 	sprite:addChild(label)
 
@@ -77,10 +77,13 @@ function ManageTrayView:addProductAtIndex(index, productType)
             end
         end)
 
-	sprite:setPosition(ccp(0, - index * 50)) --test
+	sprite:setPosition(ccp(0, - (index + 1) * 50)) --test
 	sprite:setScale(0.4) --test
-
-	sprite:runAction(CCFadeIn:create(0.2)) --进入动画
+	local fadeInAndMoveTo = CCSpawn:createWithTwoActions(CCFadeIn:create(0.2), CCMoveTo:create(0.2, ccp(0, - index * 50)))
+	fadeInAndMoveTo:setTag(99)
+	sprite:stopActionByTag(99)
+	sprite:runAction(fadeInAndMoveTo)
+	-- sprite:runAction() --进入动画
 
 	self:addChild(sprite)
 
@@ -92,24 +95,34 @@ end
 
 function ManageTrayView:removeProductAtIndex(index)
 	-- print("remove"..index)
+
+	--删除
 	local sprite = self._productVec[index]
 
 	self._productVec[index] = nil
 
 	local sequence = CCSequence:createWithTwoActions(
-					CCFadeOut:create(0.2), 
-					CCRemoveSelf:create(true)
-					)
-
+        											CCSpawn:createWithTwoActions(
+						        												CCFadeOut:create(0.2), 
+						        												CCMoveBy:create(0.2, ccp(0, 50))
+						        												),
+													CCRemoveSelf:create(true)
+													)
+	sequence:setTag(99)
+	sprite:stopActionByTag(99)
 	sprite:runAction(sequence)
 
+	--移动
 	for i = index ,self._maxNum  do
 		self._productVec[i] = self._productVec[i + 1]
 
 		sprite = self._productVec[i]
 
 		if sprite then
-			sprite:runAction(CCMoveBy:create(0.3, ccp(0, 50)))
+			local moveTo = CCMoveTo:create(0.2, ccp(0, - i * 50))
+			moveTo:setTag(99)
+			sprite:stopActionByTag(99)
+			sprite:runAction(moveTo)
 		else
 			self._productVec[i] = self._productVec[i + 1]
 			break
@@ -120,7 +133,7 @@ end
 
 function ManageTrayView:setProductFinishAtIndex(index)
 	local sprite = self._productVec[index]
-	sprite:setColor(ccc3(255, 0, 0))
+	sprite:setColor(ccc3(255, 0, 255))
 end
 
 function ManageTrayView:removeProductWithVec(indexVec)
@@ -136,9 +149,18 @@ function ManageTrayView:removeProductWithVec(indexVec)
 
         local index = indexVec[iRevert] --从后面删除
 
-        local sequence = CCSequence:createWithTwoActions(CCFadeOut:create(0.2), CCRemoveSelf:create(true))
+        local sequence = CCSequence:createWithTwoActions(
+        												CCSpawn:createWithTwoActions(
+						        													CCFadeOut:create(0.2), 
+						        													CCMoveBy:create(0.2, ccp(0, 50))
+						        													),
+											        	CCRemoveSelf:create(true)
+											        	)
 
         local sprite = productVec[index]
+
+		sequence:setTag(99)
+		sprite:stopActionByTag(99)
 
         sprite:runAction(sequence)
 
@@ -156,9 +178,11 @@ function ManageTrayView:removeProductWithVec(indexVec)
         for i, product in ipairs(productVec) do
             local sprite = product
 
-            local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(0, - i * 50)))
-
-            sprite:runAction(sequence)
+            -- local sequence = CCSequence:createWithTwoActions(CCDelayTime:create(0.2), CCMoveTo:create(0.3, ccp(0, - i * 50)))
+            local moveTo = CCMoveTo:create(0.3, ccp(0, - i * 50))
+            moveTo:setTag(99)
+			sprite:stopActionByTag(99)
+            sprite:runAction(moveTo)
         end
 
     end
