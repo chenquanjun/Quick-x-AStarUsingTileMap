@@ -6,6 +6,7 @@ Stats._npcInfoDic 				= nil --npc信息字典（加入后不可修改）
 Stats._totalNum            = 0
 
 Stats._leaveDic             = nil
+Stats._productDic           = nil
 
 
 function Stats:create()
@@ -22,6 +23,13 @@ function Stats:init()
 
     for k,v in pairs(LeaveReason) do
     	self._leaveDic[k] = {}
+    end
+
+    self._productDic = {}
+    local productNum = GlobalValue.ProductNum.value
+
+    for i = 1, productNum do
+    	self._productDic[ElfIdList.ProductOffset + i] = 0 
     end
 
 end
@@ -47,9 +55,7 @@ function Stats:addNPC(data)
 	end
 end
 
-function Stats:addProduct(data)
-	-- body
-end
+
 
 --按照顺序存储
 function Stats:leaveFor(elfId, leaveReason)
@@ -85,6 +91,20 @@ function Stats:leaveFor(elfId, leaveReason)
 		--正常支付离开
 		[LeaveReason.PayEnded] = function()
 			reasonStr = "PayEnded"
+
+			--因为添加npc的data里面已经包含产品信息，所以只需要在方法内部统计
+			local npcData = self._npcInfoDic[elfId]
+			local productVec = npcData.productVec
+
+			for i, productId in ipairs(productVec) do
+				self._productDic[productId] = self._productDic[productId] + 1
+			end
+
+			for productId ,num in pairs(self._productDic) do
+				G_modelDelegate:setStatsProductInfo(productId, num)
+			end
+
+			
 		end,
 	} --switch end
 

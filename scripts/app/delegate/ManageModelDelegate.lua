@@ -22,6 +22,10 @@ function ManageModelDelegate:setStatsReason(leaveReason, num)
 	self._refer:MD_setStatsReason(leaveReason, num)
 end
 
+function ManageModelDelegate:setStatsProductInfo(productId, num)
+	self._refer:setStatsProductInfo(productId, num)
+end
+
 --添加产品
 function ManageModelDelegate:addProduct(data)
 	self._refer:MD_addProduct(data)

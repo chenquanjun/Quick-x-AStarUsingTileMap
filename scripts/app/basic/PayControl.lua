@@ -208,6 +208,7 @@ function PayControl:onRelease()
 	self._waitPayQueue        = nil  
 end
 
+--npc在支付队列移动结束，发起支付
 function PayControl:npcMoveEnded(elfId)
 	local npcInfo = self._npcInfoMap[elfId]
 
@@ -220,7 +221,7 @@ function PayControl:npcMoveEnded(elfId)
 		local queueIndex = self._norPayQueue:getQueueIndex(elfId)
 
 		if queueIndex == 1 then --npc在第一位
-			local duration = GlobalValue.PayCD.value--收银时间
+			local duration = GlobalValue.PayCD.value / 1000--收银时间
 
 			--收银开动
 			G_timer:addTimerListener(ElfIdList.PayQueCheck, duration, self) --加入时间控制

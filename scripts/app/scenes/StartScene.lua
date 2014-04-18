@@ -112,6 +112,13 @@ GlobalValue = {
                     max   = 1000000,
                     min   = 0,
                  },
+    ProductNum =  {
+                    index = 17,
+                    name  = "产品个数(个)",
+                    value = 6,
+                    max   = 6,
+                    min   = 0,
+                 },
 }
 
 

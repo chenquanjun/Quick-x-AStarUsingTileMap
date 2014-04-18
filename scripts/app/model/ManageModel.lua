@@ -136,6 +136,10 @@ function ManageModel:initProduct()
 	-- self._mapDataDic[kMapDataProduct]
 
 	for i,mapId in ipairs(productVec) do
+		if i > GlobalValue.ProductNum.value then
+			break
+		end
+
 		local elfId = ElfIdList.ProductOffset + i
 
 		local name = "id:"..(elfId - 100)

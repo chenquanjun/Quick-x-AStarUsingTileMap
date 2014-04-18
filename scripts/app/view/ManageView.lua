@@ -21,7 +21,8 @@ ManageView._btnLayer    = nil
 ManageView._trayLayer   = nil
 ManageView._timerLabel  = nil
 ManageView._testTimerSpr= nil
-ManageView._statsMap    = nil
+ManageView._statsReasonMap    = nil
+ManageView._statsProductInfoMap = nil
 
 --[[-------------------
     ---Init Method-----
@@ -198,21 +199,49 @@ function ManageView:init()
     end
 
     do --统计
-        self._statsMap = {}
+        self._statsReasonMap = {}
+        self._statsProductInfoMap = {}
+
         local statsLayer = display.newLayer()
         self:addChild(statsLayer, 100)
-        statsLayer:setPosition(ccp(display.right - 150, display.top))
+        statsLayer:setPosition(ccp(display.right - 250, display.top))
+
+        local offsetY = 0
 
         for k,v in pairs(LeaveReason) do
+
+            offsetY = offsetY + 1
             local infoLabel = CCLabelTTF:create(k..":0", "Arial", 15)
 
             infoLabel:setColor(ccc3(0, 0, 255))
 
-            infoLabel:setPosition(ccp(0, - 20 * v))
+            infoLabel:setPosition(ccp(0, - 20 * offsetY))
 
             statsLayer:addChild(infoLabel)
 
-            self._statsMap[k] = infoLabel
+            self._statsReasonMap[k] = infoLabel
+        end
+
+        --产品个数
+        -- local productVec = G_seatControl:getMapIdVecOfType(kMapDataProduct)
+
+        local productNum = GlobalValue.ProductNum.value
+
+        offsetY = 0
+        for i = 1, productNum do
+            offsetY = offsetY + 1
+
+            local elfId = ElfIdList.ProductOffset + i --产品id
+
+            local infoLabel = CCLabelTTF:create("product"..(elfId - 100)..":0", "Arial", 15)
+
+            infoLabel:setColor(ccc3(0, 0, 255))
+
+            infoLabel:setPosition(ccp(150, - 20 * offsetY))
+
+            statsLayer:addChild(infoLabel)
+
+            self._statsProductInfoMap[elfId] = infoLabel
         end
     end
 end
@@ -236,8 +265,13 @@ end
 --MD_前缀代表model delegate---
 ----------------------------]]
 function ManageView:MD_setStatsReason(leaveReason, num)
-    local label = self._statsMap[leaveReason]
+    local label = self._statsReasonMap[leaveReason]
     label:setString(leaveReason..":"..num)
+end
+
+function ManageView:setStatsProductInfo(productId, num)
+    local label = self._statsProductInfoMap[productId]
+    label:setString("product"..(productId - 100)..":"..num)
 end
 
 function ManageView:MD_addProduct(data)
