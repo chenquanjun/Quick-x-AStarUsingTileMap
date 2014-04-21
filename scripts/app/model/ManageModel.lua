@@ -565,7 +565,16 @@ function ManageModel:playerQueue(playerInfo)
 			local mapId = preQueueData.originMapId --取出座位id
 			local elfId = G_seatControl:getSeatInfo(kMapDataSeat, mapId) --取出占座位的npc
 
-			self:addSelectLight(mapId, -1)--闪光次数减1
+
+
+			if preQueueData.IsUnselectLight then
+				--todo
+			else
+				self:addSelectLight(mapId, -1)--闪光次数减1
+				preQueueData.IsUnselectLight = true
+			end
+
+			-- self:addSelectLight(mapId, -1)--闪光次数减1
 
 			if elfId == ElfIdList.Rubbish then --清理垃圾
 				G_seatControl:leaveSeat(kMapDataSeat, mapId, elfId)
@@ -585,7 +594,14 @@ function ManageModel:playerQueue(playerInfo)
 			local preQueueData = playerInfo:preQueue() --取出上一个队列的数据
 			local mapId = preQueueData.originMapId --取出座位id
 
-			self:addSelectLight(mapId, -1)--闪光次数减1
+			if preQueueData.IsUnselectLight then
+				--todo
+			else
+				self:addSelectLight(mapId, -1)--闪光次数减1
+				preQueueData.IsUnselectLight = true
+			end
+
+			-- self:addSelectLight(mapId, -1)--闪光次数减1
 
 			local elfId = G_seatControl:getSeatInfo(kMapDataWaitSeat, mapId) --取出占座位的npc
 
@@ -607,7 +623,14 @@ function ManageModel:playerQueue(playerInfo)
 
 			local mapId = preQueueData.originMapId
 
-			self:addSelectLight(mapId, -1)--闪光次数减1
+			-- self:addSelectLight(mapId, -1)--闪光次数减1
+
+			if preQueueData.IsUnselectLight then
+				--todo
+			else
+				self:addSelectLight(mapId, -1)--闪光次数减1
+				preQueueData.IsUnselectLight = true
+			end
 
 			if preQueueData.isDelete then --先判断是否已经删除
 				-- print("delete")
@@ -650,7 +673,7 @@ function ManageModel:playerQueue(playerInfo)
 
 				--等待产品cooldown回调
 
-				self:addSelectLight(mapId, 1)--闪光次数减1
+				-- self:addSelectLight(mapId, 1)--闪光次数减1
 
 				return true --注意此值是fSwitch()的返回值
 
@@ -715,6 +738,13 @@ function ManageModel:playerQueue(playerInfo)
 				-- if playerInfo.curState == PlayerStateType.Product then
 					-- self:addSelectLight(queueData.originMapId, -1)--闪光次数减1
 				-- end
+
+				if queueData.IsUnselectLight then
+				--todo
+				else
+					self:addSelectLight(mapId, -1)--闪光次数减1
+					queueData.IsUnselectLight = true
+				end
 
 				playerInfo.curState = PlayerStateType.Idle --空闲状态
 				self:playerQueue(playerInfo)
@@ -852,15 +882,25 @@ function ManageModel:onTrayProductBtn(index)
 	local queueId = self._trayInfo:removeProduct(index)
 
 	if queueId then --queueId存在说明物品未完成状态
+
+		local testPlayerId = 1
+
+		local playerInfo = self._playerInfoMap[testPlayerId]
+
 		--删除闪光
 		
 		local productInfo = self._productInfoMap[productId]
 		local mapId = productInfo.mapId
-		self:addSelectLight(mapId, -1)--闪光次数减1
 		
-		local testPlayerId = 1
 
-		local playerInfo = self._playerInfoMap[testPlayerId]
+		local curQueueData = playerInfo:atQueue(queueId)
+
+		if curQueueData.IsUnselectLight then
+			--todo
+		else
+			self:addSelectLight(mapId, -1)--闪光次数减1
+			curQueueData.IsUnselectLight = true
+		end
 
 		playerInfo:removeQueue(queueId) --删除队列值
 
