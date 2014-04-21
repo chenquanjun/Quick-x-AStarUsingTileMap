@@ -330,7 +330,7 @@ function PayControl:onGameOver()
 
 	--删除定时器
 
-	dump(self._norPayQueue._queueData, "queuedata")
+	-- dump(self._norPayQueue._queueData, "queuedata")
 	G_timer:removeTimerListener(ElfIdList.PayQueCheck)
 
 	local queueNum = self._norPayQueue:getQueueNum()

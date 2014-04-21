@@ -84,38 +84,40 @@ function ManageModel:onEnter()
 	local perWaveNum = GlobalValue.PerWaveNum.value
 	local perWaveTime = GlobalValue.PerWaveTime.value
 
-	print("perWaveNum"..perWaveNum)
+	-- print("perWaveNum"..perWaveNum)
 
 	--批量循环增加测试
-	local function addNPCTest()
-		performWithDelay(self, function() 
-			for i=1, perWaveNum do
-			self:addNPC()
-			end
-			addNPCTest()
-		end, perWaveTime)
-	end
+	-- local function addNPCTest()
+	-- 	performWithDelay(self, function() 
+	-- 		for i=1, perWaveNum do
+	-- 		self:addNPC()
+	-- 		end
+	-- 		addNPCTest()
+	-- 	end, perWaveTime)
+	-- end
 
-	local function addSimpleNPCTest()
-		performWithDelay(self, function() 
-			for i=101 ,106 do
-				local productList = {
-										{
-											{elfId = i, curState = 0},
-										},
-									}
+	-- local function addSimpleNPCTest()
+	-- 	performWithDelay(self, function() 
+	-- 		for i=101 ,106 do
+	-- 			local productList = {
+	-- 									{
+	-- 										{elfId = i, curState = 0},
+	-- 									},
+	-- 								}
 
-				self:addNPC(productList) --单个测试	
-			end
-			addSimpleNPCTest()
-		end, math.random(5, 10))
-	end
+	-- 			self:addNPC(productList) --单个测试	
+	-- 		end
+	-- 		addSimpleNPCTest()
+	-- 	end, math.random(5, 10))
+	-- end
 
 	for i=1, perWaveNum do
 		self:addNPC()
 	end
+	--npc波数控制
+	G_timer:addTimerListener(ElfIdList.NPCWave, perWaveTime, self)
 	
-	addNPCTest() --批量测试
+	-- addNPCTest() --批量测试
 	-- addSimpleNPCTest() --批量单个测试
 
 end
@@ -923,6 +925,19 @@ function ManageModel:TD_onTimeOver(elfId)
 
 	elseif elfId >= ElfIdList.ProductOffset then
 		self:onCoolDown(elfId) --产品冷却回调
+
+	elseif elfId == ElfIdList.NPCWave then --npc波数控制
+
+		local perWaveNum = GlobalValue.PerWaveNum.value
+		local perWaveTime = GlobalValue.PerWaveTime.value
+
+
+		for i=1, perWaveNum do
+		self:addNPC()
+		end
+
+		--npc波数控制
+		G_timer:addTimerListener(ElfIdList.NPCWave, perWaveTime, self)
 
 	else
 		local testPlayerId = 1
